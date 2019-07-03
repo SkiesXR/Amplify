@@ -7,5 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore();
     const root = document.getElementById('root');
     ReactDOM.render(<h1>Music for everyone.</h1>, root);
-    window.getState = store.getState();    
+
+    // for testing
+    window.getState = store.getState(); 
+    window.dispatch = store.dispatch;   
 });
