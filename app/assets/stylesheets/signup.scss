@@ -45,6 +45,11 @@
     margin-right: auto;
     color: #fff;
     background-color: #3B5998;
+    transition: background-color .25s ease-in;
+}
+
+#signup-fb:hover {
+    background-color: rgb(73, 110, 190);
 }
 
 .content {
@@ -153,7 +158,13 @@ input:focus {
     text-align: center;
     cursor: pointer;
     border: 1px solid transparent;
+    transition: background-color .25s ease-in;
 }
+
+.signup-submit:hover {
+    background-color: rgb(37, 224, 102);
+}
+
 
 .login-prompt {
     font-family: Arial, Helvetica, sans-serif;
