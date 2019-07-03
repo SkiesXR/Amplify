@@ -40,46 +40,54 @@ class SignupForm extends React.Component {
                 <div className="signup-Header">
                     <img id="signup-logo" src={"SpotifyBlack.png"} alt="logo"></img>
                 </div>
-                    
-                <div className="login-form-container">
+                <div className="content">
+                    <button id="signup-fb">Sign up with facebook</button>
+                </div>
+ 
                     <form onSubmit={this.handleSubmit} className="login-form-box">
-                        Sign up with your email address
                         <br />
-                        Sign Up
-                        {this.renderErrors()}   
-                        <div className="login-form">
-                            <br />
-                            <label>Username:
-                                <input type="text"
-                                    value={this.state.username}
-                                    onChange={this.update('username')}
-                                    className="login-input"
-                                />
-                            </label>
-                            <br />
-                            <label>Password:
-                                <input type="password"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                    className="login-input"
-                                />
-                            </label>
-                            <br />
-                            <label>Email:
-                                <input type="text"
-                                    value={this.state.email}
-                                    onChange={this.update('email')}
-                                    className="login-input"
-                                />
-                            </label>
-                            <br /><br />
-                            <input className="session-submit" type="submit" value={this.props.formType} />
+                        <div className="content">
+                        <strong class="line-thru">or</strong>
+                            <h2 className="center">Sign up with your email address</h2>
+                            {this.renderErrors()}   
+                            <div className="login-form">
+                                <br />
+                                <label>
+                                    <input type="text"
+                                        value={this.state.username}
+                                        onChange={this.update('username')}
+                                        className="input-register-1"
+                                        placeholder="Username"
+                                    />
+                                </label>
+                                <br />
+                                <label>
+                                    <input type="password"
+                                        value={this.state.password}
+                                        onChange={this.update('password')}
+                                        className="input-register-1"
+                                        placeholder="Password"
+                                    />
+                                </label>
+                                <br />
+                                <label>
+                                    <input type="text"
+                                        value={this.state.email}
+                                        onChange={this.update('email')}
+                                        className="input-register-1"
+                                        placeholder="Email"
+                                    />
+                                </label>
+                                <br /><br />
+                                <input className="signup-submit" type="submit" value="Sign Up" />
+                                <div className="login-prompt">Already have an account? <a id="login-highlight" href="">Log in</a></div>
+                            </div>
                         </div>
                     </form>
+                    <br/>
                 </div>
-            </div>
-        );
+            );
+        }
     }
-}
 
 export default withRouter(SignupForm);
