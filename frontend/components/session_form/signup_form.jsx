@@ -43,12 +43,13 @@ class SignupForm extends React.Component {
                 <div className="content">
                     <button id="signup-fb">Sign up with facebook</button>
                 </div>
-                <div classname="content">
+                <div className="content-2">
                     <form onSubmit={this.handleSubmit} >
                         <br />
-                        <strong class="line-thru">or</strong>
+                        <strong className="line-thru">or</strong>
                             <h2 className="center">Sign up with your email address</h2>
-                            {this.renderErrors()}   
+                            {/* TODO: Style errors properly
+                            {this.renderErrors()}  */}   
                             <div className="login-form">
                                 <br />
                                 <label>
@@ -70,7 +71,7 @@ class SignupForm extends React.Component {
                                 </label>
                                 <br />
                                 <label>
-                                    <input type="text"
+                                    <input type="email"
                                         value={this.state.email}
                                         onChange={this.update('email')}
                                         className="input-register-1"

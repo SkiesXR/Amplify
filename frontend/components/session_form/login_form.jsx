@@ -50,7 +50,8 @@ class LoginForm extends React.Component {
                     Welcome to Amplify!
           <br />
                     Please login
-                    {this.renderErrors()} 
+                    {/* TODO: Style errors properly
+                    {this.renderErrors()}  */}
                     <div className="login-form">
                         <br />
                         <label>Username:
@@ -72,8 +73,8 @@ class LoginForm extends React.Component {
                         <input className="session-submit" type="submit" value={this.props.formType} />
                     </div>
                 </form>
-
-                <button type="submit" onClick={ this.handleDemoUser }>Demo User</button>
+                {/* TODO: Demo User!
+                <button type="submit" onClick={ this.handleDemoUser }>Demo User</button> */}
             </div>
         );
     }
