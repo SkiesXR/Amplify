@@ -24,7 +24,6 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        // const {usernameError, passwordError, emailError } = this.props.errors;
         const usernameError = this.props.errors.username;
         const passwordError = this.props.errors.password;
         const emailError = this.props.errors.email;
@@ -35,9 +34,7 @@ class SignupForm extends React.Component {
                     <img id="signup-logo" src={"SpotifyBlack.png"} alt="logo"></img>
                 </div>
                 <div className="content">
-                    <button id="signup-fb">Sign up with facebook</button>
-                </div>
-                <div className="content-2-signup">
+                    <button id="signup-fb">Sign up with facebook</button>                
                     <form onSubmit={this.handleSubmit} >
                         <br />
                         <strong className="line-thru">or</strong>
@@ -82,7 +79,6 @@ class SignupForm extends React.Component {
                         </form>
                         <br/>
                     </div>
-                {/* <div>{ this.handleUsernameError() }</div> */}
                 </div>
             );
         }

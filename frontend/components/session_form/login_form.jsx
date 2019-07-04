@@ -44,6 +44,7 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        const loginError = this.props.errors;
         return (
             <div className="login">
                 <div className="signup-Header">
@@ -57,8 +58,6 @@ class LoginForm extends React.Component {
                     <form className="form" onSubmit={this.handleSubmit}>
                         <br />
                         <strong className="line-thru">OR</strong>
-                        {/* TODO: Style errors properly
-                            {this.renderErrors()}  */}
                             <br />
                             <label>
                                 <input type="text"
@@ -76,6 +75,7 @@ class LoginForm extends React.Component {
                                     className="input-register-2"
                                     placeholder="Password"
                                 />
+                            {loginError ? <div className="input-error">{loginError}</div> : <div style={{ display: "none" }}>{null}</div>}
                             </label>
                             <br /><br />
                             <input className="login-submit" type="submit" value="Log In" />
