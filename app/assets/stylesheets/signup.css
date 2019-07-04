@@ -211,6 +211,14 @@ input:focus::-webkit-input-placeholder {
     color: rgb(34, 216, 98);
 }
 
+.input-error {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #EB1E32;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 
 
 

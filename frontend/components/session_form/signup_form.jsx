@@ -22,20 +22,14 @@ class SignupForm extends React.Component {
         e.preventDefault();
         this.props.processForm(this.state);
     }
-    renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
 
     render() {
+        // const {usernameError, passwordError, emailError } = this.props.errors;
+        const usernameError = this.props.errors.username;
+        const passwordError = this.props.errors.password;
+        const emailError = this.props.errors.email;
         return (
+            
             <div className="signup">
                 <div className="signup-Header">
                     <img id="signup-logo" src={"SpotifyBlack.png"} alt="logo"></img>
@@ -47,9 +41,7 @@ class SignupForm extends React.Component {
                     <form onSubmit={this.handleSubmit} >
                         <br />
                         <strong className="line-thru">or</strong>
-                            <h2 className="signup-h2">Sign up with your email address</h2>
-                            {/* TODO: Style errors properly
-                            {this.renderErrors()}  */}   
+                            <h2 className="signup-h2">Sign up with your email address</h2> 
                             <div className="login-form">
                                 <br />
                                 <label>
@@ -59,6 +51,7 @@ class SignupForm extends React.Component {
                                         className="input-register-1"
                                         placeholder="Username"
                                     />
+                                {usernameError ? <div className="input-error">Username {usernameError}</div> : <div style={{ display: "none" }}>{null}</div> }
                                 </label>
                                 <br />
                                 <label>
@@ -68,6 +61,8 @@ class SignupForm extends React.Component {
                                         className="input-register-1"
                                         placeholder="Password"
                                     />
+                                {passwordError ? <div className="input-error">Password {passwordError}</div> : <div style={{ display: "none" }}>{null}</div>}
+
                                 </label>
                                 <br />
                                 <label>
@@ -77,14 +72,17 @@ class SignupForm extends React.Component {
                                         className="input-register-1"
                                         placeholder="Email"
                                     />
+                                {emailError ? <div className="input-error">Email {emailError}</div> : <div style={{ display: "none" }}>{null}</div>}
+
                                 </label>
                                 <br /><br />
                                 <input className="signup-submit" type="submit" value="Sign Up" />
-                                <div className="login-prompt">Already have an account? <a id="login-highlight" href="">Log in</a></div>
+                                <div className="login-prompt">Already have an account? <a id="login-highlight" to="/splash">Log in</a></div>
                             </div>
                         </form>
                         <br/>
                     </div>
+                {/* <div>{ this.handleUsernameError() }</div> */}
                 </div>
             );
         }
