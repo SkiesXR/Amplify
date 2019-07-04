@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
                     <button id="login-fb">Log in with facebook</button>
                 </div>
                 <div className="content-2">
-                    <form onSubmit={this.handleSubmit}>
+                    <form className="form" onSubmit={this.handleSubmit}>
                         <br />
                         <strong className="line-thru">OR</strong>
                         {/* TODO: Style errors properly
@@ -87,7 +87,7 @@ class LoginForm extends React.Component {
                 <button type="submit" className="demo-submit" onClick={this.handleDemoUser}>Demo User</button>
                 <span id="no-account-q">Don't have an account?</span>
                 <button type="submit" className="signup-button" onClick={this.handleDemoUser}>Sign Up For Spotify</button>
-                </div>
+             </div>
             // TODO: Demo User!
             
             

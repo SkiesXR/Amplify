@@ -40,7 +40,7 @@
     border: 1px solid transparent;
     text-decoration: none;
     margin-bottom: 14px;
-    max-width: 320px;
+    width: 100%;
     margin: auto;
     margin-left: auto;
     margin-right: auto;
@@ -116,8 +116,8 @@
 
 .input-register-2 {
     height: 40px;
-    padding: 0 0.75em;
     border-radius: 2px;
+    text-indent: 12px;
     width: 100%;
     background-color: #fff;
     border: 1px solid #dfe0e6;
@@ -189,7 +189,7 @@ hr {
 
 .login-submit {
     margin-bottom: 14px;
-    max-width: 320px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     color: #FFF;
@@ -343,4 +343,8 @@ hr {
     background-color: #babbbd;
     border-color: rgb(77, 76, 76);
     color: rgb(77, 76, 76);
+}
+
+.form {
+    width: 100%;
 }
