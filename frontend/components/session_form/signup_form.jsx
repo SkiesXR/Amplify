@@ -43,7 +43,7 @@ class SignupForm extends React.Component {
                 <div className="content">
                     <button id="signup-fb">Sign up with facebook</button>
                 </div>
-                <div className="content-2">
+                <div className="content-2-signup">
                     <form onSubmit={this.handleSubmit} >
                         <br />
                         <strong className="line-thru">or</strong>

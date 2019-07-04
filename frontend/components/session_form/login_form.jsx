@@ -83,10 +83,12 @@ class LoginForm extends React.Component {
                             <hr/>
                         </form>
                         <br />
+                    <button type="submit" className="demo-submit" onClick={this.handleDemoUser}>Demo User</button>
+                    <span id="no-account-q">Don't have an account?</span>
+                    <button type="submit" className="signup-button" onClick={this.handleDemoUser}>Sign Up For Spotify</button>
+
                     </div>
-                <button type="submit" className="demo-submit" onClick={this.handleDemoUser}>Demo User</button>
-                <span id="no-account-q">Don't have an account?</span>
-                <button type="submit" className="signup-button" onClick={this.handleDemoUser}>Sign Up For Spotify</button>
+                    
              </div>
             // TODO: Demo User!
             

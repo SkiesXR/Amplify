@@ -71,12 +71,12 @@
     margin-bottom: 18px;
 }
 
-.content-2 {
+.content-2-signup {
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 430px;
-    height: 270px;
+    height: 265px;
     background: #fff;
     padding: 1.9em;
     padding-top: 0em;
@@ -178,7 +178,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 .signup-submit:active {
-    border: none;
+    /* border: none; */
 }
 
 .signup-submit:hover {

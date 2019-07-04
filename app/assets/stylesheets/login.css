@@ -75,7 +75,7 @@
     justify-content: center;
     flex-direction: column;
     width: 430px;
-    height: 270px;
+    height: 420px;
     background: #fff;
     padding: 1.9em;
     padding-top: 0em;
@@ -214,7 +214,7 @@ hr {
 }
 
 .login-submit:active {
-    border: none;
+    /* border: none; */
 }
 
 .login-submit:hover {
@@ -226,12 +226,13 @@ hr {
 }
 
 .demo-submit {
+    width: 100%;
     margin-bottom: 14px;
-    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 12px;
     color: #FFF;
-    background-color: rgb(233, 134, 134);
+    background-color: rgb(37, 37, 37);
     font-size: 14px;
     line-height: 1;
     border-radius: 500px;
@@ -251,16 +252,13 @@ hr {
     outline: none;
 }
 
-.demo-submit:active {
-    border: none;
-}
-
 .demo-submit:hover {
-    background-color: rgb(250, 145, 145);
+    background-color: rgb(104, 104, 104);
 }
 
 .demo-submit:active {
-    background-color: rgb(226, 82, 82);
+    background-color: rgb(37, 37, 37);
+    /* border: none; */
 }
 
 .forgot-password-prompt {
@@ -296,7 +294,7 @@ hr {
     color: #1c1c1f;
     line-height: 1.2;
     margin-bottom: 1em;
-    /* margin-top: 30px; */
+    margin-top: 10px;
     text-align: center;
     text-rendering: optimizelegibility;
     /* width: 430px; */
@@ -306,7 +304,7 @@ hr {
 
 .signup-button {
     margin-bottom: 14px;
-    max-width: 320px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     color: #616467;
