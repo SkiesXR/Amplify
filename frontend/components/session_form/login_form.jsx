@@ -53,8 +53,8 @@ class LoginForm extends React.Component {
                 <div className="content-login-1">
                     <h2 className="login-h2">To continue, log in to Spotify.</h2>
                     <button id="login-fb">Log in with facebook</button>
-                </div>
-                <div className="content-2">
+                {/* </div> */}
+                {/* <div className="content-2"> */}
                     <form className="form" onSubmit={this.handleSubmit}>
                         <br />
                         <strong className="line-thru">OR</strong>
@@ -63,7 +63,8 @@ class LoginForm extends React.Component {
                                 <input type="text"
                                     value={this.state.username}
                                     onChange={this.update('username')}
-                                    className="input-register-2"
+                                    className={loginError ? "input-register-error" : "input-register-2"}
+                                    // className="input-register-2"
                                     placeholder="Username"
                                 />
                             </label>
@@ -72,7 +73,8 @@ class LoginForm extends React.Component {
                                 <input type="password"
                                     value={this.state.password}
                                     onChange={this.update('password')}
-                                    className="input-register-2"
+                                    className={loginError ? "input-register-error" : "input-register-2"}
+                                    // className="input-register-2"
                                     placeholder="Password"
                                 />
                             {loginError ? <div className="input-error">{loginError}</div> : <div style={{ display: "none" }}>{null}</div>}
@@ -80,14 +82,12 @@ class LoginForm extends React.Component {
                             <br /><br />
                             <input className="login-submit" type="submit" value="Log In" />
                             <div className="forgot-password-prompt"><a id="login-highlight" href="">Forgot your password?</a></div>
-                            <hr/>
                         </form>
                         <br />
                     <button type="submit" className="demo-submit" onClick={this.handleDemoUser}>Demo User</button>
                     <span id="no-account-q">Don't have an account?</span>
                     <button type="submit" className="signup-button" onClick={this.handleDemoUser}>Sign Up For Spotify</button>
-
-                    </div>
+                </div>
                     
              </div>
             // TODO: Demo User!

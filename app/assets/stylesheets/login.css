@@ -63,7 +63,6 @@
     justify-content: center;
     flex-direction: column;
     width: 430px;
-    height: 113.4px;
     background: #fff;
     padding: 1.9em;
     padding-top: 0em;
@@ -106,7 +105,7 @@
     color: #1c1c1f;
     line-height: 1.2;
     margin-bottom: 1em;
-    margin-top: 30px;
+    margin-top: 15px;
     text-align: center;
     text-rendering: optimizelegibility;
     width: 430px;
@@ -140,6 +139,22 @@ input:focus::-webkit-input-placeholder {
 
 .input-register-2:active {
     border-color: rgb(73, 107, 172);
+}
+
+.input-register-error {
+    height: 40px;
+    border-radius: 2px;
+    /* border-color: red; */
+    text-indent: 12px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid rgb(235, 95, 95);
+    color: #1c1c1f;
+    line-height: normal;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9375em;
+    margin-bottom: 1em;
 }
 
 .line-thru {

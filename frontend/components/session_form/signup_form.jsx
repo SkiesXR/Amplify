@@ -45,7 +45,8 @@ class SignupForm extends React.Component {
                                     <input type="text"
                                         value={this.state.username}
                                         onChange={this.update('username')}
-                                        className="input-register-1"
+                                        className={usernameError ? "input-register-error" : "input-register-1"}
+                                        // className="input-register-1"
                                         placeholder="Username"
                                     />
                                 {usernameError ? <div className="input-error">Username {usernameError}</div> : <div style={{ display: "none" }}>{null}</div> }
@@ -55,7 +56,8 @@ class SignupForm extends React.Component {
                                     <input type="password"
                                         value={this.state.password}
                                         onChange={this.update('password')}
-                                        className="input-register-1"
+                                        className={passwordError ? "input-register-error" : "input-register-1"}
+                                        // className="input-register-1"
                                         placeholder="Password"
                                     />
                                 {passwordError ? <div className="input-error">Password {passwordError}</div> : <div style={{ display: "none" }}>{null}</div>}
@@ -66,7 +68,8 @@ class SignupForm extends React.Component {
                                     <input type="email"
                                         value={this.state.email}
                                         onChange={this.update('email')}
-                                        className="input-register-1"
+                                        className={emailError ? "input-register-error" : "input-register-1"}
+                                        // className="input-register-1"
                                         placeholder="Email"
                                     />
                                 {emailError ? <div className="input-error">Email {emailError}</div> : <div style={{ display: "none" }}>{null}</div>}
