@@ -43,10 +43,9 @@ class SignupForm extends React.Component {
                 <div className="content">
                     <button id="signup-fb">Sign up with facebook</button>
                 </div>
- 
-                    <form onSubmit={this.handleSubmit} className="login-form-box">
+                <div classname="content">
+                    <form onSubmit={this.handleSubmit} >
                         <br />
-                        <div className="content">
                         <strong class="line-thru">or</strong>
                             <h2 className="center">Sign up with your email address</h2>
                             {this.renderErrors()}   
@@ -82,9 +81,9 @@ class SignupForm extends React.Component {
                                 <input className="signup-submit" type="submit" value="Sign Up" />
                                 <div className="login-prompt">Already have an account? <a id="login-highlight" href="">Log in</a></div>
                             </div>
-                        </div>
-                    </form>
-                    <br/>
+                        </form>
+                        <br/>
+                    </div>
                 </div>
             );
         }

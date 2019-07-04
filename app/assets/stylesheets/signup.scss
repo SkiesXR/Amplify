@@ -95,6 +95,10 @@
     margin-bottom: 1em;
 }
 
+.input-register-1:focus {
+    color: blue;
+}
+
 input:focus {
     border-color: orange;
 }
