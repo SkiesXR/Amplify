@@ -45,37 +45,52 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to Amplify!
-          <br />
-                    Please login
-                    {/* TODO: Style errors properly
-                    {this.renderErrors()}  */}
-                    <div className="login-form">
+            <div className="login">
+                <div className="signup-Header">
+                    <img id="signup-logo" src={"SpotifyBlack.png"} alt="logo"></img>
+                </div>
+                <div className="content-login-1">
+                    <h2 className="login-h2">To continue, log in to Spotify.</h2>
+                    <button id="login-fb">Log in with facebook</button>
+                </div>
+                <div className="content-2">
+                    <form onSubmit={this.handleSubmit}>
                         <br />
-                        <label>Username:
-                            <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                                className="login-input"
-                            />
-                        </label>
+                        <strong className="line-thru">OR</strong>
+                        {/* TODO: Style errors properly
+                            {this.renderErrors()}  */}
+                            <br />
+                            <label>
+                                <input type="text"
+                                    value={this.state.username}
+                                    onChange={this.update('username')}
+                                    className="input-register-2"
+                                    placeholder="Username"
+                                />
+                            </label>
+                            <br />
+                            <label>
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className="input-register-2"
+                                    placeholder="Password"
+                                />
+                            </label>
+                            <br /><br />
+                            <input className="login-submit" type="submit" value="Log In" />
+                            <div className="forgot-password-prompt"><a id="login-highlight" href="">Forgot your password?</a></div>
+                            <hr/>
+                        </form>
                         <br />
-                        <label>Password:
-                            <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
                     </div>
-                </form>
-                {/* TODO: Demo User!
-                <button type="submit" onClick={ this.handleDemoUser }>Demo User</button> */}
-            </div>
+                <button type="submit" className="demo-submit" onClick={this.handleDemoUser}>Demo User</button>
+                <span id="no-account-q">Don't have an account?</span>
+                <button type="submit" className="signup-button" onClick={this.handleDemoUser}>Sign Up For Spotify</button>
+                </div>
+            // TODO: Demo User!
+            
+            
         );
     }
 }

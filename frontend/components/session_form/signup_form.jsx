@@ -47,7 +47,7 @@ class SignupForm extends React.Component {
                     <form onSubmit={this.handleSubmit} >
                         <br />
                         <strong className="line-thru">or</strong>
-                            <h2 className="center">Sign up with your email address</h2>
+                            <h2 className="signup-h2">Sign up with your email address</h2>
                             {/* TODO: Style errors properly
                             {this.renderErrors()}  */}   
                             <div className="login-form">
