@@ -5,6 +5,25 @@ import { Link } from 'react-router-dom'
 
 class Splash extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: ''
+        }
+        this.handleDemoUser = this.handleDemoUser.bind(this);
+    }
+
+
+    handleDemoUser(e) {
+        const { history } = this.props;
+        e.preventDefault();
+        this.props.demoLogin({
+            username: 'Demo User',
+            password: 'password'
+        }).then(history.push('/browse'))
+    }
+
     render() {
 
         return(
@@ -25,7 +44,8 @@ class Splash extends React.Component {
                 <div className="splash-main">
                     <h1 className="hero-h1">Music for everyone.</h1>
                     <h4>Millions of songs. No credit card needed.</h4>
-                    <Link to="/browse" className="demo-link"><button className="splash-demo-btn">Launch Web Player</button></Link>
+                    <button className="splash-demo-btn" onClick={ this.handleDemoUser }>Launch Web Player</button>
+                    {/* <Link to="/browse" className="demo-link"><button className="splash-demo-btn">Launch Web Player</button></Link> */}
                 </div>
                 <footer>
                     <div className="splash-footer-content">
@@ -45,4 +65,4 @@ class Splash extends React.Component {
     }
 }
 
-export default withRouter(Splash);
+export default Splash;

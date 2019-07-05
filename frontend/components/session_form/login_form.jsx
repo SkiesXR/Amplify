@@ -32,11 +32,11 @@ class LoginForm extends React.Component {
     handleDemoUser(e) {
         e.preventDefault();
         this.props.processForm({
-            username: 'NewUser2',
+            username: 'Demo user',
             password: 'password'
         })
         const { history } = this.props;
-        history.push('/signup');
+        history.push('/browse');
     }
 
     render() {

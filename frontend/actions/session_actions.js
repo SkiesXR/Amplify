@@ -9,10 +9,10 @@ export const clearErrors = () => ({
     type: CLEAR_ERRORS
 })
 
-export const receiveCurrentUser = currentUser => ({
-    type: RECEIVE_CURRENT_USER,
-    currentUser
-});
+export const receiveCurrentUser = currentUser => {
+   return {type: RECEIVE_CURRENT_USER,
+    currentUser}
+};
 
 export const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER,
