@@ -29,18 +29,8 @@ class LoginForm extends React.Component {
             username: 'NewUser2',
             password: 'password'
         })
-    }
-
-    renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+        const { history } = this.props;
+        history.push('/signup');
     }
 
     render() {
@@ -48,33 +38,29 @@ class LoginForm extends React.Component {
         return (
             <div className="login">
                 <div className="signup-Header">
-                    <img id="signup-logo" src={"SpotifyBlack.png"} alt="logo"></img>
+                    <img id="signup-logo" src={ "SpotifyBlack.png" } alt="logo"></img>
                 </div>
                 <div className="content-login-1">
                     <h2 className="login-h2">To continue, log in to Spotify.</h2>
                     <button id="login-fb">Log in with facebook</button>
-                {/* </div> */}
-                {/* <div className="content-2"> */}
                     <form className="form" onSubmit={this.handleSubmit}>
                         <br />
                         <strong className="line-thru">OR</strong>
                             <br />
                             <label>
                                 <input type="text"
-                                    value={this.state.username}
-                                    onChange={this.update('username')}
-                                    className={loginError ? "input-register-error" : "input-register-2"}
-                                    // className="input-register-2"
+                                    value={ this.state.username }
+                                    onChange={ this.update('username') }
+                                    className={ loginError ? "input-register-error" : "input-register-2" }
                                     placeholder="Username"
                                 />
                             </label>
                             <br />
                             <label>
                                 <input type="password"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                    className={loginError ? "input-register-error" : "input-register-2"}
-                                    // className="input-register-2"
+                                    value={ this.state.password }
+                                    onChange={ this.update('password') }
+                                    className={ loginError ? "input-register-error" : "input-register-2" }
                                     placeholder="Password"
                                 />
                             {loginError ? <div className="input-error">{loginError}</div> : <div style={{ display: "none" }}>{null}</div>}
@@ -84,9 +70,9 @@ class LoginForm extends React.Component {
                             <div className="forgot-password-prompt"><a id="login-highlight" href="">Forgot your password?</a></div>
                         </form>
                         <br />
-                    <button type="submit" className="demo-submit" onClick={this.handleDemoUser}>Demo User</button>
+                    <button type="submit" className="demo-submit" onClick={ this.handleDemoUser }>Demo User</button>
                     <span id="no-account-q">Don't have an account?</span>
-                    <button type="submit" className="signup-button" onClick={this.handleDemoUser}>Sign Up For Spotify</button>
+                    <button type="submit" className="signup-button" onClick={ this.handleDemoUser }>Sign Up For Spotify</button>
                 </div>
                     
              </div>

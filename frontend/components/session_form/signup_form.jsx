@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -46,7 +47,6 @@ class SignupForm extends React.Component {
                                         value={this.state.username}
                                         onChange={this.update('username')}
                                         className={usernameError ? "input-register-error" : "input-register-1"}
-                                        // className="input-register-1"
                                         placeholder="Username"
                                     />
                                 {usernameError ? <div className="input-error">Username {usernameError}</div> : <div style={{ display: "none" }}>{null}</div> }
@@ -57,7 +57,6 @@ class SignupForm extends React.Component {
                                         value={this.state.password}
                                         onChange={this.update('password')}
                                         className={passwordError ? "input-register-error" : "input-register-1"}
-                                        // className="input-register-1"
                                         placeholder="Password"
                                     />
                                 {passwordError ? <div className="input-error">Password {passwordError}</div> : <div style={{ display: "none" }}>{null}</div>}
@@ -69,7 +68,6 @@ class SignupForm extends React.Component {
                                         value={this.state.email}
                                         onChange={this.update('email')}
                                         className={emailError ? "input-register-error" : "input-register-1"}
-                                        // className="input-register-1"
                                         placeholder="Email"
                                     />
                                 {emailError ? <div className="input-error">Email {emailError}</div> : <div style={{ display: "none" }}>{null}</div>}
@@ -77,7 +75,7 @@ class SignupForm extends React.Component {
                                 </label>
                                 <br /><br />
                                 <input className="signup-submit" type="submit" value="Sign Up" />
-                                <div className="login-prompt">Already have an account? <a id="login-highlight" to="/splash">Log in</a></div>
+                                <div className="login-prompt">Already have an account? <Link id="login-highlight" to="/login">Log in</Link></div>
                             </div>
                         </form>
                         <br/>
