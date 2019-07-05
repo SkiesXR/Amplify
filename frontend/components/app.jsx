@@ -14,7 +14,7 @@ const App = () => (
             <h1>Amplify</h1>
             <GreetingContainer />
         </header> */}
-        <Route path="/" component={ Splash } />
+        {/* <Route path="/" component={ Splash } /> */}
         <Route path="/login" component={ LoginFormContainer } />
         <Route path="/signup" component={ SignupFormContainer } />
     </div>
