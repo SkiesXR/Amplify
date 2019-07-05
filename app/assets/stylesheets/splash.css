@@ -33,4 +33,14 @@
     transform: translate(-50%, 0%);
     position: absolute;
     left: 50%;
+    z-index: 1;
 }
+
+.splash-bg {
+    width: 1610px;
+    height: 1523px;
+    background-color: #F037A5;
+    background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
+    z-index: 0;
+}
+

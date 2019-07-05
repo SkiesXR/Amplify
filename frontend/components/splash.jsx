@@ -11,9 +11,12 @@ class Splash extends React.Component {
                 <div className="nav">
                     <img className="spotify-logo-splash" src="SpotifyWhite.png" alt="Amplify" />
                 </div>
-                <div className="hero-home-bg-cover">
-                    {/* <img id="hero-image" src="hero-burst.svg"></img> */}
+                <div className="splash-bg">
+                    <div className="hero-home-bg-cover">
+                    </div>
                 </div>
+                
+                
             </div>
         );
     }
