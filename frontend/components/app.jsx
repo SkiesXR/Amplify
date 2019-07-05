@@ -13,10 +13,10 @@ import {
 const App = () => (
     <div>
         <Switch>
-            <AuthRoute exact path="/login" component={ LoginFormContainer } />
-            <AuthRoute exact path="/signup" component={ SignupFormContainer } />
-            <AuthRoute exact path="/browse" component={ Browse } />
-            <AuthRoute exact path="/" component={Splash} />
+            <AuthRoute path="/login" component={ LoginFormContainer } />
+            <AuthRoute path="/signup" component={ SignupFormContainer } />
+            <Route path="/browse" component={ Browse } />
+            <AuthRoute path="/" component={Splash} />
         </Switch>
     </div>
 );

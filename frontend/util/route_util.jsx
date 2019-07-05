@@ -3,19 +3,22 @@ import { connect } from 'react-redux';
 import React from 'react';
 
 // TODO: Fix Auth Routes
-const Auth = ({ component: Component, path, logged_in, exact }) => (
-    
-    <Route path={path} exact={exact} render={(props) => (
-        !logged_in ? (
+
+const mapStateToProps = state => {
+    return { loggedIn: Boolean(state.session.id) };
+};
+
+const Auth = ({ component: Component, path, loggedIn, exact }) => {
+    debugger;
+    return <Route path={path} exact={exact} render={(props) => (
+        !loggedIn ? (
             <Component {...props} />
         ) : (
                 <Redirect to="/browse" />
             )
     )} />
-);
+        };
 
-const mapStateToProps = state => {
-    return { loggedIn: Boolean(state.session.id) }; 
-};
 
-export const AuthRoute = connect(mapStateToProps, null)(Auth);
+
+export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
