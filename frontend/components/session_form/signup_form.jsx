@@ -36,7 +36,7 @@ class SignupForm extends React.Component {
             
             <div className="signup">
                 <div className="signup-Header">
-                    <Link to="/"><img id="signup-logo" src={"SpotifyBlack.png"} alt="logo"></img></Link>
+                    <Link to="/"><img id="signup-logo" src={"Amplify_BW_Transparent.png"} alt="logo"></img></Link>
                 </div>
                 <div className="content">
                     <button id="signup-fb">Sign up with facebook</button>                

@@ -44,7 +44,7 @@ class LoginForm extends React.Component {
         return (
             <div className="login">
                 <div className="signup-Header">
-                    <Link to="/"><img id="signup-logo" src={"SpotifyBlack.png"} alt="logo"></img></Link>
+                    <Link to="/"><img id="signup-logo" src={"Amplify_BW_Transparent.png"} alt="logo"></img></Link>
                 </div>
                 <div className="content-login-1">
                     <h2 className="login-h2">To continue, log in to Spotify.</h2>

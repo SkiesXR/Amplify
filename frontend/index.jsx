@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { login, logout } from './actions/session_actions';
+import { login, logout, deleteUser } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     // const store = configureStore();
@@ -30,5 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.login = login;
     window.logout = logout;
     window.store = store;
+    window.deleteUser = deleteUser;
     // TESTING END
 });

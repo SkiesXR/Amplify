@@ -30,7 +30,7 @@ class Splash extends React.Component {
             <div className="splash">
                 <div className="header">
                     <div className="nav-flex-container">
-                        <Link to="/"><img className="spotify-logo-splash" src="SpotifyWhite.png" alt="Amplify" /></Link>
+                        <Link to="/"><img className="spotify-logo-splash" src="Amplify_White_Transparent.png" alt="Amplify" /></Link>
                         <ul className="nav  ">
                             <li><Link to="/signup">Sign Up</Link></li>
                             <li><Link to="/login">Log In</Link></li>
@@ -50,8 +50,14 @@ class Splash extends React.Component {
                 <footer>
                     <div className="splash-footer-content">
                         <div className="splash-footer-logo">
-                            <img className="spotify-logo-splash-footer" src="SpotifyWhite.png" alt="Amplify" />
+                            <img className="spotify-logo-splash-footer" src="Amplify_White_Transparent.png" alt="Amplify" />
                             <h4>A Spotify clone, made with love.</h4>
+                        </div>
+                        <div id="github">
+                            <a target="_blank "href="https://github.com/SkiesXR/Amplify/wiki/"><img src="Octocat.png"/></a>
+                        </div>
+                        <div id="linkedin">
+                            <a target="_blank " href="https://www.linkedin.com"><img src="Octocat.png" /></a>
                         </div>
                         {/* <div className="splash-credits">
                             <a>GitHub</a>
