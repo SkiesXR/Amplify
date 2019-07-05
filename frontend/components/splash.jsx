@@ -30,7 +30,7 @@ class Splash extends React.Component {
                 <footer>
                     <div className="splash-footer-content">
                         <div className="splash-footer-logo">
-                            <img className="spotify-logo-splash-footer" src="Amplify_Green.png" alt="Amplify" />
+                            <img className="spotify-logo-splash-footer" src="SpotifyWhite.png" alt="Amplify" />
                             <h4>A Spotify clone, made with love.</h4>
                         </div>
                         {/* <div className="splash-credits">
