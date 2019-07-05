@@ -1,4 +1,4 @@
-.nav {
+.header {
     background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
     right: 0;
@@ -8,6 +8,18 @@
     display: block;
     box-sizing: border-box;
     min-height: 54px; 
+}
+
+.nav-flex-container {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+    width: 934px;
+    min-height: 54px;
+    /* padding: 1.9em;
+    padding-top: 0em; */
+    margin: auto;
+    /* margin-bottom: 18px; */
 }
 
 .spotify-logo-splash {
@@ -21,8 +33,28 @@
     text-shadow: none;
     background-color: transparent;
     border: 0;
-    float: left;
-    box-sizing: border-box;
+    /* float: left; */
+    /* box-sizing: border-box; */
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #D9DADC;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 33px 17px;
+    position: relative;
+    display: block;
+}
+
+.nav a:hover {
+    color: #1DB954;
 }
 
 .hero-home-bg-cover {
