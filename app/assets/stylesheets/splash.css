@@ -136,3 +136,20 @@
     outline: none;
 }
 
+.splash-demo-btn:active {
+    /* border: none; */
+}
+
+.splash-demo-btn:hover {
+    background-color: rgb(37, 224, 102);
+}
+
+.splash-demo-btn:active {
+    background-color: rgb(20, 121, 55);
+}
+
+.demo-link {
+    text-decoration: none;
+    color: white;
+}
+
