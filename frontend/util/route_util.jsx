@@ -1,5 +1,6 @@
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import React from 'react';
 
 // TODO: Fix Auth Routes
 const Auth = ({ component: Component, path, logged_in, exact }) => (
@@ -8,7 +9,7 @@ const Auth = ({ component: Component, path, logged_in, exact }) => (
         !logged_in ? (
             <Component {...props} />
         ) : (
-                <Redirect to="/" />
+                <Redirect to="/browse" />
             )
     )} />
 );
@@ -17,4 +18,4 @@ const mapStateToProps = state => {
     return { loggedIn: Boolean(state.session.id) }; 
 };
 
-export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
+export const AuthRoute = connect(mapStateToProps, null)(Auth);

@@ -1,3 +1,5 @@
+/* header */
+
 .header {
     background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
@@ -12,14 +14,10 @@
 
 .nav-flex-container {
     display: flex;
-    /* justify-content: center; */
     justify-content: space-between;
     width: 1150px;
     min-height: 54px;
-    /* padding: 1.9em;
-    padding-top: 0em; */
     margin: auto;
-    /* margin-bottom: 18px; */
 }
 
 .spotify-logo-splash {
@@ -55,6 +53,8 @@
     color: #1DB954;
 }
 
+/* body */
+
 .splash-bg {
     width: 100vw;
     height: 100vh;
@@ -89,7 +89,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     height: 369px;
     width: 970px;
     margin: auto;
@@ -153,6 +152,8 @@
     color: white;
 }
 
+/* footer */
+
 footer {
     background-color: black;
     padding: 80px 0 50px;
@@ -163,3 +164,38 @@ footer {
     width: 100vw;
     max-width: 100%;
 }
+
+.splash-footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.splash-footer-logo {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.spotify-logo-splash-footer {
+    width: 118px;
+    height: 35px;
+    display: block;
+    margin: auto;
+    margin-bottom: 8px;
+    padding-top: 5px;
+}
+
+.splash-footer-logo h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: white;
+}
+
+.splash-credits {
+    color: white;
+    position: relative;
+}
+
+
+

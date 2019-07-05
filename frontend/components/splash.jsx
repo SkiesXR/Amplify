@@ -25,9 +25,21 @@ class Splash extends React.Component {
                 <div className="splash-main">
                     <h1 className="hero-h1">Music for everyone.</h1>
                     <h4>Millions of songs. No credit card needed.</h4>
-                    <Link to="/browse" className="demo-link"><button className="splash-demo-btn">Demo Login</button></Link>
+                    <Link to="/browse" className="demo-link"><button className="splash-demo-btn">Launch Web Player</button></Link>
                 </div>
-                <footer></footer>
+                <footer>
+                    <div className="splash-footer-content">
+                        <div className="splash-footer-logo">
+                            <img className="spotify-logo-splash-footer" src="SpotifyWhite.png" alt="Amplify" />
+                            <h4>A Spotify clone, made with love.</h4>
+                        </div>
+                        {/* <div className="splash-credits">
+                            <a>GitHub</a>
+                            <a>Portfolio</a>
+                            <a>LinkedIn</a>
+                        </div> */}
+                    </div>
+                </footer>
             </div>
         );
     }
