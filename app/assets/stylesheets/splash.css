@@ -58,6 +58,8 @@
 .splash-bg {
     width: 100vw;
     height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
     background-color: #F037A5;
     background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
     z-index: 0;
@@ -68,6 +70,8 @@
     background: url("hero-burst.svg");
     width: 100vw;
     height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
     background-position: top -350px left 10px;
     background-size: cover;
     transform: translate(-50%, 0%);
@@ -136,10 +140,6 @@
     outline: none;
 }
 
-.splash-demo-btn:active {
-    /* border: none; */
-}
-
 .splash-demo-btn:hover {
     background-color: rgb(37, 224, 102);
 }
@@ -153,3 +153,13 @@
     color: white;
 }
 
+footer {
+    background-color: black;
+    padding: 80px 0 50px;
+    display: block;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    width: 100vw;
+    max-width: 100%;
+}

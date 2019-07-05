@@ -27,7 +27,7 @@ class Splash extends React.Component {
                     <h4>Millions of songs. No credit card needed.</h4>
                     <Link to="/browse" className="demo-link"><button className="splash-demo-btn">Demo Login</button></Link>
                 </div>
-                
+                <footer></footer>
             </div>
         );
     }

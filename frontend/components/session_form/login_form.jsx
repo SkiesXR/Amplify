@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -42,7 +44,7 @@ class LoginForm extends React.Component {
         return (
             <div className="login">
                 <div className="signup-Header">
-                    <img id="signup-logo" src={ "SpotifyBlack.png" } alt="logo"></img>
+                    <Link to="/"><img id="signup-logo" src={"SpotifyBlack.png"} alt="logo"></img></Link>
                 </div>
                 <div className="content-login-1">
                     <h2 className="login-h2">To continue, log in to Spotify.</h2>
