@@ -19,6 +19,8 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 8, allow_nil: true }
 
     # associations
+
+    has_one_attached :profile
     
     # has_many :playlists,
     #     primary_key: :id,

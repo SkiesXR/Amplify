@@ -9,6 +9,29 @@
             }
         },
 
+        genres: {
+            1: {
+                id: 1,
+                category: Pop
+            },
+            2: {
+                id: 2,
+                category: Hip-Hop
+            },
+            3: {
+                id: 3,
+                category: Rock
+            },
+            4: {
+                id: 4,
+                category: Post-Rock
+            },
+            5: {
+                id: 5,
+                category: Metal
+            },
+        },
+
         artists: {
             1: {
                 id: 1,
