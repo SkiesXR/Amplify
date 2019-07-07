@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+     font-family: "Circular Bold";
+     src: image-url('CircularStd-Bold.otf');
+ }
+
+ @font-face {
+     font-family: "Circular";
+     src: image-url('CircularStd-Book.otf');
+ }

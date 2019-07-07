@@ -12,6 +12,7 @@ class LoginForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
+
     }
     
     componentWillUnmount() {
@@ -30,7 +31,6 @@ class LoginForm extends React.Component {
     }
 
     handleDemoUser(e) {
-        e.preventDefault();
         this.props.processForm({
             username: 'Demo user',
             password: 'password'

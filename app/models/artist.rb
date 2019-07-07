@@ -24,4 +24,5 @@ class Artist < ApplicationRecord
         foreign_key: :artist_id,
         class_name: :Album  
 
+    has_one_attached :artist_photo
 end

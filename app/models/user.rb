@@ -22,25 +22,25 @@ class User < ApplicationRecord
 
     has_one_attached :profile
     
-    # has_many :playlists,
-    #     primary_key: :id,
-    #     foreign_key: :user_id,
-    #     class_name: :Playlist
+    has_many :playlists,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Playlist
 
-    # belongs_to :followers,
-    #     primary_key: :id,
-    #     foreign_key: :follower_id,
-    #     class_name: :Follow
+    has_many :followers,
+        primary_key: :id,
+        foreign_key: :follower_id,
+        class_name: :Follow
         
-    # has_many :leaders,
-    #     primary_key: :id,
-    #     foreign_key: :leader_id,
-    #     class_name: :Follow  
+    has_many :leaders,
+        primary_key: :id,
+        foreign_key: :leader_id,
+        class_name: :Follow  
 
-    # has_many :likes,
-    #     primary_key: :id,
-    #     foreign_key: :user_id,
-    #     class_name: :Like  
+    has_many :likes,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Like  
 
     attr_reader :password
 
