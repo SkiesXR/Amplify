@@ -8,6 +8,7 @@
 #  image_url  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  genre_id   :integer          not null
 #
 
 require 'test_helper'

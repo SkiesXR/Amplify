@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_07_07_015209) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "genre_id", null: false
     t.index ["name"], name: "index_artists_on_name"
   end
 
