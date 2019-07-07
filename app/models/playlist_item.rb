@@ -13,6 +13,7 @@
 class PlaylistItem < ApplicationRecord
 
     validates :playlist_id, :track_id, :position, presence: true
+    validates :playlist_id, uniqueness: {scope: :track_id}
 
     belongs_to :playlist,
         primary_key: :id,

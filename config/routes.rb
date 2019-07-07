@@ -6,11 +6,12 @@ Rails.application.routes.draw do
     resources :artists, only: [:index, :show]
     resources :albums, only: [:index, :show]
     resources :tracks, only: [:index, :show]
-    resources :playlist, only: [:create, :index, :edit, :update, :show, :destroy]
+    resources :genres, only: [:index, :show]
+    resources :playlists, only: [:create, :index, :update, :show, :destroy]
+    resources :playlistitems, only: [:create, :destroy]
   end
 
   resources :users, only: [:new, :create, :show]
 
 end
-
 
