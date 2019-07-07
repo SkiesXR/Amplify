@@ -12,7 +12,7 @@
 
 class Playlist < ApplicationRecord
 
-    validates :title, uniqueness: {scope: user_id}
+    validates :title, uniqueness: {scope: :user_id}
     validates :user_id, presence: true
 
     belongs_to :user,

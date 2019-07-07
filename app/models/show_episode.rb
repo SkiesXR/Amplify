@@ -15,11 +15,11 @@
 class ShowEpisode < ApplicationRecord
 
     validates :title, :description, :release_date, :show_id, :length, presence: true
-    validates :title, uniqueness: {scope: show_id}
+    validates :title, uniqueness: {scope: :show_id}
 
     belongs_to :show,
         primary_key: :id,
         foreign_key: :show_id,
         class_name: :Show
-
+        
 end

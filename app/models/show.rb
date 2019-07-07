@@ -18,7 +18,7 @@ class Show < ApplicationRecord
     has_many :show_episodes,
         primary_key: :id,
         foreign_key: :show_id,
-        class_name: :Show_Episode
+        class_name: :ShowEpisode
         
     has_one_attached :show_photo  
 end

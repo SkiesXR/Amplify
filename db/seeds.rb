@@ -18,3 +18,6 @@ Show.destroy_all
 Show_Episode.destroy_all
 
 
+
+
+
