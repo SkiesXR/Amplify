@@ -1,0 +1,5 @@
+Track.create(title: "Shadow", length: "04:12", artist_id: 1, album_id: 1)
+Track.create(title: "Save the Clocktower", length: "03:08", artist_id: 1, album_id: 1)
+Track.create(title: "Man Under Palette", length: "03:59", artist_id: 1, album_id: 1)
+Track.create(title: "Amber Lamps", length: "04:15", artist_id: 1, album_id: 1)
+Track.create(title: "We Are All Plugged In", length: "03:33", artist_id: 1, album_id: 1)
