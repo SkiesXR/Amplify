@@ -10,12 +10,14 @@
     display: block;
     box-sizing: border-box;
     min-height: 54px; 
+    width: 100vw;
+    max-width: 100%;
 }
 
 .nav-flex-container {
     display: flex;
     justify-content: space-between;
-    width: 1150px;
+    /* width: 1150px; */
     min-height: 54px;
     margin: auto;
 }

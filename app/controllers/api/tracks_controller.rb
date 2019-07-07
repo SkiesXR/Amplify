@@ -9,4 +9,14 @@ class Api::TracksController < ApplicationController
         end
     end
 
+    def show
+        @track = Track.find(params[:id])
+        debugger
+        if @track
+            render :show
+        else
+            render json: ['Track does not exist.'], status: 422
+        end
+    end
+
 end

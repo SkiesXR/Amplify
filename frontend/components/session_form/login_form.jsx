@@ -12,7 +12,7 @@ class LoginForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoUser = this.handleDemoUser.bind(this);
-
+        this.signupRedirect = this.signupRedirect.bind(this);
     }
     
     componentWillUnmount() {
@@ -37,6 +37,11 @@ class LoginForm extends React.Component {
         })
         const { history } = this.props;
         history.push('/browse/featured');
+    }
+
+    signupRedirect(e) {
+        const { history } = this.props;
+        history.push('/signup');
     }
 
     render() {
@@ -78,13 +83,10 @@ class LoginForm extends React.Component {
                         <br />
                     <button type="submit" className="demo-submit" onClick={ this.handleDemoUser }>Demo User</button>
                     <span id="no-account-q">Don't have an account?</span>
-                    <button type="submit" className="signup-button" onClick={ this.handleDemoUser }>Sign Up For Spotify</button>
+                    <button type="submit" className="signup-button" onClick={ this.signupRedirect }>Sign Up For Spotify</button>
                 </div>
                     
              </div>
-            // TODO: Demo User!
-            
-            
         );
     }
 }

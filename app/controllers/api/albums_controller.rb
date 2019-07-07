@@ -6,8 +6,9 @@ class Api::AlbumsController < ApplicationController
 
     def show 
         @album = Album.find(params[:id])
+        @artist = @album.artist_id
         if @album
-            tracks = @album.tracks
+            @tracks = @album.tracks
             render :show
         else 
             render json: ['Album does not exist.'], status: 422

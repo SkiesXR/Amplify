@@ -13,11 +13,10 @@ json.artist do
     json.tracks do
         @artist.tracks.each do |track|
             json.set! track.id do
-                json.extract! track, :title, :length, :artist_id, :album_id
-            end
+                json.partial! 'api/tracks/track', track: track           
+             end
         end
     end
-
 end
 
     

@@ -341,6 +341,7 @@ hr {
     border: 2px solid #616467;
     transition: background-color .1s ease-in;
     outline: none;
+    text-decoration: none;
 }
 
 /* .signup-button:active {

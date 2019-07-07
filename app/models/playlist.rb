@@ -20,9 +20,13 @@ class Playlist < ApplicationRecord
         foreign_key: :user_id,
         class_name: :User
 
-    has_many :tracks,
+    has_many :playlist_items,
         primary_key: :id,
-        foreign_key: :track_id,
-        class_name: :Track    
+        foreign_key: :playlist_id,
+        class_name: :PlaylistItem
+    
+    has_many :tracks,
+        through: :playlist_items,
+        source: :track
 
 end
