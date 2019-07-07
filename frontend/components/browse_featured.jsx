@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 
-class Browse extends React.Component {
+class BrowseFeatured extends React.Component {
 
     render() {
 
@@ -12,4 +12,4 @@ class Browse extends React.Component {
     }
 }
 
-export default withRouter(Browse);
+export default withRouter(BrowseFeatured);

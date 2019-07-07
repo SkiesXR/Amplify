@@ -19,9 +19,9 @@ class Splash extends React.Component {
         const { history } = this.props;
         e.preventDefault();
         this.props.demoLogin({
-            username: 'Demo User',
+            username: 'DemoUser',
             password: 'password'
-        }).then(history.push('/browse'))
+        }).then(history.push('/browse/featured'))
     }
 
     render() {
@@ -57,7 +57,7 @@ class Splash extends React.Component {
                             <a target="_blank "href="https://github.com/SkiesXR/Amplify/wiki/"><img src="Octocat.png"/></a>
                         </div>
                         <div id="linkedin">
-                            <a target="_blank " href="https://www.linkedin.com"><img src="Octocat.png" /></a>
+                            <a target="_blank " href="https://www.linkedin.com/in/phillipkrasnick"><img src="LI-In-Bug.png" /></a>
                         </div>
                         {/* <div className="splash-credits">
                             <a>GitHub</a>

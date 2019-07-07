@@ -15,6 +15,8 @@ class Track < ApplicationRecord
 
     validates :title, :length, :artist_id, :album_id, presence: true
 
+    has_one_attached :audio_file
+
     belongs_to :artist,
         primary_key: :id,
         foreign_key: :artist_id,
