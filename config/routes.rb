@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :show]
     resources :playlists, only: [:create, :index, :update, :show, :destroy]
     resources :playlistitems, only: [:create, :destroy]
+    resources :shows, only: [:index, :show]
+    resources :show_episodes, only: [:index, :show]
   end
 
   resources :users, only: [:new, :create, :show]

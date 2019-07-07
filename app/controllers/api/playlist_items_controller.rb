@@ -14,7 +14,7 @@ def destroy
     @playlist_item.delete
     render `/api/playlists/#{playlist_id}`
 end
-
+    
 def playlist_item_params
     params.require(:playlist_items).permit(:playlist_id, :track_id)
 end 

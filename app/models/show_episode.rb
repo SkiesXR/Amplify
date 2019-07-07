@@ -23,3 +23,4 @@ class ShowEpisode < ApplicationRecord
         class_name: :Show
         
 end
+

@@ -1,0 +1,1 @@
+json.partial! 'api/show_episodes/show_episode', show_episode: @show_episode
