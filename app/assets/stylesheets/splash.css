@@ -8,6 +8,13 @@
      src: url('CircularStd-Book.otf');
  }
 
+.splash {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+}
+
 /* header */
 
 .header {
@@ -71,9 +78,10 @@
 
 .splash-bg {
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh;
     max-width: 100%;
-    max-height: 100%;
+    max-height: 100%; */
+    min-height: 100%;
     background-color: #F037A5;
     background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
     z-index: 0;
@@ -97,7 +105,7 @@
 .splash-main {
     position: relative;
     padding-top: 250px;  
-    padding-bottom: 250px;
+    /* padding-bottom: 250px; */
     padding-right: 15px;
     padding-left: 15px;
     display: flex;
@@ -176,7 +184,9 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     width: 100vw;
-    max-width: 100%;
+    /* max-width: 100%; */
+    position: relative;
+    bottom: -196px;
 }
 
 .splash-footer-content {

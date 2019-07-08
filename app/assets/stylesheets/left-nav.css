@@ -2,8 +2,6 @@ Link {
     text-decoration: none;
 }
 
-
-
 #amp-logo-left-nav {
     padding-left: 24px;
     border: 0;
@@ -22,18 +20,68 @@ Link {
     align-items: center;
     padding: 0 24px;
     height: 40px;
+    opacity: 0.75;
+    transition: opacity .2s linear;
+}
+
+.nav-link-text-with-icon:hover {
+    opacity: 1;
 }
 
 .nav-link-text {
     margin-left: 16px;
     padding-top: 5px;
-    color: white;
+    color: #b3b3b3;
     font-size: 14px;
     font-family: "Circular";
     font-weight: 700;
+    letter-spacing: .015em;
+    transition: color .2s;
+}
+
+.nav-link-text:hover {
+    color: white;
 }
 
 .nav-link-icon {
     max-height: 24px;
 }
+
+.RootList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+#left-nav-h2 {
+    font-size: 11px;
+    font-family: "Circular";
+    line-height: 16px;
+    letter-spacing: .015em;
+    /* font-weight: ; */
+    color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    margin: 0 20px;
+}
+
+#create-playlist-button {
+    color: #b3b3b3;
+    font-size: 14px;
+    font-family: "Circular";
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    background-color: transparent;  
+    border: none;
+    opacity: .75;
+    transition: opacity .2s linear;
+    padding: 15px 24px;
+}
+
+#create-playlist-button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
 

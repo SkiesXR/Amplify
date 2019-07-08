@@ -15,6 +15,22 @@ class LeftNav extends React.Component {
                         <div className="nav-link-text">Home</div>
                     </div>
                 </Link>
+                <Link className="nav-link-container" to="/search">
+                    <div className="nav-link-text-with-icon">
+                        <img className="nav-link-icon" src="search.png"/>
+                        <div className="nav-link-text">Search</div>
+                    </div>
+                </Link>
+                <Link className="nav-link-container" to="/collection/playlists">
+                    <div className="nav-link-text-with-icon">
+                        <img className="nav-link-icon" src="Library.svg" />
+                        <div className="nav-link-text">Your Library</div>
+                    </div>
+                </Link>
+                <div className="RootList">
+                    <h2 id="left-nav-h2">Playlists</h2>
+                    <button id="create-playlist-button">Create Playlist</button>
+                </div>
             </div>
         );
     }
