@@ -11,5 +11,6 @@ Album.create(id: 10, title: "Chasing Goats", album_type: "Single", artist_id: 3,
 Album.create(id: 11, title: "Travels", album_type: "Album", artist_id: 6, release_date: ("2013-05-17"), image_url: "temp")
 Album.create(id: 12, title: "Shine You Up", album_type: "EP", artist_id: 5, release_date: ("2013-10-01"), image_url: "temp")
 Album.create(id: 13, title: "Растаял", album_type: "EP", artist_id: 4, release_date: ("2014-12-14"), image_url: "temp")
+Album.create(id: 14, title: "CYBERPUNK", album_type: "Album", artist_id: 8, release_date: ("2014-8-20"), image_url: "temp ")
 
 

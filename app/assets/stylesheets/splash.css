@@ -103,8 +103,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 369px;
-    width: 970px;
+    /* height: 369px; */
+    /* width: 970   px; */
     margin: auto;
 }
 

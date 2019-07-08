@@ -45,7 +45,6 @@ class Splash extends React.Component {
                     <h1 className="hero-h1">Music for everyone.</h1>
                     <h4>Millions of songs. No credit card needed.</h4>
                     <button className="splash-demo-btn" onClick={ this.handleDemoUser }>Launch Web Player</button>
-                    {/* <Link to="/browse" className="demo-link"><button className="splash-demo-btn">Launch Web Player</button></Link> */}
                 </div>
                 <footer>
                     <div className="splash-footer-content">
@@ -59,11 +58,6 @@ class Splash extends React.Component {
                         <div id="linkedin">
                             <a target="_blank " href="https://www.linkedin.com/in/phillipkrasnick"><img src="LI-In-Bug.png" /></a>
                         </div>
-                        {/* <div className="splash-credits">
-                            <a>GitHub</a>
-                            <a>Portfolio</a>
-                            <a>LinkedIn</a>
-                        </div> */}
                     </div>
                 </footer>
             </div>

@@ -66,5 +66,19 @@ Track.create(title: "Растаял", length: "05:15", artist_id: 4, album_id: 1
 Track.create(title: "Scary Under", length: "03:22", artist_id: 4, album_id: 13)
 Track.create(title: "Твой сон", length: "04:23", artist_id: 4, album_id: 13)
 
+# JK-47 - CYBERPUNK
+Track.create(title: "DEXADRINE 医学", length: "03:06", artist_id: 8, album_id: 14)
+Track.create(title: "COWBOY カウボーイ", length: "04:45", artist_id: 8, album_id: 14)
+Track.create(title: "ONO-SENDAI 小野仙台", length: "03:23", artist_id: 8, album_id: 14)
+Track.create(title: "SPR4WL I スプロール1", length: "03:19", artist_id: 8, album_id: 14)
+Track.create(title: "M0LLYM1LL10N$ モリーの何百万人", length: "04:54", artist_id: 8, album_id: 14)
+Track.create(title: "HOSAKA 保坂", length: "02:09", artist_id: 8, album_id: 14)
+Track.create(title: "AI 人工知能", length: "04:01", artist_id: 8, album_id: 14)
+Track.create(title: "W1NT3RMUT3 冬のミュート ", length: "03:47", artist_id: 8, album_id: 14)
+Track.create(title: "Z10N 聖なる山", length: "03:01", artist_id: 8, album_id: 14)
+Track.create(title: "1CE アイス", length: "03:47", artist_id: 8, album_id: 14)
+Track.create(title: "CASE ケース", length: "05:02", artist_id: 8, album_id: 14)
+Track.create(title: "R4Z0R61RLZ かみそりの女の子", length: "02:25", artist_id: 8, album_id: 14)
+Track.create(title: "SPR4WL II スプロール2", length: "04:17", artist_id: 8, album_id: 14)
 
 
