@@ -11,14 +11,19 @@ Link {
     height: 40px;
 }
 
-.left-nav-link-container {
-    text-decoration: none;
-}
-
 .nav-link-text-with-icon {
     display: flex;
     align-items: center;
     padding: 0 24px;
+    height: 40px;
+    opacity: 0.75;
+    transition: opacity .2s linear;
+}
+
+.nav-link-text-with-icon-p {
+    display: flex;
+    align-items: center;
+    padding: 15px 24px;
     height: 40px;
     opacity: 0.75;
     transition: opacity .2s linear;
@@ -45,6 +50,13 @@ Link {
 
 .nav-link-icon {
     max-height: 24px;
+}
+
+.nav-link-icon-plus {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+    padding: 4px;
 }
 
 .RootList {

@@ -1,4 +1,4 @@
-import * as GenreAPIUtil from '../util/album_api_util';
+import * as GenreAPIUtil from '../util/genre_api_util';
 
 export const RECEIVE_GENRES = "RECEIVE_GENRES";
 export const RECEIVE_GENRE = "RECEIVE_GENRE";

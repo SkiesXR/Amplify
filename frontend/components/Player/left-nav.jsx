@@ -27,9 +27,13 @@ class LeftNav extends React.Component {
                         <div className="nav-link-text">Your Library</div>
                     </div>
                 </Link>
+                {/* TODO: add a link once playlist creation is ready for testing */}
                 <div className="RootList">
                     <h2 id="left-nav-h2">Playlists</h2>
-                    <button id="create-playlist-button">Create Playlist</button>
+                    <div className="nav-link-text-with-icon-p">
+                        <img className="nav-link-icon-plus" src="addplaylist.png" />
+                        <div className="nav-link-text">Create Playlist</div>
+                    </div>
                 </div>
             </div>
         );
