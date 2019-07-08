@@ -16,10 +16,10 @@
 
  @font-face {
      font-family: "Circular Bold";
-     src: image-url('CircularStd-Bold.otf');
+     src: url('CircularStd-Bold.otf');
  }
 
  @font-face {
      font-family: "Circular";
-     src: image-url('CircularStd-Book.otf');
+     src: url('CircularStd-Book.otf');
  }

@@ -9,7 +9,7 @@ class Api::PlaylistsController < ApplicationController
             @playlist_track_ids = @playlist.tracks.map { |track| track.id }
             render :show
         else
-            render json: ["Unable to create playlist"], status: 401
+            render json: @playlists.errors.messages, status: 401
         end
     end
 
@@ -18,7 +18,7 @@ class Api::PlaylistsController < ApplicationController
         if @playlists
             render :index
         else
-            render json: @playlists.errors.full_messages, status: 422
+            render json: @playlists.errors.messages, status: 422
         end
     end
 
@@ -28,7 +28,7 @@ class Api::PlaylistsController < ApplicationController
         if @playlist.update(playlist_params)
             render :show
         else
-            render json: @playlist.errors.full_messages, status: 422
+            render json: @playlists.errors.messages, status: 422
         end
     end
 
@@ -37,7 +37,7 @@ class Api::PlaylistsController < ApplicationController
         if @playlist
             render :show
         else
-            render json: ['Playlist does not exist.'], status: 422
+            render json: @playlists.errors.messages, status: 422
         end
     end
 

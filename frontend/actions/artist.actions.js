@@ -18,7 +18,7 @@ export const fetchArtists = () => dispatch(
     .then(artists => dispatch(receiveArtists(artists)))
 )
 
-export const fetchArtists = (id) => dispatch(
+export const fetchArtist = (id) => dispatch(
     ArtistAPIUtil.fetchArtist(id)
     .then(artist => dispatch(receiveArtist(artist)))
 )

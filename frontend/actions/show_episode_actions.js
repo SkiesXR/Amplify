@@ -1,4 +1,4 @@
-import * as ShowEpisodeAPIUtil from '../util/showe_episode_api_util';
+import * as ShowEpisodeAPIUtil from '../util/show_episode_api_util';
 
 export const RECEIVE_SHOW_EPISODES = "RECEIVE_SHOW_EPISODES";
 export const RECEIVE_SHOW_EPISODE = "RECEIVE_SHOW_EPISODE";
