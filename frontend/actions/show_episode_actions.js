@@ -13,12 +13,12 @@ export const recieveShowEpisode = (show_episode) => ({
     show_episode
 })
 
-export const fetchShowEpisodes = () => dispatch(
+export const fetchShowEpisodes = () => dispatch => (
     ShowEpisodeAPIUtil.fetchShowEpisodes()
     .then(show_episodes => dispatch(recieveShowEpisodes(show_episodes)))
 )
 
 export const fetchShowEpisode = (id) => dispatch(
     ShowEpisodeAPIUtil.fetchShowEpisode(id)
-    .then(show_episode => dispatch(recieveShowEpisode(show_episode)))
+    .then(show_episode => dispatch(recieveShowEpisode => (show_episode)))
 )

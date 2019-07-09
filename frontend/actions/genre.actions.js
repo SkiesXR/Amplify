@@ -13,12 +13,12 @@ export const recieveGenre = (album) => ({
     genre
 })
 
-export const fetchGenres = () => dispatch(
+export const fetchGenres = () => dispatch => (
     GenreAPIUtil.fetchGenres()
     .then(genres => dispatch(receiveGenres(genres)))
 )
 
-export const fetchGenre = (id) => dispatch(
+export const fetchGenre = (id) => dispatch => (
     GenreAPIUtil.fetchGenre(id)
     .then(genre => dispatch(receiveGenre(genre)))
 )

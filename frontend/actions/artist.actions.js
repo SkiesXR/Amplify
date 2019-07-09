@@ -13,12 +13,12 @@ export const receiveArtist = (artist) => ({
     artist
 })
 
-export const fetchArtists = () => dispatch(
+export const fetchArtists = () => dispatch => (
     ArtistAPIUtil.fetchArtists()
     .then(artists => dispatch(receiveArtists(artists)))
 )
 
-export const fetchArtist = (id) => dispatch(
+export const fetchArtist = (id) => dispatch => (
     ArtistAPIUtil.fetchArtist(id)
     .then(artist => dispatch(receiveArtist(artist)))
 )

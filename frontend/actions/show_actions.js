@@ -13,12 +13,12 @@ export const recieveShow = (show) => ({
     show
 })
 
-export const fetchShows = () => dispatch(
+export const fetchShows = () => dispatch => (
     ShowAPIUtil.fetchShows()
     .then(shows => dispatch(recieveShows(shows)))
 )
 
-export const fetchShow = (id) => dispatch(
+export const fetchShow = (id) => dispatch => (
     ShowAPIUtil.fetchShow(id)
     .then(show => dispatch(recieveShow(show)))
 )

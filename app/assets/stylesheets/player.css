@@ -22,6 +22,21 @@ body {
     linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
+#main-podcast {
+    background-image:linear-gradient(to right bottom, rgb(137, 16, 42), rgb(0, 0, 0)),
+    linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
+#main-genre {
+    background-image: linear-gradient(to right bottom, rgb(69, 75, 84), rgb(0, 0, 0)),
+    linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
+#main-discover {
+    background-image: linear-gradient(to right bottom, rgb(77, 70, 105), rgb(0, 0, 0)),
+    linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
 .player-container {
     width: 100vw;
     height: 100vh;

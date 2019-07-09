@@ -3,6 +3,16 @@ import React from 'react';
 
 class Player extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.play = this.play.bind(this);
+    }
+    // Play audio!
+    play() {
+        const audio = document.getElementById("audio");
+        audio.play();
+        }
+
     render() {
 
         return (
@@ -41,7 +51,7 @@ class Player extends React.Component {
                             </button>
 
                             {/* play button */}
-                            <button id="np-button">
+                            <button onClick={this.play} id="np-button">
                                 <img id="play" src="play_white.png" />
                             </button>
 
@@ -55,8 +65,10 @@ class Player extends React.Component {
                                 <img id="repeat" src="repeat_white.png" />
                             </button>
                         </div>
-
+                        <audio id="audio"><source src="skylines.mp3"/></audio>
                     </div>
+                    
+                    {/* TODO: Decide what's going on the right-hand side of the now-playing bar*/}
                     <div className="now-playing-right">
                     </div>
                 </div>

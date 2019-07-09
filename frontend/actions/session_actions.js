@@ -29,7 +29,7 @@ export const receiveErrors = errors => ({
     errors
 });
 
-export const deleteUser = user => dispatch (
+export const deleteUser = user => dispatch => (
     APIUtil.destroy(user).then(user => (
     dispatch(removeUser(user))
     ), err => {

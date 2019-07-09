@@ -13,12 +13,12 @@ export const recieveAlbum = (album) => ({
     album
 })
 
-export const fetchAlbums = () => dispatch (
+export const fetchAlbums = () => dispatch => (
     AlbumAPIUtil.fetchAlbums()
         .then(albums => dispatch(receiveAlbums(albums)))
 )
 
-export const fetchAlbum = (id) => dispatch(
+export const fetchAlbum = (id) => dispatch => (
     AlbumAPIUtil.fetchAlbum(id)
     .then(album => dispatch(receiveAlbum(album)))
 )

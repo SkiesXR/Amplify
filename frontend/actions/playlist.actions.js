@@ -34,17 +34,17 @@ export const clearErrors = (errors) => ({
 
 // thunk action creators
 
-export const fetchPlaylists = () => dispatch(
+export const fetchPlaylists = () => dispatch => (
     PlaylistAPIUtil.fetchPlaylists()
     .then(playlists => dispatch(receivePlaylists(playlists)))
 )
 
-export const fetchPlaylist = (id) => dispatch(
+export const fetchPlaylist = (id) => dispatch => (
     PlaylistAPIUtil.fetchPlaylist(id)
     .then(playlist => dispatch(receivePlaylist(playlist)))
 )
 
-export const deletePlaylist = (id) => dispatch(
+export const deletePlaylist = (id) => dispatch => (
     PlaylistAPIUtil.deletePlaylist(id)
     .then(playlist => dispatch(removePlaylist(playlist)))
 )

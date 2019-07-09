@@ -13,12 +13,12 @@ export const recieveTrack = (track) => ({
     track
 })
 
-export const fetchTracks = () => dispatch(
+export const fetchTracks = () => dispatch => (
     TrackAPIUtil.fetchTracks()
     .then(tracks => dispatch(receiveTracks(tracks)))
 )
 
-export const fetchTrack = (id) => dispatch(
+export const fetchTrack = (id) => dispatch => (
     TrackAPIUtil.fetchTrack(id)
     .then(track => dispatch(receiveTrack(track)))
 )

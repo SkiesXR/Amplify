@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Circular";
+    src: url('CircularStd-Book.otf');
+}
+
 .main-content {
     padding: 0 32px;
     margin: 0 auto;
@@ -35,3 +40,9 @@
 .navlink:hover {
     opacity: 1;
 }
+
+/* #artists {
+    color: white;
+    font-family: "Circular";
+    font-size: 16px;
+} */
