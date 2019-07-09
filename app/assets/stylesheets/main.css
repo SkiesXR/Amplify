@@ -1,0 +1,39 @@
+.main-content {
+    padding: 0 32px;
+    margin: 0 auto;
+    max-width: 1480px;
+    display: block;
+    border: 0;
+    vertical-align: baseline;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 12px;
+    padding-top: 20px;
+
+}
+
+.navlink {
+    font-family: "Circular";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: #fff;
+    opacity: 0.6;
+    position: relative;
+    border: 0;
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: opacity .2s linear;
+}
+
+.navlink:hover {
+    opacity: 1;
+}

@@ -7,7 +7,9 @@ class Player extends React.Component {
 
         return (
             <div className="player">
-                Player
+                <div id="now-playing-bar">
+                    
+                </div>
             </div>
         );
     }

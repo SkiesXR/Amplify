@@ -18,7 +18,8 @@ body {
 
 .main {
     grid-area: main;
-    background-color: #181818;
+    background-image: linear-gradient(to right bottom, rgb(15, 94, 138), rgb(0, 0, 0)),
+    linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
 .player-container {
@@ -29,19 +30,19 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto min-content auto;
     grid-template-rows: auto;
     grid-template-areas:
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "left-nav main main main main main main main"
-        "player player player player player player player player";
+        "left-nav main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main"
+        "player player player player player player player player player player player player"
+        "player player player player player player player player player player player player";
 }

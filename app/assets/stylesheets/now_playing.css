@@ -1,0 +1,10 @@
+#now-playing-bar {
+    padding: 0 16px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border: 0;
+    vertical-align: baseline;
+    position: relative;
+    height: 100%
+}
