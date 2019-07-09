@@ -24,3 +24,12 @@
     color: #fff;
     margin: 24px 0;
 }
+
+.featured-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 32px;
+}

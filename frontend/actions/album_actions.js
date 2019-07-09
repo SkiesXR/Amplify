@@ -3,12 +3,12 @@ import * as AlbumAPIUtil from '../util/album_api_util';
 export const RECEIVE_ALBUMS = "RECEIVE_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
 
-export const recieveAlbums = (albums) => ({
+export const receiveAlbums = (albums) => ({
     type: RECEIVE_ALBUMS,
     albums
 })
 
-export const recieveAlbum = (album) => ({
+export const receiveAlbum = (album) => ({
     type: RECEIVE_ALBUM,
     album
 })
