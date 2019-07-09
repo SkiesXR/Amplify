@@ -9,6 +9,12 @@ json.album do
             end
         end
     end
+
+    if album.album_art.attached?
+        json.album_art url_for(album.album_art)
+    else
+        json.album_art ""
+    end
 end
 
 
