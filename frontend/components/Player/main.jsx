@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
-import Featured from './main-featured';
+import Featured from './main-featured_container';
 import Podcast from './main-podcast';
 import Genres from './main-genres';
 import Discover from './main-discover';
@@ -11,6 +11,8 @@ import { Route, Switch } from 'react-router-dom';
 
 class Main extends React.Component {
         
+
+    // Dynamically sets the background gradient of the page based on the current URL
     setBackground() {
         let bgGradient;
         let featured = "/browse/featured";
@@ -47,6 +49,7 @@ class Main extends React.Component {
         let gradient = this.setBackground();
 
         return (
+
             <div className={ gradient }>
                 <div className="main-nav">
                     <NavLink className="navlink" to="/browse/featured">Featured</NavLink>
