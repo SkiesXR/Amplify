@@ -21,6 +21,7 @@
 
 .thumb-image {
     background-image: url("JK47 - Cyberpunk.jpg");
+    background-size: cover;
     width: 56px;
     height: 56px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
@@ -82,4 +83,35 @@
 #npa:hover {
   border-bottom: 1px solid white;
   padding-bottom: 2px;
+}
+
+.love-container {
+  margin: auto;
+  padding-left: 15px;
+}
+
+#love {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  transition: opacity .2s linear;
+}
+
+#love:hover {
+  opacity: 1;
+}
+
+#love-button {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin: auto;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+#love-button:active {
+  outline: none;
 }
