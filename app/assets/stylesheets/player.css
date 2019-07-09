@@ -30,21 +30,26 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: auto min-content auto;
+    grid-temlate-columns: auto;
+
+
+    /* grid-auto-columns: minmax(23%, 80vmax); */
     grid-template-rows: auto;
     grid-template-areas:
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main"
-        "player player player player player player player player player player player player"
-        "player player player player player player player player player player player player"
-        "player player player player player player player player player player player player";
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "left-nav main main main main main main main main main main main main main"
+        "player player player player player player player player player player player player player player"
+        "player player player player player player player player player player player player player player";
 }

@@ -14,6 +14,8 @@
     height: 100%
 }
 
+/* left side */
+
 .now-playing-left {
   display: flex;
   flex-direction: row;
@@ -114,4 +116,94 @@
 
 #love-button:active {
   outline: none;
+}
+
+/* Controls */
+
+.now-playing-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.now-playing-buttons {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 224px;
+  height: 32px;
+  justify-content: center;
+  flex-flow: row nowrap;
+}
+
+#np-button {
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+#play {
+  opacity: .6;
+  transition: opacity .2s linear;
+  width: 50px;
+  padding: 0 18px;
+}
+
+#play:hover {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+#play:active {
+  transform: scale(.95);
+  opacity: .6;
+}
+
+#direction {
+  opacity: .6;
+  transition: opacity .2s linear;
+  width: 16px;
+  height: 16px;
+}
+
+#direction:hover {
+  opacity: 1;
+}
+
+#direction:active {
+  opacity: .6;
+}
+
+#shuffle {
+  opacity: .6;
+  transition: opacity .2s linear;
+  width: 25px;
+  height: 25px;
+  padding-right: 34px;
+}
+
+#shuffle:hover {
+  opacity: 1;
+}
+
+#shuffle:active {
+  opacity: .6;
+}
+
+#repeat {
+  opacity: .6;
+  transition: opacity .2s linear;
+  width: 25px;
+  height: 25px;
+  padding-left: 34px;
+}
+
+#repeat:hover {
+  opacity: 1;
+}
+
+#repeat:active {
+  opacity: .6;
 }

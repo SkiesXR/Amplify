@@ -32,7 +32,7 @@ class LeftNav extends React.Component {
                     <h2 id="left-nav-h2">Playlists</h2>
                     <div className="nav-link-text-with-icon-p">
                         <img className="nav-link-icon-plus" src="addplaylist.png" />
-                        <div className="nav-link-text">Create Playlist</div>
+                        <div className="nav-link-text-cp">Create Playlist</div>
                     </div>
                 </div>
             </div>

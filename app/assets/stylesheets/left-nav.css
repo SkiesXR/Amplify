@@ -48,6 +48,20 @@ Link {
     color: white;
 }
 
+.nav-link-text-cp {
+    padding-top: 5px;
+    color: #b3b3b3;
+    font-size: 14px;
+    font-family: "Circular";
+    font-weight: 700;
+    letter-spacing: .015em;
+    transition: color .2s;
+}
+
+.nav-link-text-cp:hover {
+    color: white;
+}
+
 .nav-link-icon {
     max-height: 24px;
 }
@@ -84,7 +98,7 @@ Link {
     font-weight: 700;
     display: flex;
     align-items: center;
-    background-color: transparent;  
+    background-color: transparent;
     border: none;
     opacity: .75;
     transition: opacity .2s linear;
@@ -95,5 +109,3 @@ Link {
     opacity: 1;
     cursor: pointer;
 }
-
-

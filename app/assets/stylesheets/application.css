@@ -23,3 +23,5 @@
      font-family: "Circular";
      src: url('CircularStd-Book.otf');
  }
+
+ * {-webkit-font-smoothing: antialiased;}

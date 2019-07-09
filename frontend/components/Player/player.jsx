@@ -8,6 +8,8 @@ class Player extends React.Component {
         return (
             <div className="player">
                 <div id="now-playing-bar">
+
+                    {/* left side */}
                     <div className="now-playing-left">
                         <div className="thumb-image"></div>
                         <div className="np-container">
@@ -16,13 +18,43 @@ class Player extends React.Component {
                         </div>
                             <a id="npa" href="">Artist Name</a>
                         </div>
-                        <div class="love-container">
+                        <div className="love-container">
                             <button id="love-button">
                                 <img id="love" src="love.png"/>
                             </button>
                         </div>
                     </div>
+
+
+                    {/* Player Controls */}
                     <div className="now-playing-controls">
+                        <div className="now-playing-buttons">
+
+                            {/* shuffle button */}
+                            <button id="np-button">
+                                <img id="shuffle" src="shuffle_white.png" />
+                            </button>
+
+                            {/* back button */}
+                            <button id="np-button">
+                                <img id="direction" src="previous_white.png" />
+                            </button>
+
+                            {/* play button */}
+                            <button id="np-button">
+                                <img id="play" src="play_white.png" />
+                            </button>
+
+                            {/* next button */}
+                            <button id="np-button">
+                                <img id="direction" src="next_white.png" />
+                            </button>
+
+                            {/* repeat button */}
+                            <button id="np-button">
+                                <img id="repeat" src="repeat_white.png" />
+                            </button>
+                        </div>
 
                     </div>
                     <div className="now-playing-right">
