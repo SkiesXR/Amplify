@@ -5,7 +5,6 @@ import MainFeatured from '../Player/main-featured';
 
 
 const msp = state => {
-    // debugger;
     return {
         currentUser: state.entities.users[1],
         artists: Object.values(state.entities.artists),

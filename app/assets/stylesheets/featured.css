@@ -31,5 +31,21 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0 32px;
+    padding: 0 32px 32px;
+}
+
+#grid-title {
+    font-family: "Circular";
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    text-align: center;
+
+}
+
+#grid-artist {
+
 }
