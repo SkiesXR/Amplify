@@ -55,9 +55,7 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-temlate-columns: auto;
-
-
+    grid-template-columns: auto;
     /* grid-auto-columns: minmax(23%, 80vmax); */
     grid-template-rows: auto;
     grid-template-areas:
@@ -74,7 +72,7 @@ body {
         "left-nav main main main main main main main main main main main main main"
         "left-nav main main main main main main main main main main main main main"
         "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
+        "player player player player player player player player player player player player player player"
         "player player player player player player player player player player player player player player"
         "player player player player player player player player player player player player player player";
 }

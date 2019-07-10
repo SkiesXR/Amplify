@@ -125,12 +125,13 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 12px;
+  margin-right: 180px;
 }
 
 .now-playing-buttons {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   width: 224px;
   height: 32px;
   justify-content: center;
