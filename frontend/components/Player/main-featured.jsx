@@ -16,7 +16,7 @@ class MainFeatured extends React.Component {
         return (
             <div>
                 <div className="header-grid">
-                    <h1 className="main-h1">Made for { this.props.currentUser.username }</h1>
+                    <h1 className="main-h1">Albums</h1>
                 </div>
                 <div className="featured-container">
                     { albums }

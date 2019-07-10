@@ -11,6 +11,11 @@ class GridItem extends React.Component {
             <div className="album-artist-container">
                 <div className="image-hover-container">
                     <img src={album_art} />
+                    <div className="Mike"></div>
+                    <button id="Mike-button">
+                        <img id="Mike" src="play_white.png" />
+                    </button>
+
                     
                 </div>
                 

@@ -3,12 +3,12 @@ import * as GenreAPIUtil from '../util/genre_api_util';
 export const RECEIVE_GENRES = "RECEIVE_GENRES";
 export const RECEIVE_GENRE = "RECEIVE_GENRE";
 
-export const recieveGenres = (genres) => ({
+export const receiveGenres = (genres) => ({
     type: RECEIVE_GENRES,
     genres
 })
 
-export const recieveGenre = (album) => ({
+export const receiveGenre = (album) => ({
     type: RECEIVE_ALBUM,
     genre
 })

@@ -5,7 +5,7 @@ import { ProtectedRoute } from '../../util/route_util';
 import Featured from './main-featured_container';
 import Artists from './main-artists-container';
 import Podcast from './main-podcast';
-import Genres from './main-genres';
+import Genres from './main-genres-container';
 import Discover from './main-discover';
 import PlaylistIndex from '../../components/Collection/playlist-index';
 import LikedTrackIndex from '../../components/Collection/liked-tracks-index';
