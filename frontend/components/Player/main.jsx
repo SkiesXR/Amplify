@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import Featured from './main-featured_container';
+import Artists from './main-artists-container';
 import Podcast from './main-podcast';
 import Genres from './main-genres';
 import Discover from './main-discover';
@@ -20,7 +21,6 @@ class Main extends React.Component {
         let browse = "/browse";
         let collection = "/collection";
         let location = this.props.history.location.pathname.includes("browse") ? browse : collection;
-        debugger;
         switch (location) {
             case browse:
                 return (<div className="main-nav">
@@ -99,6 +99,7 @@ class Main extends React.Component {
                 <div>
                     <Switch>
                         <ProtectedRoute exact path="/browse/featured" component={ Featured } />
+                        <ProtectedRoute exact path="/browse/artists" component={ Artists } />
                         <ProtectedRoute path="/browse/podcasts" component={ Podcast } />
                         <ProtectedRoute path="/browse/genres" component={ Genres } />
                         <ProtectedRoute exact path="/browse/discover" component={ Discover } />
