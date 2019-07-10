@@ -21,9 +21,9 @@ class LeftNav extends React.Component {
                         <div className="nav-link-text" >Search</div>
                     </div>
                 </NavLink>
-                <NavLink className="nav-link-container" activeClassName="left-nav-navlink-selected" to="/collection/playlists">
+                <NavLink className="nav-link-container" to="/collection/playlists">
                     <div className="nav-link-text-with-icon">
-                        <img className="nav-link-icon" src="Library.svg" />
+                        <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M311.873 77.46l166.349 373.587-39.111 17.27-166.349-373.587zM64 463.746v-384h42.666v384h-42.666zM170.667 463.746v-384h42.667v384h-42.666z" fill="white"></path></svg>
                         <div className="nav-link-text" >Your Library</div>
                     </div>
                 </NavLink>

@@ -9,7 +9,11 @@ class GridItem extends React.Component {
 
         return (
             <div className="album-artist-container">
-                <img src={ album_art }/>
+                <div className="image-hover-container">
+                    <img src={album_art} />
+                    
+                </div>
+                
 
                 <div className="title-container">
                     <Link id="grid-title" to="">{title}</Link>

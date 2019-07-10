@@ -51,6 +51,12 @@ body {
     linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
+.main-artists {
+    grid-area: main;
+    background-image: linear-gradient(to right bottom, rgb(37, 34, 48), rgb(0, 0, 0)),
+    linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
 .main-podcast {
     grid-area: main;
     background-image:linear-gradient(to right bottom, rgb(137, 16, 42), rgb(0, 0, 0)),
@@ -69,6 +75,18 @@ body {
     linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
+.main-playlists {
+    grid-area: main;
+    background-image: linear-gradient(to right bottom, rgb(69, 75, 84), rgb(0, 0, 0)),
+    linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
+.main-liked-songs {
+    grid-area: main;
+    background-image: linear-gradient(to right bottom, rgb(54, 95, 99), rgb(0, 0, 0)),
+    linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
 .player-container {
     /* overflow-y: scroll; */
     width: 100vw;
@@ -78,27 +96,6 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
-    /* grid-template-columns: auto; */
-    /* grid-auto-columns: minmax(23%, 80vmax); */
-    /* grid-template-rows: auto; */
-    /* grid-template-areas:
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "left-nav main main main main main main main main main main main main main"
-        "player player player player player player player player player player player player player player"
-        "player player player player player player player player player player player player player player"
-        "player player player player player player player player player player player player player player";
-} */
     grid-template-columns: 228px 1fr;
     grid-template-rows: 1fr 90px;
     grid-template-areas:
