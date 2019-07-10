@@ -48,6 +48,16 @@ Link {
     color: white;
 }
 
+.left-nav-navlink-selected {
+    margin-left: 16px;
+    padding-top: 5px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Circular";
+    font-weight: 700;
+    letter-spacing: .015em;
+}
+
 .nav-link-text-cp {
     padding-top: 5px;
     color: #b3b3b3;

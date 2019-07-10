@@ -26,7 +26,6 @@ class Main extends React.Component {
                 bgGradient = "main-featured";
                 break;
             case podcasts:
-                debugger;
                 bgGradient = "main-podcast";
                 break;
             case genres:
@@ -36,7 +35,6 @@ class Main extends React.Component {
                 bgGradient = "main-discover";
                 break;
             default:
-                debugger;
                 bgGradient = main;
                 break;
         }
@@ -52,10 +50,10 @@ class Main extends React.Component {
 
             <div className={ gradient }>
                 <div className="main-nav">
-                    <NavLink className="navlink" to="/browse/featured">Featured</NavLink>
-                    <NavLink className="navlink" to="/browse/podcasts">Podcasts</NavLink>
-                    <NavLink className="navlink" to="/browse/genres">Genres</NavLink>
-                    <NavLink className="navlink" to="/browse/discover">Discover</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/featured">Featured</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/podcasts">Podcasts</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/genres">Genres</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/discover">Discover</NavLink>
                 </div>
                 <div>
                     <Switch>
