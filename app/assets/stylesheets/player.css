@@ -1,6 +1,27 @@
+/* html {
+    overflow-y: scroll;
+} */
+
 body {
     color: white;
     font-family: "Circular Bold";
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    height: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .left-nav {
@@ -15,6 +36,7 @@ body {
 .player {
     grid-area: player;
     background-color: #282828;
+    position:relative;
 }
 
 .main {
@@ -48,6 +70,7 @@ body {
 }
 
 .player-container {
+    /* overflow-y: scroll; */
     width: 100vw;
     height: 100vh;
     max-width: 100%;
@@ -55,10 +78,10 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: auto;
+    /* grid-template-columns: auto; */
     /* grid-auto-columns: minmax(23%, 80vmax); */
-    grid-template-rows: auto;
-    grid-template-areas:
+    /* grid-template-rows: auto; */
+    /* grid-template-areas:
         "left-nav main main main main main main main main main main main main main"
         "left-nav main main main main main main main main main main main main main"
         "left-nav main main main main main main main main main main main main main"
@@ -75,4 +98,15 @@ body {
         "player player player player player player player player player player player player player player"
         "player player player player player player player player player player player player player player"
         "player player player player player player player player player player player player player player";
+} */
+    grid-template-columns: 228px 1fr;
+    grid-template-rows: 1fr 90px;
+    grid-template-areas:
+    "left-nav main"
+    "player player"
+
+
+
+
+
 }

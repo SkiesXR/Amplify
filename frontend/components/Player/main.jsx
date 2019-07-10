@@ -6,6 +6,8 @@ import Featured from './main-featured_container';
 import Podcast from './main-podcast';
 import Genres from './main-genres';
 import Discover from './main-discover';
+import PlaylistIndex from '../../components/Collection/playlist-index';
+import LikedTrackIndex from '../../components/Collection/liked-tracks-index';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -16,6 +18,7 @@ class Main extends React.Component {
     setBackground() {
         let bgGradient;
         let featured = "/browse/featured";
+        let playlist_index = featured;
         let podcasts = "/browse/podcasts";
         let genres = "/browse/genres";
         let discover = "/browse/discover";
@@ -23,6 +26,9 @@ class Main extends React.Component {
 
         switch (this.props.history.location.pathname) {
             case featured:
+                bgGradient = "main-featured";
+                break;
+            case playlist_index:
                 bgGradient = "main-featured";
                 break;
             case podcasts:
@@ -50,9 +56,10 @@ class Main extends React.Component {
 
             <div className={ gradient }>
                 <div className="main-nav">
-                    <NavLink className="navlink" activeClassName="selected" to="/browse/featured">Featured</NavLink>
-                    <NavLink className="navlink" activeClassName="selected" to="/browse/podcasts">Podcasts</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/featured">Albums</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/artists">Artists</NavLink>
                     <NavLink className="navlink" activeClassName="selected" to="/browse/genres">Genres</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/podcasts">Podcasts</NavLink>
                     <NavLink className="navlink" activeClassName="selected" to="/browse/discover">Discover</NavLink>
                 </div>
                 <div>
@@ -61,6 +68,8 @@ class Main extends React.Component {
                         <ProtectedRoute path="/browse/podcasts" component={ Podcast } />
                         <ProtectedRoute path="/browse/genres" component={ Genres } />
                         <ProtectedRoute exact path="/browse/discover" component={ Discover } />
+                        <ProtectedRoute exact path="/collection/playlists" component={ PlaylistIndex } />
+                        <ProtectedRoute exact path="/collection/tracks" component={ LikedTrackIndex } />
                     </Switch>
                 </div>
             </div>

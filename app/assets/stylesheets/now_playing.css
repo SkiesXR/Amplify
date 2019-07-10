@@ -125,13 +125,13 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 12px;
-  margin-right: 180px;
+  margin-right: 185px;
 }
 
 .now-playing-buttons {
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   width: 224px;
   height: 32px;
   justify-content: center;
@@ -149,7 +149,7 @@
   opacity: .6;
   transition: opacity .2s linear;
   width: 50px;
-  padding: 0 18px;
+  padding: 0 15px;
 }
 
 #play:hover {

@@ -11,11 +11,11 @@ class GridItem extends React.Component {
             <div className="album-artist-container">
                 <img src={ album_art }/>
 
-                <div class="title-container">
+                <div className="title-container">
                     <Link id="grid-title" to="">{title}</Link>
                 </div>
 
-                <div class="artist-container">
+                <div className="artist-container">
                     <Link id="grid-artist" to="">{ artist }</Link>
                 </div>
             </div>

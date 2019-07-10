@@ -10,7 +10,6 @@ class MainFeatured extends React.Component {
 
     render() {
         let albums = this.props.albums.map(album => {
-            // return <li>{ album.title }</li>
             return <GridItem key={ album.title }album={ album }/>
         })
 

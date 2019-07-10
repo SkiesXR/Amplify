@@ -84,6 +84,7 @@
     padding: 0 8px 35px;
 }
 
+
 .album-artist-container img {
     width: 100%;
     height: 100%;
@@ -95,7 +96,7 @@
 }
 
 .album-artist-container img:hover {
-    opacity: .75;
+    opacity: .6;
 }
 
 .album-artist-container-backdrop {
