@@ -9,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 24px;
+    min-width: 228px;
 }
 
 .player {

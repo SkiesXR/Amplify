@@ -50,8 +50,9 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    padding: 0 0 35px;
 }
 
 .album-artist-container img {

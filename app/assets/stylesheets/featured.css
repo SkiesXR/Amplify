@@ -34,18 +34,44 @@
     padding: 0 32px 32px;
 }
 
+.grid-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #grid-title {
     font-family: "Circular";
     font-size: 14px;
     line-height: 20px;
     letter-spacing: .015em;
+    font-weight: 600;
     color: #fff;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     text-align: center;
+    margin: 12px 0 4px;
+}
 
+.grid-artist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #grid-artist {
+    text-decoration: none;
+    font-family: "Circular";
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    color: white;
+    opacity: 0.6;
+    transition: opacity .05s linear;
+    border-bottom: 1px solid transparent;
+}
 
+#grid-artist:hover {
+    opacity: 1;
+    border-bottom: 1px solid white;
 }
