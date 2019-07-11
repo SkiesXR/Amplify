@@ -2,7 +2,6 @@ import { withRouter, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import React from 'react';
 
-// TODO: Fix Auth Routes
 
 const mapStateToProps = state => {
     return { loggedIn: Boolean(state.session.id) };

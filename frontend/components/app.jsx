@@ -7,16 +7,17 @@ import AmplifyPlayerContainer from './Player/amplify_player_container';
 import { Route, Switch } from 'react-router-dom';
 
 
-const App = () => (
-    <div>
+const App = () => {
+   return (<div>
         <Switch>
             <AuthRoute exact path="/login" component={ LoginFormContainer } />
             <AuthRoute exact path="/signup" component={ SignupFormContainer } />
             <ProtectedRoute path="/collection" component={ AmplifyPlayerContainer } />
+            <ProtectedRoute path="/albums" component={ AmplifyPlayerContainer } />
             <ProtectedRoute path="/browse" component={ AmplifyPlayerContainer } />
             <AuthRoute exact path="/" component={ SplashContainer } />
         </Switch>
-    </div>
-);
+    </div>)
+};
 
 export default App;

@@ -9,6 +9,7 @@ import Genres from './main-genres-container';
 import Discover from './main-discover';
 import PlaylistIndex from '../../components/Collection/playlist-index';
 import LikedTrackIndex from '../../components/Collection/liked-tracks-index';
+import AlbumShow from './album-show-container';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -99,6 +100,7 @@ class Main extends React.Component {
                 <div>
                     <Switch>
                         <ProtectedRoute exact path="/browse/featured" component={ Featured } />
+                        <ProtectedRoute exact path="/albums/:albumId" component={ AlbumShow } />
                         <ProtectedRoute exact path="/browse/artists" component={ Artists } />
                         <ProtectedRoute path="/browse/podcasts" component={ Podcast } />
                         <ProtectedRoute path="/browse/genres" component={ Genres } />

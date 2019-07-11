@@ -16,14 +16,14 @@ const rootReducer = combineReducers({
     entities,
     session,
     errors,
-    albums,
-    artists,
-    tracks,
-    genres,
-    playlists,
-    playlists_errors,
-    shows,
-    show_episodes
+    // albums,
+    // artists,
+    // tracks,
+    // genres,
+    // playlists,
+    // playlists_errors,
+    // shows,
+    // show_episodes
 });
 
 export default rootReducer;

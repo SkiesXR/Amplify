@@ -10,8 +10,9 @@ export default (state = {}, action) => {
         case RECEIVE_ALBUMS:
             newState = Object.assign({}, state, action.albums)
             return newState;
-        case RECEIVE_ALBUM:
-            newState = Object.assign({}, state, {[action.album.id]: action.album})
+            case RECEIVE_ALBUM:
+                    debugger;
+            newState = Object.assign({}, state, {[action.album.album.id]: action.album.album})
             return newState;
         default:
             return state;
