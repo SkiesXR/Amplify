@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import Featured from './main-featured_container';
 import Artists from './main-artists-container';
-import Podcast from './main-podcast';
+import Podcast from './main-podcast-container';
 import Genres from './main-genres-container';
 import Discover from './main-discover';
 import PlaylistIndex from '../../components/Collection/playlist-index';

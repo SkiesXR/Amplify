@@ -5,11 +5,9 @@ class MainGenres extends React.Component {
 
     componentDidMount() {
         this.props.fetchGenres();
-        debugger;
     }
 
     render() {
-        debugger;
         let genres = this.props.genres.map(genre => {
             return <GenreGridItem key={genre.category} genre={genre} />
         })

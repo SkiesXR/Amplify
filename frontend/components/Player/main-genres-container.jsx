@@ -3,7 +3,6 @@ import { fetchGenres } from '../../actions/genre.actions';
 import MainGenres from '../Player/main-genres';
 
 const msp = state => {
-    debugger;
     return {
         genres: Object.values(state.entities.genres),
     };
