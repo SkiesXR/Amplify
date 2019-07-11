@@ -6,12 +6,22 @@ class Player extends React.Component {
     constructor(props) {
         super(props);
         this.play = this.play.bind(this);
+        this.playAudio = this.playAudio.bind(this);
     }
     // Play audio!
     play() {
         const audio = document.getElementById("audio");
         audio.play();
+    }
+
+    playAudio() {
+        const music = document.getElementById("audio");
+        if (music.paused) {
+            music.play();
+        } else {
+            music.pause();
         }
+    }
 
     render() {
 
@@ -51,7 +61,7 @@ class Player extends React.Component {
                             </button>
 
                             {/* play button */}
-                            <button onClick={this.play} id="np-button">
+                            <button onClick={this.playAudio} id="np-button">
                                 <img id="play" src="play_white.png" />
                             </button>
 
