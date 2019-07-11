@@ -5,21 +5,21 @@ class Player extends React.Component {
 
     constructor(props) {
         super(props);
-        this.play = this.play.bind(this);
         this.playAudio = this.playAudio.bind(this);
-    }
-    // Play audio!
-    play() {
-        const audio = document.getElementById("audio");
-        audio.play();
-    }
 
+        this.state = {
+            playPauseButton: "play_white.png"
+        }
+    }
+    // Logic for audio controls
     playAudio() {
         const music = document.getElementById("audio");
         if (music.paused) {
             music.play();
+            this.setState({ playPauseButton: "pause_white.png" })
         } else {
             music.pause();
+            this.setState({ playPauseButton: "play_white.png" })
         }
     }
 
@@ -60,9 +60,10 @@ class Player extends React.Component {
                                 <img id="direction" src="previous_white.png" />
                             </button>
 
-                            {/* play button */}
+                            {/* play / pause buttons */}
                             <button onClick={this.playAudio} id="np-button">
-                                <img id="play" src="play_white.png" />
+                                <img id="play" src={ this.state.playPauseButton } />
+                                {/* <img id="play" src="play_white.png" /> */}
                             </button>
 
                             {/* next button */}
