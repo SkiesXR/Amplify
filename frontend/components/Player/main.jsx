@@ -28,7 +28,7 @@ class Main extends React.Component {
                     <NavLink className="navlink" activeClassName="selected" to="/browse/artists">Artists</NavLink>
                     <NavLink className="navlink" activeClassName="selected" to="/browse/genres">Genres</NavLink>
                     <NavLink className="navlink" activeClassName="selected" to="/browse/podcasts">Podcasts</NavLink>
-                    <NavLink className="navlink" activeClassName="selected" to="/browse/discover">Discover</NavLink>
+                    {/* <NavLink className="navlink" activeClassName="selected" to="/browse/discover">Discover</NavLink> */}
                 </div>);
             case collection:
                 return (<div className="main-nav">
@@ -47,7 +47,7 @@ class Main extends React.Component {
         let liked_songs = "/collection/tracks";
         let podcasts = "/browse/podcasts";
         let genres = "/browse/genres";
-        let discover = "/browse/discover";
+        // let discover = "/browse/discover";
         let main = "main";
 
         switch (this.props.history.location.pathname) {
@@ -69,9 +69,9 @@ class Main extends React.Component {
             case genres:
                 bgGradient = "main-genre";
                 break;
-            case discover:
-                bgGradient = "main-discover";
-                break;
+            // case discover:
+            //     bgGradient = "main-discover";
+            //     break;
             default:
                 bgGradient = main;
                 break;
@@ -102,7 +102,7 @@ class Main extends React.Component {
                         <ProtectedRoute exact path="/browse/artists" component={ Artists } />
                         <ProtectedRoute path="/browse/podcasts" component={ Podcast } />
                         <ProtectedRoute path="/browse/genres" component={ Genres } />
-                        <ProtectedRoute exact path="/browse/discover" component={ Discover } />
+                        {/* <ProtectedRoute exact path="/browse/discover" component={ Discover } /> */}
                         <ProtectedRoute exact path="/collection/playlists" component={ PlaylistIndex } />
                         <ProtectedRoute exact path="/collection/tracks" component={ LikedTrackIndex } />
                     </Switch>

@@ -122,18 +122,19 @@
 
 .now-playing-controls {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 12px;
   margin-right: 185px;
+  margin-top: 10px;
 }
 
 .now-playing-buttons {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   width: 224px;
-  height: 32px;
+  height: 40px;
   justify-content: center;
   flex-flow: row nowrap;
 }
@@ -208,3 +209,23 @@
 #repeat:active {
   opacity: .6;
 }
+
+#timeline {
+  width: 500px;
+  height: 3px;
+  background: #fff;
+  opacity: .6;
+  margin-top: 20px;
+  float: left;
+  border-radius: 15px;
+}
+
+#playhead {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: -1px;
+  background: #1db954;
+}
+
+

@@ -5,7 +5,6 @@ class LeftNav extends React.Component {
 
     constructor(props) {
         super(props);
-        debugger;
         this.logoutUser = this.logoutUser.bind(this);
     }
 

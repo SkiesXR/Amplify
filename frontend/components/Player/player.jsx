@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 class Player extends React.Component {
@@ -22,6 +23,21 @@ class Player extends React.Component {
             this.setState({ playPauseButton: "play_white.png" })
         }
     }
+
+    // Update playhead position based on duration
+    timeUpdate() {
+        let duration;
+        let music = document.getElementById('playhead');
+
+        music.addEventListener("timeupdate", timeUpdate, false);
+        let playPercent = 100 * (music.currentTime / duration);
+        playhead.style.marginLeft = playPercent + "%";
+
+        music.addEventListener("canplaythrough", function () {
+            duration = music.duration;
+        }, false);
+    }
+    
 
     render() {
 
@@ -76,13 +92,23 @@ class Player extends React.Component {
                                 <img id="repeat" src="repeat_white.png" />
                             </button>
                         </div>
+                        <div id="timeline">
+                            <div id="playhead"></div>
+                        </div>
                         <audio id="audio"><source src="skylines.mp3"/></audio>
                     </div>
                     
+                    <ReactAudioPlayer
+                        src="skylines.mp3"
+                        autoPlay
+                        controls
+                    />
+
                     {/* TODO: Decide what's going on the right-hand side of the now-playing bar*/}
-                    <div className="now-playing-right">
-                    </div>
+                    <div className="now-playing-right"></div>
                 </div>
+
+                
             </div>
         );
     }

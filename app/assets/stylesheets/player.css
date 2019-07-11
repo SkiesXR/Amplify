@@ -11,8 +11,6 @@ body {
     width: 16px;
 }
 
-
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #888;
