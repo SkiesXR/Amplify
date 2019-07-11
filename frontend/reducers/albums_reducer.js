@@ -11,7 +11,6 @@ export default (state = {}, action) => {
             newState = Object.assign({}, state, action.albums)
             return newState;
             case RECEIVE_ALBUM:
-                    debugger;
             newState = Object.assign({}, state, {[action.album.album.id]: action.album.album})
             return newState;
         default:
