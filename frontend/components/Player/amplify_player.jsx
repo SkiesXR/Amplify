@@ -8,10 +8,12 @@ import Player from './player';
 class AmplifyPlayer extends React.Component {
 
     render() {  
+
+        const { currentUser, logout } = this.props;
         return (
             
             <div className="player-container">
-                <LeftNav currentUser={this.props.currentUser.username}/>
+                <LeftNav currentUser={ currentUser.username } logout={ logout }/>
                 <Player />
                 <Main 
                 />                

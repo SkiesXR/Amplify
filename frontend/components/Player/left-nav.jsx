@@ -1,27 +1,33 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-
 class LeftNav extends React.Component {
 
     constructor(props) {
         super(props);
+        debugger;
+        this.logoutUser = this.logoutUser.bind(this);
+    }
+
+    logoutUser() {
+        this.props.logout()
+            .then(() => this.props.history.push('/'));
     }
 
     render() {
 
         return (
             <div className="left-nav">
-                <Link to="/browse/featured"><img id="amp-logo-left-nav" src="Amplify_White_Transparent.png"/></Link>
+                <Link to="/browse/featured"><img id="amp-logo-left-nav" src="Amplify_White_Transparent.png" /></Link>
                 <NavLink className="nav-link-container" to="/browse/featured">
                     <div className="nav-link-text-with-icon">
-                        <img className="nav-link-icon" src="home.png"/>
+                        <img className="nav-link-icon" src="home.png" />
                         <div className="nav-link-text" >Home</div>
                     </div>
                 </NavLink>
                 <NavLink className="nav-link-container" activeClassName="left-nav-navlink-selected" to="/search">
                     <div className="nav-link-text-with-icon">
-                        <img className="nav-link-icon" src="search.png"/>
+                        <img className="nav-link-icon" src="search.png" />
                         <div className="nav-link-text" >Search</div>
                     </div>
                 </NavLink>
@@ -39,10 +45,10 @@ class LeftNav extends React.Component {
                         <div className="nav-link-text-cp">Create Playlist</div>
                     </div>
                     <div className="playlist-items"></div>
-                    <div className="nav-link-text-logout">Logout</div> 
+                    <Link className="nav-link-text-logout" onClick={ () => this.logoutUser() } to="/">Logout</Link>
                     <div className="nav-link-text-with-icon-p">
                         <img className="nav-link-profile" src="profile_photo.jpg" />
-                        <div className="nav-link-text-profile">{ this.props.currentUser }</div>
+                        <div className="nav-link-text-profile">{this.props.currentUser}</div>
                     </div>
                 </div>
             </div>
