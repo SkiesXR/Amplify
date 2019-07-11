@@ -4,6 +4,10 @@ import { NavLink, Link } from 'react-router-dom';
 
 class LeftNav extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render() {
 
         return (
@@ -34,6 +38,12 @@ class LeftNav extends React.Component {
                         <img className="nav-link-icon-plus" src="addplaylist.png" />
                         <div className="nav-link-text-cp">Create Playlist</div>
                     </div>
+                    <div className="playlist-items"></div>
+                    <div className="nav-link-text-logout">Logout</div> 
+                    <div className="nav-link-text-with-icon-p">
+                        <img className="nav-link-profile" src="profile_photo.jpg" />
+                        <div className="nav-link-text-profile">{ this.props.currentUser }</div>
+                    </div>
                 </div>
             </div>
         );
@@ -41,3 +51,4 @@ class LeftNav extends React.Component {
 }
 
 export default LeftNav;
+

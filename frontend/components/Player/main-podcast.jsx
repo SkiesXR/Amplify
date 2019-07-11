@@ -5,11 +5,9 @@ class MainPodcasts extends React.Component {
 
     componentDidMount() {
         this.props.fetchShows();
-        debugger;
     }
 
     render() {
-        debugger;
         let shows = this.props.shows.map(show => {
             return <PodcastGridItem key={ show.title } show={ show } />
         })

@@ -48,6 +48,7 @@
     line-height: 20px;
     letter-spacing: .015em;
     font-weight: 600;
+    /* min-height: 40px; */
     color: #fff;
     text-decoration: none;
     border-bottom: 1px solid transparent;
