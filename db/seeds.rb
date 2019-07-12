@@ -17,15 +17,23 @@ Playlist.destroy_all
 Show.destroy_all
 Show_Episode.destroy_all
 
+# Genres
+
+g1 = Genre.create!(category: "Rock" )
+g2 = Genre.create!(category: "Metal" )
+g3 = Genre.create!(category: "Indie" )
+g4 = Genre.create!(category: "Chill" )
+
+
 # Artists 
-Artist.create!(id: 1, name: "Visceral Skies", bio: "4-piece instrumental project focusing on cinematic post-rock, ambient trip-hop and warm jazzy melodies.", image_url: "", genre_id: 1)
-Artist.create!(id: 2, name: "Animalfirepower", bio: "Electronic music producer in Oakland, California. Affiliate of JK/47.", image_url: "", genre_id: 4)
-Artist.create!(id: 3, name: "A Thousand Dead", bio: "Hailing from Oakland, Ca, A Thousand Dead blend pulse-pounding progressive death metal technicality with the instrumental diversity of jazz and the dynamic contrast of post-rock.", image_url: "", genre_id: 2)
-Artist.create!(id: 4, name: "Secrets of the Third Planet", bio: "Secrets of the Third Planet band (S3P)- electronic-shoegaze band from Moscow.", image_url: "", genre_id: 1)
-Artist.create!(id: 5, name: "Vandella", bio: "SF's Vandella is an indie-rock/soul outfit in the vein of Fleetwood Mac, Alabama Shakes, and Jenny Lewis. Fronted by the dynamic male + female duo of vocalist Tracey Holland and guitarist Chris Tye, the two distinct songwriters tie their complementary signatures together for a sound that feels both exciting yet effortlessly vibey - evocative of that hazy sheen of their native California.", image_url: "", genre_id: 1)
-Artist.create!(id: 6, name: "Awaken the Echoes", bio: " ", image_url: "", genre_id: 1)
-Artist.create!(id: 7, name: "Lost Anyway", bio: "Mary and Jane make up the Los Angeles girl band, Lost Anyway. The duo developed a musical bond in their high school orchestra and they just completed their self titled sophomore album, 'Lost Anyway.' Not your typical Cali kids, they showed serious effort in creating a niche all their own. After a decade of growth, there is no telling where this adventure will lead them!", image_url: "", genre_id: 3)
-Artist.create!(id: 8, name: "JK47", bio: "Electronic music producer. Affiliate of Animal FirePower, Rotheads, Ghostwolf, and The Radar Cinema", image_url: "", genre_id: 5)
+Artist.create!(id: 1, name: "Visceral Skies", bio: "4-piece instrumental project focusing on cinematic post-rock, ambient trip-hop and warm jazzy melodies.", image_url: "", genre_id: g1.id)
+Artist.create!(id: 2, name: "Animalfirepower", bio: "Electronic music producer in Oakland, California. Affiliate of JK/47.", image_url: "", genre_id: g4.id)
+Artist.create!(id: 3, name: "A Thousand Dead", bio: "Hailing from Oakland, Ca, A Thousand Dead blend pulse-pounding progressive death metal technicality with the instrumental diversity of jazz and the dynamic contrast of post-rock.", image_url: "", genre_id: g2.id)
+Artist.create!(id: 4, name: "Secrets of the Third Planet", bio: "Secrets of the Third Planet band (S3P)- electronic-shoegaze band from Moscow.", image_url: "", genre_id: g1.id)
+Artist.create!(id: 5, name: "Vandella", bio: "SF's Vandella is an indie-rock/soul outfit in the vein of Fleetwood Mac, Alabama Shakes, and Jenny Lewis. Fronted by the dynamic male + female duo of vocalist Tracey Holland and guitarist Chris Tye, the two distinct songwriters tie their complementary signatures together for a sound that feels both exciting yet effortlessly vibey - evocative of that hazy sheen of their native California.", image_url: "", genre_id: g1.id)
+Artist.create!(id: 6, name: "Awaken the Echoes", bio: " ", image_url: "", genre_id: g1.id)
+Artist.create!(id: 7, name: "Lost Anyway", bio: "Mary and Jane make up the Los Angeles girl band, Lost Anyway. The duo developed a musical bond in their high school orchestra and they just completed their self titled sophomore album, 'Lost Anyway.' Not your typical Cali kids, they showed serious effort in creating a niche all their own. After a decade of growth, there is no telling where this adventure will lead them!", image_url: "", genre_id: g3.id)
+Artist.create!(id: 8, name: "JK47", bio: "Electronic music producer. Affiliate of Animal FirePower, Rotheads, Ghostwolf, and The Radar Cinema", image_url: "", genre_id: g5.id)
 
 # Albums
 
@@ -36,22 +44,22 @@ a4 = Album.create!(title: "Luna", album_type: "EP", artist_id: Artist.second.id,
 a5 = Album.create!(title: "Skylines", album_type: "Album", artist_id: Artist.second.id, release_date: ("2017-01-17"), image_url: "temp")
 a6 = Album.create!(title: "Paragon", album_type: "EP", artist_id: Artist.second.id, release_date: ("2017-06-16"), image_url: "temp")
 a7 = Album.create!(title: "Coma Sessions", album_type: "EP", artist_id: Artist.second.id, release_date: ("2016-10-13"), image_url: "temp")
-a8 = Album.create!(title: "Lost Anyway", album_type: "Album", artist_id: Artist.all[6], release_date: ("2012-12-22"), image_url: "temp")
-a9 = Album.create!(title: "Portals", album_type: "EP", artist_id: Artist.third, release_date: ("2013-06-30"), image_url: "temp")
-a10 = Album.create!(title: "Chasing Goats", album_type: "Single", Artist.third, release_date: ("2015-01-20"), image_url: "temp")
-a11 = Album.create!(title: "Travels", album_type: "Album", artist_id: Artist.all[5], release_date: ("2013-05-17"), image_url: "temp")
-a12 = Album.create!(title: "Shine You Up", album_type: "EP", artist_id: Artist.fifth, release_date: ("2013-10-01"), image_url: "temp")
-a13 = Album.create!(title: "Растаял", album_type: "EP", artist_id: Artist.fourth, release_date: ("2014-12-14"), image_url: "temp")
-a14 = Album.create!(title: "CYBERPUNK", album_type: "Album", artist_id: Artist.all[7], release_date: ("2014-8-20"), image_url: "temp ")
+a8 = Album.create!(title: "Lost Anyway", album_type: "Album", artist_id: Artist.all[6].id, release_date: ("2012-12-22"), image_url: "temp")
+a9 = Album.create!(title: "Portals", album_type: "EP", artist_id: Artist.third.id, release_date: ("2013-06-30"), image_url: "temp")
+a10 = Album.create!(title: "Chasing Goats", album_type: "Single", Artist.third.id, release_date: ("2015-01-20"), image_url: "temp")
+a11 = Album.create!(title: "Travels", album_type: "Album", artist_id: Artist.all[5].id, release_date: ("2013-05-17"), image_url: "temp")
+a12 = Album.create!(title: "Shine You Up", album_type: "EP", artist_id: Artist.fifth.id, release_date: ("2013-10-01"), image_url: "temp")
+a13 = Album.create!(title: "Растаял", album_type: "EP", artist_id: Artist.fourth.id, release_date: ("2014-12-14"), image_url: "temp")
+a14 = Album.create!(title: "CYBERPUNK", album_type: "Album", artist_id: Artist.all[7].id, release_date: ("2014-8-20"), image_url: "temp ")
 
 # Tracks
 
 # Visceral Skies - Visceral Skies
-Track.create!(title: "Shadow", length: "04:12", artist_id: Artist.first, album_id: a1.id)
-Track.create!(title: "Save the Clocktower", length: "03:08", artist_id: Artist.first, album_id: a1.id)
-Track.create!(title: "Man Under Palette", length: "03:59", artist_id: Artist.first, album_id: a1.id)
-Track.create!(title: "Amber Lamps", length: "04:15", artist_id: Artist.first, album_id: a1.id)
-Track.create!(title: "We Are All Plugged In", length: "03:33", artist_id: Artist.first, album_id: a1.id)
+Track.create!(title: "Shadow", length: "04:12", artist_id: Artist.first.id, album_id: a1.id)
+Track.create!(title: "Save the Clocktower", length: "03:08", artist_id: Artist.first.id, album_id: a1.id)
+Track.create!(title: "Man Under Palette", length: "03:59", artist_id: Artist.first.id, album_id: a1.id)
+Track.create!(title: "Amber Lamps", length: "04:15", artist_id: Artist.first.id, album_id: a1.id)
+Track.create!(title: "We Are All Plugged In", length: "03:33", artist_id: Artist.first.id, album_id: a1.id)
 
 # Visceral Skies - Wormhole Karma
 Track.create!(title: "Cybernaut", length: "04:10", artist_id: Artist.first.id, album_id: a2.id)
@@ -127,13 +135,6 @@ Track.create!(title: "1CE アイス", length: "03:47", artist_id: Artist.all[7].
 Track.create!(title: "CASE ケース", length: "05:02", artist_id: Artist.all[7].id, album_id:a14.id)
 Track.create!(title: "R4Z0R61RLZ かみそりの女の子", length: "02:25", artist_id: Artist.all[7].id, album_id:a14.id)
 Track.create!(title: "SPR4WL II スプロール2", length: "04:17", artist_id: Artist.all[7].id, album_id:a14.id)
-
-# Genres
-
-Genre.create!(category: "Rock" )
-Genre.create!(category: "Metal" )
-Genre.create!(category: "Indie" )
-Genre.create!(category: "Chill" )
 
 # Podcasts
 
