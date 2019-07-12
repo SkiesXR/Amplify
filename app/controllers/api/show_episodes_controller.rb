@@ -1,7 +1,6 @@
 class Api::ShowEpisodesController < ApplicationController
 
     def index
-        debugger
         @show_episodes = ShowEpisode.all
         if @show_episodes
             render :index
