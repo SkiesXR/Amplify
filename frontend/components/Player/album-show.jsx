@@ -9,17 +9,17 @@ class AlbumShow extends React.Component {
 
     render() {
 
-        // const { album } = this.props;
-        // let tracks = Object.values(album.tracks).map(track => {
-        //     return <AlbumShowItem track={ track } />
-        // })
+        const { album } = this.props;
+        let tracks = Object.values(album.tracks).map(track => {
+            return <AlbumShowItem track={ track } album ={ album } />
+        })
         return (
             <div className="album-show-c1">
-                <div className="album-show-container-c2">
+                {/* <div className="album-show-container-c2"> */}
                     {/* <div>
                         { AlbumShowItem }
                     </div> */}
-                </div>
+                {/* </div> */}
             </div>
         );
     }
