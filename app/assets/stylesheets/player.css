@@ -99,9 +99,9 @@ body {
     grid-template-areas:
     "left-nav main"
     "player player"
+}
 
-
-
-
-
+#react-audio,
+#react-audio:active {
+    outline: none;
 }

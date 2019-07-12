@@ -98,9 +98,8 @@ class Player extends React.Component {
                         <audio id="audio"><source src="skylines.mp3"/></audio>
                     </div>
                     
-                    <ReactAudioPlayer
+                    <ReactAudioPlayer id="react-audio"
                         src="skylines.mp3"
-                        autoPlay
                         controls
                     />
 

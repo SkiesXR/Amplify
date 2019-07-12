@@ -1,11 +1,11 @@
  @font-face {
      font-family: "Circular Bold";
-     src: url('CircularStd-Bold.otf');
+     src: url('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Fonts/CircularStd-Bold.otf');
  }
 
  @font-face {
      font-family: "Circular";
-     src: url('CircularStd-Book.otf');
+     src: url('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Fonts/CircularStd-Book.otf');
  }
 
 .splash {
