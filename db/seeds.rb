@@ -1,161 +1,110 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
+  User.create!(username: "DemoUser", password: "password", email: "demouser@demo.com", image_url: nil)
+  User.create!(username: "Kavya", password: "password", email: "kavya@test.com", image_url: nil)
 
-require "open-uri"
+  g1 = Genre.create!({category: "Rock"})
+  g2 = Genre.create!({category: "Metal"})
+  g3 = Genre.create!({category: "Indie"})
+  g4 = Genre.create!({category: "Chill"})
+  g5 = Genre.create!({category: "Cyberpunk"})
+  g6 = Genre.create!({category: "R&B"})
+  g7 = Genre.create!({category: "Pop"})
+  g8 = Genre.create!({category: "Soul"})
+  g9 = Genre.create!({category: "Dance"})
+  g10 = Genre.create!({category: "Hip Hop"})
 
-Genre.destroy_all
-Artist.destroy_all
-Album.destroy_all
-Track.destroy_all
-Playlist.destroy_all
-Show.destroy_all
-Show_Episode.destroy_all
+  a1 = Artist.create!(name: "Visceral Skies", bio: "4-piece instrumental project focusing on cinematic post-rock, ambient trip-hop and warm jazzy melodies.", image_url: "", genre_id: g1.id)
+  a2 = Artist.create!(name: "Animalfirepower", bio: "Electronic music producer in Oakland, California. Affiliate of JK/47.", image_url: "", genre_id: g4.id)
+  a3 = Artist.create!(name: "A Thousand Dead", bio: "Hailing from Oakland, Ca, A Thousand Dead blend pulse-pounding progressive death metal technicality with the instrumental diversity of jazz and the dynamic contrast of post-rock.", image_url: "", genre_id: g2.id)
+  a4 = Artist.create!(name: "Lost Anyway", bio: "Mary and Jane make up the Los Angeles girl band, Lost Anyway. The duo developed a musical bond in their high school orchestra and they just completed their self titled sophomore album, 'Lost Anyway.' Not your typical Cali kids, they showed serious effort in creating a niche all their own. After a decade of growth, there is no telling where this adventure will lead them!", image_url: "", genre_id: g3.id)
+  a5 = Artist.create!(name: "Awaken the Echoes", bio: " ", image_url: "", genre_id: g1.id)
+  a6 = Artist.create!(name: "JK47", bio: "Electronic music producer. Affiliate of Animal FirePower, Rotheads, Ghostwolf, and The Radar Cinema", image_url: "", genre_id: g5.id)
+  a7 = Artist.create!(name: "Vandella", bio: "SF's Vandella is an indie-rock/soul outfit in the vein of Fleetwood Mac, Alabama Shakes, and Jenny Lewis. Fronted by the dynamic male + female duo of vocalist Tracey Holland and guitarist Chris Tye, the two distinct songwriters tie their complementary signatures together for a sound that feels both exciting yet effortlessly vibey - evocative of that hazy sheen of their native California.", image_url: "", genre_id: g1.id)
+  a8 = Artist.create!(name: "Secrets of the Third Planet", bio: "Secrets of the Third Planet band (S3P)- electronic-shoegaze band from Moscow.", image_url: "", genre_id: g1.id)
 
-# Genres
+  al1 = Album.create!(title: "Visceral Skies", album_type: "EP", artist_id: a1.id, release_date: "2014-07-08", image_url: "temp")
+  al2 = Album.create!(title: "Chasing Goats", album_type: "Single", artist_id: a3.id, release_date: "2015-01-20", image_url: "temp")
+  al3 = Album.create!(title: "Portals", album_type: "EP", artist_id: a3.id, release_date: "2013-06-30", image_url: "temp")
+  al4 = Album.create!(title: "Coma Sessions", album_type: "EP", artist_id: a2.id, release_date: "2016-10-13", image_url: "temp")
+  al5 = Album.create!(title: "Luna", album_type: "EP", artist_id: a2.id, release_date: "2014-03-04", image_url: "temp")
+  al6 = Album.create!(title: "Paragon", album_type: "EP", artist_id: a2.id, release_date: "2017-06-16", image_url: "temp")
+  al7 = Album.create!(title: "Skylines", album_type: "Album", artist_id: a2.id, release_date: "2017-01-17", image_url: "temp")
+  al8 = Album.create!(title: "Travels", album_type: "Album", artist_id: a6.id, release_date: "2013-05-17", image_url: "temp")
+  al9 = Album.create!(title: "CYBERPUNK", album_type: "Album", artist_id: a8.id, release_date: "2014-08-20", image_url: "temp")
+  al10 = Album.create!(title: "Lost Anyway", album_type: "Album", artist_id: a7.id, release_date: "2012-12-22", image_url: "temp")
+  al11 = Album.create!(title: "Растаял", album_type: "EP", artist_id: a4.id, release_date: "2014-12-14", image_url: "temp")
+  al12 = Album.create!(title: "Shine You Up", album_type: "EP", artist_id: a5.id, release_date: "2013-10-01", image_url: "temp")
+  al13 = Album.create!(title: "Inferno Room", album_type: "Album", artist_id: a1.id, release_date: "2018-12-25", image_url: "temp")
+  al14 = Album.create!(title: "Wormhole Karma", album_type: "Album", artist_id: a1.id, release_date: "2016-09-30", image_url: "temp")
+  
+  t1= Track.create!(title: "Shadow", length: "04:12", artist_id: a1.id, album_id: al1.id)
+  t41= Track.create!(title: "Save the Clocktower", length: "03:08", artist_id: a1.id, album_id: al1.id)
+  t3= Track.create!(title: "Man Under Palette", length: "03:59", artist_id: a1.id, album_id: al1.id)
+  t4= Track.create!(title: "Amber Lamps", length: "04:15", artist_id: a1.id, album_id: al1.id)
+  t5= Track.create!(title: "We Are All Plugged In", length: "03:33", artist_id: a1.id, album_id: al1.id)
+  t6= Track.create!(title: "Cybernaut", length: "04:10", artist_id: a1.id, album_id: al2.id)
+  t7= Track.create!(title: "EightyEight", length: "03:40", artist_id: a1.id, album_id: al2.id)
+  t8= Track.create!(title: "Throwing Gravity", length: "04:17", artist_id: a1.id, album_id: al2.id)
+  t9= Track.create!(title: "Silent Colors", length: "01:13", artist_id: a1.id, album_id: al2.id)
+  t10= Track.create!(title: "Let Yourself In", length: "04:47", artist_id: a1.id, album_id: al2.id)
+  t11= Track.create!(title: "Fractures", length: "03:55", artist_id: a1.id, album_id: al2.id)
+  t12= Track.create!(title: "Halcyon", length: "01:32", artist_id: a1.id, album_id: al2.id)
+  t13= Track.create!(title: "No Fate", length: "03:55", artist_id: a1.id, album_id: al2.id)
+  t14= Track.create!(title: "Palms to Heaven", length: "03:56", artist_id: a1.id, album_id: al2.id)
+  t15= Track.create!(title: "Catching Fire", length: "04:00", artist_id: a1.id, album_id: al3.id)
+  t16= Track.create!(title: "Into the Feathers", length: "04:10", artist_id: a1.id, album_id: al3.id)
+  t17= Track.create!(title: "Skeleton Key", length: "04:05", artist_id: a1.id, album_id: al3.id)
+  t18= Track.create!(title: "Paul's Interlude", length: "02:10", artist_id: a1.id, album_id: al3.id)
+  t19= Track.create!(title: "Tracewinds", length: "04:01", artist_id: a1.id, album_id: al3.id)
+  t20= Track.create!(title: "Axis Chemicals", length: "04:54", artist_id: a1.id, album_id: al3.id)
+  t21= Track.create!(title: "East End", length: "04:05", artist_id: a2.id, album_id: al4.id)
+  t22= Track.create!(title: "7series", length: "04:10", artist_id: a2.id, album_id: al4.id)
+  t23= Track.create!(title: "Nylons", length: "04:41", artist_id: a2.id, album_id: al4.id)
+  t24= Track.create!(title: "Harbor Lanterns", length: "04:31", artist_id: a2.id, album_id: al4.id)
+  t25 = Track.create!(title: "Koshiro", length: "04:28", artist_id: a2.id, album_id: al4.id)
+  t26 = Track.create!(title: "1314", length: "01:26", artist_id: a2.id, album_id: al5.id)
+  t27 = Track.create!(title: "Atlas", length: "03:14", artist_id: a2.id, album_id: al6.id)
+  t28 = Track.create!(title: "Nova", length: "03:07", artist_id: a2.id, album_id: al6.id)
+  t29 = Track.create!(title: "1314", length: "01:06", artist_id: a2.id, album_id: al6.id)
+  t30 = Track.create!(title: "Cascade", length: "02:59", artist_id: a2.id, album_id: al6.id)
+  t31 = Track.create!(title: "The Ventriloquist", length: "03:09", artist_id: a2.id, album_id: al7.id)
+  t32 = Track.create!(title: "Mynah Metamorphose", length: "03:34", artist_id: a2.id, album_id: al7.id)
+  t33 = Track.create!(title: "A Chronic Fabrication", length: "04:32", artist_id: a3.id, album_id: al9.id)
+  t34 = Track.create!(title: "Decomission the Flesh", length: "03:15", artist_id: a3.id, album_id: al9.id)
+  t35 = Track.create!(title: "Skywatcher", length: "04:25", artist_id: a3.id, album_id: al9.id)
+  t36 = Track.create!(title: "Calculating Existence", length: "04:57", artist_id: a3.id, album_id: al9.id)
+  t37 = Track.create!(title: "Chasing Goats", length: "05:51", artist_id: a3.id, album_id: al10.id)
+  t38 = Track.create!(title: "India", length: "05:55", artist_id: a4.id, album_id: al13.id)
+  t39 = Track.create!(title: "Растаял", length: "05:15", artist_id: a4.id, album_id: al13.id)
+  t40 = Track.create!(title: "Scary Under", length: "03:22", artist_id: a4.id, album_id: al13.id)
+  t41 = Track.create!(title: "Твой сон", length: "04:23", artist_id: a4.id, album_id: al13.id)
+  t42 = Track.create!(title: "DEXADRINE 医学", length: "03:06", artist_id: a8.id, album_id: al14.id)
+  t43 = Track.create!(title: "COWBOY カウボーイ", length: "04:45", artist_id: a8.id, album_id: al14.id)
+  t44 = Track.create!(title: "ONO-SENDAI 小野仙台", length: "03:23", artist_id: a8.id, album_id: al14.id)
+  t45 = Track.create!(title: "SPR4WL I スプロール1", length: "03:19", artist_id: a8.id, album_id: al14.id)
+  t46 = Track.create!(title: "M0LLYM1LL10N$ モリーの何百万人", length: "04:54", artist_id: a8.id, album_id: al14.id)
+  t47 = Track.create!(title: "HOSAKA 保坂", length: "02:09", artist_id: a8.id, album_id: al14.id)
+  t48 = Track.create!(title: "AI 人工知能", length: "04:01", artist_id: a8.id, album_id: al14.id)
+  t49 = Track.create!(title: "W1NT3RMUT3 冬のミュート ", length: "03:47", artist_id: a8.id, album_id: al14.id)
+  t51= Track.create!(title: "Z10N 聖なる山", length: "03:01", artist_id: a8.id, album_id: al14.id)
+  t52= Track.create!(title: "1CE アイス", length: "03:47", artist_id: a8.id, album_id: al14.id)
+  t53= Track.create!(title: "CASE ケース", length: "05:02", artist_id: a8.id, album_id: al14.id)
+  t54= Track.create!(title: "R4Z0R61RLZ かみそりの女の子", length: "02:25", artist_id: a8.id, album_id: al14.id)
+  t55= Track.create!(title: "SPR4WL II スプロール2", length: "04:17", artist_id: a8.id, album_id: al14.id)
+  t56= Track.create!(title: "Answers", length: "02:01", artist_id: a2.id, album_id: al5.id)
+  t57= Track.create!(title: "Titan", length: "03:11", artist_id: a2.id, album_id: al5.id)
+  t58= Track.create!(title: "Antenna", length: "03:45", artist_id: a2.id, album_id: al5.id)
+  t59= Track.create!(title: "Skylines", length: "03:09", artist_id: a2.id, album_id: al5.id)
+  t60= Track.create!(title: "1314", length: "01:46", artist_id: a2.id, album_id: al4.id)
+  t61= Track.create!(title: "Ascend", length: "03:21", artist_id: a2.id, album_id: al5.id)
 
-g1 = Genre.create!(category: "Rock" )
-g2 = Genre.create!(category: "Metal" )
-g3 = Genre.create!(category: "Indie" )
-g4 = Genre.create!(category: "Chill" )
-
-
-# Artists 
-Artist.create!(id: 1, name: "Visceral Skies", bio: "4-piece instrumental project focusing on cinematic post-rock, ambient trip-hop and warm jazzy melodies.", image_url: "", genre_id: g1.id)
-Artist.create!(id: 2, name: "Animalfirepower", bio: "Electronic music producer in Oakland, California. Affiliate of JK/47.", image_url: "", genre_id: g4.id)
-Artist.create!(id: 3, name: "A Thousand Dead", bio: "Hailing from Oakland, Ca, A Thousand Dead blend pulse-pounding progressive death metal technicality with the instrumental diversity of jazz and the dynamic contrast of post-rock.", image_url: "", genre_id: g2.id)
-Artist.create!(id: 4, name: "Secrets of the Third Planet", bio: "Secrets of the Third Planet band (S3P)- electronic-shoegaze band from Moscow.", image_url: "", genre_id: g1.id)
-Artist.create!(id: 5, name: "Vandella", bio: "SF's Vandella is an indie-rock/soul outfit in the vein of Fleetwood Mac, Alabama Shakes, and Jenny Lewis. Fronted by the dynamic male + female duo of vocalist Tracey Holland and guitarist Chris Tye, the two distinct songwriters tie their complementary signatures together for a sound that feels both exciting yet effortlessly vibey - evocative of that hazy sheen of their native California.", image_url: "", genre_id: g1.id)
-Artist.create!(id: 6, name: "Awaken the Echoes", bio: " ", image_url: "", genre_id: g1.id)
-Artist.create!(id: 7, name: "Lost Anyway", bio: "Mary and Jane make up the Los Angeles girl band, Lost Anyway. The duo developed a musical bond in their high school orchestra and they just completed their self titled sophomore album, 'Lost Anyway.' Not your typical Cali kids, they showed serious effort in creating a niche all their own. After a decade of growth, there is no telling where this adventure will lead them!", image_url: "", genre_id: g3.id)
-Artist.create!(id: 8, name: "JK47", bio: "Electronic music producer. Affiliate of Animal FirePower, Rotheads, Ghostwolf, and The Radar Cinema", image_url: "", genre_id: g5.id)
-
-# Albums
-
-a1 = Album.create!(title: "Visceral Skies", album_type: "EP", artist_id: Artist.first.id, release_date: ("2014-7-8"), image_url: "temp")
-a2 = Album.create!(title: "Wormhole Karma", album_type: "Album", artist_id: Artist.first.id, release_date: ("2016-9-30"), image_url: "temp")
-a3 = Album.create!(title: "Inferno Room", album_type: "Album", artist_id: Artist.first.id, release_date: ("2018-12-25"), image_url: "temp")
-a4 = Album.create!(title: "Luna", album_type: "EP", artist_id: Artist.second.id, release_date: ("2014-03-04"), image_url: "temp")
-a5 = Album.create!(title: "Skylines", album_type: "Album", artist_id: Artist.second.id, release_date: ("2017-01-17"), image_url: "temp")
-a6 = Album.create!(title: "Paragon", album_type: "EP", artist_id: Artist.second.id, release_date: ("2017-06-16"), image_url: "temp")
-a7 = Album.create!(title: "Coma Sessions", album_type: "EP", artist_id: Artist.second.id, release_date: ("2016-10-13"), image_url: "temp")
-a8 = Album.create!(title: "Lost Anyway", album_type: "Album", artist_id: Artist.all[6].id, release_date: ("2012-12-22"), image_url: "temp")
-a9 = Album.create!(title: "Portals", album_type: "EP", artist_id: Artist.third.id, release_date: ("2013-06-30"), image_url: "temp")
-a10 = Album.create!(title: "Chasing Goats", album_type: "Single", Artist.third.id, release_date: ("2015-01-20"), image_url: "temp")
-a11 = Album.create!(title: "Travels", album_type: "Album", artist_id: Artist.all[5].id, release_date: ("2013-05-17"), image_url: "temp")
-a12 = Album.create!(title: "Shine You Up", album_type: "EP", artist_id: Artist.fifth.id, release_date: ("2013-10-01"), image_url: "temp")
-a13 = Album.create!(title: "Растаял", album_type: "EP", artist_id: Artist.fourth.id, release_date: ("2014-12-14"), image_url: "temp")
-a14 = Album.create!(title: "CYBERPUNK", album_type: "Album", artist_id: Artist.all[7].id, release_date: ("2014-8-20"), image_url: "temp ")
-
-# Tracks
-
-# Visceral Skies - Visceral Skies
-Track.create!(title: "Shadow", length: "04:12", artist_id: Artist.first.id, album_id: a1.id)
-Track.create!(title: "Save the Clocktower", length: "03:08", artist_id: Artist.first.id, album_id: a1.id)
-Track.create!(title: "Man Under Palette", length: "03:59", artist_id: Artist.first.id, album_id: a1.id)
-Track.create!(title: "Amber Lamps", length: "04:15", artist_id: Artist.first.id, album_id: a1.id)
-Track.create!(title: "We Are All Plugged In", length: "03:33", artist_id: Artist.first.id, album_id: a1.id)
-
-# Visceral Skies - Wormhole Karma
-Track.create!(title: "Cybernaut", length: "04:10", artist_id: Artist.first.id, album_id: a2.id)
-Track.create!(title: "EightyEight", length: "03:40", artist_id: Artist.first.id, album_id: a2.id)
-Track.create!(title: "Throwing Gravity", length: "04:17", artist_id: Artist.first.id, album_id: a2.id)
-Track.create!(title: "Silent Colors", length: "01:13", artist_id: Artist.first.id, album_id: a2.id)
-Track.create!(title: "Let Yourself In", length: "04:47", artist_id: Artist.first.id, album_id: a2.id)
-Track.create!(title: "Fractures", length: "03:55", artist_id: Artist.first.id, album_id: a2.id)
-Track.create!(title: "Halcyon", length: "01:32", artist_id: Artist.first.id, album_id: a2.id)
-Track.create!(title: "No Fate", length: "03:55", artist_id: Artist.first.id, album_id: a2.id)
-Track.create!(title: "Palms to Heaven", length: "03:56", artist_id: Artist.first.id, album_id: a2.id)
-
-# Visceral Skies - Inferno Room
-Track.create!(title: "Catching Fire", length: "04:00", artist_id: Artist.first.id, album_id: a3.id)
-Track.create!(title: "Into the Feathers", length: "04:10", artist_id: Artist.first.id, album_id: a3.id)
-Track.create!(title: "Skeleton Key", length: "04:05", artist_id: Artist.first.id, album_id: a3.id)
-Track.create!(title: "Paul's Interlude", length: "02:10", artist_id: Artist.first.id, album_id: a3.id)
-Track.create!(title: "Tracewinds", length: "04:01", artist_id: Artist.first.id, album_id: a3.id)
-Track.create!(title: "Axis Chemicals", length: "04:54", artist_id: Artist.first.id, album_id: a3.id)
-
-# Animalfirepower - Luna
-Track.create!(title: "East End", length: "04:05", artist_id: Artist.second.id, album_id: a4.id)
-Track.create!(title: "7series", length: "04:10", artist_id: Artist.second.id, album_id: a4.id)
-Track.create!(title: "Nylons", length: "04:41", artist_id: Artist.second.id, album_id: a4.id)
-Track.create!(title: "1314", length: "01:46", artist_id: Artist.second.id, album_id: a4.id)
-Track.create!(title: "Harbor Lanterns", length: "04:31", artist_id: Artist.second.id, album_id: a4.id)
-Track.create!(title: "Koshiro", length: "04:28", artist_id: Artist.second.id, album_id: a4.id)
-
-# Animalfirepower - Skylines
-Track.create!(title: "Answers", length: "02:01", artist_id: Artist.second.id, album_id: a5.id)
-Track.create!(title: "Titan", length: "03:1", artist_id: Artist.second.id, album_id: a5.id)
-Track.create!(title: "Antenna", length: "03:45", artist_id: Artist.second.id, album_id: a5.id)
-Track.create!(title: "Skylines", length: "03:09", artist_id: Artist.second.id, album_id: a5.id)
-Track.create!(title: "1314", length: "01:26", artist_id: Artist.second.id, album_id: a5.id)
-Track.create!(title: "Ascend", length: "03:21", artist_id: Artist.second.id, album_id: a5.id)
-
-# Animalfirepower - Paragon
-Track.create!(title: "Atlas", length: "03:14", artist_id: Artist.second.id, album_id: a6.id)
-Track.create!(title: "Nova", length: "03:07", artist_id: Artist.second.id, album_id: a6.id)
-Track.create!(title: "1314", length: "01:06", artist_id: Artist.second.id, album_id: a6.id)
-Track.create!(title: "Cascade", length: "02:59", artist_id: Artist.second.id, album_id: a6.id)
-
-# Animalfirepower - CoMa Sessions
-Track.create!(title: "The Ventriloquist", length: "03:09", artist_id: Artist.second.id, album_id: a7.id)
-Track.create!(title: "Mynah Metamorphose", length: "03:34", artist_id: Artist.second.id, album_id: a7.id)
-
-# A Thousand Dead - Portals EP
-Track.create!(title: "A Chronic Fabrication", length: "04:32", artist_id: Artist.third.id, album_id: a9.id)
-Track.create!(title: "Decomission the Flesh", length: "03:15", artist_id: Artist.third.id, album_id: a9.id)
-Track.create!(title: "Skywatcher", length: "04:25", artist_id: Artist.third.id, album_id: a9.id)
-Track.create!(title: "Calculating Existence", length: "04:57", artist_id: Artist.third.id, album_id: a9.id)
-
-# A Thousand Dead - Chasing Goats
-Track.create!(title: "Chasing Goats", length: "05:51", artist_id: Artist.third.id, album_id: a10.id)
-
-# Secrets of the Third Planet - Растаял Ep
-Track.create!(title: "India", length: "05:55", artist_id: Artist.fourth.id, album_id: a13.id)
-Track.create!(title: "Растаял", length: "05:15", artist_id: Artist.fourth.id, album_id: a13.id)
-Track.create!(title: "Scary Under", length: "03:22", artist_id: Artist.fourth.id, album_id: a13.id)
-Track.create!(title: "Твой сон", length: "04:23", artist_id: Artist.fourth.id, album_id: a13.id)
-
-# JK-47 - CYBERPUNK
-Track.create!(title: "DEXADRINE 医学", length: "03:06", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "COWBOY カウボーイ", length: "04:45", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "ONO-SENDAI 小野仙台", length: "03:23", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "SPR4WL I スプロール1", length: "03:19", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "M0LLYM1LL10N$ モリーの何百万人", length: "04:54", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "HOSAKA 保坂", length: "02:09", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "AI 人工知能", length: "04:01", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "W1NT3RMUT3 冬のミュート ", length: "03:47", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "Z10N 聖なる山", length: "03:01", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "1CE アイス", length: "03:47", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "CASE ケース", length: "05:02", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "R4Z0R61RLZ かみそりの女の子", length: "02:25", artist_id: Artist.all[7].id, album_id:a14.id)
-Track.create!(title: "SPR4WL II スプロール2", length: "04:17", artist_id: Artist.all[7].id, album_id:a14.id)
-
-# Podcasts
-
-Show.create!(title: "The freeCodeCamp Podcast", author: "freeCodeCamp.org", description: "The official podcast of the freeCodeCamp open source community. Learn to code with free online courses, programming projects, and interview preparation for developer jobs.", image_url: "temp")
-Show.create!(title: "Make Me Smart with Kai and Molly", author: "Marketplace", description: "Hosted by Kai Ryssdal and Molly Wood, 'Make Me Smart with Kai & Molly' is a weekly podcast about the economy, technology and culture. In a time when the world is moving faster than ever, this podcast is where we unpack complex topics, together. Because none of us is as smart as all of us.", image_url: "temp")
-Show.create!(title: "David Tennant Does a Podcast With...", author: "Somethin' Else & No Mystery", description: "David Tennant gets talking with the biggest names from TV, movies, comedy and elsewhere. Revealing conversation, surprise stories and lots of laughs. A Somethin' Else and No Mystery production.", image_url: "temp")
-Show.create!(title: "Radiolab", author: "New York Public Radio", description: "Radiolab is a show about wonder, curiosity and big ideas. Hailed by critics as 'best radio show,' Radiolab presents a potent elixir of science and philosophy, first-person storytelling and radio theatre, all woven together with the most innovative sound design to ever spill out of the radio. Hosted by Jad Abumrad and Robert Krulwich and produced by WNYC, the show is heard on more than 300 public radio stations around the country.", image_url: "temp")
-Show.create!(title: "The Daily", author: "The New York Times", description: "This is how the news should sound. Twenty minutes a day, five days a week, hosted by Michael Barbaro and powered by New York Times journalism.", image_url: "temp")
-Show.create!(title: "Hidden Brain", author: "NPR", description: "Shankar Vedantam uses science and storytelling to reveal the unconscious patterns that drive human behavior, shape our choices and direct our relationships.", image_url: "temp")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  s1 = Show.create!(title: "Inside Marvel", author: "New Rockstars", description: "New Rockstars bring you breakdowns, theories and commentary on what is happening right now and what is coming next in the Marvel Cinematic Universe.", image_url: "temp")
+  s2 = Show.create!(title: "Beyond the Screenplay", author: "Michael Tucker", description: "'Lessons from the Screenplay' creator Michael Tucker and the LFTS team do deeper dives into the storytelling of individual movies and chat with the creatives behind those films.", image_url: "temp")
+  s3 = Show.create!(title: "ID10T with Chris Hardwick", author: "Chris Hardwick", description: "I am Chris Hardwick. This podcast used to be called Nerdist. Now it is not. It is still basically just me talking about stuff and things with my two nerdy friends Jonah Ray and Matt Mira when they’re available, and usually someone more famous and smarter than all of us. Swearing is still fun, so we still do that occasionally. I hope you like this new iteration which is the same as before, but if a name hangs you up unhealthily I’m sure you will not hesitate to unfurl your rage not only in the ‘reviews’ section but also now on all the various social media platforms that have popped up since we started in 2010, effectively murdering blogs.", image_url: "temp ")
+  s4 = Show.create!(title: "The freeCodeCamp Podcast", author: "freeCodeCamp.org", description: "The official podcast of the freeCodeCamp open source community. Learn to code with free online courses, programming projects, and interview preparation for developer jobs.", image_url: "temp")
+  s5 = Show.create!(title: "Make Me Smart with Kai and Molly", author: "Marketplace", description: "Hosted by Kai Ryssdal and Molly Wood, 'Make Me Smart with Kai & Molly' is a weekly podcast about the economy, technology and culture. In a time when the world is moving faster than ever, this podcast is where we unpack complex topics, together. Because none of us is as smart as all of us.", image_url: "temp")
+  s6 = Show.create!(title: "David Tennant Does a Podcast With...", author: "Somethin' Else & No Mystery", description: "David Tennant gets talking with the biggest names from TV, movies, comedy and elsewhere. Revealing conversation, surprise stories and lots of laughs. A Somethin' Else and No Mystery production.", image_url: "temp")
+  s7 = Show.create!(title: "Radiolab", author: "New York Public Radio", description: "Radiolab is a show about wonder, curiosity and big ideas. Hailed by critics as 'best radio show,' Radiolab presents a potent elixir of science and philosophy, first-person storytelling and radio theatre, all woven together with the most innovative sound design to ever spill out of the radio. Hosted by Jad Abumrad and Robert Krulwich and produced by WNYC, the show is heard on more than 300 public radio stations around the country.", image_url: "temp")
+  s8 = Show.create!(title: "The Daily", author: "The New York Times", description: "This is how the news should sound. Twenty minutes a day, five days a week, hosted by Michael Barbaro and powered by New York Times journalism.", image_url: "temp")
+  s9 = Show.create!(title: "Hidden Brain", author: "NPR", description: "Shankar Vedantam uses science and storytelling to reveal the unconscious patterns that drive human behavior, shape our choices and direct our relationships.", image_url: "temp")
 
