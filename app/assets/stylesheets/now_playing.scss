@@ -85,6 +85,29 @@
 .love-container {
   margin: auto;
   padding-left: 15px;
+  //
+  position: relative;
+  display: inline-block;
+}
+
+.love-container .tooltip {
+  font-family: "Circular";
+  font-size: 14px;
+  visibility: hidden;
+  width: 168px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  top: 10px;
+  left: 35px;
+  z-index: 1;
+}
+
+.love-container:hover .tooltip {
+  visibility: visible;
 }
 
 #love {

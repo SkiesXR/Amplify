@@ -85,6 +85,7 @@ class Player extends React.Component {
                             <a id="npa" href="">Artist Name</a>
                         </div>
                         <div className="love-container">
+                            <div className="tooltip">Save to your Liked Songs</div>
                             <button id="love-button" onClick={ this.toggleLove }>
                                 <img id={ this.state.loveId } src={ this.state.loveButton }/>
                             </button>
