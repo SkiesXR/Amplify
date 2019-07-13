@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 
-
 class Player extends React.Component {
 
     constructor(props) {
@@ -12,14 +11,26 @@ class Player extends React.Component {
 
         this.state = {
             playPauseButton: "play_white.png",
-            loveButton: "love.png"
+            loveButton: "love.png",
+            loveId: "love",
+            currentSong: null
         }
     }
 
     // Display appropriate "like" button based user action
     toggleLove() {
-        this.state.loveButton === "love.png" ? this.setState({ loveButton: "love_filled_green.png" }) : this.setState({ loveButton: "love.png" })
-        // this.setState({ loveButton: "love.png" ? "love_filled_green.png" : "love.png" })
+        switch(this.state.loveButton) {
+            case "love.png":
+                this.setState({ loveButton: "love_filled_green.png" });
+                this.setState({ loveId: "love-green" });
+                console.log(`User clicked the like button!`);
+                break;
+            case "love_filled_green.png":
+                this.setState({ loveButton: "love.png" });
+                this.setState({ loveId: "love" });
+                console.log(`User clicked the like button!`);
+                break;
+        }
     }
 
     // Logic for audio controls
@@ -27,21 +38,19 @@ class Player extends React.Component {
         const music = document.getElementById("audio");
         if (music.paused) {
             music.play();
-            this.setState({ playPauseButton: "pause_white.png" })
-            // const volume = document.querySelector("audio").volume; // 1 
-            // console.log(volume);
+            this.setState({ playPauseButton: "pause_white.png" })         
         } else {
             music.pause();
             this.setState({ playPauseButton: "play_white.png" })
         }
     }
 
+    // Volume controller
     volChange() {
         let audio = document.querySelector("audio");
         let range = document.getElementById("myRange");
-        audio.volume = (range.value / 100);
-        console.log(audio.volume);
-
+        audio.volume = range.value / 100;
+        console.log(`Audio Volume: ${audio.volume}`);
     }
         
     // Update playhead position based on duration
@@ -77,7 +86,7 @@ class Player extends React.Component {
                         </div>
                         <div className="love-container">
                             <button id="love-button" onClick={ this.toggleLove }>
-                                <img id="love" src={ this.state.loveButton }/>
+                                <img id={ this.state.loveId } src={ this.state.loveButton }/>
                             </button>
                         </div>
                     </div>
@@ -129,7 +138,7 @@ class Player extends React.Component {
                     {/* TODO: Decide what's going on the right-hand side of the now-playing bar*/}
                     <div className="now-playing-right">
                         <div className="slidecontainer">
-                            <input type="range" min="1" max="100" defaultValue="1" className="slider" id="myRange" onChange={ this.volChange }></input>                
+                            <input type="range" min="1" max="100" defaultValue="50" className="slider" id="myRange" onChange={ this.volChange }></input>                
                         </div>
                     </div>
                 </div>
