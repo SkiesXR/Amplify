@@ -45,7 +45,7 @@ body {
 
 .main-featured {
     grid-area: main;
-    background-image: linear-gradient(to right bottom, rgb(15, 94, 138), rgb(0, 0, 0)),
+    background-image: linear-gradient(to right bottom, rgb(43, 84, 91), rgb(0, 0, 0)),
     linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
