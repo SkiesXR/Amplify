@@ -7,6 +7,7 @@ class Player extends React.Component {
     constructor(props) {
         super(props);
         this.playAudio = this.playAudio.bind(this);
+        this.volChange = this.volChange.bind(this);
 
         this.state = {
             playPauseButton: "play_white.png"
@@ -18,30 +19,41 @@ class Player extends React.Component {
         if (music.paused) {
             music.play();
             this.setState({ playPauseButton: "pause_white.png" })
+            // const volume = document.querySelector("audio").volume; // 1 
+            // console.log(volume);
         } else {
             music.pause();
             this.setState({ playPauseButton: "play_white.png" })
         }
     }
 
-    // Update playhead position based on duration
-    timeUpdate() {
-        let duration;
-        let music = document.getElementById('playhead');
+    volChange() {
+        let audio = document.querySelector("audio");
+        let range = document.getElementById("myRange");
+        audio.volume = (range.value / 100);
+        console.log(audio.volume);
 
-        music.addEventListener("timeupdate", timeUpdate, false);
-        let playPercent = 100 * (music.currentTime / duration);
-        playhead.style.marginLeft = playPercent + "%";
-
-        music.addEventListener("canplaythrough", function () {
-            duration = music.duration;
-        }, false);
     }
+        
+    // Update playhead position based on duration
+    // timeUpdate() {
+    //     let duration;
+    //     let music = document.getElementById('playhead');
+
+    //     music.addEventListener("timeupdate", timeUpdate, false);
+    //     let playPercent = 100 * (music.currentTime / duration);
+    //     playhead.style.marginLeft = playPercent + "%";
+
+    //     music.addEventListener("canplaythrough", function () {
+    //         duration = music.duration;
+    //     }, false);
+    // }
     
 
     render() {
-
+        
         return (
+
             <div className="player">
                 <div id="now-playing-bar">
 
@@ -98,13 +110,19 @@ class Player extends React.Component {
                         <audio id="audio"><source src="skylines.mp3"/></audio>
                     </div>
                     
-                    <ReactAudioPlayer id="react-audio"
+                   
+
+                    {/* <ReactAudioPlayer id="react-audio"
                         src="skylines.mp3"
                         controls
-                    />
+                    /> */}
 
                     {/* TODO: Decide what's going on the right-hand side of the now-playing bar*/}
-                    <div className="now-playing-right"></div>
+                    <div className="now-playing-right">
+                        <div className="slidecontainer">
+                            <input type="range" min="1" max="100" defaultValue="1" className="slider" id="myRange" onChange={ this.volChange }></input>                
+                        </div>
+                    </div>
                 </div>
 
                 

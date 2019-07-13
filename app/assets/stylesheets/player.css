@@ -37,6 +37,8 @@ body {
     position:relative;
 }
 
+/* Gradient Options */
+
 .main {
     grid-area: main;
     background-image: linear-gradient(to right bottom, rgb(15, 94, 138), rgb(0, 0, 0)),
@@ -105,3 +107,42 @@ body {
 #react-audio:active {
     outline: none;
 }
+
+/* Volume Control */
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 8px;
+    background: #d3d3d3;
+    outline: none;
+}
+
+.slider:hover {
+    opacity: 1;
+    background: #1db954
+}
+
+.slider::-webkit-slider-thumb {
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slidecontainer:hover input[type="range"]::-webkit-slider-thumb {
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
