@@ -193,6 +193,7 @@ input:focus::-webkit-input-placeholder {
     margin: auto;
     position: relative;
     text-align: center;
+    display: flex;
 }
 
 #login-highlight {

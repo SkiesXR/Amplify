@@ -83,19 +83,19 @@ al6.album_art.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazona
 al7 = Album.create!(title: "Skylines", album_type: "Album", artist_id: a2.id, release_date: "2017-01-17", image_url: "temp")
 al7.album_art.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg'), filename: 'afp - skylines.jpg')
 
-al8 = Album.create!(title: "Travels", album_type: "Album", artist_id: a6.id, release_date: "2013-05-17", image_url: "temp")
+al8 = Album.create!(title: "Travels", album_type: "Album", artist_id: a5.id, release_date: "2013-05-17", image_url: "temp")
 al8.album_art.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/Awaken+the+Echoes+-+Travels.jpg'), filename: 'ate - travels.jpg')
 
-al9 = Album.create!(title: "CYBERPUNK", album_type: "Album", artist_id: a8.id, release_date: "2014-08-20", image_url: "temp")
+al9 = Album.create!(title: "CYBERPUNK", album_type: "Album", artist_id: a6.id, release_date: "2014-08-20", image_url: "temp")
 al9.album_art.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/JK47+-+Cyberpunk.jpg'), filename: 'jk47 - cyberpunk.jpg')
 
-al10 = Album.create!(title: "Lost Anyway", album_type: "Album", artist_id: a7.id, release_date: "2012-12-22", image_url: "temp")
+al10 = Album.create!(title: "Lost Anyway", album_type: "Album", artist_id: a4.id, release_date: "2012-12-22", image_url: "temp")
 al10.album_art.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/Lost+Anyway+-+Lost+Anyway.jpg'), filename: 'lostanyway - st.jpg')
 
-al11 = Album.create!(title: "Растаял", album_type: "EP", artist_id: a4.id, release_date: "2014-12-14", image_url: "temp")
+al11 = Album.create!(title: "Растаял", album_type: "EP", artist_id: a8.id, release_date: "2014-12-14", image_url: "temp")
 al11.album_art.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/Secrets+of+the+Third+Planet+-+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB.jpg'), filename: 's3p - rastayl.jpg')
 
-al12 = Album.create!(title: "Shine You Up", album_type: "EP", artist_id: a5.id, release_date: "2013-10-01", image_url: "temp")
+al12 = Album.create!(title: "Shine You Up", album_type: "EP", artist_id: a7.id, release_date: "2013-10-01", image_url: "temp")
 al12.album_art.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/Vandella+-+Shine+You+Up.jpg'), filename: 'vandella - shineyouup.jpg')
 
 al13 = Album.create!(title: "Inferno Room", album_type: "Album", artist_id: a1.id, release_date: "2018-12-25", image_url: "temp")
