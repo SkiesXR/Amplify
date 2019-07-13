@@ -20,7 +20,7 @@ g4 = Genre.create!({category: "Chill"})
 g4.genre_image.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Genre+Photos/Genre-Chill.jpg'), filename: 'genre-chill.jpg')
 
 g5 = Genre.create!({category: "Electronic"})
-g5.genre_image.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Genre+Photos/Genre-Chill.jpg'), filename: 'genre-electronic.jpg')
+g5.genre_image.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Genre+Photos/Genre-Dance.jpg'), filename: 'genre-electronic.jpg')
 
 g6 = Genre.create!({category: "R&B"})
 g6.genre_image.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Genre+Photos/Genre-RB.jpg'), filename: 'genre-rb.jpg')
