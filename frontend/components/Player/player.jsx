@@ -8,11 +8,20 @@ class Player extends React.Component {
         super(props);
         this.playAudio = this.playAudio.bind(this);
         this.volChange = this.volChange.bind(this);
+        this.toggleLove = this.toggleLove.bind(this);
 
         this.state = {
-            playPauseButton: "play_white.png"
+            playPauseButton: "play_white.png",
+            loveButton: "love.png"
         }
     }
+
+    // Display appropriate "like" button based user action
+    toggleLove() {
+        this.state.loveButton === "love.png" ? this.setState({ loveButton: "love_filled_green.png" }) : this.setState({ loveButton: "love.png" })
+        // this.setState({ loveButton: "love.png" ? "love_filled_green.png" : "love.png" })
+    }
+
     // Logic for audio controls
     playAudio() {
         const music = document.getElementById("audio");
@@ -67,8 +76,8 @@ class Player extends React.Component {
                             <a id="npa" href="">Artist Name</a>
                         </div>
                         <div className="love-container">
-                            <button id="love-button">
-                                <img id="love" src="love.png"/>
+                            <button id="love-button" onClick={ this.toggleLove }>
+                                <img id="love" src={ this.state.loveButton }/>
                             </button>
                         </div>
                     </div>
