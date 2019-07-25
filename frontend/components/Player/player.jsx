@@ -9,6 +9,7 @@ class Player extends React.Component {
         this.playAudio = this.playAudio.bind(this);
         this.volChange = this.volChange.bind(this);
         this.toggleLove = this.toggleLove.bind(this);
+        this.likedSongMessage = this.likedSongMessage.bind(this);
 
         this.state = {
             playPauseButton: "play_white.png",
@@ -24,13 +25,28 @@ class Player extends React.Component {
             case "love.png":
                 this.setState({ loveButton: "love_filled_green.png" });
                 this.setState({ loveId: "love-green" });
-                console.log(`User clicked the like button!`);
+                console.log(`User liked a song!`);
+                this.likedSongMessage("add");
                 break;
             case "love_filled_green.png":
                 this.setState({ loveButton: "love.png" });
                 this.setState({ loveId: "love" });
-                console.log(`User clicked the like button!`);
+                this.likedSongMessage("remove");
+                console.log(`User removed a liked song!`);
                 break;
+        }
+        // TODO: "Saved to your Liked Songs" message
+        // TODO: "Removed from your Liked Songs" message
+    }
+
+    likedSongMessage(action) {
+        switch(action) {
+            case "add":
+                console.log("Displaying liked song message");
+                return (<span class="likedSongMessage">Added to your Liked Songs</span>);
+            case "remove":
+                console.log("Displaying liked song message");
+                return (<span class="likedSongMessage">Removed from your Liked Songs</span>);
         }
     }
 
@@ -51,6 +67,7 @@ class Player extends React.Component {
         let audio = document.querySelector("audio");
         let range = document.getElementById("myRange");
         audio.volume = range.value / 100;
+        audio.volume === 0.01 ? audio.muted = true : audio.muted = false;
         console.log(`Audio Volume: ${audio.volume}`);
     }
         
@@ -141,7 +158,7 @@ class Player extends React.Component {
                     {/* TODO: Decide what's going on the right-hand side of the now-playing bar*/}
                     <div className="now-playing-right">
                         <div className="slidecontainer">
-                            <input type="range" min="1" max="100" defaultValue="50" className="slider" id="myRange" onChange={ this.volChange }></input>                
+                            <input type="range" min="0" max="100" defaultValue="50" className="slider" id="myRange" onChange={ this.volChange }></input>                
                         </div>
                     </div>
                 </div>

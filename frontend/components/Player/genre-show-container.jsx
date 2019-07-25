@@ -3,20 +3,14 @@ import GenreShow from './genre-show';
 import { fetchGenre } from '../../actions/genre.actions';
 
 const msp = (state, ownProps) => {
-    // let artists = [];
-    // const genre = state.entities.genres[ownProps.match.params.genreId];
-    // debugger;
-    // if (genre.artists) {
-    //     return artists = Object.keys(genre.artists).map(artistId => {
-    //         return Object.assign({}, genre.artists[artistId], {id: artistId});
-    //     })
-    // }
-    console.log(state.entities);
-    console.log(ownProps);
-    console.log(state.entities.genres[ownProps.match.params.genreId]);
-    debugger;
+    let genres = state.entities.genres[ownProps.match.params.genreId];
     return ({ 
-        genres: state.entities.genres[ownProps.match.params.genreId]
+        // genres: state.entities.genres[ownProps.match.params.genreId],
+        // artists: state.entities.genres[ownProps.match.params.genreId].artists,
+        // category: state.entities.genres[ownProps.match.params.genreId].category
+        genres: genres,
+        artists: genres.artists,
+        category: genres.cateogry
      });
 };
 
