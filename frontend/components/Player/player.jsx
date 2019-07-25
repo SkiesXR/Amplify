@@ -15,7 +15,10 @@ class Player extends React.Component {
             playPauseButton: "play_white.png",
             loveButton: "love.png",
             loveId: "love",
-            currentSong: null
+            currentSong: null,
+            likedSongMessage: null,
+            likedSongMessageClass: "likedSongMessageInactive"
+            // showLikeAlert: false
         }
     }
 
@@ -23,16 +26,20 @@ class Player extends React.Component {
     toggleLove() {
         switch(this.state.loveButton) {
             case "love.png":
-                this.setState({ loveButton: "love_filled_green.png" });
-                this.setState({ loveId: "love-green" });
+                this.setState({
+                    loveButton: "love_filled_green.png",
+                    loveId: "love-green"
+                });
                 console.log(`User liked a song!`);
                 this.likedSongMessage("add");
                 break;
             case "love_filled_green.png":
-                this.setState({ loveButton: "love.png" });
-                this.setState({ loveId: "love" });
-                this.likedSongMessage("remove");
+                this.setState({ 
+                    loveButton: "love.png",
+                    loveId: "love"
+                });
                 console.log(`User removed a liked song!`);
+                this.likedSongMessage("remove");
                 break;
         }
         // TODO: "Saved to your Liked Songs" message
@@ -42,11 +49,33 @@ class Player extends React.Component {
     likedSongMessage(action) {
         switch(action) {
             case "add":
-                console.log("Displaying liked song message");
-                return (<span class="likedSongMessage">Added to your Liked Songs</span>);
+                console.log("Displaying add song message");
+                this.setState({
+                    likedSongMessage: "Added to your Liked Songs",
+                    likedSongMessageClass: "likedSongMessage",
+                    // showLikeAlert: true
+                })
+                setTimeout(() => {
+                    this.setState({
+                        // showLikeAlert: false,
+                        likedSongMessageClass: "likedSongMessageInactive"
+                    });
+                }, 3000);
+                break;
             case "remove":
-                console.log("Displaying liked song message");
-                return (<span class="likedSongMessage">Removed from your Liked Songs</span>);
+                console.log("Displaying remove song message");
+                this.setState({
+                    likedSongMessage: "Removed from your Liked Songs",
+                    likedSongMessageClass: "likedSongMessage",
+                    // showLikeAlert: true
+                })
+                setTimeout(() => {
+                    this.setState({
+                        // showLikeAlert: false,
+                        likedSongMessageClass: "likedSongMessageInactive"
+                    });
+                }, 3000);
+                break;
         }
     }
 
@@ -67,7 +96,7 @@ class Player extends React.Component {
         let audio = document.querySelector("audio");
         let range = document.getElementById("myRange");
         audio.volume = range.value / 100;
-        audio.volume === 0.01 ? audio.muted = true : audio.muted = false;
+        audio.muted = audio.volume === 0.01 ? true : false;
         console.log(`Audio Volume: ${audio.volume}`);
     }
         
@@ -146,9 +175,7 @@ class Player extends React.Component {
                             <div id="playhead"></div>
                         </div>
                         <audio id="audio"><source src="skylines.mp3"/></audio>
-                    </div>
-                    
-                   
+                    </div>                   
 
                     {/* <ReactAudioPlayer id="react-audio"
                         src="skylines.mp3"
@@ -161,9 +188,9 @@ class Player extends React.Component {
                             <input type="range" min="0" max="100" defaultValue="50" className="slider" id="myRange" onChange={ this.volChange }></input>                
                         </div>
                     </div>
-                </div>
-
-                
+                </div>   
+                <span id="likedSongMessage" className={this.state.likedSongMessageClass}>{this.state.likedSongMessage}</span>
+             
             </div>
         );
     }

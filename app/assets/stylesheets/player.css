@@ -158,6 +158,10 @@ body {
     cursor: pointer;
 }
 
+.likedSongMessageInactive {
+    display: none;
+}
+
 .likedSongMessage {
     font-family: 'Circular';
     font-size: 14px;
@@ -166,7 +170,7 @@ body {
     border-radius: 8px;
     padding: 10px;
     position: fixed;
-    bottom: 100px;
-    z-index: 5;
+    bottom: 10%;
+    left: 50%;
     margin: auto;
 }
