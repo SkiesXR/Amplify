@@ -3,8 +3,12 @@ import AlbumShow from './album-show';
 import { fetchAlbum } from '../../actions/album_actions';
 
 const msp = (state, ownProps) => {
-    return {album: state.entities.albums[ownProps.match.params.albumId]}
-    };
+    // debugger;
+    return {
+        album: state.entities.albums[ownProps.match.params.albumId],
+        tracks: state.entities.albums[ownProps.match.params.albumId].tracks
+    }
+};
 
 const mdp = dispatch => ({
     fetchAlbum: id => dispatch(fetchAlbum(id))
@@ -12,5 +16,6 @@ const mdp = dispatch => ({
 
 export default connect(
     msp,
+    // null,
     mdp
 )(AlbumShow);

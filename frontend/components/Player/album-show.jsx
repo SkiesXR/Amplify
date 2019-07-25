@@ -4,22 +4,25 @@ import AlbumShowItem from './album-show-item';
 class AlbumShow extends React.Component {
 
     componentDidMount() {
-        this.props.fetchAlbum(this.props.match.params.albumId);
+        // debugger;
+        let albumId = this.props.match.params.albumId;
+        this.props.fetchAlbum(albumId);
     }
 
     render() {
-
-        const { album } = this.props;
-        let tracks = Object.values(album.tracks).map(track => {
-            return <AlbumShowItem track={ track } album ={ album } />
+        if (!this.props.album) return "";
+        if (!this.props.tracks) return "";
+        let tracks = this.props.tracks || {};
+        let albumTracks = Object.values(tracks).map(track => {
+            return <AlbumShowItem key={ track.title } track={ track } album ={ this.props.album } />
         })
         return (
             <div className="album-show-c1">
-                {/* <div className="album-show-container-c2"> */}
-                    {/* <div>
-                        { AlbumShowItem }
-                    </div> */}
-                {/* </div> */}
+                <div className="album-show-container-c2">
+                    <div>
+                        { albumTracks }
+                    </div>
+                </div>
             </div>
         );
     }

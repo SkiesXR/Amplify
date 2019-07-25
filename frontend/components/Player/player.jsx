@@ -18,7 +18,6 @@ class Player extends React.Component {
             currentSong: null,
             likedSongMessage: null,
             likedSongMessageClass: "likedSongMessageInactive"
-            // showLikeAlert: false
         }
     }
 
@@ -30,7 +29,7 @@ class Player extends React.Component {
                     loveButton: "love_filled_green.png",
                     loveId: "love-green"
                 });
-                console.log(`User liked a song!`);
+                // console.log(`User liked a song!`);
                 this.likedSongMessage("add");
                 break;
             case "love_filled_green.png":
@@ -38,40 +37,35 @@ class Player extends React.Component {
                     loveButton: "love.png",
                     loveId: "love"
                 });
-                console.log(`User removed a liked song!`);
+                // console.log(`User removed a liked song!`);
                 this.likedSongMessage("remove");
                 break;
         }
-        // TODO: "Saved to your Liked Songs" message
-        // TODO: "Removed from your Liked Songs" message
     }
 
+    // TODO: Add smooth fade in/out
     likedSongMessage(action) {
         switch(action) {
             case "add":
-                console.log("Displaying add song message");
+                // console.log("Displaying add song message");
                 this.setState({
                     likedSongMessage: "Added to your Liked Songs",
                     likedSongMessageClass: "likedSongMessage",
-                    // showLikeAlert: true
                 })
                 setTimeout(() => {
                     this.setState({
-                        // showLikeAlert: false,
                         likedSongMessageClass: "likedSongMessageInactive"
                     });
                 }, 3000);
                 break;
             case "remove":
-                console.log("Displaying remove song message");
+                // console.log("Displaying remove song message");
                 this.setState({
                     likedSongMessage: "Removed from your Liked Songs",
                     likedSongMessageClass: "likedSongMessage",
-                    // showLikeAlert: true
                 })
                 setTimeout(() => {
                     this.setState({
-                        // showLikeAlert: false,
                         likedSongMessageClass: "likedSongMessageInactive"
                     });
                 }, 3000);
@@ -171,8 +165,11 @@ class Player extends React.Component {
                             </button>
                         </div>
                         {/* <ProgressBar /> */}
-                        <div id="timeline">
+                        {/* <div id="timeline">
                             <div id="playhead"></div>
+                        </div> */}
+                        <div className="slidecontainer">
+                            <input type="range" min="0" max="100" defaultValue="50" className="slider" id="progressBar"></input>
                         </div>
                         <audio id="audio"><source src="skylines.mp3"/></audio>
                     </div>                   

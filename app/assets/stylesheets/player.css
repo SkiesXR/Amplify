@@ -147,6 +147,10 @@ body {
     cursor: pointer;
 }
 
+.slidecontainer {
+    width: 100%;
+}
+
 .slidecontainer:hover input[type="range"]::-webkit-slider-thumb {
     display: block;
     -webkit-appearance: none;
@@ -160,6 +164,8 @@ body {
 
 .likedSongMessageInactive {
     display: none;
+    opacity: 0;
+    transition: opacity .5s;
 }
 
 .likedSongMessage {
@@ -173,4 +179,6 @@ body {
     bottom: 10%;
     left: 50%;
     margin: auto;
+    opacity: 1;
+    transition: opacity .5s;
 }

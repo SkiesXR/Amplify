@@ -121,67 +121,67 @@ t4.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazona
 t5 = Track.create!(title: "We Are All Plugged In", length: "03:33", artist_id: a1.id, album_id: al1.id)
 t5.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Visceral+Skies/Visceral+Skies+-+Visceral+Skies+-+05+We+are+all+Plugged+In.mp3'), filename: 'vs - vs - we_are_all_plugged_in.mp3')
 
-t6 = Track.create!(title: "Cybernaut", length: "04:10", artist_id: a1.id, album_id: al2.id)
+t6 = Track.create!(title: "Cybernaut", length: "04:10", artist_id: a1.id, album_id: al14.id)
 t6.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Wormhole+Karma/Visceral+Skies+-+Wormhole+Karma+-+01+Cybernaut.mp3'), filename: 'vs - wormhole_karma - cybernaut.mp3')
 
-t7 = Track.create!(title: "EightyEight", length: "03:40", artist_id: a1.id, album_id: al2.id)
+t7 = Track.create!(title: "EightyEight", length: "03:40", artist_id: a1.id, album_id: al14.id)
 t7.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Wormhole+Karma/Visceral+Skies+-+Wormhole+Karma+-+02+EightyEight.mp3'), filename: 'vs - wormhole_karma - eightyeight.mp3')
 
-t8 = Track.create!(title: "Throwing Gravity", length: "04:17", artist_id: a1.id, album_id: al2.id)
+t8 = Track.create!(title: "Throwing Gravity", length: "04:17", artist_id: a1.id, album_id: al14.id)
 t8.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Wormhole+Karma/Visceral+Skies+-+Wormhole+Karma+-+03+Throwing+Gravity.mp3'), filename: 'vs - wormhole_karma - throwing_gravity.mp3')
 
-t9 = Track.create!(title: "Silent Colors", length: "01:13", artist_id: a1.id, album_id: al2.id)
+t9 = Track.create!(title: "Silent Colors", length: "01:13", artist_id: a1.id, album_id: al14.id)
 t9.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Wormhole+Karma/Visceral+Skies+-+Wormhole+Karma+-+04+Silent+Colors.mp3'), filename: 'vs - wormhole_karma - silent_colors.mp3')
 
-t10 = Track.create!(title: "Let Yourself In", length: "04:47", artist_id: a1.id, album_id: al2.id)
+t10 = Track.create!(title: "Let Yourself In", length: "04:47", artist_id: a1.id, album_id: al14.id)
 t10.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Wormhole+Karma/Visceral+Skies+-+Wormhole+Karma+-+05+Let+Yourself+In.mp3'), filename: 'vs - wormhole_karma - let_yourself_in.mp3')
 
-t11 = Track.create!(title: "Fractures", length: "03:55", artist_id: a1.id, album_id: al2.id)
+t11 = Track.create!(title: "Fractures", length: "03:55", artist_id: a1.id, album_id: al14.id)
 t11.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Wormhole+Karma/Visceral+Skies+-+Wormhole+Karma+-+06+Fractures.mp3'), filename: 'vs - wormhole_karma - fractures.mp3')
 
-t12 = Track.create!(title: "Halcyon", length: "01:32", artist_id: a1.id, album_id: al2.id)
+t12 = Track.create!(title: "Halcyon", length: "01:32", artist_id: a1.id, album_id: al14.id)
 t12.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Wormhole+Karma/Visceral+Skies+-+Wormhole+Karma+-+07+Halcyon.mp3'), filename: 'vs - wormhole_karma - halcyon.mp3')
 
-t13 = Track.create!(title: "No Fate", length: "03:55", artist_id: a1.id, album_id: al2.id)
+t13 = Track.create!(title: "No Fate", length: "03:55", artist_id: a1.id, album_id: al14.id)
 t13.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Wormhole+Karma/Visceral+Skies+-+Wormhole+Karma+-+08+No+Fate.mp3'), filename: 'vs - wormhole_karma - no_fate.mp3')
 
-t14 = Track.create!(title: "Palms to Heaven", length: "03:56", artist_id: a1.id, album_id: al2.id)
+t14 = Track.create!(title: "Palms to Heaven", length: "03:56", artist_id: a1.id, album_id: al14.id)
 t14.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Wormhole+Karma/Visceral+Skies+-+Wormhole+Karma+-+09+Palms+to+Heaven.mp3'), filename: 'vs - wormhole_karma - palms_to_heaven.mp3')
 
-t15 = Track.create!(title: "Catching Fire", length: "04:00", artist_id: a1.id, album_id: al3.id)
+t15 = Track.create!(title: "Catching Fire", length: "04:00", artist_id: a1.id, album_id: al13.id)
 t15.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Inferno+Room/Visceral+Skies+-+Inferno+Room+-+01+Catching+Fire.mp3'), filename: 'vs - inferno_room - catching_fire.mp3')
 
-t16 = Track.create!(title: "Into the Feathers", length: "04:10", artist_id: a1.id, album_id: al3.id)
+t16 = Track.create!(title: "Into the Feathers", length: "04:10", artist_id: a1.id, album_id: al13.id)
 t16.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Inferno+Room/Visceral+Skies+-+Inferno+Room+-+02+Into+the+Feathers.mp3'), filename: 'vs - inferno_room - into_the_feathers.mp3')
 
-t17 = Track.create!(title: "Skeleton Key", length: "04:05", artist_id: a1.id, album_id: al3.id)
+t17 = Track.create!(title: "Skeleton Key", length: "04:05", artist_id: a1.id, album_id: al13.id)
 t17.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Inferno+Room/Visceral+Skies+-+Inferno+Room+-+03+Skeleton+Key.mp3'), filename: 'vs - inferno_room - skeleton_key.mp3')
 
-t18 = Track.create!(title: "Paul's Interlude", length: "02:10", artist_id: a1.id, album_id: al3.id)
+t18 = Track.create!(title: "Paul's Interlude", length: "02:10", artist_id: a1.id, album_id: al13.id)
 t18.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Inferno+Room/Visceral+Skies+-+Inferno+Room+-+04+Pauls+Interlude.mp3'), filename: 'vs - inferno_room - pauls_interlud.mp3')
 
-t19 = Track.create!(title: "Tracewinds", length: "04:01", artist_id: a1.id, album_id: al3.id)
+t19 = Track.create!(title: "Tracewinds", length: "04:01", artist_id: a1.id, album_id: al13.id)
 t19.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Inferno+Room/Visceral+Skies+-+Inferno+Room+-+05+Tracewinds.mp3'), filename: 'vs - inferno_room - tracewinds.mp3')
 
-t20 = Track.create!(title: "Axis Chemicals", length: "04:54", artist_id: a1.id, album_id: al3.id)
+t20 = Track.create!(title: "Axis Chemicals", length: "04:54", artist_id: a1.id, album_id: al13.id)
 t20.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Visceral+Skies+-+Inferno+Room/Visceral+Skies+-+Inferno+Room+-+06+Axis+Chemicals.mp3'), filename: 'vs - inferno_room - axis_chemicals.mp3')
 
-t21 = Track.create!(title: "East End", length: "04:05", artist_id: a2.id, album_id: al4.id)
+t21 = Track.create!(title: "East End", length: "04:05", artist_id: a2.id, album_id: al5.id)
 t21.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Luna+EP/Animal+Firepower+-+Luna+EP+-+01+East+End.mp3'), filename: 'afp - luna - east_end.mp3')
 
-t22 = Track.create!(title: "7series", length: "04:10", artist_id: a2.id, album_id: al4.id)
+t22 = Track.create!(title: "7series", length: "04:10", artist_id: a2.id, album_id: al5.id)
 t22.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Luna+EP/Animal+Firepower+-+Luna+EP+-+02+7series.mp3'), filename: 'afp - luna - 7series.mp3')
 
-t23 = Track.create!(title: "Nylons", length: "04:41", artist_id: a2.id, album_id: al4.id)
+t23 = Track.create!(title: "Nylons", length: "04:41", artist_id: a2.id, album_id: al5.id)
 t23.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Luna+EP/Animal+Firepower+-+Luna+EP+-+03+Nylons.mp3'), filename: 'afp - luna - nylons.mp3')
 
 t24 = Track.create!(title: "1314", length: "01:26", artist_id: a2.id, album_id: al5.id)
 t24.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Luna+EP/Animal+Firepower+-+Luna+EP+-+04+1314.mp3'), filename: 'afp - luna - 1314.mp3')
 
-t25 = Track.create!(title: "Harbor Lanterns", length: "04:31", artist_id: a2.id, album_id: al4.id)
+t25 = Track.create!(title: "Harbor Lanterns", length: "04:31", artist_id: a2.id, album_id: al5.id)
 t25.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Luna+EP/Animal+Firepower+-+Luna+EP+-+05+Harbor+Lanterns.mp3'), filename: 'afp - luna - harbor_lanterns.mp3')
 
-t26 = Track.create!(title: "Koshiro", length: "04:28", artist_id: a2.id, album_id: al4.id)
+t26 = Track.create!(title: "Koshiro", length: "04:28", artist_id: a2.id, album_id: al5.id)
 t26.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Luna+EP/Animal+Firepower+-+Luna+EP+-+06+Koshiro.mp3'), filename: 'afp - luna - koshiro.mp3')
 
 t27 = Track.create!(title: "Atlas", length: "03:14", artist_id: a2.id, album_id: al6.id)
@@ -196,95 +196,158 @@ t29.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazon
 t30 = Track.create!(title: "Cascade", length: "02:59", artist_id: a2.id, album_id: al6.id)
 t30.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Paragon/Animal+Firepower+-+Paragon+-+04+Cascade.mp3'), filename: 'afp - paragon - cascade.mp3')
 
-t31 = Track.create!(title: "The Ventriloquist", length: "03:09", artist_id: a2.id, album_id: al7.id)
+t31 = Track.create!(title: "The Ventriloquist", length: "03:09", artist_id: a2.id, album_id: al4.id)
 t31.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+CoMa+Sessions/Animal+Firepower+-+CoMa+Sessions+-+01+The+Ventriloquist.mp3'), filename: 'afp - coMa_sessions - the_ventriloquist.mp3')
 
-t32 = Track.create!(title: "Mynah Metamorphose", length: "03:34", artist_id: a2.id, album_id: al7.id)
+t32 = Track.create!(title: "Mynah Metamorphose", length: "03:34", artist_id: a2.id, album_id: al4.id)
 t32.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+CoMa+Sessions/Animal+Firepower+-+CoMa+Sessions+-+02+Mynah+Metamorphose.mp3'), filename: 'afp - coMa_sessions - mynah_metamorphose.mp3')
 
-t33 = Track.create!(title: "A Chronic Fabrication", length: "04:32", artist_id: a3.id, album_id: al9.id)
+t33 = Track.create!(title: "A Chronic Fabrication", length: "04:32", artist_id: a3.id, album_id: al3.id)
 t33.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/A+Thousand+Dead+-+Portals/A+Thousand+Dead+-+Portals+-+01+A+Chronic+Fabrication.mp3'), filename: 'atd - portals - a_chronic_fabrication.mp3')
 
-t34 = Track.create!(title: "Decomission the Flesh", length: "03:15", artist_id: a3.id, album_id: al9.id)
+t34 = Track.create!(title: "Decomission the Flesh", length: "03:15", artist_id: a3.id, album_id: al3.id)
 t34.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/A+Thousand+Dead+-+Portals/A+Thousand+Dead+-+Portals+-+02+Decommission+the+Flesh.mp3'), filename: 'atd - portals - decomission_the_flesh.mp3')
 
-t35 = Track.create!(title: "Skywatcher", length: "04:25", artist_id: a3.id, album_id: al9.id)
+t35 = Track.create!(title: "Skywatcher", length: "04:25", artist_id: a3.id, album_id: al3.id)
 t35.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/A+Thousand+Dead+-+Portals/A+Thousand+Dead+-+Portals+-+03+Skywatcher.mp3'), filename: 'atd - portals - skywatcher.mp3')
 
-t36 = Track.create!(title: "Calculating Existence", length: "04:57", artist_id: a3.id, album_id: al9.id)
+t36 = Track.create!(title: "Calculating Existence", length: "04:57", artist_id: a3.id, album_id: al3.id)
 t36.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/A+Thousand+Dead+-+Portals/A+Thousand+Dead+-+Portals+-+04+Calculating+Existence.mp3'), filename: 'atd - portals - calculating_existence.mp3')
 
-t37 = Track.create!(title: "Chasing Goats", length: "05:51", artist_id: a3.id, album_id: al10.id)
+t37 = Track.create!(title: "Chasing Goats", length: "05:51", artist_id: a3.id, album_id: al2.id)
 t37.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/A+Thousand+Dead+-+Chasing+Goats/Chasing+Goats'), filename: 'atd - portals - chasing_goats.mp3')
 
-t38 = Track.create!(title: "India", length: "05:55", artist_id: a4.id, album_id: al13.id)
+t38 = Track.create!(title: "India", length: "05:55", artist_id: a4.id, album_id: al11.id)
 t38.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Secrets+of+the+third+planet+-+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB+Ep/Secrets+of+the+third+planet+-+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB+Ep+-+01+India.mp3'), filename: 's3p - rastayl - india.mp3')
 
-t39 = Track.create!(title: "Растаял", length: "05:15", artist_id: a4.id, album_id: al13.id)
+t39 = Track.create!(title: "Растаял", length: "05:15", artist_id: a4.id, album_id: al11.id)
 t39.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Secrets+of+the+third+planet+-+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB+Ep/Secrets+of+the+third+planet+-+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB+Ep+-+02+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB.mp3'), filename: 's3p - rastayl - rastayl.mp3')
 
-t40 = Track.create!(title: "Scary Under", length: "03:22", artist_id: a4.id, album_id: al13.id)
+t40 = Track.create!(title: "Scary Under", length: "03:22", artist_id: a4.id, album_id: al11.id)
 t40.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Secrets+of+the+third+planet+-+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB+Ep/Secrets+of+the+third+planet+-+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB+Ep+-+03+Scary+Under.mp3'), filename: 's3p - rastayl - scary_under.mp3')
 
-t41 = Track.create!(title: "Твой сон", length: "04:23", artist_id: a4.id, album_id: al13.id)
+t41 = Track.create!(title: "Твой сон", length: "04:23", artist_id: a4.id, album_id: al11.id)
 t41.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Secrets+of+the+third+planet+-+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB+Ep/Secrets+of+the+third+planet+-+%D0%A0%D0%B0%D1%81%D1%82%D0%B0%D1%8F%D0%BB+Ep+-+04+%D0%A2%D0%B2%D0%BE%D0%B9+%D1%81%D0%BE%D0%BD.mp3'), filename: 's3p - rastayl - your_son.mp3')
 
-t42 = Track.create!(title: "DEXADRINE 医学", length: "03:06", artist_id: a8.id, album_id: al14.id)
+t42 = Track.create!(title: "DEXADRINE 医学", length: "03:06", artist_id: a6.id, album_id: al9.id)
 t42.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+01+DEXADRINE+%E5%8C%BB%E5%AD%A6.mp3'), filename: 'jk47 - cyberpunk - dexadrine.mp3')
 
-t43 = Track.create!(title: "COWBOY カウボーイ", length: "04:45", artist_id: a8.id, album_id: al14.id)
+t43 = Track.create!(title: "COWBOY カウボーイ", length: "04:45", artist_id: a6.id, album_id: al9.id)
 t43.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+02+COWBOY+%E3%82%AB%E3%82%A6%E3%83%9C%E3%83%BC%E3%82%A4.mp3'), filename: 'jk47 - cyberpunk - cowboy.mp3')
 
-t44 = Track.create!(title: "ONO-SENDAI 小野仙台", length: "03:23", artist_id: a8.id, album_id: al14.id)
+t44 = Track.create!(title: "ONO-SENDAI 小野仙台", length: "03:23", artist_id: a6.id, album_id: al9.id)
 t44.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+03+ONO-SENDAI+%E5%B0%8F%E9%87%8E%E4%BB%99%E5%8F%B0.mp3'), filename: 'jk47 - cyberpunk - ono_sendai.mp3')
 
-t45 = Track.create!(title: "SPR4WL I スプロール1", length: "03:19", artist_id: a8.id, album_id: al14.id)
+t45 = Track.create!(title: "SPR4WL I スプロール1", length: "03:19", artist_id: a6.id, album_id: al9.id)
 t45.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+04+SPR4WL+I+%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%AB1.mp3'), filename: 'jk47 - cyberpunk - spr4wl.mp3')
 
-t46 = Track.create!(title: "M0LLYM1LL10N$ モリーの何百万人", length: "04:54", artist_id: a8.id, album_id: al14.id)
+t46 = Track.create!(title: "M0LLYM1LL10N$ モリーの何百万人", length: "04:54", artist_id: a6.id, album_id: al9.id)
 t46.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+05+M0LLYM1LL10N%24+%E3%83%A2%E3%83%AA%E3%83%BC%E3%81%AE%E4%BD%95%E7%99%BE%E4%B8%87%E4%BA%BA.mp3'), filename: 'jk47 - cyberpunk - mollym1ll10ns.mp3')
 
-t47 = Track.create!(title: "HOSAKA 保坂", length: "02:09", artist_id: a8.id, album_id: al14.id)
+t47 = Track.create!(title: "HOSAKA 保坂", length: "02:09", artist_id: a6.id, album_id: al9.id)
 t47.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+06+HOSAKA+%E4%BF%9D%E5%9D%82.mp3'), filename: 'jk47 - cyberpunk - hosaka.mp3')
 
-t48 = Track.create!(title: "AI 人工知能", length: "04:01", artist_id: a8.id, album_id: al14.id)
+t48 = Track.create!(title: "AI 人工知能", length: "04:01", artist_id: a6.id, album_id: al9.id)
 t48.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+07+AI+%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD.mp3'), filename: 'jk47 - cyberpunk - ai.mp3')
 
-t49 = Track.create!(title: "W1NT3RMUT3 冬のミュート ", length: "03:47", artist_id: a8.id, album_id: al14.id)
+t49 = Track.create!(title: "W1NT3RMUT3 冬のミュート ", length: "03:47", artist_id: a6.id, album_id: al9.id)
 t49.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+08+W1NT3RMUT3+%E5%86%AC%E3%81%AE%E3%83%9F%E3%83%A5%E3%83%BC%E3%83%88.mp3'), filename: 'jk47 - cyberpunk - w1nt3rmut3.mp3')
 
-t50 = Track.create!(title: "Z10N 聖なる山", length: "03:01", artist_id: a8.id, album_id: al14.id)
+t50 = Track.create!(title: "Z10N 聖なる山", length: "03:01", artist_id: a6.id, album_id: al9.id)
 t50.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+09+Z10N+%E8%81%96%E3%81%AA%E3%82%8B%E5%B1%B1.mp3'), filename: 'jk47 - cyberpunk - z10n.mp3')
 
-t51 = Track.create!(title: "1CE アイス", length: "03:47", artist_id: a8.id, album_id: al14.id)
+t51 = Track.create!(title: "1CE アイス", length: "03:47", artist_id: a6.id, album_id: al9.id)
 t51.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+10+1CE+%E3%82%A2%E3%82%A4%E3%82%B9.mp3'), filename: 'jk47 - cyberpunk - 1ce.mp3')
 
-t52 = Track.create!(title: "CASE ケース", length: "05:02", artist_id: a8.id, album_id: al14.id)
+t52 = Track.create!(title: "CASE ケース", length: "05:02", artist_id: a6.id, album_id: al9.id)
 t52.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+11+CASE+%E3%82%B1%E3%83%BC%E3%82%B9.mp3'), filename: 'jk47 - cyberpunk - case.mp3')
 
-t53 = Track.create!(title: "R4Z0R61RLZ かみそりの女の子", length: "02:25", artist_id: a8.id, album_id: al14.id)
+t53 = Track.create!(title: "R4Z0R61RLZ かみそりの女の子", length: "02:25", artist_id: a6.id, album_id: al9.id)
 t53.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+12+R4Z0R61RLZ+%E3%81%8B%E3%81%BF%E3%81%9D%E3%82%8A%E3%81%AE%E5%A5%B3%E3%81%AE%E5%AD%90.mp3'), filename: 'jk47 - cyberpunk - r4z0r61rlz.mp3')
 
-t54 = Track.create!(title: "SPR4WL II スプロール2", length: "04:17", artist_id: a8.id, album_id: al14.id)
+t54 = Track.create!(title: "SPR4WL II スプロール2", length: "04:17", artist_id: a6.id, album_id: al9.id)
 t54.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/JK-47+-+CYBERPUNK/JK-47+-+CYBERPUNK+-+13+SPR4WL+II+%E3%82%B9%E3%83%97%E3%83%AD%E3%83%BC%E3%83%AB2.mp3'), filename: 'jk47 - cyberpunk - spr4wl2.mp3')
 
-t55 = Track.create!(title: "Answers", length: "02:01", artist_id: a2.id, album_id: al5.id)
+t55 = Track.create!(title: "Answers", length: "02:01", artist_id: a2.id, album_id: al7.id)
 t55.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Skylines/Animal+Firepower+-+Skylines+-+01+Answers.mp3'), filename: 'afp - skylines - answers.mp3')
 
-t56 = Track.create!(title: "Titan", length: "03:11", artist_id: a2.id, album_id: al5.id)
+t56 = Track.create!(title: "Titan", length: "03:11", artist_id: a2.id, album_id: al7.id)
 t56.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Skylines/Animal+Firepower+-+Skylines+-+02+Titan.mp3'), filename: 'afp - skylines - titan.mp3')
 
-t57 = Track.create!(title: "Antenna", length: "03:45", artist_id: a2.id, album_id: al5.id)
+t57 = Track.create!(title: "Antenna", length: "03:45", artist_id: a2.id, album_id: al7.id)
 t57.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Skylines/Animal+Firepower+-+Skylines+-+03+Antenna.mp3'), filename: 'afp - skylines - antenna.mp3')
 
-t58 = Track.create!(title: "Skylines", length: "03:09", artist_id: a2.id, album_id: al5.id)
+t58 = Track.create!(title: "Skylines", length: "03:09", artist_id: a2.id, album_id: al7.id)
 t58.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Skylines/Animal+Firepower+-+Skylines+-+04+Skylines.mp3'), filename: 'afp - skylines - skylines.mp3')
 
-t59 = Track.create!(title: "1314", length: "01:46", artist_id: a2.id, album_id: al4.id)
+t59 = Track.create!(title: "1314", length: "01:46", artist_id: a2.id, album_id: al7.id)
 t59.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Skylines/Animal+Firepower+-+Skylines+-+05+1314.mp3'), filename: 'afp - skylines - 1314.mp3')
 
-t60 = Track.create!(title: "Ascend", length: "03:21", artist_id: a2.id, album_id: al5.id)
+t60 = Track.create!(title: "Ascend", length: "03:21", artist_id: a2.id, album_id: al7.id)
 t60.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Skylines/Animal+Firepower+-+Skylines+-+06+Ascend.mp3'), filename: 'afp - skylines - ascend.mp3')
+
+t61 = Track.create!(title: "Shook Up", length: "02:59", artist_id: a5.id, album_id: al8.id)
+t61.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Awaken+The+Echoes+-+Travels+LP/Awaken+The+Echoes+-+Travels+LP+-+01+Shook+Up.mp3'), filename: 'awaken_the_echoes - travels - shook_up.mp3')
+
+t62 = Track.create!(title: "Goodbyes", length: "04:37", artist_id: a5.id, album_id: al8.id)
+t62.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Awaken+The+Echoes+-+Travels+LP/Awaken+The+Echoes+-+Travels+LP+-+02+Goodbyes.mp3'), filename: 'awaken_the_echoes - travels - goodbyes.mp3')
+
+t63 = Track.create!(title: "Apprehend", length: "04:48", artist_id: a5.id, album_id: al8.id)
+t63.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Awaken+The+Echoes+-+Travels+LP/Awaken+The+Echoes+-+Travels+LP+-+03+Apprehend.mp3'), filename: 'awaken_the_echoes - travels - apprehend.mp3')
+
+t64 = Track.create!(title: "The Trip", length: "07:48", artist_id: a5.id, album_id: al8.id)
+t64.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Awaken+The+Echoes+-+Travels+LP/Awaken+The+Echoes+-+Travels+LP+-+04+The+Trip.mp3'), filename: 'awaken_the_echoes - travels - the_trip.mp3')
+
+t65 = Track.create!(title: "Friends Last Forever", length: "08:18", artist_id: a5.id, album_id: al8.id)
+t65.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Awaken+The+Echoes+-+Travels+LP/Awaken+The+Echoes+-+Travels+LP+-+05+Friends+Last+Forever.mp3'), filename: 'awaken_the_echoes - travels - friends_last_forever.mp3')
+
+t66 = Track.create!(title: "New Beginnings", length: "05:41", artist_id: a5.id, album_id: al8.id)
+t66.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Awaken+The+Echoes+-+Travels+LP/Awaken+The+Echoes+-+Travels+LP+-+06+New+Beginnings.mp3'), filename: 'awaken_the_echoes - travels - new_beginnings.mp3')
+
+t67 = Track.create!(title: "Combat", length: "02:54", artist_id: a4.id, album_id: al10.id)
+t67.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+01+Combat.mp3'), filename: 'lost_anyway - lost anyway - combat.mp3')
+
+t68 = Track.create!(title: "Magic List", length: "02:50", artist_id: a4.id, album_id: al10.id)
+t68.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+02+Magic+List.mp3'), filename: 'lost_anyway - lost anyway - magic_list.mp3')
+
+t69 = Track.create!(title: "Reveal", length: "03:22", artist_id: a4.id, album_id: al10.id)
+t69.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+03+Reveal.mp3'), filename: 'lost_anyway - lost anyway - reveal.mp3')
+
+t70 = Track.create!(title: "Road is Long", length: "01:48", artist_id: a4.id, album_id: al10.id)
+t70.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+04+Road+Is+Long.mp3'), filename: 'lost_anyway - lost anyway - road_is_long.mp3')
+
+t71 = Track.create!(title: "Lily", length: "02:40", artist_id: a4.id, album_id: al10.id)
+t71.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+05+Lily.mp3'), filename: 'lost_anyway - lost anyway - lily.mp3')
+
+t72 = Track.create!(title: "If I Could", length: "04:22", artist_id: a4.id, album_id: al10.id)
+t72.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+06+If+I+Could.mp3'), filename: 'lost_anyway - lost anyway - if_i_could.mp3')
+
+t73 = Track.create!(title: "Too Late For That Now", length: "02:37", artist_id: a4.id, album_id: al10.id)
+t73.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+07+Too+Late+For+That+Now.mp3'), filename: 'lost_anyway - lost anyway - too_late_for_that_now.mp3')
+
+t74 = Track.create!(title: "Nothing But Silver", length: "02:50", artist_id: a4.id, album_id: al10.id)
+t74.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+08+Nothing+But+Silver.mp3'), filename: 'lost_anyway - lost anyway - nothing_but_silver.mp3')
+
+t75 = Track.create!(title: "In Your Arms", length: "03:49", artist_id: a4.id, album_id: al10.id)
+t75.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+09+In+Your+Arms.mp3'), filename: 'lost_anyway - lost anyway - in_your_arms.mp3')
+
+t76 = Track.create!(title: "Somewhere Far", length: "02:58", artist_id: a4.id, album_id: al10.id)
+t76.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Lost+Anyway+-+Lost+Anyway/Lost+Anyway+-+Lost+Anyway+-+10+Somewhere+Far.mp3'), filename: 'lost_anyway - lost anyway - somewhere_far.mp3')
+
+t77 = Track.create!(title: "Gold", length: "04:34", artist_id: a7.id, album_id: al12.id)
+t77.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Vandella+-+Shine+You+Up+-+EP/Vandella+-+Shine+You+Up+-+EP+-+01+Gold.mp3'), filename: 'vandella - shine_you_up - gold.mp3')
+
+t78 = Track.create!(title: "Easy", length: "03:54", artist_id: a7.id, album_id: al12.id)
+t78.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Vandella+-+Shine+You+Up+-+EP/Vandella+-+Shine+You+Up+-+EP+-+02+Easy.mp3'), filename: 'vandella - shine_you_up - easy.mp3')
+
+t79 = Track.create!(title: "Foolish", length: "04:43", artist_id: a7.id, album_id: al12.id)
+t79.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Vandella+-+Shine+You+Up+-+EP/Vandella+-+Shine+You+Up+-+EP+-+03+Foolish.mp3'), filename: 'vandella - shine_you_up - foolish.mp3')
+
+t80 = Track.create!(title: "Twin", length: "06:25", artist_id: a7.id, album_id: al12.id)
+t80.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Vandella+-+Shine+You+Up+-+EP/Vandella+-+Shine+You+Up+-+EP+-+04+Twin.mp3'), filename: 'vandella - shine_you_up - twin.mp3')
+
+
+
 
 # Podcasts
 
