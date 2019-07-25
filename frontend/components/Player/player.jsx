@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from './progress-bar';
 import ReactAudioPlayer from 'react-audio-player';
 
 class Player extends React.Component {
@@ -123,6 +124,7 @@ class Player extends React.Component {
                                 <img id="repeat" src="repeat_white.png" />
                             </button>
                         </div>
+                        {/* <ProgressBar /> */}
                         <div id="timeline">
                             <div id="playhead"></div>
                         </div>

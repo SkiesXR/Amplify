@@ -8,8 +8,10 @@ class MainGenres extends React.Component {
     }
 
     render() {
-        let genres = this.props.genres.map(genre => {
-            return <GenreGridItem key={genre.category} genre={genre} />
+        let genres = this.props.genres.map((genre, idx) => {
+            let banana;
+            banana = idx + 1;
+            return <GenreGridItem key={idx} genre={genre} genreId={ banana } />
         })
 
         return (

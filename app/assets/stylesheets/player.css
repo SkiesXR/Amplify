@@ -37,7 +37,7 @@ body {
     position:relative;
 }
 
-/* Gradient Options */
+/* Background Gradient Options */
 
 .main {
     grid-area: main;
@@ -85,6 +85,18 @@ body {
     grid-area: main;
     background-image: linear-gradient(to right bottom, rgb(54, 95, 99), rgb(0, 0, 0)),
     linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
+.albums-show {
+    grid-area: main;
+    background-image: linear-gradient(to right bottom, rgb(30, 40, 46), rgb(0, 0, 0)),
+        linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
+.genres-show {
+    grid-area: main;
+    background-image: linear-gradient(to right bottom, rgb(230, 227, 104), rgb(0, 0, 0)),
+        linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
 .player-container {

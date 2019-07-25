@@ -8,8 +8,8 @@ export const receiveGenres = (genres) => ({
     genres
 })
 
-export const receiveGenre = (album) => ({
-    type: RECEIVE_ALBUM,
+export const receiveGenre = (genre) => ({
+    type: RECEIVE_GENRE,
     genre
 })
 
@@ -18,7 +18,7 @@ export const fetchGenres = () => dispatch => (
     .then(genres => dispatch(receiveGenres(genres)))
 )
 
-export const fetchGenre = (id) => dispatch => (
-    GenreAPIUtil.fetchGenre(id)
+export const fetchGenre = (genre) => dispatch => {
+    return GenreAPIUtil.fetchGenre(genre)
     .then(genre => dispatch(receiveGenre(genre)))
-)
+}

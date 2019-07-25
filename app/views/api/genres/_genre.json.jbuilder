@@ -3,6 +3,11 @@ json.artists do
     genre.artists.each_with_index do |artist, idx|
         json.set! (idx + 1) do
             json.extract! artist, :name
+            if artist.artist_photo.attached?
+                json.artist_photo url_for(artist.artist_photo)
+            else
+                json.artist_photo ""
+            end
         end
     end
 end
