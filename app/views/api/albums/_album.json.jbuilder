@@ -1,5 +1,5 @@
 json.album do
-    json.extract! album, :id, :title, :album_type, :artist_id, :image_url
+    json.extract! album, :id, :title, :album_type, :artist_id, :release_date, :image_url
     json.artist_name album.artist.name
 
     if album.album_art.attached?

@@ -20,7 +20,7 @@ class Main extends React.Component {
     // Dynamically sets the background gradient of the page based on the current URL
 
     setNavLinks() {
-        // let browse = "/browse";
+        let browse = "/browse";
         let collection = "/collection";
         let album = "/albums";
         // let location = this.props.history.location.pathname.includes("collection") ? collection : "other";
@@ -33,7 +33,6 @@ class Main extends React.Component {
         } else {
             path = "other"
         }
-        debugger;
 
         switch (path) {
             case browse:
@@ -45,7 +44,6 @@ class Main extends React.Component {
                     {/* <NavLink className="navlink" activeClassName="selected" to="/browse/discover">Discover</NavLink> */}
                 </div>);
             case album:
-                debugger;
                 return (<div></div>);
                 break;
             case collection:
@@ -116,7 +114,6 @@ class Main extends React.Component {
     
 
     render() {
-        debugger;
         let gradient = this.setBackground();
         let nav = this.setNavLinks();
 
