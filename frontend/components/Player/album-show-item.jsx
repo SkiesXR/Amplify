@@ -7,7 +7,7 @@ const AlbumShowItem
     const { album_art, title, artist } = props.album;
     // const { track } = props.track;
     debugger;   
-    const showItem =
+    
         <div className="album-artist-container">
             {/* { title } */}
             {/* <div className="image-hover-container">

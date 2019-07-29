@@ -18,9 +18,21 @@ class AlbumShow extends React.Component {
         })
         return (
             <div className="album-show-c1">
-                <div className="album-show-container-c2">
+                <div className="album-show-c2">
+                    <div className="album-show-c3">
+                        <div className="album-show-c3a">
+                        </div>
+                        <div className="album-show-c3b">
+
+                    
+
+                {/* <div className="album-show-container-c2">
                     <div>
                         { albumTracks }
+                    </div>
+                </div> */}
+                            
+                        </div>
                     </div>
                 </div>
             </div>

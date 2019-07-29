@@ -29,12 +29,17 @@ body {
     flex-direction: column;
     padding-top: 24px;
     min-width: 228px;
+    position: fixed;
+    height: 100%;
 }
 
 .player {
     grid-area: player;
     background-color: #282828;
-    position:relative;
+    /* position:relative; */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Background Gradient Options */
@@ -43,6 +48,7 @@ body {
     grid-area: main;
     background-image: linear-gradient(to right bottom, rgb(15, 94, 138), rgb(0, 0, 0)),
     linear-gradient(transparent, rgb(0, 0, 0) 70%);
+    height: 100vh;
 }
 
 .main-featured {

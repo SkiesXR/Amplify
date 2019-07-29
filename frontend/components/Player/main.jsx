@@ -20,23 +20,40 @@ class Main extends React.Component {
     // Dynamically sets the background gradient of the page based on the current URL
 
     setNavLinks() {
-        let browse = "/browse";
+        // let browse = "/browse";
         let collection = "/collection";
-        let location = this.props.history.location.pathname.includes("collection") ? collection : "other";
-        switch (location) {
-            // case browse:
-            //     return (<div className="main-nav">
-            //         <NavLink className="navlink" activeClassName="selected" to="/browse/featured">Albums</NavLink>
-            //         <NavLink className="navlink" activeClassName="selected" to="/browse/artists">Artists</NavLink>
-            //         <NavLink className="navlink" activeClassName="selected" to="/browse/genres">Genres</NavLink>
-            //         <NavLink className="navlink" activeClassName="selected" to="/browse/podcasts">Podcasts</NavLink>
-            //         {/* <NavLink className="navlink" activeClassName="selected" to="/browse/discover">Discover</NavLink> */}
-            //     </div>);
+        let album = "/albums";
+        // let location = this.props.history.location.pathname.includes("collection") ? collection : "other";
+        let path;
+        let location = this.props.history.location.pathname;
+        if (location.includes("collection")) {
+            path = collection;
+        } else if (location.includes("albums")) {
+            path = album;
+        } else {
+            path = "other"
+        }
+        debugger;
+
+        switch (path) {
+            case browse:
+                return (<div className="main-nav">
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/featured">Albums</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/artists">Artists</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/genres">Genres</NavLink>
+                    <NavLink className="navlink" activeClassName="selected" to="/browse/podcasts">Podcasts</NavLink>
+                    {/* <NavLink className="navlink" activeClassName="selected" to="/browse/discover">Discover</NavLink> */}
+                </div>);
+            case album:
+                debugger;
+                return (<div></div>);
+                break;
             case collection:
                 return (<div className="main-nav">
                     <NavLink className="navlink" activeClassName="selected" to="/collection/playlists">Playlists</NavLink>
                     <NavLink className="navlink" activeClassName="selected" to="/collection/tracks">Liked Songs</NavLink>
                 </div>);
+                break;
             default:
                 return (<div className="main-nav">
                     <NavLink className="navlink" activeClassName="selected" to="/browse/featured">Albums</NavLink>
@@ -99,15 +116,14 @@ class Main extends React.Component {
     
 
     render() {
-
+        debugger;
         let gradient = this.setBackground();
         let nav = this.setNavLinks();
 
         return (
-
             <div className={ gradient }>
                 { nav }
-                <div>
+                {/* <div> */}
                     <Switch>
                         <ProtectedRoute exact path="/browse/featured" component={ Featured } />
                         <ProtectedRoute exact path="/albums/:albumId" component={ AlbumShow } />
@@ -119,7 +135,7 @@ class Main extends React.Component {
                         <ProtectedRoute exact path="/collection/playlists" component={ PlaylistIndex } />
                         <ProtectedRoute exact path="/collection/tracks" component={ LikedTrackIndex } />
                     </Switch>
-                </div>
+                {/* </div> */}
             </div>
         );
     }
