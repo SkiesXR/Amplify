@@ -50,11 +50,14 @@ class AlbumShow extends React.Component {
                                             </div>
                                         </div>
                                         <div className="album-show-left-play">Play</div>
-                                        <div></div>
+                                        {/* <div></div> */}
+                                        <div>
+                                            <div className="album-show-c3a-bottom">
+                                                <p>{releaseYear} • {trackCount} SONGS</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="album-show-c3a-bottom">
-                                        <p>{releaseYear} • {trackCount} SONGS</p>
-                                    </div>
+                                    
                                 </div>
                                 <div className="album-show-c3b">
                                     {albumTracks}
@@ -77,5 +80,3 @@ class AlbumShow extends React.Component {
 }
 
 export default AlbumShow;
-
-// TODO: Play button hover & active state styling
