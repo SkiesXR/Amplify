@@ -106,13 +106,11 @@ class Main extends React.Component {
             //     bgGradient = "main-discover";
             //     break;
             default:
-                debugger;
                 bgGradient = main;
                 break;
         }
         let path = this.props.history.location.pathname;
         if (path.includes(albumShow)) bgGradient = "albums-show";
-        debugger;
         return bgGradient;
     }
     

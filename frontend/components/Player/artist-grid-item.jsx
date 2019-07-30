@@ -9,7 +9,7 @@ class ArtistGridItem extends React.Component {
 
         return (
             <div className="album-artist-container">
-                <div className="image-hover-container">
+                <div className="artist-image-hover-container">
                     <img src={ artist_photo } />
                 </div>
 
