@@ -34,7 +34,10 @@ class AlbumShow extends React.Component {
                                                         {/* <div className="cover-art-icon">
                                                             <img id="Mike" src="play_white.png" />
                                                         </div> */}
-                                                        <div className="album-show-cover-art" background-image={this.props.album.album_art}>
+                                                        {/* <div className="album-show-cover-art" background-image={this.props.album.album_art}> */}
+                                                        {/* <div className="album-show-cover-art"> */}
+                                                        <div>
+                                                            <img className="album-show-cover-art" src={this.props.album.album_art}/>
                                                         </div>
                                                     {/* </div> */}
                                                     {/* <button id="cover-art-play"> */}
@@ -74,3 +77,5 @@ class AlbumShow extends React.Component {
 }
 
 export default AlbumShow;
+
+// TODO: Play button hover & active state styling

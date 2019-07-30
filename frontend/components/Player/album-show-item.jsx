@@ -25,7 +25,6 @@ class AlbumShowItem extends React.Component {
                     <div className="tc-title">{ title }</div>
                     <div className="tc-artist">{ artist_name }</div>
                 </div>
-                {/* <div className="more"></div> */}
                 <div className="tc-duration">
                     <div className="tc-duration-top">{ duration }</div>
                 </div>
@@ -37,3 +36,4 @@ class AlbumShowItem extends React.Component {
 export default AlbumShowItem;
 
 // TODO: Dynamically change music note to play on hover or click
+

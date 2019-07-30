@@ -191,7 +191,14 @@
 .track-container {
     display: flex;
     justify-content: space-evenly;
-    // align-items: center;
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    padding-bottom: .7em;
+}
+
+.track-container:hover, .track-container:focus {
+    background-color: rgba(0, 0, 0, .3);
 }
 
 .tc-outer {
@@ -245,7 +252,7 @@
 }
 
 .tc-duration-top {
-    margin-top: .7em;
+    margin-top: .75em;
     color: #fff;
     opacity: .6;
     font-family: 'Circular';
