@@ -10,13 +10,14 @@ class AlbumShow extends React.Component {
     }
 
     render() {
+        // debugger;
         if (!this.props.album) return "";
         if (!this.props.tracks) return "";
         let tracks = this.props.tracks || {};
+        const releaseYear = parseInt(this.props.album.release_date.slice(0, 4), 10) || "";
+        const trackCount = Object.keys(this.props.album.tracks).length || "";    
         let albumTracks = Object.values(tracks).map(track => {
             return <AlbumShowItem key={ track.title } track={ track } album ={ this.props.album } />
-        let releaseYear = this.props.album.release_date.slice(0,4);
-        let trackCount = Object.keys(this.props.album.tracks).length;    
         })
         return (
             <div className="album-show-c1">
@@ -28,31 +29,32 @@ class AlbumShow extends React.Component {
                                     <div className="album-show-c3a-content">
                                         <div className="album-show-c3a-content-header">
                                             <div className="cover-art-info">
-                                                <div className="cover-art-shadow">
-                                                    <div>
-                                                        <div className="cover-art-icon">
+                                                {/* <div className="cover-art-shadow"> */}
+                                                    {/* <div> */}
+                                                        {/* <div className="cover-art-icon">
                                                             <img id="Mike" src="play_white.png" />
-                                                        </div>
+                                                        </div> */}
                                                         <div className="album-show-cover-art" background-image={this.props.album.album_art}>
                                                         </div>
-                                                    </div>
-                                                    <button id="cover-art-play">
-                                                    </button>
-                                                </div>
+                                                    {/* </div> */}
+                                                    {/* <button id="cover-art-play"> */}
+                                                    {/* </button> */}
+                                                {/* </div> */}
                                                 <div className="album-title-container">
                                                     <span>{this.props.album.title}</span>
                                                 </div>
                                                 <div className="album-artist">{this.props.album.artist_name}</div>
                                             </div>
                                         </div>
-                                        <div className="album-show-left-play"></div>
+                                        <div className="album-show-left-play">Play</div>
                                         <div></div>
                                     </div>
                                     <div className="album-show-c3a-bottom">
-                                        <p>{releaseYear} • {trackCount}</p>
+                                        <p>{releaseYear} • {trackCount} SONGS</p>
                                     </div>
                                 </div>
                                 <div className="album-show-c3b">
+                                    {albumTracks}
 
                     
 

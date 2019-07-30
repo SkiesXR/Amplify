@@ -35,7 +35,7 @@
     padding: 0 8px;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    // height: 100%;
     width: 33%;
 }
 
@@ -80,8 +80,8 @@
     transition-property: opacity;
     transition-duration: .3s;
     transition-timing-function: cubic-bezier(.3, 0, .4, 1);
-    position: absolute;
-    top: 0;
+    // position: absolute;
+    // top: 0;
     width: 100%;
     height: 100%;
     background-size: cover !important;
@@ -134,24 +134,28 @@
     white-space: nowrap;
     padding-right: 1px;
     margin-right: -1px;
+    font-family: 'Circular';
+    opacity: .6;
+    font-size: 14px;
 }
 
 .album-show-left-play {
-    min-width: 130px;
+    // min-width: 130px;
+    width: 10%;
     margin: 16px auto;
     color: #FFF;
     background-color: #1DB954;
+    font-family: 'Circular';
     font-size: 11px;
     line-height: 1.6;
-    // vertical-align: middle;
     border-radius: 500px;
     padding: 11px 44px;
     border-width: 0;
     letter-spacing: 2px;
     text-transform: uppercase;
     white-space: normal;
-    display: block;
-    width: 100%;
+    display: flex;
+    justify-content: center;
     font-weight: 700;
     text-align: center;
     cursor: pointer;
@@ -162,8 +166,18 @@
 
 .album-show-c3a-bottom {
     vertical-align: middle;
+    text-align: center;
+    font-family: 'Circular';
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: .16em;
+    opacity: .6;
     color: #fff;
 }
+
+// .album-show-c3a-bottom p {
+//     text-align: middle;
+// }
 
 .album-show-c3b {
     position: relative;
@@ -173,3 +187,69 @@
     height: 100%;
     width: 66%;
 }
+
+.track-container {
+    display: flex;
+    justify-content: space-evenly;
+    // align-items: center;
+}
+
+.tc-outer {
+    text-align: right;
+    padding-right: 1em;
+    height: 42px;
+    width: 10%;
+}
+
+.tc-outer-top {
+    margin-top: .75em;
+}
+
+.tc-outer-top img {
+    max-width: 25px;
+    max-height: 25px;
+    opacity: .6;
+}
+
+.tc-title-artist {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-right: 1px;
+    margin-top: .7em;
+    width: 80%;
+}
+
+.tc-title {
+    font-family: 'Circular';
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: .015em;
+    color: #fff;
+}
+
+.tc-artist {
+    font-family: 'Circular';
+    font-size: 14px;
+    opacity: .6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 1px;
+}
+
+.tc-duration {
+    padding: 0px 14px 0px 0px;
+    text-align: right;
+    letter-spacing: 0;
+    width: 10%;
+}
+
+.tc-duration-top {
+    margin-top: .7em;
+    color: #fff;
+    opacity: .6;
+    font-family: 'Circular';
+}
+
+
+

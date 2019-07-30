@@ -1,52 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AlbumShowItem
-    = (props) => {
+class AlbumShowItem extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-    const { album_art, title, artist } = props.album;
-    // const { track } = props.track;
-    debugger;   
-    
-        <div className="album-artist-container">
-            {/* { title } */}
-            {/* <div className="image-hover-container">
-                <Link to={`/albums/${props.album.id}`}><img src={album_art} />
-                    <div className="Mike">
-                        <button id="Mike-button">
-                            <img id="Mike" src="play_white.png" />
-                        </button>
-                    </div>
-                </Link>
-            </div> */}
+    render() {
+        // debugger;
+        const { artist_name } = this.props.album;
+        const { length, title } = this.props.track;
+        let min = length.slice(0,2);
+        let sec = length.slice(3);
+        let duration = `${min}:${sec}`;
 
-            <div className="title-container">
-                <Link id="grid-title" to="">{props.track.title}</Link>
+        return(
+            <div className="track-container">
+                <div className="tc-outer">
+                    <div className="tc-outer-top">
+                        <img src={"music_note.png"} />
+                    </div>  
+                </div>
+                <div className="tc-title-artist">
+                    <div className="tc-title">{ title }</div>
+                    <div className="tc-artist">{ artist_name }</div>
+                </div>
+                {/* <div className="more"></div> */}
+                <div className="tc-duration">
+                    <div className="tc-duration-top">{ duration }</div>
+                </div>
             </div>
-
-            {/* <div className="artist-container">
-                <Link id="grid-artist" to="">{artist}</Link>
-            </div> */}
-        </div>
-    return showItem;
+        );
+    }
 }
 
 export default AlbumShowItem;
 
-// class AlbumShowItem extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
-
-//     render() {
-//         debugger;
-//         const { album_art, title, artist } = this.props.album;
-//         const { track } = this.props.track;
-
-//         return(
-//             <div className="album-artist-container">{track}</div>
-//         );
-//     }
-// }
-
-// export default AlbumShowItem;
+// TODO: Dynamically change music note to play on hover or click
