@@ -4,6 +4,27 @@ import { Link } from 'react-router-dom';
 class AlbumShowItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            noteIcon: "music_note.png"
+        }
+        this.playNote = this.playNote.bind(this);
+        this.musicNote = this.musicNote.bind(this);
+    }
+
+    // Flip musical note icon to play icon once mouse enters track container
+    playNote() {
+        // document.getElementById("tc-note").src = "play.png";
+        this.setState({
+            noteIcon: "play.png"
+        });
+    }
+
+    // Flip play icon to musical note icon once mouse leaves track container
+    musicNote() {
+        // document.getElementById("tc-note").src = "music_note.png";
+        this.setState({
+            noteIcon: "music_note.png"
+        });
     }
 
     render() {
@@ -15,10 +36,12 @@ class AlbumShowItem extends React.Component {
         let duration = `${min}:${sec}`;
 
         return(
-            <div className="track-container">
+            // <div onMouseEnter={ this.playNote } onMouseLeave={ this.musicNote } className="track-container">
+            <div onMouseEnter={ this.playNote } onMouseLeave={ this.musicNote } className="track-container">
                 <div className="tc-outer">
                     <div className="tc-outer-top">
-                        <img src={"music_note.png"} />
+                        {/* <img id="tc-note" src={"music_note.png"} /> */}
+                        <img id="tc-note" src={ this.state.noteIcon } />
                     </div>  
                 </div>
                 <div className="tc-title-artist">
