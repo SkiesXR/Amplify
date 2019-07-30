@@ -29,7 +29,7 @@ body {
     flex-direction: column;
     padding-top: 24px;
     min-width: 228px;
-    position: fixed;
+    /* position: fixed; */
     height: 100%;
 }
 
@@ -37,7 +37,7 @@ body {
     grid-area: player;
     background-color: #282828;
     /* position:relative; */
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 100%;
 }
@@ -95,7 +95,9 @@ body {
 
 .albums-show {
     grid-area: main;
-    background-image: linear-gradient(to right bottom, rgb(30, 40, 46), rgb(0, 0, 0)),
+    /* background-image: linear-gradient(to right bottom, rgb(30, 40, 46), rgb(0, 0, 0)),
+        linear-gradient(transparent, rgb(0, 0, 0) 70%); */
+    background-image: linear-gradient(to right bottom, rgb(51, 51, 45), rgb(0, 0, 0)),
         linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 

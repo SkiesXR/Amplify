@@ -15,9 +15,6 @@ import { Route, Switch } from 'react-router-dom';
 
 
 class Main extends React.Component {
-        
-
-    // Dynamically sets the background gradient of the page based on the current URL
 
     setNavLinks() {
         let browse = "/browse";
@@ -34,6 +31,7 @@ class Main extends React.Component {
             path = "other"
         }
 
+        // Dynamically sets the navigation links based on the current URL
         switch (path) {
             case browse:
                 return (<div className="main-nav">
@@ -64,10 +62,11 @@ class Main extends React.Component {
 
     }
 
+    // Dynamically sets the background gradient of the page based on the current URL
     setBackground() {
         let bgGradient;
         let featured = "/browse/featured";
-        let albumShow = "/albums/:albumId";
+        let albumShow = "/albums/";
         let artists = "/browse/artists"
         let playlist_index = "/collection/playlists";
         let liked_songs = "/collection/tracks";
@@ -82,6 +81,7 @@ class Main extends React.Component {
                 bgGradient = "main-featured";
                 break;
             case albumShow:
+                debugger;
                 bgGradient = "albums-show";
                 break;    
             case artists:
@@ -106,9 +106,13 @@ class Main extends React.Component {
             //     bgGradient = "main-discover";
             //     break;
             default:
+                debugger;
                 bgGradient = main;
                 break;
         }
+        let path = this.props.history.location.pathname;
+        if (path.includes(albumShow)) bgGradient = "albums-show";
+        debugger;
         return bgGradient;
     }
     
