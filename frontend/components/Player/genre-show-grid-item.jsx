@@ -14,11 +14,11 @@ class GenreShowGridItem extends React.Component {
         return (
             <div className="album-artist-container">
                 <div className="artist-image-hover-container">
-                    <img src={ artist_photo } />
+                    <img src={artist_photo} />
                 </div>
 
                 <div className="title-container">
-                    <Link id="grid-title" to={`/artists/${ id }`}>{ name }</Link>
+                    <Link id="grid-title" to={`/artists/${id}`}>{name}</Link>
                 </div>
             </div>
         );
