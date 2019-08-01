@@ -5,7 +5,8 @@ class AlbumShowItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            noteIcon: "music_note.png"
+            noteIcon: "music_note.png",
+            noteContainerClass: "tc-outer-top"
         }
         this.playNote = this.playNote.bind(this);
         this.musicNote = this.musicNote.bind(this);
@@ -13,34 +14,32 @@ class AlbumShowItem extends React.Component {
 
     // Flip musical note icon to play icon once mouse enters track container
     playNote() {
-        // document.getElementById("tc-note").src = "play.png";
         this.setState({
-            noteIcon: "play.png"
+            noteIcon: "play.png",
+            noteContainerClass: "tc-outer-top-2"
         });
     }
 
     // Flip play icon to musical note icon once mouse leaves track container
     musicNote() {
-        // document.getElementById("tc-note").src = "music_note.png";
         this.setState({
-            noteIcon: "music_note.png"
-        });
+            noteIcon: "music_note.png",
+            noteContainerClass: "tc-outer-top"
+         });
     }
 
     render() {
-        // debugger;
-        const { artist_name } = this.props.album;
         const { length, title } = this.props.track;
+        const { artist_name } = this.props.album;
+        let noteContainerClass = this.state.noteContainerClass;
         let min = length.slice(0,2);
         let sec = length.slice(3);
         let duration = `${min}:${sec}`;
-
+        
         return(
-            // <div onMouseEnter={ this.playNote } onMouseLeave={ this.musicNote } className="track-container">
             <div onMouseEnter={ this.playNote } onMouseLeave={ this.musicNote } className="track-container">
                 <div className="tc-outer">
-                    <div className="tc-outer-top">
-                        {/* <img id="tc-note" src={"music_note.png"} /> */}
+                    <div className={ noteContainerClass }>
                         <img id="tc-note" src={ this.state.noteIcon } />
                     </div>  
                 </div>
@@ -57,6 +56,3 @@ class AlbumShowItem extends React.Component {
 }
 
 export default AlbumShowItem;
-
-// TODO: Dynamically change music note to play on hover or click
-

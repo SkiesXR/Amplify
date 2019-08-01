@@ -63,16 +63,17 @@
     border: 0;
     outline: 0;
     position: relative;
-    background-color: #282828;
+    // background-color: #282828;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
 .cover-art-icon {
     position: absolute;
-    top: 35%;
-    bottom: 35%;
-    left: 35%;
-    right: 35%;
+    left: 50%;
+    // top: 35%;
+    // bottom: 35%;
+    // left: 35%;
+    // right: 35%;
 }
 
 .album-show-cover-art {
@@ -228,6 +229,16 @@
     opacity: .6;
 }
 
+.tc-outer-top-2 {
+    margin-top: .75em;
+}
+
+.tc-outer-top-2 img {
+    max-width: 25px;
+    max-height: 25px;
+    opacity: 1;
+}
+
 .tc-title-artist {
     display: flex;
     flex-direction: column;
@@ -238,7 +249,7 @@
 }
 
 .tc-title {
-    font-family: 'Circular';
+    font-family: 'Circular', 'Montserrat';
     font-size: 16px;
     line-height: 22px;
     letter-spacing: .015em;
