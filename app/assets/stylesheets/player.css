@@ -123,8 +123,7 @@ body {
     "player player"
 }
 
-#react-audio,
-#react-audio:active {
+#react-audio,#react-audio:active {
     outline: none;
 }
 
@@ -169,6 +168,8 @@ body {
     background: #4CAF50;
     cursor: pointer;
 }
+
+/* Like (Heart) Icon */
 
 .likedSongMessageInactive {
     display: none;

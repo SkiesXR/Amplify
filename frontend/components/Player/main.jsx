@@ -10,6 +10,7 @@ import Discover from './main-discover';
 import PlaylistIndex from '../../components/Collection/playlist-index';
 import LikedTrackIndex from '../../components/Collection/liked-tracks-index';
 import AlbumShow from './album-show-container';
+import ArtistShow from './artist-show-container';
 import GenreShow from './genre-show-container';
 import { Route, Switch } from 'react-router-dom';
 
@@ -20,6 +21,7 @@ class Main extends React.Component {
         let browse = "/browse";
         let collection = "/collection";
         let album = "/albums";
+        let artist = "/artists";
         // let location = this.props.history.location.pathname.includes("collection") ? collection : "other";
         let path;
         let location = this.props.history.location.pathname;
@@ -27,6 +29,8 @@ class Main extends React.Component {
             path = collection;
         } else if (location.includes("albums")) {
             path = album;
+        } else if (location.includes("artists")) {
+            path = artist;
         } else {
             path = "other"
         }
@@ -42,6 +46,9 @@ class Main extends React.Component {
                     {/* <NavLink className="navlink" activeClassName="selected" to="/browse/discover">Discover</NavLink> */}
                 </div>);
             case album:
+                return (<div></div>);
+                break;
+            case artist:
                 return (<div></div>);
                 break;
             case collection:
@@ -122,10 +129,10 @@ class Main extends React.Component {
         return (
             <div className={ gradient }>
                 { nav }
-                {/* <div> */}
                     <Switch>
                         <ProtectedRoute exact path="/browse/featured" component={ Featured } />
                         <ProtectedRoute exact path="/albums/:albumId" component={ AlbumShow } />
+                        <ProtectedRoute exact path="/artists/:artistId" component={ ArtistShow } />
                         <ProtectedRoute exact path="/genres/:genreId" component={ GenreShow } />
                         <ProtectedRoute exact path="/browse/artists" component={ Artists } />
                         <ProtectedRoute path="/browse/podcasts" component={ Podcast } />
@@ -134,7 +141,6 @@ class Main extends React.Component {
                         <ProtectedRoute exact path="/collection/playlists" component={ PlaylistIndex } />
                         <ProtectedRoute exact path="/collection/tracks" component={ LikedTrackIndex } />
                     </Switch>
-                {/* </div> */}
             </div>
         );
     }
