@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 class ArtistShowItem extends React.Component {
     constructor(props) {
         super(props);
-        debugger;
     }
 
     render() {
-        debugger;
         if (!this.props.album) return "";
         const { name } = this.props.artist || "";
         const album = this.props.album || "";
@@ -31,7 +29,7 @@ class ArtistShowItem extends React.Component {
                 </div>
 
                 <div className="artist-container">
-                    <Link id="grid-artist" to={`${ window.location.href }`}>{ name }</Link>
+                    <Link id="grid-artist" to="">{ name }</Link>
                 </div>
             </div>
         );

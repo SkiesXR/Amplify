@@ -19,17 +19,27 @@ class ArtistShow extends React.Component {
             return x.release_date.slice(0,4) - y.release_date.slice(0,4);
         })
 
-        let albumList = Object.values(sortedAlbums).map(album => {
-            // return <li>{album.title} - {album.album_type} - {album.release_date}</li>
-            return <ArtistShowItem key={ album.title } album={ album } artist= { artist }/>
-        })
+        let albumListLP = Object.values(sortedAlbums).map(album => {
+            if (album.album_type === "Album") {
+                return <ArtistShowItem key={ album.title } album={ album } artist= { artist }/>
+            }
+        });
+        
+        let albumListEP = Object.values(sortedAlbums).map(album => {
+            if (album.album_type === "EP" || album.album_type === "Single") {
+                return <ArtistShowItem key={ album.title } album={ album } artist={ artist } />
+            }
+        });
 
         return (
             <div className="artist-show-c1">
+                {/* <img src={ artist_photo }></img> */}
                 <div>{name}</div>
                 <div>{bio}</div>
-                <div>{ albumList }</div>
-                {/* <img src={ artist_photo }></img> */}
+                Albums
+                <div>{ albumListLP }</div>
+                EPs & Singles
+                <div>{albumListEP}</div>
             </div>
         );
     }
