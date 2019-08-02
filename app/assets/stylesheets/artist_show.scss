@@ -1,0 +1,38 @@
+#artist-show-photo {
+    position: absolute;
+    width: 80%;
+    height: 30%;
+    align-items: center;
+}
+
+.artist-show-name {
+    font-family: 'Circular Bold';
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -.005em;
+    color: #fff;
+    text-align: center;
+}
+
+.artist-show-bio-header {
+    font-family: 'Circular Bold';
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: .015em;
+    color: #fff;
+    margin-bottom: .15em;
+}
+
+.artist-show-bio {
+    font-family: 'Circular';
+    font-size: 14px;
+    color: #B3B3B3;
+
+}
+
+.artist-show-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
