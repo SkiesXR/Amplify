@@ -11,7 +11,7 @@ export default (state = {}, action) => {
             newState = Object.assign({}, state, action.artists)
             return newState;
         case RECEIVE_ARTIST:
-            newState = Object.assign({}, state, {[action.track.id]: action.artist})
+            newState = Object.assign({}, state, {[action.artist.artist.id]: action.artist.artist})
             return newState;
         default:
             return state;

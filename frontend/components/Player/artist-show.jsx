@@ -5,13 +5,14 @@ class ArtistShow extends React.Component {
     componentDidMount() {
         let artistId = this.props.match.params.artistId;
         this.props.fetchArtist(artistId);
+        debugger;
     }
 
     render() {
         debugger;
         return (
             <div className="artist-show-c1">
-                <span style="color: white">Hey there</span>
+                <span>Hey there</span>
             </div>
         );
     }

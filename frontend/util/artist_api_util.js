@@ -8,6 +8,6 @@ export const fetchArtists = () => (
 export const fetchArtist = (id) => (
     $.ajax({
         method: "GET",
-        url: `api/artist/${id}`,
+        url: `api/artists/${id}`,
     })
 )
