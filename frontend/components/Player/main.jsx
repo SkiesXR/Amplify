@@ -75,6 +75,7 @@ class Main extends React.Component {
         let featured = "/browse/featured";
         let albumShow = "/albums/";
         let artists = "/browse/artists"
+        let artistShow = "/artists/";
         let playlist_index = "/collection/playlists";
         let liked_songs = "/collection/tracks";
         let podcasts = "/browse/podcasts";
@@ -87,10 +88,13 @@ class Main extends React.Component {
             case featured:
                 bgGradient = "main-featured";
                 break;
-            case albumShow:
-                debugger;
-                bgGradient = "albums-show";
-                break;    
+            // case albumShow:
+            //     bgGradient = "albums-show";
+            //     break;    
+            // case artistShow:
+            //     debugger;
+            //     bgGradient = "artists-show";
+            //     break;    
             case artists:
                 bgGradient = "main-artists";
                 break;    
@@ -118,6 +122,7 @@ class Main extends React.Component {
         }
         let path = this.props.history.location.pathname;
         if (path.includes(albumShow)) bgGradient = "albums-show";
+        if (path.includes(artistShow)) bgGradient = "artists-show";
         return bgGradient;
     }
     
