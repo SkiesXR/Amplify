@@ -21,7 +21,7 @@ class Main extends React.Component {
         let browse = "/browse";
         let collection = "/collection";
         let album = "/albums";
-        let artist = "/artists";
+        let artist = "artists/";
         // let location = this.props.history.location.pathname.includes("collection") ? collection : "other";
         let path;
         let location = this.props.history.location.pathname;
@@ -29,7 +29,7 @@ class Main extends React.Component {
             path = collection;
         } else if (location.includes("albums")) {
             path = album;
-        } else if (location.includes("artists")) {
+        } else if (location.includes("artists/")) {
             path = artist;
         } else {
             path = "other"
