@@ -37,8 +37,8 @@ body {
 .player {
     grid-area: player;
     background-color: #282828;
-    /* position:relative; */
-    position: fixed;
+    position:relative;
+    /* position: fixed; */
     z-index: 2;
     bottom: 0;
     width: 100%;
