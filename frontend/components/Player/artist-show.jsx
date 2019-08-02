@@ -33,7 +33,9 @@ class ArtistShow extends React.Component {
 
         return (
             <div className="artist-show-c1">
-                <div id="artist-show-photo" style={{ backgroundImage: `url(${artist_photo}})`}}></div>
+                <div className="artist-show-header-container">
+                    <div id="artist-show-photo" style={{ backgroundImage: `url(${artist_photo}})`}}></div>
+                </div>
                 <div className="artist-show-name">{ name }</div>
                 <span className="artist-show-bio-header">Biography</span>
                 <div className="artist-show-bio">{ bio }</div>
