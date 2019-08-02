@@ -13,6 +13,7 @@ class ArtistShow extends React.Component {
         let artist = this.props.artist || {};
         const { artist_photo, bio, name } = this.props.artist || "";
         const albums = artist.albums || {};
+        const orderedAlbums = Object.values(albums)
         let albumList = Object.values(albums).map(album => {
             return <li>{ album.title }</li>
         })
