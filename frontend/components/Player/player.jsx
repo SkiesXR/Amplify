@@ -107,6 +107,16 @@ class Player extends React.Component {
     //         duration = music.duration;
     //     }, false);
     // }
+
+    // Track Duration
+    // let length = track.length;
+    // let minFirstDigit = length[0];
+    // let minutes = parseInt(minFirstDigit, 10) > ? parseInt(length.slice(0,2)) : parseInt(length.slice(1,2));
+    // let seconds = parseInt(length.slice(3));
+    // let duration = (minutes * 60) + seconds;
+
+    
+    
     
 
     render() {
