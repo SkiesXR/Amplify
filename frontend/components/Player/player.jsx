@@ -155,13 +155,9 @@ class Player extends React.Component {
             // Every second, move progress bar's playhead forward
             // setInterval(barMovement(), 1000);
             setInterval(function() {
-                // debugger;
                 that.setState((prevState) => {
                     return { currentTime: prevState.currentTime + 1 }
                 });
-                // that.setState({
-                //     currentTime: 1000
-                // });
             }, 1000);
         } else {
 
@@ -291,6 +287,10 @@ class Player extends React.Component {
 
                     {/* Player Controls */}
                     <div className="now-playing-controls-container">
+                        <div className="currentTime">
+                            {this.state.currentTime}
+                        </div>
+
                         <div className="now-playing-controls">
                             <div className="now-playing-buttons">
 
@@ -332,8 +332,7 @@ class Player extends React.Component {
                             {/* { this.state.track } */}
                         </div>  
                         <div className="duration">
-                            {/* {this.state.track.duration} */}
-                            {this.state.currentTime}
+                            {this.state.track.duration}
                         </div>
                     </div>   
 
