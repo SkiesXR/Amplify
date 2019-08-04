@@ -57,18 +57,31 @@ class Player extends React.Component {
     }
 
     componentDidMount() {
-        // debugger;
         let track;
         track = document.querySelector('#audio');
-        track.addEventListener("timeupdate", () => {
-            console.log("time updated");
+        let that = this;
+        var id = null;
+
+        // When user clicks "play", start counter
+        track.addEventListener("play", () => {
+            id = setInterval(function () {
+                that.setState((prevState) => {
+                    return { currentTime: prevState.currentTime + 1 }
+                });
+            }, 1000);
+            // console.log("time updated");
             let rangeslider;
             rangeslider = document.querySelector('.rangeslider');
             let ratio = track.currentTime / track.duration;
             let position = rangeslider.offsetWidth * ratio;
             this.positionHandle(position);
         });
-    }
+
+        // When user clicks "pause", stop counter
+        track.addEventListener("pause", () => {
+            clearInterval(id);
+    });
+}
 
 
     
@@ -139,6 +152,7 @@ class Player extends React.Component {
     // Logic for audio controls
     playAudio() {
         const music = document.getElementById("audio");
+        var id = null;
         if (music.paused) {
 
             // Play current track
@@ -150,20 +164,23 @@ class Player extends React.Component {
                 play: true,
             });
             // console.log("Attempted to move the bar!");
-            let that = this;
-
+            
             // Every second, move progress bar's playhead forward
             // setInterval(barMovement(), 1000);
-            setInterval(function() {
-                that.setState((prevState) => {
-                    return { currentTime: prevState.currentTime + 1 }
-                });
-            }, 1000);
+            // setInterval(function() {
+            //     id = that.setState((prevState) => {
+            //         return { currentTime: prevState.currentTime + 1 }
+            //     });
+            // }, 1000);
         } else {
 
             // Pause current track
             music.pause();
-
+            if (id) {
+                debugger;
+                clearInterval(id);
+                console.log("cleared interval!")
+            }
             // Swap "play" icon for "pause icon"
             this.setState({
                 playPauseButton: "play_white.png",
@@ -209,7 +226,7 @@ class Player extends React.Component {
         let progressbarWidth;
         rangeslider = document.querySelector('.rangeslider').offsetWidth;
         rangesliderHandle = document.querySelector('.rangeslider_handle').offsetWidth;
-        console.log("handling position");
+        // console.log("handling position");
         // Width of the progress bar
         progressbarWidth = rangeslider - rangesliderHandle;
 
