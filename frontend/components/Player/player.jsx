@@ -6,15 +6,28 @@ class Player extends React.Component {
 
     constructor(props) {
         super(props);
+
+        // Let's bind some methods!
         this.playAudio = this.playAudio.bind(this);
         this.volChange = this.volChange.bind(this);
         this.toggleLove = this.toggleLove.bind(this);
         this.likedSongMessage = this.likedSongMessage.bind(this);
+        this.mouseDown = this.mouseDown.bind(this);
+        this.mouseUp = this.mouseUp.bind(this);
+        this.mouseMove = this.mouseMove.bind(this);
+
+        // Refs
+        this.rangeslider = React.createRef();
+        this.rangesliderFill = React.createRef();
+        this.rangesliderHandle = React.createRef();
+        this.audio = React.createRef();
         // this.barMovement = this.barMovement.bind(this);
-        const audio = <audio id="audio"><source src="skylines.mp3" /></audio>
+        // const audio = <audio id="audio"><source src="skylines.mp3" /></audio>
 
         this.state = {
-            track: audio,
+            play: false,
+            audioSrc: "skylines.mp3",
+            // track: audio,
             playheadPos: 0,
             playPauseButton: "play_white.png",
             currentSong: null,
@@ -23,6 +36,18 @@ class Player extends React.Component {
             likedSongMessage: null,
             likedSongMessageClass: "likedSongMessageInactive",
         }
+    }
+
+    componentWillMount() {
+        this.refs = {}
+    }
+
+    componentDidMount() {
+        this.audio.current.addEventListener("timeupdate", () => {
+            let ratio = this.audio.current.currentTime / this.audio.current.duration;
+            let position = this.rangeslider.current.offsetWidth * ratio;
+            this.positionHandle(position);
+        });
     }
 
     // Display appropriate "like" button based user action
@@ -51,7 +76,6 @@ class Player extends React.Component {
     likedSongMessage(action) {
         switch(action) {
             case "add":
-                // console.log("Displaying add song message");
                 this.setState({
                     likedSongMessage: "Added to your Liked Songs",
                     likedSongMessageClass: "likedSongMessage",
@@ -63,7 +87,6 @@ class Player extends React.Component {
                 }, 3000);
                 break;
             case "remove":
-                // console.log("Displaying remove song message");
                 this.setState({
                     likedSongMessage: "Removed from your Liked Songs",
                     likedSongMessageClass: "likedSongMessage",
@@ -94,7 +117,8 @@ class Player extends React.Component {
 
             // Swap "pause" icon for "play icon"
             this.setState({ 
-                playPauseButton: "pause_white.png"
+                playPauseButton: "pause_white.png",
+                play: true
                 // playheadPos: 35
             });
             // console.log("Attempted to move the bar!");
@@ -114,7 +138,8 @@ class Player extends React.Component {
 
             // Swap "play" icon for "pause icon"
             this.setState({
-                playPauseButton: "play_white.png"
+                playPauseButton: "play_white.png",
+                play: false
             });
         }
     }
@@ -149,9 +174,41 @@ class Player extends React.Component {
     // let seconds = parseInt(length.slice(3));
     // let duration = (minutes * 60) + seconds;
 
+    positionHandle(position) {
+        // Width of the progress bar
+        let progressbarWidth = this.rangeslider.current.offsetWidth - this.rangesliderHandle.current.offsetWidth;
 
-    
-    
+        // Left position of the handle
+        let handleLeft = position - this.rangeslider.current.offsetLeft;
+
+        if (handleLeft >= 0 && handleLeft <= progressbarWidth) {
+            console.log("in between");
+            this.rangesliderHandle.current.style.marginLeft = handleLeft + "px";
+        }
+        if (handleLeft < 0) {
+            console.log("left");
+            this.rangesliderHandle.current.style.marginLeft = "0px";
+        }
+        if (handleLeft > progressbarWidth) {
+            console.log("right");
+            this.rangesliderHandle.current.style.marginLeft = progressbarWidth + "px";
+        }
+    }
+
+    mouseMove(e) {
+        this.positionHandle(e.pageX);
+        this.audio.current.currentTime = (e.pageX / this.rangeslider.current.offsetWidth) * this.audio.current.duration;
+    };
+
+    mouseUp(e) {
+        window.removeEventListener('mousemove', this.mouseMove);
+        window.removeEventListener('mouseup', this.mouseUp);
+    };
+
+    mouseDown(e) {
+        window.addEventListener('mousemove', this.mouseMove);
+        window.addEventListener('mouseup', this.mouseUp);
+    };
 
     render() {
         return (
@@ -210,12 +267,12 @@ class Player extends React.Component {
                         {/* <div className="slidecontainer">
                             <input type="range" min="0" max="100" defaultValue="0" className="slider" id="progressBar"></input>
                         </div> */}
-                        <div className="rangeslider">
-                            <div className="rangeslider_fill"></div>
-                            <div className="rangeslider_handle"></div>
+                        <div className="rangeslider" onClick={ this.mouseMove } ref={ this.rangeslider } >
+                            <div className="rangeslider_fill" ref={ this.rangesliderFill }></div>
+                            <div className="rangeslider_handle" onMouseDown={ this.mouseDown } ref={ this.rangesliderHandle }></div>
                         </div>
-                        {/* <audio id="audio"><source src="skylines.mp3"/></audio> */}
-                        { this.state.track }
+                        <audio id="audio"><source src={this.state.audioSrc} ref={ this.audio }/></audio>
+                        {/* { this.state.track } */}
                     </div>                   
 
                     {/* <ReactAudioPlayer id="react-audio"

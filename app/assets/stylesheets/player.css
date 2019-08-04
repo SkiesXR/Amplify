@@ -186,6 +186,10 @@ body {
     border-radius: 10px;
 }
 
+/* .rangeslider:hover .rangeslider_handle {
+    display: inline-block;
+} */
+
 .rangeslider_fill {
     width: 46px;
     top: 0;
@@ -196,13 +200,14 @@ body {
 }
 
 .rangeslider_handle {
-    left: 26px;
+    /* display: none; */
+    display: inline-block;
+    left: 0px;
     top: -4px;
     touch-action: pan-y;
     background: white;
     border: .5px solid #ccc;
     cursor: pointer;
-    display: inline-block;
     width: 12px;
     height: 12px;
     position: absolute;
