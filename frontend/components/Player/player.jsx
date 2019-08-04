@@ -10,14 +10,18 @@ class Player extends React.Component {
         this.volChange = this.volChange.bind(this);
         this.toggleLove = this.toggleLove.bind(this);
         this.likedSongMessage = this.likedSongMessage.bind(this);
+        // this.barMovement = this.barMovement.bind(this);
+        const audio = <audio id="audio"><source src="skylines.mp3" /></audio>
 
         this.state = {
+            track: audio,
+            playheadPos: 0,
             playPauseButton: "play_white.png",
+            currentSong: null,
             loveButton: "love.png",
             loveId: "love",
-            currentSong: null,
             likedSongMessage: null,
-            likedSongMessageClass: "likedSongMessageInactive"
+            likedSongMessageClass: "likedSongMessageInactive",
         }
     }
 
@@ -73,15 +77,45 @@ class Player extends React.Component {
         }
     }
 
+    // Progress Bar Movement
+    // barMovement() {
+    //     this.setState({
+    //         playheadPos: playheadPos += 1
+    //     });
+    // }
+
     // Logic for audio controls
     playAudio() {
         const music = document.getElementById("audio");
         if (music.paused) {
+
+            // Play current track
             music.play();
-            this.setState({ playPauseButton: "pause_white.png" })         
+
+            // Swap "pause" icon for "play icon"
+            this.setState({ 
+                playPauseButton: "pause_white.png"
+                // playheadPos: 35
+            });
+            // console.log("Attempted to move the bar!");
+            // let that = this;
+
+            // Every second, move progress bar's playhead forward
+            // setInterval(barMovement(), 1000);
+            // setInterval(function() {
+            //     this.setState({
+            //         playheadPos: playheadPos += 1
+            //     });
+            // }, 1000);
         } else {
+
+            // Pause current track
             music.pause();
-            this.setState({ playPauseButton: "play_white.png" })
+
+            // Swap "play" icon for "pause icon"
+            this.setState({
+                playPauseButton: "play_white.png"
+            });
         }
     }
 
@@ -115,12 +149,11 @@ class Player extends React.Component {
     // let seconds = parseInt(length.slice(3));
     // let duration = (minutes * 60) + seconds;
 
-    
+
     
     
 
     render() {
-        
         return (
 
             <div className="player">
@@ -179,9 +212,10 @@ class Player extends React.Component {
                             <div id="playhead"></div>
                         </div> */}
                         <div className="slidecontainer">
-                            <input type="range" min="0" max="100" defaultValue="50" className="slider" id="progressBar"></input>
+                            <input type="range" min="0" max="100" defaultValue="0" className="slider" id="progressBar"></input>
                         </div>
-                        <audio id="audio"><source src="skylines.mp3"/></audio>
+                        {/* <audio id="audio"><source src="skylines.mp3"/></audio> */}
+                        { this.state.track }
                     </div>                   
 
                     {/* <ReactAudioPlayer id="react-audio"

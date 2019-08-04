@@ -46,6 +46,7 @@
   },
   "homepage": "https://github.com/SkiesXR/Amplify#readme",
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "webpack-cli": "^3.3.5"
   }
 }
