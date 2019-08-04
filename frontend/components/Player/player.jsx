@@ -30,8 +30,6 @@ class Player extends React.Component {
 
         this.state = {
             play: false,
-            audioSrc: "skylines.mp3",
-            // length: duration,
             track: {
                 title: "Skylines",
                 src: "skylines.mp3",
@@ -39,7 +37,12 @@ class Player extends React.Component {
                 artist: "Animalfirepower",
                 artwork: "https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg"
             },
+            // updateTime: function (timestamp) {
+            //     timestamp = Math.floor(timestamp);
+            //     this.setState({ currentTime: timestamp });
+            // },
             playheadPos: "0px",
+            currentTime: 0,
             playPauseButton: "play_white.png",
             currentSong: null,
             loveButton: "love.png",
@@ -144,19 +147,22 @@ class Player extends React.Component {
             // Swap "pause" icon for "play icon"
             this.setState({ 
                 playPauseButton: "pause_white.png",
-                play: true
-                // playheadPos: 35
+                play: true,
             });
             // console.log("Attempted to move the bar!");
-            // let that = this;
+            let that = this;
 
             // Every second, move progress bar's playhead forward
             // setInterval(barMovement(), 1000);
-            // setInterval(function() {
-            //     this.setState({
-            //         playheadPos: playheadPos += 1
-            //     });
-            // }, 1000);
+            setInterval(function() {
+                // debugger;
+                that.setState((prevState) => {
+                    return { currentTime: prevState.currentTime + 1 }
+                });
+                // that.setState({
+                //     currentTime: 1000
+                // });
+            }, 1000);
         } else {
 
             // Pause current track
@@ -201,7 +207,7 @@ class Player extends React.Component {
     // let duration = (minutes * 60) + seconds;
 
     positionHandle(position) {
-        debugger;
+        // debugger;
         let rangeslider;
         let rangesliderHandle;
         let progressbarWidth;
@@ -326,7 +332,8 @@ class Player extends React.Component {
                             {/* { this.state.track } */}
                         </div>  
                         <div className="duration">
-                            {this.state.track.duration}
+                            {/* {this.state.track.duration} */}
+                            {this.state.currentTime}
                         </div>
                     </div>   
 

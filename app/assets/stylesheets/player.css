@@ -213,13 +213,6 @@ body {
     outline: none;
 }
 
-.duration {
-    font-family: 'Circular';
-    color: #fff;
-    font-size: 12px;
-    opacity: 0.6;
-}
-
 /* Like (Heart) Icon */
 
 .likedSongMessageInactive {
