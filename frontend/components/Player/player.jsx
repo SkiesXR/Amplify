@@ -207,12 +207,12 @@ class Player extends React.Component {
                                 <img id="repeat" src="repeat_white.png" />
                             </button>
                         </div>
-                        {/* <ProgressBar /> */}
-                        {/* <div id="timeline">
-                            <div id="playhead"></div>
-                        </div> */}
-                        <div className="slidecontainer">
+                        {/* <div className="slidecontainer">
                             <input type="range" min="0" max="100" defaultValue="0" className="slider" id="progressBar"></input>
+                        </div> */}
+                        <div className="rangeslider">
+                            <div className="rangeslider_fill"></div>
+                            <div className="rangeslider_handle"></div>
                         </div>
                         {/* <audio id="audio"><source src="skylines.mp3"/></audio> */}
                         { this.state.track }

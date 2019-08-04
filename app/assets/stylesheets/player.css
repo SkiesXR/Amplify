@@ -42,6 +42,7 @@ body {
     z-index: 2;
     bottom: 0;
     width: 100%;
+    height: 10%;
 }
 
 /* Background Gradient Options */
@@ -173,6 +174,40 @@ body {
     border-radius: 50%;
     background: #4CAF50;
     cursor: pointer;
+}
+
+.rangeslider {
+    height: 4px;
+    width: 100%;
+    background: #e6e6e6;
+    position: relative;
+    display: block;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.rangeslider_fill {
+    width: 46px;
+    top: 0;
+    height: 100%;
+    background: #4CAF50;
+    position: absolute;
+    border-radius: 18%;
+}
+
+.rangeslider_handle {
+    left: 26px;
+    top: -4px;
+    touch-action: pan-y;
+    background: white;
+    border: .5px solid #ccc;
+    cursor: pointer;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    border-radius: 50%;
+    outline: none;
 }
 
 /* Like (Heart) Icon */
