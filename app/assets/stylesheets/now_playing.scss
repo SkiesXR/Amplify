@@ -17,7 +17,7 @@
 }
 
 .thumb-image {
-    background-image: url("https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg");
+    // background-image: url("https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg");
     background-size: cover;
     width: 56px;
     height: 56px;
@@ -142,6 +142,12 @@
 }
 
 /* Controls */
+
+.now-playing-controls-container {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
 
 .now-playing-controls {
   display: flex;

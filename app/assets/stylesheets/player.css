@@ -200,9 +200,7 @@ body {
 }
 
 .rangeslider_handle {
-    /* display: none; */
     display: inline-block;
-    left: 0px;
     top: -4px;
     touch-action: pan-y;
     background: white;
@@ -213,6 +211,13 @@ body {
     position: absolute;
     border-radius: 50%;
     outline: none;
+}
+
+.duration {
+    font-family: 'Circular';
+    color: #fff;
+    font-size: 12px;
+    opacity: 0.6;
 }
 
 /* Like (Heart) Icon */
