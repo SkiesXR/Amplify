@@ -362,4 +362,6 @@ export default Player;
 // TODO: Get progress bar draggable
 // TODO: Progress bar handle position controls current time display
 // TODO: Add mute button
+// TODO: Playhead visible only on hover
+// TODO: Green BG (progress bar) visible only on hover
 

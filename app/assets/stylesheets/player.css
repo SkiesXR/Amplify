@@ -186,9 +186,9 @@ body {
     border-radius: 10px;
 }
 
-/* .rangeslider:hover .rangeslider_handle {
+.rangeslider:hover .rangeslider_handle {
     display: inline-block;
-} */
+}
 
 .rangeslider_fill {
     width: 0px;
@@ -201,7 +201,8 @@ body {
 }
 
 .rangeslider_handle {
-    display: inline-block;
+    display: none;
+    /* display: inline-block; */
     top: -4px;
     touch-action: pan-y;
     background: white;
