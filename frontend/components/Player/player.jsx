@@ -22,25 +22,11 @@ class Player extends React.Component {
         this.rangeslider = React.createRef();
         this.rangesliderFill = React.createRef();
         this.rangesliderHandle = React.createRef();
-        this.audio = React.createRef();
-        // this.duration = React.createRef();
+        // this.audio = React.createRef();
         // this.barMovement = this.barMovement.bind(this);
-        // const audio = <audio id="audio"><source src="skylines.mp3" /></audio>
-        // const duration = audio.duration;
 
         this.state = {
             play: false,
-            track: {
-                title: "Skylines",
-                src: "skylines.mp3",
-                duration: "03:09",
-                artist: "Animalfirepower",
-                artwork: "https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg"
-            },
-            // updateTime: function (timestamp) {
-            //     timestamp = Math.floor(timestamp);
-            //     this.setState({ currentTime: timestamp });
-            // },
             playheadPos: "0px",
             currentTime: 0,
             playPauseButton: "play_white.png",
@@ -49,6 +35,13 @@ class Player extends React.Component {
             loveId: "love",
             likedSongMessage: null,
             likedSongMessageClass: "likedSongMessageInactive",
+            track: {
+                title: "Skylines",
+                src: "skylines.mp3",
+                duration: "03:09",
+                artist: "Animalfirepower",
+                artwork: "https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg"
+            }
         }
     }
 
@@ -83,13 +76,20 @@ class Player extends React.Component {
     });
 }
 
-
-    
     timeUpdate() {
         // debugger;
-        // let ratio = this.audio.current.currentTime / this.audio.current.duration;
-        // let position = this.rangeslider.current.offsetWidth * ratio;
-        // this.positionHandle(position);
+
+        // Convert track duration to seconds
+        let length = this.state.track.duration;
+        let minFirstDigit = length[0];
+        let minutes = parseInt(minFirstDigit, 10) > 0 ? parseInt(length.slice(0,2)) : parseInt(length.slice(1,2));
+        let seconds = parseInt(length.slice(3));
+        let duration = (minutes * 60) + seconds;
+
+        // 
+        let ratio = this.state.currentTime / this.audio.current.duration;
+        let position = this.rangeslider.current.offsetWidth * ratio;
+        this.positionHandle(position);
     }
     
     // Display appropriate "like" button based user action
@@ -212,17 +212,12 @@ class Player extends React.Component {
     //     }, false);
     // }
 
-    // Obtain track duration from state and convert for displaying track's current time
+    // Obtain timestamp and convert for displaying track's current time
     convertTime(timestamp) {
-        // let length = this.state.track.duration;
-        // let minFirstDigit = length[0];
-        // let minutes = parseInt(minFirstDigit, 10) > 0 ? parseInt(length.slice(0,2)) : parseInt(length.slice(1,2));
-        // let seconds = parseInt(length.slice(3));
-        // let duration = (minutes * 60) + seconds; 
-        let minutes = Math.floor(timestamp / 60);
-        let seconds = timestamp - (minutes * 60);
-        if (seconds < 10) seconds = `0${seconds}`;
-        timestamp = `${minutes}:${seconds}`;
+        let mins = Math.floor(timestamp / 60);
+        let secs = timestamp - (mins * 60);
+        if (secs < 10) secs = `0${secs}`;
+        timestamp = `${mins}:${secs}`;
         return timestamp;
     }
 
@@ -369,7 +364,6 @@ class Player extends React.Component {
 
 export default Player;
 
-// TODO: Display current time in correct format
 // TODO: Add mute button
 // TODO: Get progress bar working
 // TODO: Progress bar handle position controls current time display
