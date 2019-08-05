@@ -16,7 +16,7 @@ class Player extends React.Component {
         this.mouseUp = this.mouseUp.bind(this);
         this.mouseMove = this.mouseMove.bind(this);
         this.timeUpdate = this.timeUpdate.bind(this);
-        // this.findDuration = this.findDuration.bind(this);
+        this.convertTime = this.convertTime.bind(this);
 
         // Refs
         this.rangeslider = React.createRef();
@@ -77,7 +77,7 @@ class Player extends React.Component {
             this.positionHandle(position);
         });
 
-        // When user clicks "pause", stop counter
+        // When user clicks "pause", pause counter
         track.addEventListener("pause", () => {
             clearInterval(id);
     });
@@ -212,22 +212,27 @@ class Player extends React.Component {
     //     }, false);
     // }
 
-    // Track Duration
-    // let length = track.length;
-    // let minFirstDigit = length[0];
-    // let minutes = parseInt(minFirstDigit, 10) > ? parseInt(length.slice(0,2)) : parseInt(length.slice(1,2));
-    // let seconds = parseInt(length.slice(3));
-    // let duration = (minutes * 60) + seconds;
+    // Obtain track duration from state and convert for displaying track's current time
+    convertTime(timestamp) {
+        // let length = this.state.track.duration;
+        // let minFirstDigit = length[0];
+        // let minutes = parseInt(minFirstDigit, 10) > 0 ? parseInt(length.slice(0,2)) : parseInt(length.slice(1,2));
+        // let seconds = parseInt(length.slice(3));
+        // let duration = (minutes * 60) + seconds; 
+        let minutes = Math.floor(timestamp / 60);
+        let seconds = timestamp - (minutes * 60);
+        if (seconds < 10) seconds = `0${seconds}`;
+        timestamp = `${minutes}:${seconds}`;
+        return timestamp;
+    }
 
     positionHandle(position) {
-        // debugger;
         let rangeslider;
         let rangesliderHandle;
         let progressbarWidth;
         rangeslider = document.querySelector('.rangeslider').offsetWidth;
         rangesliderHandle = document.querySelector('.rangeslider_handle').offsetWidth;
         // console.log("handling position");
-        // Width of the progress bar
         progressbarWidth = rangeslider - rangesliderHandle;
 
         // Left position of the handle
@@ -254,7 +259,6 @@ class Player extends React.Component {
     }
 
     mouseMove(e) {
-        // debugger;
         let rangeslider;
         rangeslider = document.querySelector('.rangeslider');
         this.positionHandle(e.pageX);
@@ -272,10 +276,6 @@ class Player extends React.Component {
         window.addEventListener('mousemove', this.mouseMove);
         window.addEventListener('mouseup', this.mouseUp);
     };
-
-    // findDuration() {
-    //     return document.querySelector('#audio').duration;
-    // }
 
     render() {
 
@@ -305,7 +305,7 @@ class Player extends React.Component {
                     {/* Player Controls */}
                     <div className="now-playing-controls-container">
                         <div className="currentTime">
-                            {this.state.currentTime}
+                            { this.convertTime(this.state.currentTime) }
                         </div>
 
                         <div className="now-playing-controls">
@@ -368,3 +368,9 @@ class Player extends React.Component {
 }
 
 export default Player;
+
+// TODO: Display current time in correct format
+// TODO: Add mute button
+// TODO: Get progress bar working
+// TODO: Progress bar handle position controls current time display
+
