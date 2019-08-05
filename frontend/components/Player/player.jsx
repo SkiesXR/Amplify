@@ -17,6 +17,7 @@ class Player extends React.Component {
         this.mouseMove = this.mouseMove.bind(this);
         this.timeUpdate = this.timeUpdate.bind(this);
         this.convertTime = this.convertTime.bind(this);
+        this.positionHandle = this.positionHandle.bind(this);
 
         // Refs
         this.rangeslider = React.createRef();
@@ -27,7 +28,7 @@ class Player extends React.Component {
 
         this.state = {
             play: false,
-            playheadPos: "0px",
+            playheadPos: 0,
             currentTime: 0,
             playPauseButton: "play_white.png",
             currentSong: null,
@@ -58,16 +59,22 @@ class Player extends React.Component {
         // When user clicks "play", start counter
         track.addEventListener("play", () => {
             id = setInterval(function () {
+                var progress = that.timeUpdate();
+                console.log(`playheadPos: ${that.state.playheadPos}`);
+                console.log(`currentTime: ${that.state.currentTime}`);
                 that.setState((prevState) => {
-                    return { currentTime: prevState.currentTime + 1 }
+                    return { 
+                        currentTime: prevState.currentTime + 1,
+                        playheadPos: progress
+                     }
                 });
             }, 1000);
             // console.log("time updated");
             let rangeslider;
             rangeslider = document.querySelector('.rangeslider');
-            let ratio = track.currentTime / track.duration;
+            let ratio = that.state.currentTime / that.state.track.duration;
             let position = rangeslider.offsetWidth * ratio;
-            this.positionHandle(position);
+            that.positionHandle(position);
         });
 
         // When user clicks "pause", pause counter
@@ -77,20 +84,34 @@ class Player extends React.Component {
 }
 
     timeUpdate() {
-        // debugger;
-
         // Convert track duration to seconds
         let length = this.state.track.duration;
         let minFirstDigit = length[0];
         let minutes = parseInt(minFirstDigit, 10) > 0 ? parseInt(length.slice(0,2)) : parseInt(length.slice(1,2));
         let seconds = parseInt(length.slice(3));
         let duration = (minutes * 60) + seconds;
+        console.log(`Duration:${duration}`);
 
-        // 
-        let ratio = this.state.currentTime / this.audio.current.duration;
-        let position = this.rangeslider.current.offsetWidth * ratio;
-        this.positionHandle(position);
+        // let ratio = this.state.currentTime / duration;
+        return (this.state.currentTime / duration) * 100;
+        // let position = this.rangeslider.current.offsetWidth * ratio;
+        // this.positionHandle(position);
     }
+    // (length of bar / duration ) * elapsed time
+
+    // Update playhead position based on duration
+    // timeUpdate() {
+    //     let duration;
+    //     let music = document.getElementById('playhead');
+
+    //     music.addEventListener("timeupdate", timeUpdate, false);
+    //     let playPercent = 100 * (music.currentTime / duration);
+    //     playhead.style.marginLeft = playPercent + "%";
+
+    //     music.addEventListener("canplaythrough", function () {
+    //         duration = music.duration;
+    //     }, false);
+    // }
     
     // Display appropriate "like" button based user action
     toggleLove() {
@@ -142,21 +163,14 @@ class Player extends React.Component {
         }
     }
 
-    // Progress Bar Movement
-    // barMovement() {
-    //     this.setState({
-    //         playheadPos: playheadPos += 1
-    //     });
-    // }
-
     // Logic for audio controls
     playAudio() {
         const music = document.getElementById("audio");
         var id = null;
         if (music.paused) {
-
+            
             // Play current track
-            music.play();
+            music.play();   
 
             // Swap "pause" icon for "play icon"
             this.setState({ 
@@ -164,14 +178,6 @@ class Player extends React.Component {
                 play: true,
             });
             // console.log("Attempted to move the bar!");
-            
-            // Every second, move progress bar's playhead forward
-            // setInterval(barMovement(), 1000);
-            // setInterval(function() {
-            //     id = that.setState((prevState) => {
-            //         return { currentTime: prevState.currentTime + 1 }
-            //     });
-            // }, 1000);
         } else {
 
             // Pause current track
@@ -197,20 +203,6 @@ class Player extends React.Component {
         audio.muted = audio.volume === 0.01 ? true : false;
         console.log(`Audio Volume: ${audio.volume}`);
     }
-        
-    // Update playhead position based on duration
-    // timeUpdate() {
-    //     let duration;
-    //     let music = document.getElementById('playhead');
-
-    //     music.addEventListener("timeupdate", timeUpdate, false);
-    //     let playPercent = 100 * (music.currentTime / duration);
-    //     playhead.style.marginLeft = playPercent + "%";
-
-    //     music.addEventListener("canplaythrough", function () {
-    //         duration = music.duration;
-    //     }, false);
-    // }
 
     // Obtain timestamp and convert for displaying track's current time
     convertTime(timestamp) {
@@ -222,11 +214,12 @@ class Player extends React.Component {
     }
 
     positionHandle(position) {
-        let rangeslider;
-        let rangesliderHandle;
+        debugger;
+        // let rangeslider;
+        // let rangesliderHandle;
         let progressbarWidth;
-        rangeslider = document.querySelector('.rangeslider').offsetWidth;
-        rangesliderHandle = document.querySelector('.rangeslider_handle').offsetWidth;
+        let rangeslider = this.rangeslider.current.offsetWidth;
+        let rangesliderHandle = this.rangesliderHandle.current.offsetWidth;
         // console.log("handling position");
         progressbarWidth = rangeslider - rangesliderHandle;
 
@@ -236,30 +229,37 @@ class Player extends React.Component {
         if (handleLeft >= 0 && handleLeft <= progressbarWidth) {
             // this.rangesliderHandle.current.style.left = handleLeft + "px";
             this.setState({
-                playheadPos: `${handleLeft}px`
+                playheadPos: handleLeft
             }); 
         }
         if (handleLeft < 0) {
             // this.rangesliderHandle.current.style.left = "0px";
             this.setState({
-                playheadPos: "0px"
+                playheadPos: 0
             }); 
         }
         if (handleLeft > progressbarWidth) {
             // this.rangesliderHandle.current.style.left = progressbarWidth + "px";
             this.setState({
-                playheadPos: `${progressbarWidth}px`
+                playheadPos: progressbarWidth
             }); 
         }
     }
 
     mouseMove(e) {
-        let rangeslider;
-        rangeslider = document.querySelector('.rangeslider');
+        debugger;
+        // let rangeslider;
+        let rangeslider = this.rangeslider.current.offsetWidth;
         this.positionHandle(e.pageX);
-        let track;
-        track = document.querySelector('#audio');
-        track.currentTime = (e.pageX / rangeslider.offsetWidth) * track.duration;
+        let length = this.state.track.duration;
+        let minFirstDigit = length[0];
+        let minutes = parseInt(minFirstDigit, 10) > 0 ? parseInt(length.slice(0, 2)) : parseInt(length.slice(1, 2));
+        let seconds = parseInt(length.slice(3));
+        let duration = (minutes * 60) + seconds;
+        let newTime = (e.pageX / rangeslider.offsetWidth) * duration;
+        this.setState({
+            currentTime: newTime
+        })
     };
 
     mouseUp(e) {
@@ -337,7 +337,7 @@ class Player extends React.Component {
                             </div> */}
                             <div className="rangeslider" onClick={ this.mouseMove } ref={ this.rangeslider } >
                                 <div className="rangeslider_fill" ref={ this.rangesliderFill }></div>
-                                <div className="rangeslider_handle" onMouseDown={ this.mouseDown } ref={ this.rangesliderHandle } style={ { left: this.state.playheadPos } }></div>
+                                <div className="rangeslider_handle" onMouseDown={ this.mouseDown } ref={ this.rangesliderHandle } style={ { left: `${this.state.playheadPos}%` } }></div>
                             </div>
                             {/* <audio id="audio"><source src={ this.state.audioSrc } ref={ this.audio } onTimeUpdate={ this.timeUpdate }/></audio> */}
                             <audio id="audio"><source src={ this.state.track.src } ref={ this.audio } /></audio>
@@ -364,7 +364,9 @@ class Player extends React.Component {
 
 export default Player;
 
-// TODO: Add mute button
-// TODO: Get progress bar working
+// TODO: Progress bar moves at appropriate speed according to percentage completion of current track
+// TODO: Make progress bar green background follow handle
+// TODO: Get progress bar draggable
 // TODO: Progress bar handle position controls current time display
+// TODO: Add mute button
 
