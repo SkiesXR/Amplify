@@ -60,8 +60,8 @@ class Player extends React.Component {
         track.addEventListener("play", () => {
             id = setInterval(function () {
                 var progress = that.timeUpdate();
-                console.log(`playheadPos: ${that.state.playheadPos}`);
-                console.log(`currentTime: ${that.state.currentTime}`);
+                // console.log(`playheadPos: ${that.state.playheadPos}`);
+                // console.log(`currentTime: ${that.state.currentTime}`);
                 that.setState((prevState) => {
                     return { 
                         currentTime: prevState.currentTime + 1,
@@ -90,7 +90,7 @@ class Player extends React.Component {
         let minutes = parseInt(minFirstDigit, 10) > 0 ? parseInt(length.slice(0,2)) : parseInt(length.slice(1,2));
         let seconds = parseInt(length.slice(3));
         let duration = (minutes * 60) + seconds;
-        console.log(`Duration:${duration}`);
+        // console.log(`Duration:${duration}`);
 
         // let ratio = this.state.currentTime / duration;
         return (this.state.currentTime / duration) * 100;
@@ -336,7 +336,7 @@ class Player extends React.Component {
                                 <input type="range" min="0" max="100" defaultValue="0" className="slider" id="progressBar"></input>
                             </div> */}
                             <div className="rangeslider" onClick={ this.mouseMove } ref={ this.rangeslider } >
-                                <div className="rangeslider_fill" ref={ this.rangesliderFill }></div>
+                                <div className="rangeslider_fill" ref={this.rangesliderFill} style={{ width: `${this.state.playheadPos}%` }}></div>
                                 <div className="rangeslider_handle" onMouseDown={ this.mouseDown } ref={ this.rangesliderHandle } style={ { left: `${this.state.playheadPos}%` } }></div>
                             </div>
                             {/* <audio id="audio"><source src={ this.state.audioSrc } ref={ this.audio } onTimeUpdate={ this.timeUpdate }/></audio> */}
@@ -365,7 +365,6 @@ class Player extends React.Component {
 export default Player;
 
 // TODO: Progress bar moves at appropriate speed according to percentage completion of current track
-// TODO: Make progress bar green background follow handle
 // TODO: Get progress bar draggable
 // TODO: Progress bar handle position controls current time display
 // TODO: Add mute button

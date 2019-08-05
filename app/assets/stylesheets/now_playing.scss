@@ -156,7 +156,8 @@
   font-size: 12px;
   opacity: 0.6;
   padding-top: 50px;
-  width: 5px;
+  width: 35px;
+  text-align: right;
 }
 
 .duration {
@@ -165,7 +166,7 @@
   font-size: 12px;
   opacity: 0.6;
   padding-top: 48px;
-  width: 5px;
+  width: 35px;
 }
 
 .now-playing-controls {
@@ -173,8 +174,8 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 12px;
-  margin-right: 10px;
-  margin-left: 30px;
+  margin-right: 16px;
+  margin-left: 16px;
   margin-top: 10px;
   width: 35%;
 }

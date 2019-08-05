@@ -16,6 +16,5 @@ const mdp = dispatch => ({
 
 export default connect(
     msp,
-    // null,
     mdp
 )(AlbumShow);
