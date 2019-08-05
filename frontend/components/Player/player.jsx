@@ -358,10 +358,7 @@ class Player extends React.Component {
 export default Player;
 
 // TODO: Limit progress bar handler and fill from overshooting
-// TODO: Fix issue where ending track time is less than duration
 // TODO: Get progress bar draggable
 // TODO: Progress bar handle position controls current time display
 // TODO: Add mute button
-// TODO: Playhead visible only on hover
-// TODO: Green BG (progress bar) visible only on hover
 

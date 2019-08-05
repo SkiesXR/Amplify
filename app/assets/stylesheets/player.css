@@ -179,7 +179,7 @@ body {
 .rangeslider {
     height: 4px;
     width: 100%;
-    background: #e6e6e6;
+    background: #404040;
     position: relative;
     display: block;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3);
@@ -190,12 +190,16 @@ body {
     display: inline-block;
 }
 
+.rangeslider:hover .rangeslider_fill {
+    background: #4CAF50;
+}
+
 .rangeslider_fill {
     width: 0px;
     max-width: 100%;
     top: 0;
     height: 100%;
-    background: #4CAF50;
+    background: #e6e6e6;
     position: absolute;
     border-radius: 18%;
 }
