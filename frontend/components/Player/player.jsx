@@ -52,11 +52,11 @@ class Player extends React.Component {
 
     componentDidMount() {
         let track;
-        track = document.querySelector('#audio');
         let that = this;
         var id = null;
+        track = document.querySelector('#audio');
 
-        // When user clicks "play", start counter
+        // When user clicks "play", start counter & progress the bar
         track.addEventListener("play", () => {
             id = setInterval(function () {
                 var progress = that.timeUpdate();
@@ -71,16 +71,28 @@ class Player extends React.Component {
             }, 1000);
             // console.log("time updated");
             let rangeslider;
-            rangeslider = document.querySelector('.rangeslider');
-            let ratio = that.state.currentTime / that.state.track.duration;
-            let position = rangeslider.offsetWidth * ratio;
+            let ratio;
+            let position;
+            // rangeslider = document.querySelector('.rangeslider');
+            rangeslider = that.rangeslider;
+            ratio = that.state.currentTime / that.state.track.duration;
+            position = rangeslider.offsetWidth * ratio;
             that.positionHandle(position);
         });
 
-        // When user clicks "pause", pause counter
+        // When user clicks "pause", pause counter and suspend progress bar movement
         track.addEventListener("pause", () => {
             clearInterval(id);
-    });
+        });
+
+        // reset everything once track ends
+        track.addEventListener("ended", () => {
+            that.setState({
+                currentTime: 0,
+                playheadPos: 0,
+                playPauseButton: "play_white.png"
+            })
+        });
 }
 
     timeUpdate() {
@@ -91,27 +103,8 @@ class Player extends React.Component {
         let seconds = parseInt(length.slice(3));
         let duration = (minutes * 60) + seconds;
         // console.log(`Duration:${duration}`);
-
-        // let ratio = this.state.currentTime / duration;
         return (this.state.currentTime / duration) * 100;
-        // let position = this.rangeslider.current.offsetWidth * ratio;
-        // this.positionHandle(position);
     }
-    // (length of bar / duration ) * elapsed time
-
-    // Update playhead position based on duration
-    // timeUpdate() {
-    //     let duration;
-    //     let music = document.getElementById('playhead');
-
-    //     music.addEventListener("timeupdate", timeUpdate, false);
-    //     let playPercent = 100 * (music.currentTime / duration);
-    //     playhead.style.marginLeft = playPercent + "%";
-
-    //     music.addEventListener("canplaythrough", function () {
-    //         duration = music.duration;
-    //     }, false);
-    // }
     
     // Display appropriate "like" button based user action
     toggleLove() {
@@ -364,7 +357,8 @@ class Player extends React.Component {
 
 export default Player;
 
-// TODO: Progress bar moves at appropriate speed according to percentage completion of current track
+// TODO: Limit progress bar handler and fill from overshooting
+// TODO: Fix issue where ending track time is less than duration
 // TODO: Get progress bar draggable
 // TODO: Progress bar handle position controls current time display
 // TODO: Add mute button
