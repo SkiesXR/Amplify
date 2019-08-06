@@ -375,5 +375,6 @@ export default Player;
 
 // TODO: Get progress bar draggable
 // TODO: Progress bar handle position controls current time display
-// TODO: Add mute button
+// TODO: Triggering mute button adjusts volume slider position
+// TODO: BUG: After track completes and playhead resets, clicking play no longer moves the playhead
 
