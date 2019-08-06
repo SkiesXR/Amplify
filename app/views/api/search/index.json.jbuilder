@@ -24,6 +24,19 @@ unless @albums.empty?
     end
 end
 
+unless @genres.empty?
+    json.genres do
+        @genres.each do |genre|
+            json.extract! genre, :id, :category
+            if genre.genre_image.attached?
+                json.genre_image url_for(genre.genre_image)
+            else
+                json.genre_image ""
+            end
+        end
+    end
+end
+
 unless @shows.empty?
     json.shows do
         @shows.each do |show|
