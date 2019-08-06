@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :playlistitems, only: [:create, :destroy]
     resources :shows, only: [:index, :show]
     resources :show_episodes, only: [:index, :show]
+    resources :search, only: [:index]
   end
 
   resources :users, only: [:new, :create, :show]
