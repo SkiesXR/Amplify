@@ -10,12 +10,14 @@ import playlists from './playlist_reducer';
 import playlists_errors from './playlist_errors_reducer';
 import shows from './show_reducer';
 import show_episodes from './show_episodes_reducer';
+import search from './search_reducer';
 
 
 const rootReducer = combineReducers({
     entities,
     session,
     errors,
+    search
     // albums,
     // artists,
     // tracks,
