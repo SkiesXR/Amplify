@@ -18,6 +18,7 @@ class Player extends React.Component {
         this.timeUpdate = this.timeUpdate.bind(this);
         this.convertTime = this.convertTime.bind(this);
         this.positionHandle = this.positionHandle.bind(this);
+        this.toggleMute = this.toggleMute.bind(this);
 
         // Refs
         this.rangeslider = React.createRef();
@@ -36,6 +37,7 @@ class Player extends React.Component {
             loveId: "love",
             likedSongMessage: null,
             likedSongMessageClass: "likedSongMessageInactive",
+            muteIcon: "max_volume_gray.png",
             track: {
                 title: "Skylines",
                 src: "skylines.mp3",
@@ -265,6 +267,13 @@ class Player extends React.Component {
         window.addEventListener('mouseup', this.mouseUp);
     };
 
+    toggleMute() {
+        let audio = document.getElementById("audio");
+        audio.muted === true? audio.muted = false : audio.muted = true;
+        // document.getElementById("audio").muted = true;
+        console.log(document.getElementById("myRange").value);
+    }
+
     render() {
 
         return (
@@ -341,7 +350,14 @@ class Player extends React.Component {
                         </div>
                     </div>   
 
-                    {/* TODO: Decide what's going on the right-hand side of the now-playing bar*/}
+                    {/* Mute Icon */}
+                    <div className="mute-icon-container">
+                        <button onClick={ this.toggleMute }>
+                            <img id="mute-icon" src={ this.state.muteIcon } />
+                        </button>
+                    </div>
+
+                    {/* Volume Slider */}
                     <div className="now-playing-right">
                         <div className="slidecontainer">
                             <input type="range" min="0" max="100" defaultValue="50" className="slider" id="myRange" onChange={ this.volChange }></input>                
@@ -357,7 +373,6 @@ class Player extends React.Component {
 
 export default Player;
 
-// TODO: Limit progress bar handler and fill from overshooting
 // TODO: Get progress bar draggable
 // TODO: Progress bar handle position controls current time display
 // TODO: Add mute button

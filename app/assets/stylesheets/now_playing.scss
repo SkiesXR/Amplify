@@ -285,5 +285,28 @@
   min-width: 130px;
 }
 
+/* Mute Icon */
+
+.mute-icon-container button {
+  background: none;
+  border: none;
+  padding-top: 10px;
+  outline: none;
+}
+
+#mute-icon {
+  width: 20px;
+  height: 20px;
+  transition: all .05s;
+}
+
+#mute-icon:hover {
+  transform: scale(1.1);
+}
+
+#mute-icon:active {
+  transform: scale(1);
+}
+
 
 
