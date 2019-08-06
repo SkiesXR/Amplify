@@ -1,7 +1,7 @@
 unless @artists.empty?
     json.artists do
         @artists.each do |artist|
-            json.extract! artist, :name
+            json.extract! artist, :id, :name
             if artist.artist_photo.attached?
                 json.artist_photo url_for(artist.artist_photo)
             else
@@ -14,7 +14,7 @@ end
 unless @albums.empty?
     json.albums do
         @albums.each do |album|
-            json.extract! album, :title
+            json.extract! album, :id, :title
             if album.album_art.attached?
                 json.album_art url_for(album.album_art)
             else
@@ -27,7 +27,7 @@ end
 unless @shows.empty?
     json.shows do
         @shows.each do |show|
-            json.extract! show, :title
+            json.extract! show, :id, :title
             if show.show_photo.attached?
                 json.show_photo url_for(show.show_photo)
             else

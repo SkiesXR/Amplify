@@ -2,7 +2,7 @@ class Api::SearchController < ApplicationController
 
     def index
         puts params.inspect
-        input = "id10t"
+        input = "lost"
 
         if input.empty?
             render json: {}
