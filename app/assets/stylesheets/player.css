@@ -114,6 +114,11 @@ body {
         linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
+.search {
+    grid-area: main;
+    background-color: #090909;
+}
+
 .player-container {
     /* overflow-y: scroll; */
     width: 100vw;

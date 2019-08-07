@@ -17,6 +17,7 @@ const App = () => {
             <ProtectedRoute path="/artists" component={ AmplifyPlayerContainer } />
             <ProtectedRoute path="/genres" component={ AmplifyPlayerContainer } />
             <ProtectedRoute path="/browse" component={ AmplifyPlayerContainer } />
+            <ProtectedRoute path="/search" component={ AmplifyPlayerContainer } />
             <AuthRoute exact path="/" component={ SplashContainer } />
         </Switch>
     </div>)

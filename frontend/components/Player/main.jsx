@@ -12,6 +12,7 @@ import LikedTrackIndex from '../../components/Collection/liked-tracks-index';
 import AlbumShow from './album-show-container';
 import ArtistShow from './artist-show-container';
 import GenreShow from './genre-show-container';
+import Search from './search';
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -22,6 +23,7 @@ class Main extends React.Component {
         let collection = "/collection";
         let album = "/albums";
         let artist = "artists/";
+        let search = "/search";
         // let location = this.props.history.location.pathname.includes("collection") ? collection : "other";
         let path;
         let location = this.props.history.location.pathname;
@@ -31,6 +33,8 @@ class Main extends React.Component {
             path = album;
         } else if (location.includes("artists/")) {
             path = artist;
+        } else if (location.includes("search")) {
+            path = search;
         } else {
             path = "other"
         }
@@ -49,6 +53,9 @@ class Main extends React.Component {
                 return (<div></div>);
                 break;
             case artist:
+                return (<div></div>);
+                break;
+            case search:
                 return (<div></div>);
                 break;
             case collection:
@@ -72,6 +79,7 @@ class Main extends React.Component {
     // Dynamically sets the background gradient of the page based on the current URL
     setBackground() {
         let bgGradient;
+        let search = "/search";
         let featured = "/browse/featured";
         let albumShow = "/albums/";
         let artists = "/browse/artists"
@@ -113,6 +121,9 @@ class Main extends React.Component {
             case genreShow:
                 bgGradient = "genres-show";
                 break;
+            case search:
+                bgGradient = "search";
+                break;
             // case discover:
             //     bgGradient = "main-discover";
             //     break;
@@ -142,6 +153,7 @@ class Main extends React.Component {
                         <ProtectedRoute exact path="/browse/artists" component={ Artists } />
                         <ProtectedRoute path="/browse/podcasts" component={ Podcast } />
                         <ProtectedRoute path="/browse/genres" component={ Genres } />
+                        <ProtectedRoute path="/search" component={ Search } />
                         {/* <ProtectedRoute exact path="/browse/discover" component={ Discover } /> */}
                         <ProtectedRoute exact path="/collection/playlists" component={ PlaylistIndex } />
                         <ProtectedRoute exact path="/collection/tracks" component={ LikedTrackIndex } />
