@@ -1,9 +1,9 @@
-export const fetchSearchResults = (search) => (
+export const fetchSearchResults = (input) => (
     $.ajax({
         method: 'GET',
         url: 'api/search',
         data: {
-            search
+            input
         }
     })
 );

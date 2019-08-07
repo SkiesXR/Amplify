@@ -1,11 +1,18 @@
-import { merge} from 'lodash';
+// import { merge} from 'lodash';
 import { RECEIVE_SEARCH_RESULTS } from '../actions/search_actions';
 
 const searchReducer = (state = {}, action) => {
     Object.freeze(state);
+    let newState;
     switch (action.type) {
         case RECEIVE_SEARCH_RESULTS:
-            return merge({}, action.results);
+            newState = Object.assign(
+                {},
+                {artists: action.artists},
+                {albums: action.albums},
+                {genres: action.genres},
+                {shows: action.shows});
+            return newState;
         default:
             return state;
     }

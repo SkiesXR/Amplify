@@ -12,7 +12,7 @@ import LikedTrackIndex from '../../components/Collection/liked-tracks-index';
 import AlbumShow from './album-show-container';
 import ArtistShow from './artist-show-container';
 import GenreShow from './genre-show-container';
-import Search from './search';
+import Search from './search-container';
 import { Route, Switch } from 'react-router-dom';
 
 

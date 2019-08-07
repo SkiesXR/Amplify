@@ -5,7 +5,8 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            input: ''
+            input: '',
+            results: this.props.results
         };
     }
 
@@ -14,12 +15,20 @@ class Search extends React.Component {
     }
 
     update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+        let that = this;
+        return function(e) {
+            that.setState({
+                [field]: e.currentTarget.value
+            });
+            that.props.fetchSearchResults(e.currentTarget.value);
+        }
     }
 
     render() {
+        // debugger;
+        const { results = {} } = this.props;
+        console.log(results);
+
         return(
             <div className="search-container">
                 <div className="search-inputBox">
@@ -28,7 +37,7 @@ class Search extends React.Component {
                             type="text"
                             value={ this.state.input }
                             placeholder="Start typing..."
-                            onChange={ this.update('input') }/>
+                            onChange={this.update('input')}/>
                     </div>
                 </div>
                 <div className="search-content-empty">

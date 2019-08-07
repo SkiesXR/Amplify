@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { receiveSearchResults } from '../../actions/search_actions';
+import { fetchSearchResults } from '../../actions/search_actions';
 import Search from '../Player/search';
 
 const msp = state => {
@@ -9,7 +9,7 @@ const msp = state => {
 };
 
 const mdp = dispatch => ({
-    receiveSearchResults: (results) => dispatch(receiveSearchResults(results)),
+    fetchSearchResults: (results) => dispatch(fetchSearchResults(results)),
 });
 
 export default connect(msp, mdp)(Search);
