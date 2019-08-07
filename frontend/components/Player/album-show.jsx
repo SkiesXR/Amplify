@@ -10,8 +10,9 @@ class AlbumShow extends React.Component {
 
     render() {
         if (!this.props.album) return "";
-        if (!this.props.tracks) return "";
-        let tracks = this.props.tracks || {};
+        if (!this.props.album.release_date) return "";
+        // if (!this.props.tracks) return this.props.album.tracks;
+        let tracks = this.props.tracks || this.props.album.tracks;
         // const { tracks = {} } = this.props.album;
         debugger;
         const releaseYear = parseInt(this.props.album.release_date.slice(0, 4), 10) || "";

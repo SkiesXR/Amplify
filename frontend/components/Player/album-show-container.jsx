@@ -5,8 +5,8 @@ import { fetchAlbum } from '../../actions/album_actions';
 const msp = (state, ownProps) => {
     // debugger;
     return {
-        album: state.entities.albums[ownProps.match.params.albumId],
-        tracks: state.entities.albums[ownProps.match.params.albumId].tracks
+        album: state.entities.albums[ownProps.match.params.albumId] || {},
+        tracks: (state.entities.albums[ownProps.match.params.albumId] || {}).tracks
     }
 };
 
