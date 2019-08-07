@@ -6,6 +6,7 @@
     right: 0;
     height: 46px;
     padding: 16px;
+    box-shadow: -2px 1px 4px #161616;
 }
 
 .search-contentSpacing {
@@ -30,6 +31,34 @@
 
 .search-contentSpacing input::placeholder {
     opacity: .6;
+}
+
+.search-content-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 32px;
+    height: 50vh;
+}
+
+#search-amplify-header {
+    font-size: 28px;
+    font-family: 'Circular Bold';
+    line-height: 36px;
+    letter-spacing: -.005em;
+    text-transform: none;
+    color: #fff;
+    width: 100%;
+    // overflow-wrap: break-word;
+    text-align: center;
+}
+
+#search-amplify-subheader {
+    padding-top: 10px;
+    color: #B3B3B3;
+    font-size: 14px;
+    font-family: 'Circular';
 }
 
 

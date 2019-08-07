@@ -10,7 +10,8 @@ class Search extends React.Component {
                     </div>
                 </div>
                 <div className="search-content-empty">
-                    
+                    <span id="search-amplify-header">Search Amplify</span>
+                    <span id="search-amplify-subheader">Find your favorite songs, artists, albums, podcasts and playlists.</span>
                 </div>
             </div>
         );
