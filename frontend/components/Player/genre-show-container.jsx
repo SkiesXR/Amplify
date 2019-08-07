@@ -5,12 +5,9 @@ import { fetchGenre } from '../../actions/genre.actions';
 const msp = (state, ownProps) => {
     let genres = state.entities.genres[ownProps.match.params.genreId];
     return ({ 
-        // genres: state.entities.genres[ownProps.match.params.genreId],
-        // artists: state.entities.genres[ownProps.match.params.genreId].artists,
-        // category: state.entities.genres[ownProps.match.params.genreId].category
         genres: genres,
-        artists: genres.artists,
-        category: genres.cateogry
+        artists: (genres || {}).artists,
+        category: (genres || {}).category
      });
 };
 
@@ -20,6 +17,5 @@ const mdp = dispatch => {
 
 export default connect(
     msp,
-    // null,
     mdp
 )(GenreShow);
