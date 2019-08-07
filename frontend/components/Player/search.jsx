@@ -4,7 +4,14 @@ class Search extends React.Component {
     render() {
         return(
             <div className="search-container">
-                <span style={{ color: 'white' }}>Hello</span>
+                <div className="search-inputBox">
+                    <div className="search-contentSpacing">
+                        <input type="text" placeholder="Start typing..."/>
+                    </div>
+                </div>
+                <div className="search-content-empty">
+                    
+                </div>
             </div>
         );
     }

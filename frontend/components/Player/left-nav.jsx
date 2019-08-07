@@ -24,7 +24,7 @@ class LeftNav extends React.Component {
                         <div className="nav-link-text" >Home</div>
                     </div>
                 </NavLink>
-                <NavLink className="nav-link-container" activeClassName="left-nav-navlink-selected" to="/search">
+                <NavLink className="nav-link-container" to="/search">
                     <div className="nav-link-text-with-icon">
                         <img className="nav-link-icon" src="search.png" />
                         <div className="nav-link-text" >Search</div>

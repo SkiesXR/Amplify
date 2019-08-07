@@ -1,0 +1,36 @@
+.search-inputBox {
+    position: fixed;
+    background-color: #282828;
+    top: 0;
+    left: 228px;
+    right: 0;
+    height: 46px;
+    padding: 16px;
+}
+
+.search-contentSpacing {
+    padding: 0 32px;
+    margin: 0 auto;
+    max-width: 1480px;
+}
+
+.search-contentSpacing input {
+    font-family: 'Circular Bold';
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -.005em;
+    color: #fff;
+    // caret-color: #1db954;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.search-contentSpacing input::placeholder {
+    opacity: .6;
+}
+
+
+
