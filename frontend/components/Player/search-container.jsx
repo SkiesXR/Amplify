@@ -4,7 +4,7 @@ import Search from '../Player/search';
 
 const msp = state => {
     return {
-        results: Object.values(state.search),
+        results: state.search
     };
 };
 

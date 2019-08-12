@@ -1,5 +1,9 @@
+.search-container {
+    height: 100%;
+}
+
 .search-inputBox {
-    position: fixed;
+    position: static;
     background-color: #282828;
     top: 0;
     left: 228px;
@@ -42,6 +46,10 @@
     height: 50vh;
 }
 
+.search-content-full {
+    display: none;
+}
+
 #search-amplify-header {
     font-size: 28px;
     font-family: 'Circular Bold';
@@ -59,6 +67,25 @@
     color: #B3B3B3;
     font-size: 14px;
     font-family: 'Circular';
+}
+
+.result-dn {
+    display: none;
+}
+
+.result-d {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+
+.search-results-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
 }
 
 
