@@ -15,8 +15,12 @@ class Search extends React.Component {
         this.displayPodcasts = this.displayPodcasts.bind(this);
     }
 
-    componentDidMount() {
-        // this.props.receiveSearchResults();
+    // componentDidMount() {
+    //     // this.props.receiveSearchResults();
+    // }
+
+    componentWillUnmount() {
+        this.props.clearSearchResults();
     }
 
     update(field) {
@@ -177,3 +181,5 @@ class Search extends React.Component {
 export default Search;
 
 // TODO: Reset search results on component unmount
+// TODO: Improve quality of search results:
+//  1) Searching artist name displays artist AND albums they've produced
