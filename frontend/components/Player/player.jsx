@@ -6,6 +6,28 @@ class Player extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            play: false,
+            playheadPos: 0,
+            volPos: 50,
+            currentTime: 0,
+            playPauseButton: "play_white.png",
+            previousVolume: .5,
+            volume: .5,
+            currentSong: null,
+            loveButton: "love.png",
+            loveId: "love",
+            likedSongMessage: null,
+            likedSongMessageClass: "likedSongMessageInactive",
+            muteIcon: "max_volume_gray.png",
+            track: {
+                title: "Skylines",
+                src: "skylines.mp3",
+                duration: "03:09",
+                artist: "Animalfirepower",
+                artwork: "https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg"
+            }
+        }
 
         // Let's bind some methods!
         this.playAudio = this.playAudio.bind(this);
@@ -24,28 +46,9 @@ class Player extends React.Component {
         this.rangeslider = React.createRef();
         this.rangesliderFill = React.createRef();
         this.rangesliderHandle = React.createRef();
-        // this.audio = React.createRef();
+        this.audio = React.createRef();
         // this.barMovement = this.barMovement.bind(this);
 
-        this.state = {
-            play: false,
-            playheadPos: 0,
-            currentTime: 0,
-            playPauseButton: "play_white.png",
-            currentSong: null,
-            loveButton: "love.png",
-            loveId: "love",
-            likedSongMessage: null,
-            likedSongMessageClass: "likedSongMessageInactive",
-            muteIcon: "max_volume_gray.png",
-            track: {
-                title: "Skylines",
-                src: "skylines.mp3",
-                duration: "03:09",
-                artist: "Animalfirepower",
-                artwork: "https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg"
-            }
-        }
     }
 
     componentWillMount() {
@@ -65,10 +68,10 @@ class Player extends React.Component {
                 // console.log(`playheadPos: ${that.state.playheadPos}`);
                 // console.log(`currentTime: ${that.state.currentTime}`);
                 that.setState((prevState) => {
-                    return { 
+                    return {
                         currentTime: prevState.currentTime + 1,
                         playheadPos: progress
-                     }
+                    }
                 });
             }, 1000);
             // console.log("time updated");
@@ -95,22 +98,22 @@ class Player extends React.Component {
                 playPauseButton: "play_white.png"
             })
         });
-}
+    }
 
     timeUpdate() {
         // Convert track duration to seconds
         let length = this.state.track.duration;
         let minFirstDigit = length[0];
-        let minutes = parseInt(minFirstDigit, 10) > 0 ? parseInt(length.slice(0,2)) : parseInt(length.slice(1,2));
+        let minutes = parseInt(minFirstDigit, 10) > 0 ? parseInt(length.slice(0, 2)) : parseInt(length.slice(1, 2));
         let seconds = parseInt(length.slice(3));
         let duration = (minutes * 60) + seconds;
         // console.log(`Duration:${duration}`);
         return (this.state.currentTime / duration) * 100;
     }
-    
+
     // Display appropriate "like" button based user action
     toggleLove() {
-        switch(this.state.loveButton) {
+        switch (this.state.loveButton) {
             case "love.png":
                 this.setState({
                     loveButton: "love_filled_green.png",
@@ -120,7 +123,7 @@ class Player extends React.Component {
                 this.likedSongMessage("add");
                 break;
             case "love_filled_green.png":
-                this.setState({ 
+                this.setState({
                     loveButton: "love.png",
                     loveId: "love"
                 });
@@ -132,7 +135,7 @@ class Player extends React.Component {
 
     // TODO: Add smooth fade in/out
     likedSongMessage(action) {
-        switch(action) {
+        switch (action) {
             case "add":
                 this.setState({
                     likedSongMessage: "Added to your Liked Songs",
@@ -163,12 +166,12 @@ class Player extends React.Component {
         const music = document.getElementById("audio");
         var id = null;
         if (music.paused) {
-            
+
             // Play current track
-            music.play();   
+            music.play();
 
             // Swap "pause" icon for "play icon"
-            this.setState({ 
+            this.setState({
                 playPauseButton: "pause_white.png",
                 play: true,
             });
@@ -180,7 +183,7 @@ class Player extends React.Component {
             if (id) {
                 debugger;
                 clearInterval(id);
-                console.log("cleared interval!")
+                // console.log("cleared interval!")
             }
             // Swap "play" icon for "pause icon"
             this.setState({
@@ -191,12 +194,20 @@ class Player extends React.Component {
     }
 
     // Volume controller
-    volChange() {
-        let audio = document.querySelector("audio");
-        let range = document.getElementById("myRange");
+    volChange(e) {
+        // let audio = this.audio;
+        let range = e.currentTarget;
+        let audio = document.getElementById('audio');
+        // let newVolume = Number(e.target.value);
         audio.volume = range.value / 100;
+        this.setState({ 
+            // volume: range.value / 100,
+            volPos: range.value
+        });
+        console.log(audio.volume);
+        // debugger;
+        // console.log(`Audio Volume: ${audio.volume}`);
         audio.muted = audio.volume === 0.01 ? true : false;
-        console.log(`Audio Volume: ${audio.volume}`);
     }
 
     // Obtain timestamp and convert for displaying track's current time
@@ -208,8 +219,9 @@ class Player extends React.Component {
         return timestamp;
     }
 
+    // control the position of the progress bar playhead using the mouse
     positionHandle(position) {
-        debugger;
+        // debugger;
         // let rangeslider;
         // let rangesliderHandle;
         let progressbarWidth;
@@ -225,22 +237,23 @@ class Player extends React.Component {
             // this.rangesliderHandle.current.style.left = handleLeft + "px";
             this.setState({
                 playheadPos: handleLeft
-            }); 
+            });
         }
         if (handleLeft < 0) {
             // this.rangesliderHandle.current.style.left = "0px";
             this.setState({
                 playheadPos: 0
-            }); 
+            });
         }
         if (handleLeft > progressbarWidth) {
             // this.rangesliderHandle.current.style.left = progressbarWidth + "px";
             this.setState({
                 playheadPos: progressbarWidth
-            }); 
+            });
         }
     }
 
+    // update the time elapsed based on the position of the progress bar playhead
     mouseMove(e) {
         debugger;
         // let rangeslider;
@@ -267,11 +280,23 @@ class Player extends React.Component {
         window.addEventListener('mouseup', this.mouseUp);
     };
 
+    // mute & unmute audio
     toggleMute() {
-        let audio = document.getElementById("audio");
-        audio.muted === true? audio.muted = false : audio.muted = true;
-        // document.getElementById("audio").muted = true;
-        console.log(document.getElementById("myRange").value);
+        let audio = document.getElementById('audio');
+        if (audio.muted === false) {
+            this.setState({ 
+                previousVolume: this.state.volPos,
+                volPos: 0 
+            })
+            audio.muted = true;
+        } else {
+            audio.volume = this.state.previousVolume / 100;
+            let volPos = this.state.previousVolume;
+            this.setState({ 
+                volPos
+            })
+            audio.muted = false;
+        }
     }
 
     render() {
@@ -285,15 +310,15 @@ class Player extends React.Component {
                     <div className="now-playing-left">
                         <div className="thumb-image" style={{ backgroundImage: `url(${this.state.track.artwork})` }}></div>
                         <div className="np-container">
-                            <a id="npt" href="">{ this.state.track.title }</a>
+                            <a id="npt" href="">{this.state.track.title}</a>
                             <div className="now-playing-text">
-                        </div>
+                            </div>
                             <a id="npa" href="">{this.state.track.artist}</a>
                         </div>
                         <div className="love-container">
                             <div className="tooltip">Save to your Liked Songs</div>
-                            <button id="love-button" onClick={ this.toggleLove }>
-                                <img id={ this.state.loveId } src={ this.state.loveButton }/>
+                            <button id="love-button" onClick={this.toggleLove}>
+                                <img id={this.state.loveId} src={this.state.loveButton} />
                             </button>
                         </div>
                     </div>
@@ -302,7 +327,7 @@ class Player extends React.Component {
                     {/* Player Controls */}
                     <div className="now-playing-controls-container">
                         <div className="currentTime">
-                            { this.convertTime(this.state.currentTime) }
+                            {this.convertTime(this.state.currentTime)}
                         </div>
 
                         <div className="now-playing-controls">
@@ -320,7 +345,7 @@ class Player extends React.Component {
 
                                 {/* play / pause buttons */}
                                 <button onClick={this.playAudio} id="np-button">
-                                    <img id="play" src={ this.state.playPauseButton } />
+                                    <img id="play" src={this.state.playPauseButton} />
                                     {/* <img id="play" src="play_white.png" /> */}
                                 </button>
 
@@ -337,35 +362,35 @@ class Player extends React.Component {
                             {/* <div className="slidecontainer">
                                 <input type="range" min="0" max="100" defaultValue="0" className="slider" id="progressBar"></input>
                             </div> */}
-                            <div className="rangeslider" onClick={ this.mouseMove } ref={ this.rangeslider } >
+                            <div className="rangeslider" onClick={this.mouseMove} ref={this.rangeslider} >
                                 <div className="rangeslider_fill" ref={this.rangesliderFill} style={{ width: `${this.state.playheadPos}%` }}></div>
-                                <div className="rangeslider_handle" onMouseDown={ this.mouseDown } ref={ this.rangesliderHandle } style={ { left: `${this.state.playheadPos}%` } }></div>
+                                <div className="rangeslider_handle" onMouseDown={this.mouseDown} ref={this.rangesliderHandle} style={{ left: `${this.state.playheadPos}%` }}></div>
                             </div>
                             {/* <audio id="audio"><source src={ this.state.audioSrc } ref={ this.audio } onTimeUpdate={ this.timeUpdate }/></audio> */}
-                            <audio id="audio"><source src={ this.state.track.src } ref={ this.audio } /></audio>
+                            <audio id="audio"><source src={this.state.track.src} ref={audio => this.audio = audio } /></audio>
                             {/* { this.state.track } */}
-                        </div>  
+                        </div>
                         <div className="duration">
                             {this.state.track.duration}
                         </div>
-                    </div>   
+                    </div>
 
                     {/* Mute Icon */}
                     <div className="mute-icon-container">
-                        <button onClick={ this.toggleMute }>
-                            <img id="mute-icon" src={ this.state.muteIcon } />
+                        <button onClick={this.toggleMute}>
+                            <img id="mute-icon" src={this.state.muteIcon} />
                         </button>
                     </div>
 
                     {/* Volume Slider */}
                     <div className="now-playing-right">
                         <div className="slidecontainer">
-                            <input type="range" min="0" max="100" defaultValue="50" className="slider" id="myRange" onChange={ this.volChange }></input>                
+                            <input type="range" min="0" max="100" value={ this.state.volPos } className="slider" id="myRange" onChange={this.volChange}></input>
                         </div>
                     </div>
-                </div>   
+                </div>
                 <span id="likedSongMessage" className={this.state.likedSongMessageClass}>{this.state.likedSongMessage}</span>
-             
+
             </div>
         );
     }
@@ -376,5 +401,4 @@ export default Player;
 // TODO: Get progress bar draggable
 // TODO: Progress bar handle position controls current time display
 // TODO: Triggering mute button adjusts volume slider position
-// TODO: BUG: After track completes and playhead resets, clicking play no longer moves the playhead
 

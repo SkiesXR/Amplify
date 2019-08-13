@@ -180,6 +180,5 @@ class Search extends React.Component {
 
 export default Search;
 
-// TODO: Reset search results on component unmount
 // TODO: Improve quality of search results:
 //  1) Searching artist name displays artist AND albums they've produced
