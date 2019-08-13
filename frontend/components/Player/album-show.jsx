@@ -14,7 +14,6 @@ class AlbumShow extends React.Component {
         // if (!this.props.tracks) return this.props.album.tracks;
         let tracks = this.props.tracks || this.props.album.tracks;
         // const { tracks = {} } = this.props.album;
-        debugger;
         const releaseYear = parseInt(this.props.album.release_date.slice(0, 4), 10) || "";
         const trackCount = Object.keys(this.props.album.tracks).length || "";    
         let albumTracks = Object.values(tracks).map(track => {

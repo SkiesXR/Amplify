@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Search extends React.Component {
 
@@ -35,15 +36,43 @@ class Search extends React.Component {
                     return (
                         // debugger;
                     <div id="results-albums">
-                        <div>{result[1].title}</div>
+                        <h1 className="main-h1">Albums</h1>
+                        <div className="album-artist-container">
+                            <div className="image-hover-container">
+                                <Link to={`/albums/${result[1].id}`}><img src={result[1].album_art} />
+                                    <div className="Mike">
+                                        <button id="Mike-button">
+                                            <img id="Mike" src="play_white.png" />
+                                        </button>
+                                    </div>
+                                </Link>
+                            </div>
+
+                            {/* <div className="title-container">
+                                <Link id="grid-title" to={`/albums/${result[1].id}`}>{title}</Link>
+                            </div> */}
+
+                            <div className="artist-container">
+                                    <Link id="grid-artist" to={`/albums/${result[1].id}`}>{result[1].title}</Link>
+                            </div>
+                        </div>
                     </div>
                     );
                     break;
                 case "artists":
+                    // debugger;
                     return (
-                        // debugger;
                         <div id="results-artists">
-                            <div>{result[1].name}</div>
+                            <h1 className="main-h1">Artists</h1>
+                            <div className="album-artist-container">
+                                <div className="artist-image-hover-container">
+                                    <img src={ result[1].artist_photo } />
+                                </div>
+
+                                <div className="title-container">
+                                    <Link id="grid-title" to={ `/artists/${result[1].id}` }>{ result[1].name }</Link>
+                                </div>
+                            </div>
                         </div>
                         );
                     break;
@@ -65,15 +94,7 @@ class Search extends React.Component {
                     break;
             }
         });
-        // let searchResults = Object.keys(results).map(key => {  
-        //     return (
-        //         // <div className={ inputClass }>
-        //         <div id="results-artists">
-        //             <div>{ result[0] }</div>
-        //         </div>
-        //     );
         
-
         return(
             <div className="search-container">
                 <div className="search-inputBox">
