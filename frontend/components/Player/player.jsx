@@ -74,11 +74,9 @@ class Player extends React.Component {
                     }
                 });
             }, 1000);
-            // console.log("time updated");
             let rangeslider;
             let ratio;
             let position;
-            // rangeslider = document.querySelector('.rangeslider');
             rangeslider = that.rangeslider;
             ratio = that.state.currentTime / that.state.track.duration;
             position = rangeslider.offsetWidth * ratio;
