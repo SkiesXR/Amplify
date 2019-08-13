@@ -87,9 +87,17 @@
     align-items: flex-start;
     color: white;
     margin-left: 50px;
+    margin-bottom: 100px;
 }
 
 #results-artists {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#results-albums {
     display: flex;
     justify-content: flex-start;
     align-items: center;

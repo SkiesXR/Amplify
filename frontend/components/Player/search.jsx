@@ -10,6 +10,7 @@ class Search extends React.Component {
         };
         // this.displayResult = this.displayResult.bind(this);
         this.displayArtists = this.displayArtists.bind(this);
+        this.displayAlbums = this.displayAlbums.bind(this);
     }
 
     componentDidMount() {
@@ -45,6 +46,35 @@ class Search extends React.Component {
                             );
                         })
                     }  
+                </div>
+            </div>
+        );
+    }
+
+    displayAlbums(albumResults) {
+        let albums = albumResults[1];
+        return (
+            <div>
+                <h1 className="main-h1">Albums</h1>
+                <div id="results-albums">
+                    {albums.map(album => {
+                        return (
+                            <div className="album-artist-container">
+                                <div className="image-hover-container">
+                                    <Link to={`/albums/${album.id}`}><img src={album.album_art} />
+                                        <div className="Mike">
+                                            <button id="Mike-button">
+                                                <img id="Mike" src="play_white.png" />
+                                            </button>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="artist-container">
+                                    <Link id="grid-artist" to={`/albums/${album.id}`}>{album.title}</Link>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         );
@@ -166,8 +196,8 @@ class Search extends React.Component {
                     <span id="search-amplify-subheader">Find your favorite songs, artists, albums, podcasts and playlists.</span>
                 </div>
                 <div className="search-results-main">
-                    {/* { shownResults } */}
                     { artistResults.length > 0 ? this.displayArtists(artistResults) : ""}
+                    { albumResults.length > 0 ? this.displayAlbums(albumResults) : ""}
                 </div>
             </div>
         );
