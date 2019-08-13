@@ -11,6 +11,7 @@ class Search extends React.Component {
         // this.displayResult = this.displayResult.bind(this);
         this.displayArtists = this.displayArtists.bind(this);
         this.displayAlbums = this.displayAlbums.bind(this);
+        this.displayGenres = this.displayGenres.bind(this);
     }
 
     componentDidMount() {
@@ -32,7 +33,7 @@ class Search extends React.Component {
         return (
             <div>
                 <h1 className="main-h1">Artists</h1>
-                <div id="results-artists">
+                <div className="results">
                     { artists.map(artist => {
                         return (
                             <div className="album-artist-container">
@@ -56,7 +57,7 @@ class Search extends React.Component {
         return (
             <div>
                 <h1 className="main-h1">Albums</h1>
-                <div id="results-albums">
+                <div className="results">
                     {albums.map(album => {
                         return (
                             <div className="album-artist-container">
@@ -71,6 +72,36 @@ class Search extends React.Component {
                                 </div>
                                 <div className="artist-container">
                                     <Link id="grid-artist" to={`/albums/${album.id}`}>{album.title}</Link>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        );
+    }
+
+    displayGenres(genreResults) {
+        let genres = genreResults[1];
+        debugger;
+        return (
+            <div>
+                <h1 className="main-h1">Genres</h1>
+                <div className="results">
+                    {genres.map(genre => {
+                        return (
+                            <div className="album-artist-container">
+                                <div className="image-hover-container">
+                                    <Link to={`/genres/${genre.id}`}><img src={genre.genre_image} />
+                                        <div className="Mike">
+                                            <button id="Mike-button">
+                                                <img id="Mike" src="play_white.png" />
+                                            </button>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="artist-container">
+                                    <Link id="grid-artist" to={`/genres/${genre.id}`}>{genre.category}</Link>
                                 </div>
                             </div>
                         );
@@ -198,6 +229,7 @@ class Search extends React.Component {
                 <div className="search-results-main">
                     { artistResults.length > 0 ? this.displayArtists(artistResults) : ""}
                     { albumResults.length > 0 ? this.displayAlbums(albumResults) : ""}
+                    { genreResults.length > 0 ? this.displayGenres(genreResults) : ""}
                 </div>
             </div>
         );
