@@ -8,7 +8,10 @@ import {
 
 const msp = state => {
   return {
-    nowPlaying: state.ui.nowPlaying
+    currentSong: state.ui.nowPlaying.currentSong,
+    playing: state.ui.nowPlaying.playing,
+    repeat: state.ui.nowPlaying.repeat,
+    shuffle: state.ui.nowPlaying.shuffle
   };
 };
 

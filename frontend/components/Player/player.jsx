@@ -6,14 +6,16 @@ class Player extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      play: false,
+      playing: this.props.playing || false,
+      currentSong: null,
+      repeat: false,
+      shuffle: false,
       playheadPos: 0,
       volPos: 50,
-      currentTime: 0,
-      playPauseButton: "play_white.png",
       previousVolume: 0.5,
       volume: 0.5,
-      currentSong: null,
+      currentTime: 0,
+      playPauseButton: "play_white.png",
       loveButton: "love.png",
       loveId: "love",
       likedSongMessage: null,
@@ -64,8 +66,9 @@ class Player extends React.Component {
     track.addEventListener("play", () => {
       id = setInterval(function() {
         var progress = that.timeUpdate();
-        // console.log(`playheadPos: ${that.state.playheadPos}`);
-        // console.log(`currentTime: ${that.state.currentTime}`);
+        console.log(`playheadPos: ${that.state.playheadPos}`);
+        console.log(`currentTime: ${that.state.currentTime}`);
+        console.log(`track current time: ${track.currentTime}`);
         that.setState(prevState => {
           return {
             currentTime: prevState.currentTime + 1,
@@ -196,7 +199,7 @@ class Player extends React.Component {
     this.setState({
       volPos: range.value
     });
-    console.log(audio.volume);
+    // console.log(audio.volume);
     audio.muted = audio.volume <= 0.01 ? true : false;
   }
 
@@ -215,7 +218,6 @@ class Player extends React.Component {
     let rangesliderHandle;
     let progressbarWidth;
     rangeslider = document.querySelector(".rangeslider");
-    console.log(rangeslider);
     rangesliderHandle = this.rangesliderHandle.current.offsetWidth;
     progressbarWidth = rangeslider - rangesliderHandle;
 
@@ -257,7 +259,7 @@ class Player extends React.Component {
     this.setState({
       currentTime: newTime
     });
-    document.getElementById("audio").currentTime = this.state.currentTime;
+    document.getElementById("audio").currentTime = newTime;
   }
 
   mouseUp(e) {
@@ -419,4 +421,3 @@ class Player extends React.Component {
 export default Player;
 
 // DEBUG: Progress bar handle movement is on an interval
-// DEBUG: Audio currentTime and displayed current time are incorrect once you move the progress bar handle
