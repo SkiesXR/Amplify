@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { setCurrentSong, setQueue, toggleSong } from '../../actions/player_actions';
 
 class AlbumShowItem extends React.Component {
     constructor(props) {
