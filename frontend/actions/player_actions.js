@@ -1,31 +1,29 @@
-export const PLAY = "PLAY";
-export const PAUSE = "PAUSE";
-export const RESUME = "RESUME";
-export const NEXT_SONG = "NEXT_SONG";
-export const PREVIOUS_SONG = "PREVIOUS_SONG";
-export const UPDATE_TIME = "UPDATE_TIME";
+export const SET_CURRENT_SONG = 'SET_CURRENT_SONG';
+export const TOGGLE_SONG = 'TOGGLE_SONG';
+export const SET_QUEUE = 'SET_QUEUE';
+export const ADD_TO_QUEUE = 'ADD_TO_QUEUE';
+export const TOGGLE_SHUFFLE = 'TOGGLE_SHUFFLE';
 
-export const PLAY = () => ({
-    type: PLAY
-    
+
+export const setCurrentSong = (song) => ({
+    type: SET_CURRENT_SONG,
+    song
 })
 
-export const PAUSE = () => ({
-    type: PAUSE
+export const toggleSong = () => ({
+    type: TOGGLE_SONG
 })
 
-export const RESUME = () => ({
-    type: RESUME
+export const setQueue = (queue) => ({
+    type: SET_QUEUE,
+    queue
 })
 
-export const NEXT_SONG = () => ({
-    type: NEXT_SONG
+export const addToQueue = (song) => ({
+    type: ADD_TO_QUEUE,
+    song
 })
 
-export const PREVIOUS_SONG = () => ({
-    type: PREVIOUS_SONG
-})
-
-export const UPDATE_TIME = () => ({
-    type: UPDATE_TIME
+export const toggleShuffle = () => ({
+            type: TOGGLE_SHUFFLE
 })
