@@ -25,5 +25,5 @@ export const addToQueue = (song) => ({
 })
 
 export const toggleShuffle = () => ({
-            type: TOGGLE_SHUFFLE
+    type: TOGGLE_SHUFFLE
 })
