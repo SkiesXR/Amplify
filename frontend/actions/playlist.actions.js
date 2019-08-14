@@ -9,7 +9,7 @@ export const CLEAR_PLAYLIST_ERRORS = "CLEAR_PLAYLIST_ERRORS";
 // action creators
 
 export const receivePlaylists = (playlists) => ({
-    type: RECEIVE_PLAYLIST,
+    type: RECEIVE_PLAYLISTS,
     playlists
 })
 
