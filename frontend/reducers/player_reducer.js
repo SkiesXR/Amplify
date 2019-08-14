@@ -1,4 +1,6 @@
-import { merge } from 'lodash';
+import {
+    merge
+} from 'lodash';
 import {
     SET_CURRENT_SONG,
     TOGGLE_SONG,
@@ -9,7 +11,8 @@ import {
 
 const nullState = {
     currentSong: {
-        audioUrl: 'https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg'
+        audioUrl: 'https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg',
+        album_art: 'https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg'
     },
     playing: false,
     queue: [],

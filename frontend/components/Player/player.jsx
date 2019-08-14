@@ -290,7 +290,6 @@ class Player extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div className="player">
         {/* Audio element */}
@@ -308,7 +307,8 @@ class Player extends React.Component {
             <div
               className="thumb-image"
               style={{
-                backgroundImage: `url(${this.state.track.artwork})`
+                // backgroundImage: `url(${this.state.track.artwork})`
+                backgroundImage: `url(${this.props.currentSong.album_art})`
               }}
             />
             <div className="np-container">
