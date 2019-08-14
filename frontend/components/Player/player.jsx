@@ -54,7 +54,6 @@ class Player extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     let track;
     let that = this;
     var id = null;
