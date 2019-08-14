@@ -78,9 +78,10 @@ class Player extends React.Component {
             let ratio;
             let position;
             rangeslider = that.rangeslider;
-            ratio = that.state.currentTime / that.state.track.duration;
-            position = rangeslider.offsetWidth * ratio;
+            ratio = that.state.currentTime / that.timeUpdate();
+            position = rangeslider.current.offsetWidth * ratio;
             that.positionHandle(position);
+            // debugger;
         });
 
         // When user clicks "pause", pause counter and suspend progress bar movement
@@ -193,19 +194,14 @@ class Player extends React.Component {
 
     // Volume controller
     volChange(e) {
-        // let audio = this.audio;
         let range = e.currentTarget;
         let audio = document.getElementById('audio');
-        // let newVolume = Number(e.target.value);
         audio.volume = range.value / 100;
         this.setState({ 
-            // volume: range.value / 100,
             volPos: range.value
         });
         console.log(audio.volume);
-        // debugger;
-        // console.log(`Audio Volume: ${audio.volume}`);
-        audio.muted = audio.volume === 0.01 ? true : false;
+        audio.muted = audio.volume <= 0.01 ? true : false;
     }
 
     // Obtain timestamp and convert for displaying track's current time
@@ -219,12 +215,17 @@ class Player extends React.Component {
 
     // control the position of the progress bar playhead using the mouse
     positionHandle(position) {
-        // debugger;
-        // let rangeslider;
-        // let rangesliderHandle;
+        debugger;
+        let rangeslider;
+        let rangesliderHandle;
         let progressbarWidth;
-        let rangeslider = this.rangeslider.current.offsetWidth;
-        let rangesliderHandle = this.rangesliderHandle.current.offsetWidth;
+        rangeslider = document.querySelector('.rangeslider');
+        console.log(rangeslider);
+        // let rangeslider = this.rangeslider.current.offsetWidth;
+        debugger;
+        // console.log(this.rangesliderHandle.current.offsetWidth);
+        rangesliderHandle = this.rangesliderHandle.current.offsetWidth;
+        // let rangesliderHandle = this.rangesliderHandle.current.offsetWidth;
         // console.log("handling position");
         progressbarWidth = rangeslider - rangesliderHandle;
 
@@ -253,7 +254,7 @@ class Player extends React.Component {
 
     // update the time elapsed based on the position of the progress bar playhead
     mouseMove(e) {
-        debugger;
+        // debugger;
         // let rangeslider;
         let rangeslider = this.rangeslider.current.offsetWidth;
         this.positionHandle(e.pageX);
@@ -357,12 +358,10 @@ class Player extends React.Component {
                                     <img id="repeat" src="repeat_white.png" />
                                 </button>
                             </div>
-                            {/* <div className="slidecontainer">
-                                <input type="range" min="0" max="100" defaultValue="0" className="slider" id="progressBar"></input>
-                            </div> */}
-                            <div className="rangeslider" onClick={this.mouseMove} ref={this.rangeslider} >
-                                <div className="rangeslider_fill" ref={this.rangesliderFill} style={{ width: `${this.state.playheadPos}%` }}></div>
-                                <div className="rangeslider_handle" onMouseDown={this.mouseDown} ref={this.rangesliderHandle} style={{ left: `${this.state.playheadPos}%` }}></div>
+                            
+                            <div className="rangeslider" onClick={ this.mouseMove } ref={ this.rangeslider } >
+                                <div className="rangeslider_fill" ref={ this.rangesliderFill } style={{ width: `${this.state.playheadPos }%` }}></div>
+                                <div className="rangeslider_handle" onMouseDown={ this.mouseDown } ref={ this.rangesliderHandle } style={{ left: `${this.state.playheadPos }%` }}></div>
                             </div>
                             {/* <audio id="audio"><source src={ this.state.audioSrc } ref={ this.audio } onTimeUpdate={ this.timeUpdate }/></audio> */}
                             <audio id="audio"><source src={this.state.track.src} ref={audio => this.audio = audio } /></audio>
@@ -398,5 +397,4 @@ export default Player;
 
 // TODO: Get progress bar draggable
 // TODO: Progress bar handle position controls current time display
-// TODO: Triggering mute button adjusts volume slider position
 
