@@ -1,5 +1,5 @@
 import React from 'react';
-import { setCurrentSong, setQueue, toggleSong } from '../../actions/player_actions';
+// import { setCurrentSong, setQueue, toggleSong } from '../../actions/player_actions';
 
 class AlbumShowItem extends React.Component {
     constructor(props) {
@@ -8,8 +8,17 @@ class AlbumShowItem extends React.Component {
             noteIcon: "music_note.png",
             noteContainerClass: "tc-outer-top"
         }
+
+        // Bind some methods!
         this.playNote = this.playNote.bind(this);
         this.musicNote = this.musicNote.bind(this);
+        this.handlePlay = this.handlePlay.bind(this);
+    }
+
+    handlePlay() {
+        this.props.setCurrentSong(this.props.track);
+        // this.props.setQueue(this.props.queue);
+        this.props.toggleSong();
     }
 
     // Flip musical note icon to play icon once mouse enters track container
@@ -40,7 +49,7 @@ class AlbumShowItem extends React.Component {
             <div onMouseEnter={ this.playNote } onMouseLeave={ this.musicNote } className="track-container">
                 <div className="tc-outer">
                     <div className={ noteContainerClass }>
-                        <img id="tc-note" src={ this.state.noteIcon } />
+                        <img id="tc-note" src={ this.state.noteIcon } onClick={ this.handlePlay } />
                     </div>  
                 </div>
                 <div className="tc-title-artist">
