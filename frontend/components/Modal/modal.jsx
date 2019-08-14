@@ -1,6 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import NewPlaylist from '../Playlists/new_playlist';
 
 class Modal extends React.Component {
 
@@ -19,7 +20,7 @@ class Modal extends React.Component {
         let component;
         switch (modal.modal) {
             case 'new_playlist':
-                component = <span>MODAL STUFF!</span>;
+                component = <NewPlaylist />;
                 break;
             default:
                 return null;
