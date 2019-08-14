@@ -15,7 +15,6 @@ class NewPlaylist extends React.Component {
     }
 
     handleSubmit() {
-        // e.preventDefault();
         let playlist = this.state;
         this.setState({ title: '' });
         this.props.createPlaylist(playlist)
@@ -44,7 +43,6 @@ class NewPlaylist extends React.Component {
                 </button>
                 <h1 id="new-playlist-header">Create new playlist</h1>
                 <div className="new-playlist-input-container">
-                    {/* <form onSubmit={ this.handleSubmit }> */}
                         <div className="new-playlist-input-box">
                             <div className="new-playlist-content-spacing">
                                 <h4 className="new-playlist-inputBox-label">Playlist Name</h4>
@@ -58,7 +56,6 @@ class NewPlaylist extends React.Component {
                                 </input>
                             </div>
                         </div>
-                    {/* </form> */}
                 </div>
                 <div className="modal-buttons">
                     <button className="modal-button-cancel" onClick={ closeModal }>CANCEL</button>
@@ -84,6 +81,3 @@ export default withRouter(connect(msp, mdp)(NewPlaylist));
 
 // TODO: Click propogation hasn't been stopped
 // TODO: Error when trying to create playlist with no name
-// TODO: "Create" button works
-
-window.closeModal = closeModal();

@@ -3,6 +3,7 @@ import {
     RECEIVE_PLAYLIST,
     DELETE_PLAYLIST,
 } from '../actions/playlist.actions';
+import { merge } from 'lodash';
 
 export default (state = {}, action) => {
     Object.freeze(state);
@@ -12,10 +13,11 @@ export default (state = {}, action) => {
             newState = Object.assign({}, state, action.playlists)
             return newState;
         case RECEIVE_PLAYLIST:
-            newState = Object.assign({}, state, {
-                [action.playlist.id]: action.playlist
-            })
-            return newState;
+            // newState = Object.assign({}, state, {
+            //     [action.playlist.id]: action.playlist
+            // })
+            // return newState;
+            return merge ({}, state, action.playlist);
         case DELETE_PLAYLIST:
             newState = Object.assign({}, state)
             delete newState[action.playlistId]
