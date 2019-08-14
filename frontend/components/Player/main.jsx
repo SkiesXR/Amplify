@@ -7,7 +7,7 @@ import Artists from './main-artists-container';
 import Podcast from './main-podcast-container';
 import Genres from './main-genres-container';
 import Discover from './main-discover';
-import PlaylistIndex from '../Playlists/playlist-index';
+import PlaylistIndex from '../Playlists/playlist-index-container';
 import LikedTrackIndex from '../../components/Collection/liked-tracks-index';
 import AlbumShow from './album-show-container';
 import ArtistShow from './artist-show-container';
