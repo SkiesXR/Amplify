@@ -5,10 +5,11 @@ import SplashContainer from './session_form/splash_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import AmplifyPlayerContainer from './Player/amplify_player_container';
 import { Route, Switch } from 'react-router-dom';
-
+import Modal from './Modal/modal';
 
 const App = () => {
    return (<div>
+       <Modal />
         <Switch>
             <AuthRoute exact path="/login" component={ LoginFormContainer } />
             <AuthRoute exact path="/signup" component={ SignupFormContainer } />
