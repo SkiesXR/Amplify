@@ -5,8 +5,8 @@ class Api::PlaylistsController < ApplicationController
         @playlist.user_id = current_user.id
 
         if @playlist.save
-            @user = User.find(@playlist.creator_id)
-            @playlist_track_ids = @playlist.tracks.map { |track| track.id }
+            @user = User.find(@playlist.user_id)
+            # @playlist_track_ids = @playlist.tracks.map { |track| track.id }
             render :show
         else
             render json: @playlists.errors.messages, status: 401
