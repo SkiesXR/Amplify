@@ -7,7 +7,6 @@ class Player extends React.Component {
     super(props);
     this.state = {
       playing: this.props.playing || false,
-      currentSong: null,
       repeat: false,
       shuffle: false,
       playheadPos: 0,
@@ -56,7 +55,6 @@ class Player extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     let track;
     let that = this;
     var id = null;
@@ -292,6 +290,7 @@ class Player extends React.Component {
   }
 
   render() {
+    debugger;
     return (
       <div className="player">
         {/* Audio element */}

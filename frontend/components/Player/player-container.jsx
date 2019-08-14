@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { Player } from "./player";
+import Player from "./player";
 import {
   toggleSong,
   setCurrentSong,
