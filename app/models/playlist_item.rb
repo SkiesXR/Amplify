@@ -24,4 +24,5 @@ class PlaylistItem < ApplicationRecord
         primary_key: :id,
         foreign_key: :track_id,
         class_name: :Track
+
 end
