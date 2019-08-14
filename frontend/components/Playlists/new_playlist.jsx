@@ -32,7 +32,8 @@ class NewPlaylist extends React.Component {
     // }
 
     render() {
-        const { closeModal } = this.props;
+        debugger;
+        let { closeModal } = this.props;
 
         return (
             <div className="modal-container">
@@ -75,9 +76,15 @@ const msp = (state) => ({
 });
 
 const mdp = (dispatch) => ({
-    closeModal: () => dispatch(closeModal()),
     createPlaylist: (playlist) => dispatch(createPlaylist(playlist)),
+    closeModal: () => dispatch(closeModal())
 })
 
 
 export default withRouter(connect(msp, mdp)(NewPlaylist));
+
+// TODO: Click propogation hasn't been stopped
+// TODO: Error when trying to create playlist with no name
+// TODO: "Create" button works
+
+window.closeModal = closeModal();
