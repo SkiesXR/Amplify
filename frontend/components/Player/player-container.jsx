@@ -1,15 +1,24 @@
-import { connect } from 'react-redux';
-import { Player } from './player';
-import { toggleSong } from '../../actions/player_actions';
+import { connect } from "react-redux";
+import { Player } from "./player";
+import {
+  toggleSong,
+  setCurrentSong,
+  setQueue
+} from "../../actions/player_actions";
 
 const msp = state => {
-    return {
-        nowPlaying: state.ui.nowPlaying
-    };
+  return {
+    nowPlaying: state.ui.nowPlaying
+  };
 };
 
 const mdp = dispatch => ({
-    toggleSong: () => (dispatch(toggleSong()))
+  toggleSong: () => dispatch(toggleSong()),
+  setCurrentSong: track => dispath(setCurrentSong(track)),
+  setQueue: queue => dispatch(setQueue(queue))
 });
 
-export default connect(msp, mdp)(Player);
+export default connect(
+  msp,
+  mdp
+)(Player);

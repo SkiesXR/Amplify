@@ -54,6 +54,7 @@ class Player extends React.Component {
   }
 
   componentDidMount() {
+    debugger;
     let track;
     let that = this;
     var id = null;
@@ -256,6 +257,7 @@ class Player extends React.Component {
     this.setState({
       currentTime: newTime
     });
+    document.getElementById("audio").currentTime = this.state.currentTime;
   }
 
   mouseUp(e) {
@@ -290,12 +292,23 @@ class Player extends React.Component {
   render() {
     return (
       <div className="player">
+        {/* Audio element */}
+        <audio id="audio">
+          <source
+            src={this.state.track.src}
+            ref={audio => (this.audio = audio)}
+            currentTime={this.state.currentTime}
+          />
+        </audio>
+
         <div id="now-playing-bar">
           {/* left side */}
           <div className="now-playing-left">
             <div
               className="thumb-image"
-              style={{ backgroundImage: `url(${this.state.track.artwork})` }}
+              style={{
+                backgroundImage: `url(${this.state.track.artwork})`
+              }}
             />
             <div className="np-container">
               <a id="npt" href="">
@@ -366,14 +379,6 @@ class Player extends React.Component {
                   style={{ left: `${this.state.playheadPos}%` }}
                 />
               </div>
-              {/* <audio id="audio"><source src={ this.state.audioSrc } ref={ this.audio } onTimeUpdate={ this.timeUpdate }/></audio> */}
-              <audio id="audio">
-                <source
-                  src={this.state.track.src}
-                  ref={audio => (this.audio = audio)}
-                />
-              </audio>
-              {/* { this.state.track } */}
             </div>
             <div className="duration">{this.state.track.duration}</div>
           </div>
@@ -414,3 +419,4 @@ class Player extends React.Component {
 export default Player;
 
 // DEBUG: Progress bar handle movement is on an interval
+// DEBUG: Audio currentTime and displayed current time are incorrect once you move the progress bar handle
