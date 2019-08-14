@@ -1,5 +1,8 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class LeftNav extends React.Component {
 
@@ -41,7 +44,7 @@ class LeftNav extends React.Component {
                     <h2 id="left-nav-h2">Playlists</h2>
                     <div className="nav-link-text-with-icon-p">
                         <img className="nav-link-icon-plus" src="addplaylist.png" />
-                        <div className="nav-link-text-cp">Create Playlist</div>
+                        <div className="nav-link-text-cp" onClick={ this.props.openModal }>Create Playlist</div>
                     </div>
                     <div className="playlist-items"></div>
                     <Link className="nav-link-text-logout" onClick={ () => this.logoutUser() } to="/">Logout</Link>
@@ -52,8 +55,17 @@ class LeftNav extends React.Component {
                 </div>
             </div>
         );
-    }
+    }  
 }
 
-export default LeftNav;
+const mdp = (dispatch) => ({
+    openModal: () => dispatch(openModal({ modal: 'new_playlist' }))
+})
+
+// export default LeftNav;
+export default withRouter(connect(null, mdp)(LeftNav));
+
+
+
+
 

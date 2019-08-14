@@ -2,28 +2,37 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 
-function Modal({ modal, closeModal }) {
-    if (!modal) {
-        return null;
+class Modal extends React.Component {
+
+    constructor(props) {
+        super(props);
     }
-    let component;
-    switch (modal) {
-        case 'login':
-            component = <LoginFormContainer />;
-            break;
-        case 'signup':
-            component = <SignupFormContainer />;
-            break;
-        default:
+
+    render() {
+
+        let { modal, closeModal } = this.props;
+
+        if (!modal) {
             return null;
-    }
-    return (
-        <div className="modal-background" onClick={closeModal}>
-            <div className="modal-child" onClick={e => e.stopPropagation()}>
-                {component}
+        }
+
+        let component;
+        switch (modal.modal) {
+            case 'new_playlist':
+                component = <span>MODAL STUFF!</span>;
+                break;
+            default:
+                return null;
+        }
+
+        return (
+            <div className="modal-background" onClick={closeModal} >
+                <div className="modal-child" onClick={e => e.stopPropagation()}>
+                    {component}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }  
 }
 
 const msp = state => {
