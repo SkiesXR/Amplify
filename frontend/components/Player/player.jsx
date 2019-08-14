@@ -307,17 +307,16 @@ class Player extends React.Component {
             <div
               className="thumb-image"
               style={{
-                // backgroundImage: `url(${this.state.track.artwork})`
                 backgroundImage: `url(${this.props.currentSong.album_art})`
               }}
             />
             <div className="np-container">
               <a id="npt" href="">
-                {this.state.track.title}
+                {this.props.currentSong.title}
               </a>
               <div className="now-playing-text" />
               <a id="npa" href="">
-                {this.state.track.artist}
+                {this.props.currentSong.artist}
               </a>
             </div>
             <div className="love-container">
