@@ -7,6 +7,7 @@ class Player extends React.Component {
     super(props);
     this.state = {
       playing: this.props.playing || false,
+      currentSong: this.props.currentSong,
       repeat: false,
       shuffle: false,
       playheadPos: 0,
@@ -59,14 +60,15 @@ class Player extends React.Component {
     let that = this;
     var id = null;
     track = document.querySelector("#audio");
+    track.src = this.state.currentSong.audio_file;
 
     // When user clicks "play", start counter & progress the bar
     track.addEventListener("play", () => {
       id = setInterval(function() {
         var progress = that.timeUpdate();
-        console.log(`playheadPos: ${that.state.playheadPos}`);
-        console.log(`currentTime: ${that.state.currentTime}`);
-        console.log(`track current time: ${track.currentTime}`);
+        // console.log(`playheadPos: ${that.state.playheadPos}`);
+        // console.log(`currentTime: ${that.state.currentTime}`);
+        // console.log(`track current time: ${track.currentTime}`);
         that.setState(prevState => {
           return {
             currentTime: prevState.currentTime + 1,
@@ -167,25 +169,22 @@ class Player extends React.Component {
     music.src = this.props.currentSong.audio_file;
     var id = null;
     if (music.paused) {
-      // Play current track
       music.play();
 
       // Swap "pause" icon for "play icon"
       this.setState({
-        playPauseButton: "pause_white.png",
-        play: true
+        playPauseButton: "pause_white.png"
       });
     } else {
-      // Pause current track
       music.pause();
+
       if (id) {
-        debugger;
         clearInterval(id);
       }
       // Swap "play" icon for "pause icon"
       this.setState({
         playPauseButton: "play_white.png",
-        play: false
+        playing: false
       });
     }
   }
@@ -296,7 +295,7 @@ class Player extends React.Component {
         {/* Audio element */}
         <audio id="audio">
           <source
-            src={this.state.track.src}
+            src={this.props.currentSong.audio_file}
             ref={audio => (this.audio = audio)}
             currentTime={this.state.currentTime}
           />
