@@ -8,6 +8,7 @@ export default (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_PLAYLIST_ERRORS:
             return action.errors;
+            // return {};
         case CLEAR_PLAYLIST_ERRORS:
             return {};
         default:

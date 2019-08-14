@@ -8,12 +8,12 @@ export const CLEAR_PLAYLIST_ERRORS = "CLEAR_PLAYLIST_ERRORS";
 
 // action creators
 
-export const recievePlaylists = (playlists) => ({
+export const receivePlaylists = (playlists) => ({
     type: RECEIVE_PLAYLIST,
     playlists
 })
 
-export const recievePlaylist = (playlist) => ({
+export const receivePlaylist = (playlist) => ({
     type: RECEIVE_PLAYLIST,
     playlist
 })
@@ -50,15 +50,13 @@ export const deletePlaylist = (id) => dispatch => (
 )
 
 export const createPlaylist = (playlist) => dispatch => (
-    PlaylistApiUtil.createPlaylist(playlist)
+    PlaylistAPIUtil.createPlaylist(playlist)
         .then(playlist => {
             dispatch(receivePlaylist(playlist))
-        },
-        err => dispatch(receivePlaylistErrors(err.responseJSON)))
-);
-
+        }));
+        
 export const updatePlaylist = (playlist) => dispatch => (
-    PlaylistApiUtil.updatePlaylist(playlist)
+    PlaylistAPIUtil.updatePlaylist(playlist)
     .then(playlist => {
             dispatch(receivePlaylist(playlist))
         },

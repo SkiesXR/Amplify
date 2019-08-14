@@ -11,20 +11,20 @@ class NewPlaylist extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         // this.redirectToShow = this.redirectToShow.bind(this);
-        this.state = { name: '' };
+        this.state = { title: '' };
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
+    handleSubmit() {
+        // e.preventDefault();
         let playlist = this.state;
-        this.setState({ name: '' });
+        this.setState({ title: '' });
         this.props.createPlaylist(playlist)
-        //     .then(this.props.closeModal)
+            .then(this.props.closeModal);
         //     .then(() => this.redirectToShow());
     }
 
     handleChange(e) {
-        this.setState({ name: e.target.value })
+        this.setState({ title: e.target.value })
     }
 
     // redirectToShow() {
@@ -32,7 +32,6 @@ class NewPlaylist extends React.Component {
     // }
 
     render() {
-        debugger;
         let { closeModal } = this.props;
 
         return (
@@ -45,7 +44,7 @@ class NewPlaylist extends React.Component {
                 </button>
                 <h1 id="new-playlist-header">Create new playlist</h1>
                 <div className="new-playlist-input-container">
-                    <form onSubmit={ this.handleSubmit }>
+                    {/* <form onSubmit={ this.handleSubmit }> */}
                         <div className="new-playlist-input-box">
                             <div className="new-playlist-content-spacing">
                                 <h4 className="new-playlist-inputBox-label">Playlist Name</h4>
@@ -53,17 +52,17 @@ class NewPlaylist extends React.Component {
                                     type="text"
                                     className="new-playlist-inputBox-input"
                                     placeholder="New Playlist"
-                                    value={ this.state.name }
+                                    value={ this.state.title }
                                     onChange={ this.handleChange }
                                     >
                                 </input>
                             </div>
                         </div>
-                    </form>
+                    {/* </form> */}
                 </div>
                 <div className="modal-buttons">
                     <button className="modal-button-cancel" onClick={ closeModal }>CANCEL</button>
-                    <button className="modal-button-create">CREATE</button>
+                    <button className="modal-button-create" onClick={ this.handleSubmit }>CREATE</button>
                 </div>
             </div>
         )
