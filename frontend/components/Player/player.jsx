@@ -164,6 +164,7 @@ class Player extends React.Component {
   // Logic for audio controls
   playAudio() {
     const music = document.getElementById("audio");
+    music.src = this.props.currentSong.audio_file;
     var id = null;
     if (music.paused) {
       // Play current track
