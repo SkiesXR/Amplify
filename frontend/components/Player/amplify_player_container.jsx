@@ -7,7 +7,9 @@ import { logout } from '../../actions/session_actions';
 const msp = state => {
     return {
         currentUser: state.entities.users[state.session.id],
-        artists: Object.values(state.entities.artists)
+        artists: Object.values(state.entities.artists),
+        playing: state.ui.nowPlaying.playing
+
     };
 };
 
