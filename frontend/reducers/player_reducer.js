@@ -13,7 +13,8 @@ const nullState = {
     },
     playing: false,
     queue: [],
-    shuffle: false
+    shuffle: false,
+    repeat: false
 };
 
 
