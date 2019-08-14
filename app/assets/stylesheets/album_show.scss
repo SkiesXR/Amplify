@@ -168,7 +168,7 @@
 .album-show-left-play:hover {
     background-color: rgb(36, 219, 100);
     transform: scale(1.05);
-    cursor: default;
+    cursor: pointer;
 }
 
 .album-show-left-play:active {
@@ -208,7 +208,8 @@
     padding-bottom: .7em;
 }
 
-.track-container:hover, .track-container:focus {
+.track-container:hover,
+.track-container:focus {
     background-color: rgba(0, 0, 0, .3);
 }
 
@@ -278,6 +279,3 @@
     opacity: .6;
     font-family: 'Circular';
 }
-
-
-

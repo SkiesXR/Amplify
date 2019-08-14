@@ -47,7 +47,6 @@ class Player extends React.Component {
     this.rangesliderFill = React.createRef();
     this.rangesliderHandle = React.createRef();
     this.audio = React.createRef();
-    // this.barMovement = this.barMovement.bind(this);
   }
 
   componentWillMount() {
@@ -80,7 +79,6 @@ class Player extends React.Component {
       ratio = that.state.currentTime / that.timeUpdate();
       position = rangeslider.current.offsetWidth * ratio;
       that.positionHandle(position);
-      // debugger;
     });
 
     // When user clicks "pause", pause counter and suspend progress bar movement
@@ -108,7 +106,6 @@ class Player extends React.Component {
         : parseInt(length.slice(1, 2));
     let seconds = parseInt(length.slice(3));
     let duration = minutes * 60 + seconds;
-    // console.log(`Duration:${duration}`);
     return (this.state.currentTime / duration) * 100;
   }
 
@@ -175,14 +172,12 @@ class Player extends React.Component {
         playPauseButton: "pause_white.png",
         play: true
       });
-      // console.log("Attempted to move the bar!");
     } else {
       // Pause current track
       music.pause();
       if (id) {
         debugger;
         clearInterval(id);
-        // console.log("cleared interval!")
       }
       // Swap "play" icon for "pause icon"
       this.setState({
@@ -220,30 +215,23 @@ class Player extends React.Component {
     let progressbarWidth;
     rangeslider = document.querySelector(".rangeslider");
     console.log(rangeslider);
-    // let rangeslider = this.rangeslider.current.offsetWidth;
-    // console.log(this.rangesliderHandle.current.offsetWidth);
     rangesliderHandle = this.rangesliderHandle.current.offsetWidth;
-    // let rangesliderHandle = this.rangesliderHandle.current.offsetWidth;
-    // console.log("handling position");
     progressbarWidth = rangeslider - rangesliderHandle;
 
     // Left position of the handle
     let handleLeft = position - rangeslider.offsetLeft;
 
     if (handleLeft >= 0 && handleLeft <= progressbarWidth) {
-      // this.rangesliderHandle.current.style.left = handleLeft + "px";
       this.setState({
         playheadPos: handleLeft
       });
     }
     if (handleLeft < 0) {
-      // this.rangesliderHandle.current.style.left = "0px";
       this.setState({
         playheadPos: 0
       });
     }
     if (handleLeft > progressbarWidth) {
-      // this.rangesliderHandle.current.style.left = progressbarWidth + "px";
       this.setState({
         playheadPos: progressbarWidth
       });
@@ -252,8 +240,6 @@ class Player extends React.Component {
 
   // update the time elapsed based on the position of the progress bar playhead
   mouseMove(e) {
-    // debugger;
-    // let rangeslider;
     let rangeslider = this.rangeslider.current.offsetWidth;
     this.positionHandle(e.pageX);
     let length = this.state.track.duration;
@@ -264,7 +250,6 @@ class Player extends React.Component {
         : parseInt(length.slice(1, 2));
     let seconds = parseInt(length.slice(3));
     let duration = minutes * 60 + seconds;
-    // let newTime = this.convertTime((Math.floor((e.pageX / rangeslider) * 100)) * duration);
     let newTime = Math.floor(
       ((e.pageX - this.rangeslider.current.offsetLeft) / rangeslider) * duration
     );
@@ -428,5 +413,4 @@ class Player extends React.Component {
 
 export default Player;
 
-// TODO: Get progress bar draggable
-// TODO: Progress bar handle position controls current time display
+// DEBUG: Progress bar handle movement is on an interval
