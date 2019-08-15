@@ -4,6 +4,9 @@ import {
     REMOVE_PLAYLIST,
 } from '../actions/playlist.actions';
 import {
+    LOGOUT_CURRENT_USER
+} from '../actions/session_actions';
+import {
     merge
 } from 'lodash';
 
@@ -11,6 +14,8 @@ export default (state = {}, action) => {
     Object.freeze(state);
     let newState;
     switch (action.type) {
+        case LOGOUT_CURRENT_USER:
+            return {};
         case RECEIVE_PLAYLISTS:
             newState = Object.assign({}, state, action.playlists)
             return newState;

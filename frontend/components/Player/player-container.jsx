@@ -3,7 +3,8 @@ import Player from "./player";
 import {
   toggleSong,
   setCurrentSong,
-  setQueue
+  setQueue,
+  setPlaying
 } from "../../actions/player_actions";
 
 const msp = state => {
@@ -18,6 +19,7 @@ const msp = state => {
 const mdp = dispatch => ({
   toggleSong: () => dispatch(toggleSong()),
   setCurrentSong: track => dispath(setCurrentSong(track)),
+  setPlaying: playing => dispatch(setPlaying(playing)),
   setQueue: queue => dispatch(setQueue(queue))
 });
 

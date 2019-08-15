@@ -25,6 +25,7 @@ class AlbumShow extends React.Component {
           setCurrentSong={this.props.setCurrentSong}
           toggleSong={this.props.toggleSong}
           setQueue={this.props.setQueue}
+          setPlaying={this.props.setPlaying}
         />
       );
     });

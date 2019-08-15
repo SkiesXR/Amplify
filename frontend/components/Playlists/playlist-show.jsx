@@ -17,6 +17,14 @@ class PlaylistShow extends React.Component {
     this.props.fetchPlaylist(this.props.match.params.playlistId);
   }
 
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.match.params.playlistId != this.props.match.params.playlistId
+    ) {
+      this.props.fetchPlaylist(this.props.match.params.playlistId);
+    }
+  }
+
   handleDelete() {
     this.props.deletePlaylist(this.props.playlist.id);
     this.props.history.push("/collection/playlists/");

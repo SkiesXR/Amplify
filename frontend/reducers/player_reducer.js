@@ -6,7 +6,8 @@ import {
     TOGGLE_SONG,
     SET_QUEUE,
     ADD_TO_QUEUE,
-    TOGGLE_SHUFFLE
+    TOGGLE_SHUFFLE,
+    SET_PLAYING
 } from '../actions/player_actions';
 
 const nullState = {
@@ -43,6 +44,9 @@ const PlayerReducer = (state = nullState, action) => {
             return newState;
         case ADD_TO_QUEUE:
             newState.queue.push(action.song);
+            return newState;
+        case SET_PLAYING:
+            newState.playing = action.playing
             return newState;
         default:
             return state;

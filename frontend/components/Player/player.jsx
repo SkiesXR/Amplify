@@ -55,6 +55,17 @@ class Player extends React.Component {
     this.refs = {};
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.currentSong.audio_file != this.props.currentSong.audio_file) {
+      this.setAudioSource();
+      console.log("change song");
+    }
+    if (prevProps.playing != this.props.playing) {
+      this.setSongPlaying(this.props.playing);
+      console.log(`playing changed: ${this.props.playing}`);
+    }
+  }
+
   componentDidMount() {
     let track;
     let that = this;
@@ -163,10 +174,39 @@ class Player extends React.Component {
     }
   }
 
-  // Logic for audio controls
-  playAudio() {
+  setAudioSource() {
     const music = document.getElementById("audio");
     music.src = this.props.currentSong.audio_file;
+  }
+
+  setSongPlaying(isPlaying) {
+    const music = document.getElementById("audio");
+    if (isPlaying) {
+      music.play();
+
+      // Swap "pause" icon for "play icon"
+      this.setState({
+        playPauseButton: "pause_white.png"
+      });
+    } else {
+      music.pause();
+      this.setState({
+        playPauseButton: "play_white.png",
+        playing: false
+      });
+    }
+  }
+
+  // Logic for audio controls
+  playAudio() {
+    // actually toggles the audio, fix the name
+
+    // set song
+    // pause song
+    // play song
+
+    // const music = document.getElementById("audio");
+    // music.src = this.props.currentSong.audio_file;
     var id = null;
     if (music.paused) {
       music.play();
