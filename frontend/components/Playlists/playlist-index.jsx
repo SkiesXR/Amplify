@@ -33,10 +33,6 @@ class PlaylistIndex extends React.Component {
         </div>
       );
     });
-    //TODO: Create Playlist Grid Item Component
-    // let playlists = this.props.playlists.map(playlist => {
-    //     return <PlaylistGridItem key={playlist.title} playlist={playlist} />
-    // })
 
     return <div className="playlist-index-container">{userPlaylists}</div>;
   }

@@ -1,117 +1,117 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { fetchOnePlaylist, followPlaylist, unfollowPlaylist, deletePlaylist } from './../actions/music_actions';
-// import SongIndexItem from './song_index_item';
-import SongIndex from './song_index';
-import { setCurrentSong, setQueue, toggleSong } from './../actions/music_player_actions';
+import React from "react";
+import PlaylistShowItem from "./playlist-show-item";
 
 class PlaylistShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+    // this.getQueue = this.getQueue.bind(this);
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = { followed: null }
-        this.handleFollow = this.handleFollow.bind(this);
-        this.handleUnfollow = this.handleUnfollow.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-        this.setInitialState = this.setInitialState.bind(this);
-        this.handlePlay = this.handlePlay.bind(this);
-        this.getQueue = this.getQueue.bind(this);
-    }
+  componentDidMount() {
+    this.props.fetchPlaylist(this.props.match.params.playlistId);
+  }
 
-    componentDidMount() {
-        this.props.fetchOnePlaylist(this.props.match.params.playlistId)
-            .then(() => this.setInitialState())
-    }
+  handleDelete() {
+    this.props
+      .deletePlaylist(this.props.playlist.id)
+      .then(() => this.props.history.push("/collection/playlists/"));
+  }
 
-    setInitialState() {
-        this.setState({ followed: this.props.playlist.followed });
-    }
+  handlePlay() {
+    // this.props.setCurrentSong(this.props.playlist.tracks);
+    this.props.setQueue(this.props.queue);
+    this.props.toggleSong();
+  }
 
-    handleFollow() {
-        this.setState({ followed: true })
-        this.props.followPlaylist(this.props.playlist.id)
-    }
+  //   getQueue(currSongIdx) {
+  //     let { songs } = this.props;
+  //     let queue = songs.slice(1);
+  //     return queue;
+  //   }
 
-    handleUnfollow() {
-        this.setState({ followed: false })
-        this.props.unfollowPlaylist(this.props.playlist.id)
-    }
+  render() {
+    let { user } = this.props;
+    let { playlist = {} } = this.props;
+    if (!playlist) return null;
+    let tracks = playlist.tracks || {};
+    const trackCount = Object.keys(tracks).length || "";
+    let playlistTracks = Object.values(tracks).map(track => {
+      return (
+        <PlaylistShowItem
+          key={track.title}
+          track={track}
+          playlist={playlist}
+          setCurrentSong={this.props.setCurrentSong}
+          toggleSong={this.props.toggleSong}
+          setQueue={this.props.setQueue}
+        />
+      );
+    });
 
-    handleDelete() {
-        this.props.deletePlaylist(this.props.playlist.id)
-            .then(() => this.props.history.push(`/library/playlists/`))
-    }
+    // let followButton;
+    // if (!this.state.followed) {
+    //   followButton = <button onClick={this.handleFollow}>FOLLOW</button>;
+    // } else {
+    //   followButton = <button onClick={this.handleUnfollow}>UNFOLLOW</button>;
+    // }
 
-    handlePlay() {
-        this.props.setCurrentSong(this.props.songs[0]);
-        this.props.setQueue(this.props.queue);
-        this.props.toggleSong();
-    }
+    // let deleteButton;
+    // if (playlist.owned) {
+    //   deleteButton = <button onClick={this.handleDelete}>DELETE</button>;
+    // } else {
+    //   deleteButton = null;
 
-    getQueue(currSongIdx) {
-        let { songs } = this.props;
-        let queue = songs.slice(1);
-        return queue;
-    }
-
-    render() {
-        let { playlist } = this.props;
-        if (!playlist) {
-            return null;
-        }
-
-        let followButton;
-        if (!this.state.followed) {
-            followButton = (<button onClick={this.handleFollow}>FOLLOW</button>)
-        } else {
-            followButton = (<button onClick={this.handleUnfollow}>UNFOLLOW</button>)
-        }
-
-        let deleteButton;
-        if (playlist.owned) {
-            deleteButton = (<button onClick={this.handleDelete}>DELETE</button>)
-        } else {
-            deleteButton = null;
-        }
-
-        return (
-            <div className="playlist-show-container">
-                <div className="playlist-info">
-                    <div className="img-container">
-                        <img src={window.images.playlist}></img>
-                        <i className="far fa-play-circle"></i>
+    return (
+      <div className="album-show-c1">
+        <div className="album-show-c2">
+          <section id="album-show-section">
+            <div className="fluid-container">
+              <div className="fluid">
+                <div className="album-show-c3a">
+                  <div className="album-show-c3a-content">
+                    <div className="album-show-c3a-content-header">
+                      <div className="cover-art-info">
+                        <div className="cover-art-shadow">
+                          <div>
+                            {/* <div className="cover-art-icon">
+                                                            <img src="play_white.png"/>
+                                                        </div> */}
+                            <div>
+                              <img
+                                className="album-show-cover-art"
+                                src="bts.jpg"
+                              />
+                            </div>
+                          </div>
+                          <button id="cover-art-play" />
+                        </div>
+                        <div className="album-title-container">
+                          <span>{playlist.title}</span>
+                        </div>
+                        <div className="album-artist">{user}</div>
+                      </div>
                     </div>
-                    <h1>{playlist.name}</h1>
-                    <button onClick={this.handlePlay}>PLAY</button>
-                    {followButton}
-                    {deleteButton}
-                    <h3>{this.props.songs ? Object.values(this.props.songs).length : 0} SONGS</h3>
+                    <div className="album-show-left-play">Play</div>
+                    <div>
+                      <div className="album-show-c3a-bottom">
+                        <p>
+                          {releaseYear} • {trackCount}{" "}
+                          {trackCount > 1 ? "SONGS" : "SONG"}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <div className="playlist-songs">
-                    <ul className="song-index">
-                        <SongIndex inPlaylist={true}></SongIndex>
-                    </ul>
-                </div>
+                <div className="album-show-c3b">{playlistTracks}</div>
+              </div>
             </div>
-        )
-    }
+          </section>
+        </div>
+      </div>
+    );
+  }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-    playlist: state.entities.playlists[ownProps.match.params.playlistId],
-    songs: Object.values(state.entities.songs)
-});
-
-const mapDispatchToProps = (dispatch) => ({
-    fetchOnePlaylist: (playlistId) => dispatch(fetchOnePlaylist(playlistId)),
-    followPlaylist: (playlistId) => dispatch(followPlaylist(playlistId)),
-    unfollowPlaylist: (playlistId) => dispatch(unfollowPlaylist(playlistId)),
-    deletePlaylist: (playlistId) => dispatch(deletePlaylist(playlistId)),
-    setCurrentSong: (song) => (dispatch(setCurrentSong(song))),
-    toggleSong: () => (dispatch(toggleSong())),
-    setQueue: (queue) => (dispatch(setQueue(queue)))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)
-    (PlaylistShow);
+export default PlaylistShow;
