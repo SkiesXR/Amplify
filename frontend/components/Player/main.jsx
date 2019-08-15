@@ -13,6 +13,7 @@ import LikedTrackIndex from "../../components/Collection/liked-tracks-index";
 import AlbumShow from "./album-show-container";
 import ArtistShow from "./artist-show-container";
 import GenreShow from "./genre-show-container";
+import PodcastShow from "./podcast-show-container";
 import Search from "./search-container";
 import { Route, Switch } from "react-router-dom";
 
@@ -222,6 +223,12 @@ class Main extends React.Component {
             path="/collection/playlists/:playlistId"
             component={PlaylistShow}
           />
+          <ProtectedRoute
+            exact
+            path="/podcasts/:podcastId"
+            component={PodcastShow}
+          />
+
           <ProtectedRoute exact path="/browse/artists" component={Artists} />
           <ProtectedRoute path="/browse/podcasts" component={Podcast} />
           <ProtectedRoute path="/browse/genres" component={Genres} />

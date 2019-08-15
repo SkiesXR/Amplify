@@ -1,5 +1,5 @@
 json.podcast do
-    json.extract! show, :title, :author, :description, :image_url
+    json.extract! show, :id, :title, :author, :description, :image_url
     if show.show_photo.attached?
         json.show_photo url_for(show.show_photo)
     else
