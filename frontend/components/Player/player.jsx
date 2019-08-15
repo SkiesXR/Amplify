@@ -58,11 +58,11 @@ class Player extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.currentSong.audio_file != this.props.currentSong.audio_file) {
       this.setAudioSource();
-      console.log("change song");
+      // console.log("change song");
     }
     if (prevProps.playing != this.props.playing) {
       this.setSongPlaying(this.props.playing);
-      console.log(`playing changed: ${this.props.playing}`);
+      // console.log(`playing changed: ${this.props.playing}`);
     }
   }
 
@@ -174,11 +174,13 @@ class Player extends React.Component {
     }
   }
 
+  // update audio source for audio element
   setAudioSource() {
     const music = document.getElementById("audio");
     music.src = this.props.currentSong.audio_file;
   }
 
+  // update
   setSongPlaying(isPlaying) {
     const music = document.getElementById("audio");
     if (isPlaying) {
@@ -199,6 +201,8 @@ class Player extends React.Component {
 
   // Logic for audio controls
   playAudio() {
+    const music = document.getElementById("audio");
+    music.src = this.props.currentSong.audio_file;
     // actually toggles the audio, fix the name
 
     // set song
