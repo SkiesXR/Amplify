@@ -6,14 +6,16 @@ class Player extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      play: false,
+      playing: this.props.playing || false,
+      currentSong: this.props.currentSong,
+      repeat: false,
+      shuffle: false,
       playheadPos: 0,
       volPos: 50,
-      currentTime: 0,
-      playPauseButton: "play_white.png",
       previousVolume: 0.5,
       volume: 0.5,
-      currentSong: null,
+      currentTime: 0,
+      playPauseButton: "play_white.png",
       loveButton: "love.png",
       loveId: "love",
       likedSongMessage: null,
@@ -58,6 +60,7 @@ class Player extends React.Component {
     let that = this;
     var id = null;
     track = document.querySelector("#audio");
+    track.src = this.state.currentSong.audio_file;
 
     // When user clicks "play", start counter & progress the bar
     track.addEventListener("play", () => {
@@ -65,6 +68,7 @@ class Player extends React.Component {
         var progress = that.timeUpdate();
         // console.log(`playheadPos: ${that.state.playheadPos}`);
         // console.log(`currentTime: ${that.state.currentTime}`);
+        // console.log(`track current time: ${track.currentTime}`);
         that.setState(prevState => {
           return {
             currentTime: prevState.currentTime + 1,
@@ -162,27 +166,25 @@ class Player extends React.Component {
   // Logic for audio controls
   playAudio() {
     const music = document.getElementById("audio");
+    music.src = this.props.currentSong.audio_file;
     var id = null;
     if (music.paused) {
-      // Play current track
       music.play();
 
       // Swap "pause" icon for "play icon"
       this.setState({
-        playPauseButton: "pause_white.png",
-        play: true
+        playPauseButton: "pause_white.png"
       });
     } else {
-      // Pause current track
       music.pause();
+
       if (id) {
-        debugger;
         clearInterval(id);
       }
       // Swap "play" icon for "pause icon"
       this.setState({
         playPauseButton: "play_white.png",
-        play: false
+        playing: false
       });
     }
   }
@@ -195,7 +197,7 @@ class Player extends React.Component {
     this.setState({
       volPos: range.value
     });
-    console.log(audio.volume);
+    // console.log(audio.volume);
     audio.muted = audio.volume <= 0.01 ? true : false;
   }
 
@@ -214,7 +216,6 @@ class Player extends React.Component {
     let rangesliderHandle;
     let progressbarWidth;
     rangeslider = document.querySelector(".rangeslider");
-    console.log(rangeslider);
     rangesliderHandle = this.rangesliderHandle.current.offsetWidth;
     progressbarWidth = rangeslider - rangesliderHandle;
 
@@ -256,7 +257,7 @@ class Player extends React.Component {
     this.setState({
       currentTime: newTime
     });
-    document.getElementById("audio").currentTime = this.state.currentTime;
+    document.getElementById("audio").currentTime = newTime;
   }
 
   mouseUp(e) {
@@ -294,7 +295,7 @@ class Player extends React.Component {
         {/* Audio element */}
         <audio id="audio">
           <source
-            src={this.state.track.src}
+            src={this.props.currentSong.audio_file}
             ref={audio => (this.audio = audio)}
             currentTime={this.state.currentTime}
           />
@@ -306,16 +307,16 @@ class Player extends React.Component {
             <div
               className="thumb-image"
               style={{
-                backgroundImage: `url(${this.state.track.artwork})`
+                backgroundImage: `url(${this.props.currentSong.album_art})`
               }}
             />
             <div className="np-container">
               <a id="npt" href="">
-                {this.state.track.title}
+                {this.props.currentSong.title}
               </a>
               <div className="now-playing-text" />
               <a id="npa" href="">
-                {this.state.track.artist}
+                {this.props.currentSong.artist}
               </a>
             </div>
             <div className="love-container">
@@ -418,4 +419,3 @@ class Player extends React.Component {
 export default Player;
 
 // DEBUG: Progress bar handle movement is on an interval
-// DEBUG: Audio currentTime and displayed current time are incorrect once you move the progress bar handle

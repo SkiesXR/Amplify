@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { Player } from "./player";
+import Player from "./player";
 import {
   toggleSong,
   setCurrentSong,
@@ -8,7 +8,10 @@ import {
 
 const msp = state => {
   return {
-    nowPlaying: state.ui.nowPlaying
+    currentSong: state.ui.nowPlaying.currentSong,
+    playing: state.ui.nowPlaying.playing,
+    repeat: state.ui.nowPlaying.repeat,
+    shuffle: state.ui.nowPlaying.shuffle
   };
 };
 
