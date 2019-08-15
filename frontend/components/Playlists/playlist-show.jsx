@@ -11,7 +11,6 @@ class PlaylistShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchPlaylist(this.props.match.params.playlistId);
-    debugger;
   }
 
   handleDelete() {
@@ -33,8 +32,6 @@ class PlaylistShow extends React.Component {
   //   }
 
   render() {
-    // debugger;
-    console.log(this.props.playlist);
     let { user } = this.props;
     if (!this.props.playlist) return "";
     let { playlist } = this.props || {};

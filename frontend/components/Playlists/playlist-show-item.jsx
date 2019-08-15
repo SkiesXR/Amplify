@@ -1,5 +1,4 @@
 import React from "react";
-// import { setCurrentSong, setQueue, toggleSong } from '../../actions/player_actions';
 
 class PlaylistShowItem extends React.Component {
   constructor(props) {
@@ -16,9 +15,10 @@ class PlaylistShowItem extends React.Component {
   }
 
   handlePlay() {
+    debugger;
     this.props.setCurrentSong(this.props.track);
-    // this.props.setQueue(this.props.queue);
     this.props.toggleSong();
+    // this.props.setQueue(this.props.queue);
   }
 
   // Flip musical note icon to play icon once mouse enters track container

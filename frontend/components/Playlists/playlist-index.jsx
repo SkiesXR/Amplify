@@ -17,7 +17,7 @@ class PlaylistIndex extends React.Component {
       return (
         <div key={playlist.title} className="album-artist-container">
           <div className="image-hover-container">
-            <Link to="">
+            <Link to={`/collection/playlists/${playlist.id}`}>
               <img src="bts.jpg" />
               <div className="Mike">
                 <button id="Mike-button">
