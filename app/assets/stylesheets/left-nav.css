@@ -11,6 +11,10 @@ Link {
     height: 40px;
 }
 
+.nav-link-container-active {
+    border-left: 3px solid #1db954;
+}
+
 .nav-link-text-with-icon {
     display: flex;
     align-items: center;

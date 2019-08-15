@@ -19,11 +19,14 @@ class LeftNav extends React.Component {
     let { playlists = {} } = this.props;
     let playlistNames = playlists.map(playlist => {
       return (
-        <div key={playlist.title} className="playlist-item">
-          <Link to={`/collection/playlists/${playlist.id}`}>
+        <NavLink
+          activeClassName="nav-link-container-active"
+          to={`/collection/playlists/${playlist.id}`}
+        >
+          <div key={playlist.title} className="playlist-item">
             {playlist.title}
-          </Link>
-        </div>
+          </div>
+        </NavLink>
       );
     });
 
@@ -32,19 +35,31 @@ class LeftNav extends React.Component {
         <Link to="/browse/featured">
           <img id="amp-logo-left-nav" src="Amplify_White_Transparent.png" />
         </Link>
-        <NavLink className="nav-link-container" to="/browse/featured">
+        <NavLink
+          className="nav-link-container"
+          activeClassName="nav-link-container-active"
+          to="/browse/featured"
+        >
           <div className="nav-link-text-with-icon">
             <img className="nav-link-icon" src="home.png" />
             <div className="nav-link-text">Home</div>
           </div>
         </NavLink>
-        <NavLink className="nav-link-container" to="/search">
+        <NavLink
+          className="nav-link-container"
+          activeClassName="nav-link-container-active"
+          to="/search"
+        >
           <div className="nav-link-text-with-icon">
             <img className="nav-link-icon" src="search.png" />
             <div className="nav-link-text">Search</div>
           </div>
         </NavLink>
-        <NavLink className="nav-link-container" to="/collection/playlists">
+        <NavLink
+          className="nav-link-container"
+          activeClassName="nav-link-container-active"
+          to="/collection/playlists"
+        >
           <div className="nav-link-text-with-icon">
             <svg
               viewBox="0 0 512 512"
@@ -103,3 +118,5 @@ export default withRouter(
     mdp
   )(LeftNav)
 );
+
+// DEBUG: Playlist links don't load playlist info
