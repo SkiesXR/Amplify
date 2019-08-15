@@ -11,6 +11,7 @@ class PlaylistShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchPlaylist(this.props.match.params.playlistId);
+    debugger;
   }
 
   handleDelete() {
@@ -32,25 +33,32 @@ class PlaylistShow extends React.Component {
   //   }
 
   render() {
+    // debugger;
+    console.log(this.props.playlist);
     let { user } = this.props;
     if (!this.props.playlist) return "";
     let { playlist } = this.props || {};
-    // if (!playlist) return null;
+    if (!playlist.creation_at) return null;
     let releaseYear = playlist.creation_at.slice(0, 4) || "";
-    let tracks = Object.values(playlist.playlist_tracks) || {};
-    const trackCount = Object.keys(playlist.playlist_tracks).length || "";
-    let playlistTracks = tracks.map(track => {
-      return (
-        <PlaylistShowItem
-          key={track.title}
-          track={track}
-          playlist={playlist}
-          setCurrentSong={this.props.setCurrentSong}
-          toggleSong={this.props.toggleSong}
-          setQueue={this.props.setQueue}
-        />
-      );
-    });
+    if (playlist.playlist_tracks) {
+      let tracks = Object.values(playlist.playlist_tracks) || {};
+      trackCount = Object.keys(playlist.playlist_tracks).length || "";
+      var playlistTracks = tracks.map(track => {
+        return (
+          <PlaylistShowItem
+            key={track.title}
+            track={track}
+            playlist={playlist}
+            setCurrentSong={this.props.setCurrentSong}
+            toggleSong={this.props.toggleSong}
+            setQueue={this.props.setQueue}
+          />
+        );
+      });
+    } else {
+      var trackCount = 0;
+      var playlistTracks = "";
+    }
 
     // let followButton;
     // if (!this.state.followed) {
@@ -99,8 +107,8 @@ class PlaylistShow extends React.Component {
                     <div>
                       <div className="album-show-c3a-bottom">
                         <p>
-                          {releaseYear} • {trackCount}
-                          {trackCount > 1 ? " SONGS" : " SONG"}
+                          {releaseYear} • {trackCount ? trackCount : 0}
+                          {trackCount != 1 ? " SONGS" : " SONG"}
                         </p>
                       </div>
                     </div>
