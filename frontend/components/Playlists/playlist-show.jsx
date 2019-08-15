@@ -11,7 +11,6 @@ class PlaylistShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchPlaylist(this.props.match.params.playlistId);
-    debugger;
   }
 
   handleDelete() {
@@ -33,14 +32,14 @@ class PlaylistShow extends React.Component {
   //   }
 
   render() {
-    debugger;
     let { user } = this.props;
-    if (!playlist) return null;
-    let { playlist } = this.props;
+    if (!this.props.playlist) return "";
+    let { playlist } = this.props || {};
+    // if (!playlist) return null;
     let releaseYear = playlist.creation_at.slice(0, 4) || "";
-    let tracks = playlist.tracks || {};
-    const trackCount = Object.keys(tracks).length || "";
-    let playlistTracks = Object.values(tracks).map(track => {
+    let tracks = Object.values(playlist.playlist_tracks) || {};
+    const trackCount = Object.keys(playlist.playlist_tracks).length || "";
+    let playlistTracks = tracks.map(track => {
       return (
         <PlaylistShowItem
           key={track.title}
@@ -100,8 +99,8 @@ class PlaylistShow extends React.Component {
                     <div>
                       <div className="album-show-c3a-bottom">
                         <p>
-                          {releaseYear} • {trackCount}{" "}
-                          {trackCount > 1 ? "SONGS" : "SONG"}
+                          {releaseYear} • {trackCount}
+                          {trackCount > 1 ? " SONGS" : " SONG"}
                         </p>
                       </div>
                     </div>

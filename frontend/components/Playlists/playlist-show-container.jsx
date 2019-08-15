@@ -9,7 +9,7 @@ import PlaylistShow from "../Playlists/playlist-show";
 
 const msp = (state, ownProps) => {
   return {
-    playlist: state.entities.playlists[ownProps.match.params.playlistId] || {},
+    playlist: state.entities.playlists[ownProps.match.params.playlistId],
     user: Object.values(state.entities.users)[0].username
   };
 };
