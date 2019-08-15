@@ -2,8 +2,11 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
+    justify-content: flex-start;
+    // padding: 0 32px;
+    padding-left: 10px;
+    width: 85%;
+    margin: auto;
 }
 
 .main-h1 {
@@ -24,6 +27,8 @@
     // max-height: 566px;
     overflow: auto;
     padding: 0 32px 32px;
+    width: 85%;
+    margin: auto;
     margin-bottom: 160px;
 }
 
