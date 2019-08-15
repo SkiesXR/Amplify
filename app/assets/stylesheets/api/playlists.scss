@@ -26,14 +26,35 @@
     // height: 100%;
 }
 
-.context-menu {
+.context-menu-ellipses {
     cursor: pointer;
     font-size: 26px;
     font-family: 'Circular';
     transition: all .02s ease-in;
     height: 30px;
+    position: relative;
 }
 
-.context-menu:hover {
-    transform: scale(1.1);
+// .context-menu-ellipses:hover {
+//     transform: scale(1.1);
+// }
+
+.context-menu-show {
+    // display: none;
+    position: absolute;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    background-color: #282828;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+    outline: none;
+    pointer-events: none;
+    z-index: 5
+}
+
+.context-menu-hidden {
+    display: none;
 }

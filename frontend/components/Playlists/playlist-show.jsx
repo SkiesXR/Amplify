@@ -4,7 +4,11 @@ import PlaylistShowItem from "./playlist-show-item";
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      menuVisible: false
+    };
     this.handleDelete = this.handleDelete.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
     // this.handlePlay = this.handlePlay.bind(this);
     // this.getQueue = this.getQueue.bind(this);
   }
@@ -17,6 +21,12 @@ class PlaylistShow extends React.Component {
     this.props
       .deletePlaylist(this.props.playlist.id)
       .then(() => this.props.history.push("/collection/playlists/"));
+  }
+
+  toggleMenu() {
+    this.setState(prevState => ({
+      menuVisible: !prevState.menuVisible
+    }));
   }
 
   //   handlePlay() {
@@ -32,6 +42,7 @@ class PlaylistShow extends React.Component {
   //   }
 
   render() {
+    let { menuVisible } = this.state;
     let { user } = this.props;
     if (!this.props.playlist) return "";
     let { playlist } = this.props || {};
@@ -111,8 +122,20 @@ class PlaylistShow extends React.Component {
                           {releaseYear} • {trackCount ? trackCount : 0}
                           {trackCount != 1 ? " SONGS" : " SONG"}
                         </p>
-                        <div className="context-menu" title="More">
+                        <div
+                          className="context-menu-ellipses"
+                          title="More"
+                          onClick={this.toggleMenu}
+                        >
                           ...
+                          <div
+                            id="context-menu"
+                            className={
+                              menuVisible
+                                ? "context-menu-show"
+                                : "context-menu-hidden"
+                            }
+                          />
                         </div>
                       </div>
                     </div>
