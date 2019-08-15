@@ -70,17 +70,10 @@ class Player extends React.Component {
       this.setSongPlaying(this.props.playing);
       // console.log(`playing changed: ${this.props.playing}`);
     }
-  }
-
-  componentDidMount() {
-    let track;
-    let that = this;
-    var id = null;
-    track = document.querySelector("#audio");
-    track.src = this.state.currentSong.audio_file;
-
-    // When user clicks "play", start counter & progress the bar
-    // track.addEventListener("play", () => {
+    // let that = this;
+    // var id = null;
+    // let track = document.querySelector("#audio");
+    // if (this.props.playing === true) {
     //   id = setInterval(function() {
     //     var progress = that.timeUpdate();
     //     that.setState(prevState => {
@@ -90,6 +83,25 @@ class Player extends React.Component {
     //       };
     //     });
     //   }, 1000);
+    //   let rangeslider;
+    //   let ratio;
+    //   let position;
+    //   rangeslider = that.rangeslider;
+    //   ratio = that.state.currentTime / that.timeUpdate();
+    //   position = rangeslider.current.offsetWidth * ratio;
+    //   that.positionHandle(position);
+    // } else {
+    //   clearInterval(id);
+    // }
+  }
+
+  componentDidMount() {
+    let track;
+    let that = this;
+    var id = null;
+    track = document.querySelector("#audio");
+
+    // When user clicks "play", start counter & progress the bar
     track.addEventListener("play", () => {
       id = setInterval(function() {
         var progress = that.timeUpdate();
@@ -215,8 +227,9 @@ class Player extends React.Component {
 
   // Logic for audio controls
   playAudio() {
+    this.props.toggleSong();
     const music = document.getElementById("audio");
-    music.src = this.props.currentSong.audio_file;
+    // music.src = this.props.currentSong.audio_file;
     // actually toggles the audio, fix the name
 
     // set song
