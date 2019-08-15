@@ -15,7 +15,8 @@ const nullState = {
         audio_file: 'https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/skylines.mp3',
         album_art: 'https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg',
         artist: "Animalfirepower",
-        title: "Skylines"
+        title: "Skylines",
+        duration: "03:09"
     },
     playing: false,
     queue: [],

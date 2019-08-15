@@ -6,7 +6,7 @@ class Player extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: this.props.playing || false,
+      // playing: this.props.playing || false,
       currentSong: this.props.currentSong,
       repeat: false,
       shuffle: false,
@@ -119,7 +119,8 @@ class Player extends React.Component {
 
   timeUpdate() {
     // Convert track duration to seconds
-    let length = this.state.track.duration;
+    // let length = this.state.track.duration;
+    let length = this.props.currentSong.length;
     let minFirstDigit = length[0];
     let minutes =
       parseInt(minFirstDigit, 10) > 0
