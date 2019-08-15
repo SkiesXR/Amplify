@@ -4,11 +4,17 @@ import { openModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions.js";
+import { fetchPlaylists } from "../../actions/playlist.actions";
 
 class LeftNav extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
+  }
+
+  componentDidMount() {
+    debugger;
+    if (this.props.playlists.length === 0) this.props.fetchPlaylists();
   }
 
   logoutUser() {
@@ -110,7 +116,8 @@ const msp = state => ({
 
 const mdp = dispatch => ({
   openModal: () => dispatch(openModal({ modal: "new_playlist" })),
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  fetchPlaylists: () => dispatch(fetchPlaylists())
 });
 
 // export default LeftNav;
