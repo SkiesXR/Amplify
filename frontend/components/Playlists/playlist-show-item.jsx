@@ -15,7 +15,6 @@ class PlaylistShowItem extends React.Component {
   }
 
   handlePlay() {
-    debugger;
     this.props.setCurrentSong(this.props.track);
     this.props.toggleSong();
     // this.props.setQueue(this.props.queue);
