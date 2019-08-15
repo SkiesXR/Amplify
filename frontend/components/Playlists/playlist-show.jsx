@@ -71,8 +71,8 @@ class PlaylistShow extends React.Component {
     //   deleteButton = null;
 
     return (
-      <div className="album-show-c1">
-        <div className="album-show-c2">
+      <div className="playlist-show-c1">
+        <div className="playlist-show-c2">
           <section id="album-show-section">
             <div className="fluid-container">
               <div className="fluid">
@@ -89,6 +89,10 @@ class PlaylistShow extends React.Component {
                               <img
                                 className="album-show-cover-art"
                                 src="bts.jpg"
+                                // src={
+                                //   Object.values(playlist.playlist_tracks)[0]
+                                //     .album_art
+                                // }
                               />
                             </div>
                           </div>
@@ -107,6 +111,7 @@ class PlaylistShow extends React.Component {
                           {releaseYear} • {trackCount ? trackCount : 0}
                           {trackCount != 1 ? " SONGS" : " SONG"}
                         </p>
+                        <div className="context-menu">...</div>
                       </div>
                     </div>
                   </div>
