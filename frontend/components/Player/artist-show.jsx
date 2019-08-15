@@ -1,55 +1,61 @@
-import React from 'react';
-import ArtistShowItem from './artist-show-item';
+import React from "react";
+import ArtistShowItem from "./artist-show-item";
 
 class ArtistShow extends React.Component {
+  componentDidMount() {
+    let artistId = this.props.match.params.artistId;
+    this.props.fetchArtist(artistId);
+  }
 
-    componentDidMount() {
-        let artistId = this.props.match.params.artistId;
-        this.props.fetchArtist(artistId);
-    }
+  render() {
+    if (!this.props.artist) return "";
+    let artist = this.props.artist || {};
+    const { artist_photo, bio, name } = this.props.artist || "";
+    const albums = artist.albums || {};
 
-    render() {
-        if (!this.props.artist) return "";
-        let artist = this.props.artist || {};
-        const { artist_photo, bio, name } = this.props.artist || "";
-        const albums = artist.albums || {};
-        
-        // sort albums by release year
-        let sortedAlbums = Object.values(albums).sort(function (x,y) {
-            return x.release_date.slice(0,4) - y.release_date.slice(0,4);
-        })
+    // sort albums by release year
+    let sortedAlbums = Object.values(albums).sort(function(x, y) {
+      return x.release_date.slice(0, 4) - y.release_date.slice(0, 4);
+    });
 
-        let albumListLP = Object.values(sortedAlbums).map(album => {
-            if (album.album_type === "Album") {
-                return <ArtistShowItem key={ album.title } album={ album } artist= { artist }/>
-            }
-        });
-        
-        let albumListEP = Object.values(sortedAlbums).map(album => {
-            if (album.album_type === "EP" || album.album_type === "Single") {
-                return <ArtistShowItem key={ album.title } album={ album } artist={ artist } />
-            }
-        });
-
+    let albumListLP = Object.values(sortedAlbums).map(album => {
+      if (album.album_type === "Album") {
         return (
-            <div className="artist-show-c1">
-                <div className="artist-show-header-container">
-                    <div id="artist-show-photo" style={{ backgroundImage: `url(${artist_photo}})`}}></div>
-                </div>
-                <div className="artist-show-name">{ name }</div>
-                <span className="artist-show-bio-header">Biography</span>
-                <div className="artist-show-bio">{ bio }</div>
-                <h1 className="main-h1">Albums</h1>
-                <div className="artist-show-container">
-                    <div className="artist-show-container">{ albumListLP }</div>
-                </div>
-                <h1 className="main-h1">EPs & Singles</h1>
-                <div className="artist-show-container">
-                    <div className="artist-show-container">{ albumListEP }</div>
-                </div>
-            </div>
+          <ArtistShowItem key={album.title} album={album} artist={artist} />
         );
-    }
+      }
+    });
+
+    let albumListEP = Object.values(sortedAlbums).map(album => {
+      if (album.album_type === "EP" || album.album_type === "Single") {
+        return (
+          <ArtistShowItem key={album.title} album={album} artist={artist} />
+        );
+      }
+    });
+
+    return (
+      <div className="artist-show-c1">
+        <div className="artist-show-header-container">
+          <div
+            id="artist-show-photo"
+            style={{ backgroundImage: `url(${artist_photo})` }}
+          />
+        </div>
+        <div className="artist-show-name">{name}</div>
+        <span className="artist-show-bio-header">Biography</span>
+        <div className="artist-show-bio">{bio}</div>
+        <h1 className="main-h1">Albums</h1>
+        <div className="artist-show-container">
+          <div className="artist-show-container">{albumListLP}</div>
+        </div>
+        <h1 className="main-h1">EPs & Singles</h1>
+        <div className="artist-show-container">
+          <div className="artist-show-container">{albumListEP}</div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default ArtistShow;

@@ -57,6 +57,7 @@ class Player extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.currentSong.audio_file != this.props.currentSong.audio_file) {
+      clearInterval(this.intervalId);
       this.setAudioSource();
       this.setState({
         currentTime: 0,
@@ -80,7 +81,7 @@ class Player extends React.Component {
 
     // When user clicks "play", start counter & progress the bar
     track.addEventListener("play", () => {
-      id = setInterval(function() {
+      this.intervalId = setInterval(function() {
         var progress = that.timeUpdate();
         that.setState(prevState => {
           return {
@@ -208,7 +209,8 @@ class Player extends React.Component {
     const music = document.getElementById("audio");
     // music.src = this.props.currentSong.audio_file;
     // actually toggles the audio, fix the name
-    var id = null;
+    var intervalId = null;
+    clearInterval(this.intervalId);
     if (music.paused) {
       music.play();
 
@@ -219,8 +221,8 @@ class Player extends React.Component {
     } else {
       music.pause();
 
-      if (id) {
-        clearInterval(id);
+      if (intervalId) {
+        clearInterval(intervalId);
       }
       // Swap "play" icon for "pause icon"
       this.setState({
