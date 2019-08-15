@@ -135,7 +135,9 @@ class PlaylistShow extends React.Component {
                                 ? "context-menu-show"
                                 : "context-menu-hidden"
                             }
-                          />
+                          >
+                            <div className="context-menu-item">Delete</div>
+                          </div>
                         </div>
                       </div>
                     </div>

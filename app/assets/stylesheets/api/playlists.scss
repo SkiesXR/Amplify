@@ -31,7 +31,7 @@
     font-size: 26px;
     font-family: 'Circular';
     transition: all .02s ease-in;
-    height: 30px;
+    height: 100px;
     position: relative;
 }
 
@@ -42,6 +42,8 @@
 .context-menu-show {
     // display: none;
     position: absolute;
+    left: 45px;
+    top: 25px;
     min-width: 160px;
     padding: 5px 0;
     margin: 2px 0 0;
@@ -53,6 +55,20 @@
     outline: none;
     pointer-events: none;
     z-index: 5
+}
+
+.context-menu-item {
+    font-family: 'Circular';
+    font-size: 14px;
+    color: white;
+    width: 100%;
+    clear: both;
+    // line-height: 32px;
+    white-space: nowrap;
+    background: 0 0;
+    border: 0;
+    user-select: none;
+    cursor: pointer;
 }
 
 .context-menu-hidden {
