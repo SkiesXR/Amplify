@@ -58,6 +58,12 @@ class Player extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.currentSong.audio_file != this.props.currentSong.audio_file) {
       this.setAudioSource();
+      this.setState({
+        currentTime: 0,
+        playheadPos: 0,
+        playPauseButton: "pause_white.png"
+      });
+      this.setSongPlaying(true);
       // console.log("change song");
     }
     if (prevProps.playing != this.props.playing) {
