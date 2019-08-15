@@ -8,10 +8,9 @@ import {
 import PlaylistShow from "../Playlists/playlist-show";
 
 const msp = (state, ownProps) => {
-  debugger;
   return {
-    playlist: state.entities.playlists[ownProps.match.params.playlistId],
-    user: Object.values(state.entities.users)[username]
+    playlist: state.entities.playlists[ownProps.match.params.playlistId] || {},
+    user: Object.values(state.entities.users)[0].username
   };
 };
 

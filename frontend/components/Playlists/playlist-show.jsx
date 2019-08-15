@@ -11,6 +11,7 @@ class PlaylistShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchPlaylist(this.props.match.params.playlistId);
+    debugger;
   }
 
   handleDelete() {
@@ -32,10 +33,11 @@ class PlaylistShow extends React.Component {
   //   }
 
   render() {
+    debugger;
     let { user } = this.props;
-    let { playlist = {} } = this.props;
     if (!playlist) return null;
-    let releaseYear = playlist.creation_at.slice(0, 4);
+    let { playlist } = this.props;
+    let releaseYear = playlist.creation_at.slice(0, 4) || "";
     let tracks = playlist.tracks || {};
     const trackCount = Object.keys(tracks).length || "";
     let playlistTracks = Object.values(tracks).map(track => {

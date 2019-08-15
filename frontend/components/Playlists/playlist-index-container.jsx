@@ -1,15 +1,19 @@
-import { connect } from 'react-redux';
-import { fetchPlaylists } from '../../actions/playlist.actions';
-import PlaylistIndex from '../Playlists/playlist-index';
+import { connect } from "react-redux";
+import { fetchPlaylists } from "../../actions/playlist.actions";
+import PlaylistIndex from "../Playlists/playlist-index";
 
 const msp = state => {
-    return {
-        playlists: Object.values(state.entities.playlists)
-    };
+  return {
+    // playlists: Object.values(state.entities.playlists)
+    playlists: state.entities.playlists
+  };
 };
 
 const mdp = dispatch => ({
-    fetchPlaylists: () => dispatch(fetchPlaylists()),
+  fetchPlaylists: () => dispatch(fetchPlaylists())
 });
 
-export default connect(msp, mdp)(PlaylistIndex);
+export default connect(
+  msp,
+  mdp
+)(PlaylistIndex);

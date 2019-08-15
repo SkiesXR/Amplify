@@ -12,9 +12,10 @@ class PlaylistIndex extends React.Component {
 
   render() {
     const { playlists } = this.props;
-    let userPlaylists = playlists.map(playlist => {
+    // let userPlaylists = playlists.map(playlist => {
+    let userPlaylists = Object.values(playlists).map(playlist => {
       return (
-        <div className="album-artist-container">
+        <div key={playlist.title} className="album-artist-container">
           <div className="image-hover-container">
             <Link to="">
               <img src="bts.jpg" />
@@ -26,7 +27,7 @@ class PlaylistIndex extends React.Component {
             </Link>
           </div>
           <div className="artist-container">
-            <Link id="grid-artist" to="">
+            <Link id="grid-artist" to={`/collection/playlists/${playlist.id}`}>
               {playlist.title}
             </Link>
           </div>
