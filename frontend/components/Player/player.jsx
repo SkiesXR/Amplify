@@ -20,15 +20,15 @@ class Player extends React.Component {
       loveId: "love",
       likedSongMessage: null,
       likedSongMessageClass: "likedSongMessageInactive",
-      muteIcon: "max_volume_gray.png",
-      track: {
-        title: "Skylines",
-        src: "skylines.mp3",
-        duration: "03:09",
-        artist: "Animalfirepower",
-        artwork:
-          "https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg"
-      }
+      muteIcon: "max_volume_gray.png"
+      // track: {
+      //   title: "Skylines",
+      //   src: "skylines.mp3",
+      //   duration: "03:09",
+      //   artist: "Animalfirepower",
+      //   artwork:
+      //     "https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg"
+      // }
     };
 
     // Let's bind some methods!
@@ -80,12 +80,19 @@ class Player extends React.Component {
     track.src = this.state.currentSong.audio_file;
 
     // When user clicks "play", start counter & progress the bar
+    // track.addEventListener("play", () => {
+    //   id = setInterval(function() {
+    //     var progress = that.timeUpdate();
+    //     that.setState(prevState => {
+    //       return {
+    //         currentTime: prevState.currentTime + 1,
+    //         playheadPos: progress
+    //       };
+    //     });
+    //   }, 1000);
     track.addEventListener("play", () => {
       id = setInterval(function() {
         var progress = that.timeUpdate();
-        // console.log(`playheadPos: ${that.state.playheadPos}`);
-        // console.log(`currentTime: ${that.state.currentTime}`);
-        // console.log(`track current time: ${track.currentTime}`);
         that.setState(prevState => {
           return {
             currentTime: prevState.currentTime + 1,
@@ -431,7 +438,7 @@ class Player extends React.Component {
                 />
               </div>
             </div>
-            <div className="duration">{this.state.track.duration}</div>
+            <div className="duration">{this.props.currentSong.length}</div>
           </div>
 
           {/* Mute Icon */}

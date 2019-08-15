@@ -16,7 +16,7 @@ const nullState = {
         album_art: 'https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg',
         artist: "Animalfirepower",
         title: "Skylines",
-        duration: "03:09"
+        length: "03:09"
     },
     playing: false,
     queue: [],
