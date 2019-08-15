@@ -31,8 +31,7 @@
     font-size: 26px;
     font-family: 'Circular';
     transition: all .02s ease-in;
-    height: 100px;
-    position: relative;
+    height: 40px;
 }
 
 // .context-menu-ellipses:hover {
@@ -41,20 +40,21 @@
 
 .context-menu-show {
     // display: none;
-    position: absolute;
-    left: 50%;
-    top: 25px;
-    min-width: 160px;
+    // position: absolute;
+    // left: 50%;
+    // top: 90%;
+    width: 50%;
+    // min-width: 160px;
     padding: 5px 0;
-    margin: 2px 0 0;
+    margin: auto;
     background-color: #282828;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: .25rem;
     outline: none;
-    pointer-events: none;
-    z-index: 5
+    z-index: 5;
+    cursor: pointer;
 }
 
 .context-menu-item {

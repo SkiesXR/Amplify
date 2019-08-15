@@ -1,9 +1,11 @@
 import {
     RECEIVE_PLAYLISTS,
     RECEIVE_PLAYLIST,
-    DELETE_PLAYLIST,
+    REMOVE_PLAYLIST,
 } from '../actions/playlist.actions';
-import { merge } from 'lodash';
+import {
+    merge
+} from 'lodash';
 
 export default (state = {}, action) => {
     Object.freeze(state);
@@ -17,8 +19,8 @@ export default (state = {}, action) => {
             //     [action.playlist.id]: action.playlist
             // })
             // return newState;
-            return merge ({}, state, action.playlist);
-        case DELETE_PLAYLIST:
+            return merge({}, state, action.playlist);
+        case REMOVE_PLAYLIST:
             newState = Object.assign({}, state)
             delete newState[action.playlistId]
             return newState;

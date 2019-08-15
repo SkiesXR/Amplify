@@ -18,9 +18,8 @@ class PlaylistShow extends React.Component {
   }
 
   handleDelete() {
-    this.props
-      .deletePlaylist(this.props.playlist.id)
-      .then(() => this.props.history.push("/collection/playlists/"));
+    this.props.deletePlaylist(this.props.playlist.id);
+    this.props.history.push("/collection/playlists/");
   }
 
   toggleMenu() {
@@ -128,16 +127,17 @@ class PlaylistShow extends React.Component {
                           onClick={this.toggleMenu}
                         >
                           ...
-                          <div
-                            id="context-menu"
-                            className={
-                              menuVisible
-                                ? "context-menu-show"
-                                : "context-menu-hidden"
-                            }
-                          >
-                            <div className="context-menu-item">Delete</div>
-                          </div>
+                        </div>
+                        <div
+                          id="context-menu"
+                          className={
+                            menuVisible
+                              ? "context-menu-show"
+                              : "context-menu-hidden"
+                          }
+                          onClick={this.handleDelete}
+                        >
+                          <div className="context-menu-item">Delete</div>
                         </div>
                       </div>
                     </div>
