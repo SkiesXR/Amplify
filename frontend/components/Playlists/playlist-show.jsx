@@ -111,7 +111,9 @@ class PlaylistShow extends React.Component {
                           {releaseYear} • {trackCount ? trackCount : 0}
                           {trackCount != 1 ? " SONGS" : " SONG"}
                         </p>
-                        <div className="context-menu">...</div>
+                        <div className="context-menu" title="More">
+                          ...
+                        </div>
                       </div>
                     </div>
                   </div>
