@@ -13,7 +13,6 @@ class LeftNav extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     if (this.props.playlists.length === 0) this.props.fetchPlaylists();
   }
 
