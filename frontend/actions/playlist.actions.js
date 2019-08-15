@@ -18,9 +18,9 @@ export const receivePlaylist = (playlist) => ({
     playlist
 })
 
-export const removePlaylist = (id) => ({
+export const removePlaylist = (playlist) => ({
     type: REMOVE_PLAYLIST,
-    playlistId: id
+    playlistId: playlist.id
 })
 
 export const receivePlaylistErrors = (errors) => ({

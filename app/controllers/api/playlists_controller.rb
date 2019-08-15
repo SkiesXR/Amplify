@@ -44,7 +44,8 @@ class Api::PlaylistsController < ApplicationController
     def destroy
         @playlist = current_user.playlists.find(params[:id])
         @playlist.destroy
-        render :index
+        # render :index
+        render json: @playlist
     end
 
 
