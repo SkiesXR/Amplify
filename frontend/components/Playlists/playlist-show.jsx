@@ -5,7 +5,7 @@ class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
-    this.handlePlay = this.handlePlay.bind(this);
+    // this.handlePlay = this.handlePlay.bind(this);
     // this.getQueue = this.getQueue.bind(this);
   }
 
@@ -19,11 +19,11 @@ class PlaylistShow extends React.Component {
       .then(() => this.props.history.push("/collection/playlists/"));
   }
 
-  handlePlay() {
-    // this.props.setCurrentSong(this.props.playlist.tracks);
-    this.props.setQueue(this.props.queue);
-    this.props.toggleSong();
-  }
+  //   handlePlay() {
+  //     this.props.setCurrentSong(this.props.playlist.tracks);
+  //     this.props.setQueue(this.props.queue);
+  //     this.props.toggleSong();
+  //   }
 
   //   getQueue(currSongIdx) {
   //     let { songs } = this.props;
@@ -35,6 +35,7 @@ class PlaylistShow extends React.Component {
     let { user } = this.props;
     let { playlist = {} } = this.props;
     if (!playlist) return null;
+    let releaseYear = playlist.creation_at.slice(0, 4);
     let tracks = playlist.tracks || {};
     const trackCount = Object.keys(tracks).length || "";
     let playlistTracks = Object.values(tracks).map(track => {
