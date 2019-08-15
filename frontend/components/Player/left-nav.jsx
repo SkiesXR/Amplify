@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { openModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { logout } from "../../actions/session_actions.js";
 
 class LeftNav extends React.Component {
   constructor(props) {
@@ -91,7 +92,7 @@ class LeftNav extends React.Component {
           >
             Logout
           </Link>
-          <div className="nav-link-text-with-icon-p">
+          <div className="nav-link-user">
             <img className="nav-link-profile" src="profile_photo.jpg" />
             <div className="nav-link-text-profile">
               {this.props.currentUser}
@@ -108,7 +109,8 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-  openModal: () => dispatch(openModal({ modal: "new_playlist" }))
+  openModal: () => dispatch(openModal({ modal: "new_playlist" })),
+  logout: () => dispatch(logout())
 });
 
 // export default LeftNav;
@@ -119,4 +121,5 @@ export default withRouter(
   )(LeftNav)
 );
 
+// DEBUG: Logout Button not actually logging out user
 // DEBUG: Playlist links don't load playlist info

@@ -37,6 +37,17 @@ Link {
     opacity: 1;
 }
 
+.nav-link-user {
+    display: flex;
+    align-items: center;
+    padding: 15px 24px;
+    height: 40px;
+    opacity: 0.75;
+    transition: opacity .2s linear;
+    position: absolute;
+    bottom: 120px;
+}
+
 .nav-link-text {
     margin-left: 16px;
     padding-top: 5px;
@@ -92,6 +103,8 @@ Link {
     font-weight: 700;
     letter-spacing: .015em;
     text-align: left;
+    position: absolute;
+    bottom: 185px;
 }
 
 .nav-link-text-logout:hover {
