@@ -70,29 +70,6 @@ class Player extends React.Component {
       this.setSongPlaying(this.props.playing);
       // console.log(`playing changed: ${this.props.playing}`);
     }
-    // let that = this;
-    // var id = null;
-    // let track = document.querySelector("#audio");
-    // if (this.props.playing === true) {
-    //   id = setInterval(function() {
-    //     var progress = that.timeUpdate();
-    //     that.setState(prevState => {
-    //       return {
-    //         currentTime: prevState.currentTime + 1,
-    //         playheadPos: progress
-    //       };
-    //     });
-    //   }, 1000);
-    //   let rangeslider;
-    //   let ratio;
-    //   let position;
-    //   rangeslider = that.rangeslider;
-    //   ratio = that.state.currentTime / that.timeUpdate();
-    //   position = rangeslider.current.offsetWidth * ratio;
-    //   that.positionHandle(position);
-    // } else {
-    //   clearInterval(id);
-    // }
   }
 
   componentDidMount() {
@@ -231,13 +208,6 @@ class Player extends React.Component {
     const music = document.getElementById("audio");
     // music.src = this.props.currentSong.audio_file;
     // actually toggles the audio, fix the name
-
-    // set song
-    // pause song
-    // play song
-
-    // const music = document.getElementById("audio");
-    // music.src = this.props.currentSong.audio_file;
     var id = null;
     if (music.paused) {
       music.play();
@@ -314,7 +284,7 @@ class Player extends React.Component {
   mouseMove(e) {
     let rangeslider = this.rangeslider.current.offsetWidth;
     this.positionHandle(e.pageX);
-    let length = this.state.track.duration;
+    let length = this.props.currentSong.length;
     let minFirstDigit = length[0];
     let minutes =
       parseInt(minFirstDigit, 10) > 0

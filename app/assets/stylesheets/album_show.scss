@@ -134,10 +134,22 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     padding-right: 1px;
+    padding-bottom: 6px;
     margin-right: -1px;
     font-family: 'Circular';
-    opacity: .6;
     font-size: 14px;
+}
+
+.album-artist a {
+    text-decoration: none;
+    color: white;
+    opacity: .6;
+}
+
+.album-artist a:hover {
+    // text-decoration: underline;
+    border-bottom: 1px solid white;
+    opacity: 1;
 }
 
 .album-show-left-play {

@@ -5,8 +5,6 @@ export const ADD_TO_QUEUE = 'ADD_TO_QUEUE';
 export const TOGGLE_SHUFFLE = 'TOGGLE_SHUFFLE';
 export const SET_PLAYING = 'SET_PLAYING';
 
-
-
 export const setCurrentSong = (song) => ({
     type: SET_CURRENT_SONG,
     song

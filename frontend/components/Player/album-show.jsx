@@ -1,10 +1,23 @@
 import React from "react";
 import AlbumShowItem from "./album-show-item";
+import { Link } from "react-router-dom";
 
 class AlbumShow extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // bind methods
+    this.addToQueue = this.addToQueue.bind(this);
+  }
+
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
     this.props.fetchAlbum(albumId);
+  }
+
+  addToQueue() {
+    let tracks = this.props.album.tracks;
+    this.props.setQueue(tracks);
   }
 
   render() {
@@ -57,11 +70,18 @@ class AlbumShow extends React.Component {
                           <span>{this.props.album.title}</span>
                         </div>
                         <div className="album-artist">
-                          {this.props.album.artist_name}
+                          <Link to={`/artists/${this.props.album.artist_id}`}>
+                            {this.props.album.artist_name}
+                          </Link>
                         </div>
                       </div>
                     </div>
-                    <div className="album-show-left-play">Play</div>
+                    <div
+                      className="album-show-left-play"
+                      onClick={this.addToQueue}
+                    >
+                      Play
+                    </div>
                     <div>
                       <div className="album-show-c3a-bottom">
                         {/* <p>{ releaseYear } • { trackCount } SONGS</p> */}
