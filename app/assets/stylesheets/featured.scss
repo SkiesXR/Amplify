@@ -1,9 +1,9 @@
 .header-grid {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
 }
 
 .main-h1 {
@@ -68,9 +68,11 @@
     opacity: 0.6;
     transition: opacity .05s linear;
     border-bottom: 1px solid transparent;
+    // min-height: 30px;
 }
 
 #grid-artist:hover {
     opacity: 1;
     border-bottom: 1px solid white;
+    // text-decoration: underline;
 }
