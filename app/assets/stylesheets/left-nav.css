@@ -81,7 +81,7 @@ Link {
 }
 
 .nav-link-text-logout {
-    padding: 0px 24px;
+    padding: 30px 24px 0;
     color: #fff;
     font-size: 20px;
     font-family: "Circular";
@@ -154,7 +154,37 @@ Link {
 
 .playlist-items {
     display: flex;
-    align-items: center;
-    padding: 15px 24px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    /* padding: 15px 24px; */
     height: 378px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 230px;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 24px;
+    min-height: 32px;
+    opacity: .75;
+    font-family: 'Circular';
+    font-size: 14px;
+    color: white;
+    white-space: nowrap;
+    cursor: pointer;
+    max-width: 170px;
+    overflow: hidden;
+}
+
+.playlist-item:hover {
+    opacity: 1;
+}
+
+.playlist-item a {
+    color: white;
 }
