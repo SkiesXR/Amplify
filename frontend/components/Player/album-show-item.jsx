@@ -76,12 +76,8 @@ class AlbumShowItem extends React.Component {
         </div>
         <div className="tc-context-menu" title="More" onClick={this.toggleMenu}>
           <div className="ellipsis">...</div>
-          <div
-            className={
-              menuVisible ? "context-menu-show" : "context-menu-hidden"
-            }
-          >
-            <div className="context-menu-item">Add Song to Playlist</div>
+          <div className={menuVisible ? "cm-show" : "cm-hidden"}>
+            <div className="cm-item">Add Song to Playlist</div>
           </div>
         </div>
         <div className="tc-duration">
