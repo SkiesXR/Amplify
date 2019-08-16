@@ -33,7 +33,7 @@ class ArtistShow extends React.Component {
         );
       }
     });
-
+    // debugger;
     return (
       <div className="artist-show-c1">
         <div className="artist-show-header-container">
@@ -43,15 +43,30 @@ class ArtistShow extends React.Component {
           />
         </div>
         <div className="artist-show-name">{name}</div>
-        <span className="artist-show-bio-header">Biography</span>
-        <div className="artist-show-bio">{bio}</div>
-        <h1 className="main-h1">Albums</h1>
-        <div className="artist-show-container">
-          <div className="artist-show-container">{albumListLP}</div>
-        </div>
-        <h1 className="main-h1">EPs & Singles</h1>
-        <div className="artist-show-container">
-          <div className="artist-show-container">{albumListEP}</div>
+        {/* <span className="artist-show-bio-header">Biography</span> */}
+        {/* <div className="artist-show-bio">{bio}</div> */}
+        <div className="artist-show-content">
+          <h1
+            className={
+              albumListLP.every(e => e === undefined) ? "main-h1-dn" : "main-h1"
+            }
+          >
+            Albums
+          </h1>
+          <div className="artist-show-container">
+            <div className="artist-show-container">{albumListLP}</div>
+          </div>
+          {/* <h1 className="main-h1">EPs & Singles</h1> */}
+          <h1
+            className={
+              albumListEP.every(e => e === undefined) ? "main-h1-dn" : "main-h1"
+            }
+          >
+            EPs & Singles
+          </h1>
+          <div className="artist-show-container">
+            <div className="artist-show-container">{albumListEP}</div>
+          </div>
         </div>
       </div>
     );
