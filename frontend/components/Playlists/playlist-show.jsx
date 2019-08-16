@@ -5,17 +5,22 @@ class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuVisible: false
+      menuVisible: false,
+      artworks: []
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
     this.addToQueue = this.addToQueue.bind(this);
+    this.setArtwork = this.setArtwork.bind(this);
     // this.handlePlay = this.handlePlay.bind(this);
     // this.getQueue = this.getQueue.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchPlaylist(this.props.match.params.playlistId);
+    this.props
+      .fetchPlaylist(this.props.match.params.playlistId)
+      .then(() => this.setArtwork());
+    debugger;
   }
 
   componentDidUpdate(prevProps) {
@@ -26,8 +31,17 @@ class PlaylistShow extends React.Component {
     }
   }
 
-  addToQueue() {
+  setArtwork() {
     debugger;
+    let tracks = this.props.playlist.playlist_tracks;
+    let art = Object.values(this.props.playlist.playlist_tracks).map(track => {
+      this.setState(prevState => {
+        return { artworks: prevState.artworks.concat([track.album_art]) };
+      });
+    });
+  }
+
+  addToQueue() {
     if (Object.keys(this.props.playlist.playlist_tracks).length > 0) {
       let tracks = this.props.playlist.playlist_tracks;
       this.props.setQueue(tracks);
@@ -64,6 +78,7 @@ class PlaylistShow extends React.Component {
     let { playlist } = this.props || {};
     if (!playlist.creation_at) return null;
     let releaseYear = playlist.creation_at.slice(0, 4) || "";
+
     if (playlist.playlist_tracks) {
       let tracks = Object.values(playlist.playlist_tracks) || {};
       trackCount = Object.keys(playlist.playlist_tracks).length || "";
