@@ -74,10 +74,14 @@ class AlbumShowItem extends React.Component {
           <div className="tc-title">{title}</div>
           <div className="tc-artist">{artist_name}</div>
         </div>
-        <div className="tc-context-menu" title="More" onClick={this.toggleMenu}>
-          <div className="ellipsis">...</div>
+        <div className="tc-context-menu" title="More">
+          <div className="ellipsis" onClick={this.toggleMenu}>
+            ...
+          </div>
           <div className={menuVisible ? "cm-show" : "cm-hidden"}>
-            <div className="cm-item">Add Song to Playlist</div>
+            <div className="cm-item" onClick={this.props.openModal}>
+              Add Song to Playlist
+            </div>
           </div>
         </div>
         <div className="tc-duration">

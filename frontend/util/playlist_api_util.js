@@ -16,7 +16,9 @@ export const createPlaylist = (playlist) => (
     $.ajax({
         method: "POST",
         url: `api/playlists`,
-        data: { playlist }
+        data: {
+            playlist
+        }
     })
 )
 
@@ -24,7 +26,9 @@ export const updatePlaylist = (playlist) => (
     $.ajax({
         method: "PATCH",
         url: `api/playlists/${playlist.id}`,
-        data: { playlist }
+        data: {
+            playlist
+        }
     })
 )
 
@@ -34,3 +38,10 @@ export const deletePlaylist = (id) => (
         url: `api/playlists/${id}`,
     })
 )
+
+export const addTrackToPlaylist = (playlistId, trackId) => (
+    $.ajax({
+        method: 'POST',
+        url: `api/playlists/${playlistId}/tracks/${trackId}`
+    })
+);

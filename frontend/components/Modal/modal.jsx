@@ -2,6 +2,7 @@ import React from "react";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import NewPlaylist from "../Playlists/new_playlist";
+import AddTrackToPlaylist from "../Playlists/Add_Track_To_Playlist";
 
 class Modal extends React.Component {
   constructor(props) {
@@ -19,6 +20,9 @@ class Modal extends React.Component {
     switch (modal.modal) {
       case "new_playlist":
         component = <NewPlaylist />;
+        break;
+      case "addTrackToPlaylist":
+        component = <AddTrackToPlaylist />;
         break;
       default:
         return null;
