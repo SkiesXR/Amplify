@@ -85,7 +85,10 @@ class AddTrackToPlaylist extends React.Component {
                   </div>
                   <div className="asp-artist-container">{playlist.title}</div>
                   <div className="asp-artist-container">
-                    {Object.keys(playlist.playlist_tracks).length}
+                    {playlist.trackCount}
+                    {playlist.trackCount > 1 || playlist.trackCount === 0
+                      ? " Songs"
+                      : " Song"}
                   </div>
                 </div>
               );
