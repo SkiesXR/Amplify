@@ -6,6 +6,7 @@
     left: 0;
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
+    overflow-y: scroll;
 }
 
 .modal-child-np {
@@ -19,7 +20,8 @@
 .modal-child-asp {
     position: absolute;
     top: 10%;
-    left: 35%;
+    left: 6%;
+    overflow-y: scroll;
 }
 
 // New Playlist
@@ -198,3 +200,5 @@
 }
 
 // Add Track to Playlist Modal
+
+.asp-playlistIndexContainer {}
