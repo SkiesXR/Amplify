@@ -26,19 +26,24 @@ class PlaylistShow extends React.Component {
     if (
       prevProps.match.params.playlistId != this.props.match.params.playlistId
     ) {
-      this.props.fetchPlaylist(this.props.match.params.playlistId);
+      this.setState({ artworks: [] });
+      this.props
+        .fetchPlaylist(this.props.match.params.playlistId)
+        .then(() => this.setArtwork());
     }
   }
 
   setArtwork() {
-    let tracks = this.props.playlist.playlist_tracks;
-    let artCollection = Object.values(this.props.playlist.playlist_tracks).map(
-      track => {
+    if (Object.keys(this.props.playlist).includes("playlist_tracks")) {
+      let tracks = this.props.playlist.playlist_tracks;
+      let artCollection = Object.values(
+        this.props.playlist.playlist_tracks
+      ).map(track => {
         this.setState(prevState => {
           return { artworks: prevState.artworks.concat([track.album_art]) };
         });
-      }
-    );
+      });
+    }
   }
 
   addToQueue() {
@@ -80,13 +85,31 @@ class PlaylistShow extends React.Component {
     let releaseYear = playlist.creation_at.slice(0, 4) || "";
 
     let { artworks } = this.state;
-    let playlistArt = artworks.slice(0, 4).map(art => {
-      return (
-        <div className="playlist-coverArt-item">
-          <img src={art} />
+    if (artworks.length >= 1 && artworks.length < 4) {
+      var playlistArt = (
+        <div className="playlist-coverArt-single">
+          <img src={artworks[0]} />
         </div>
       );
-    });
+    } else if (artworks.length >= 4) {
+      var playlistArt = artworks.slice(0, 4).map(art => {
+        return (
+          <div key={art} className="playlist-coverArt-item">
+            <img src={art} />
+          </div>
+        );
+      });
+    } else {
+      var playlistArt = <div className="playlist-coverArt-placeholder" />;
+    }
+
+    // let playlistArt = artworks.slice(0, 4).map(art => {
+    //   return (
+    //     <div className="playlist-coverArt-item">
+    //       <img src={art} />
+    //     </div>
+    //   );
+    // });
 
     if (playlist.playlist_tracks) {
       let tracks = Object.values(playlist.playlist_tracks) || {};
