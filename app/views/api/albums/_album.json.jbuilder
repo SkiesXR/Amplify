@@ -11,7 +11,7 @@ json.album do
     json.tracks do
         album.tracks.each_with_index do |track, idx|
             json.set! (idx+1) do
-                json.extract! track, :title, :length, :artist_id, :album_id
+                json.extract! track, :id, :title, :length, :artist_id, :album_id
                 json.artist track.artist.name
 
                 # attach audio file
