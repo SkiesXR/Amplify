@@ -2,7 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { closeModal } from "../../actions/modal_actions";
-import { addTrackToPlaylist } from "../../actions/playlist.actions";
+import {
+  addTrackToPlaylist,
+  fetchPlaylists
+} from "../../actions/playlist.actions";
 
 class AddTrackToPlaylist extends React.Component {
   constructor(props) {
@@ -10,6 +13,12 @@ class AddTrackToPlaylist extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     // this.handleChange = this.handleChange.bind(this);
     // this.redirectToIndex = this.redirectToIndex.bind(this);
+  }
+
+  componentDidMount() {
+    if (Object.keys(this.props.playlists).length < 1) {
+      this.props.fetchPlaylists();
+    }
   }
 
   handleSubmit() {
@@ -30,6 +39,9 @@ class AddTrackToPlaylist extends React.Component {
 
   render() {
     let { closeModal } = this.props;
+    if (!this.props.playlists) return null;
+    let { playlists } = this.props;
+    debugger;
 
     return (
       <div className="modal-container">
@@ -49,20 +61,24 @@ class AddTrackToPlaylist extends React.Component {
           </svg>
         </button>
         <h1 id="new-playlist-header">Add Song to Playlist</h1>
-        <div className="new-playlist-input-container">
-          <div className="new-playlist-input-box">
-            <div className="new-playlist-content-spacing">
-              <h4 className="new-playlist-inputBox-label">Playlist Name</h4>
-            </div>
+        <div className="asp-playlistIndexContainer">
+          <div className="results">
+            {Object.values(playlists).map(playlist => {
+              return (
+                <div className="album-artist-container">
+                  <div className="image-hover-container">
+                    <img src="bts.jpg" />
+                    <div className="Mike">
+                      <button id="Mike-button">
+                        <img id="Mike" src="play_white.png" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="artist-container">{playlist.title}</div>
+                </div>
+              );
+            })}
           </div>
-        </div>
-        <div className="modal-buttons">
-          <button className="modal-button-cancel" onClick={closeModal}>
-            CANCEL
-          </button>
-          <button className="modal-button-create" onClick={this.handleSubmit}>
-            CREATE
-          </button>
         </div>
       </div>
     );
@@ -70,12 +86,13 @@ class AddTrackToPlaylist extends React.Component {
 }
 
 const msp = state => ({
-  // last_playlist: Object.values(state.entities.playlists).slice(-1)[0]
+  playlists: state.entities.playlists
 });
 
 const mdp = dispatch => ({
   addTrackToPlaylist: track => dispatch(addTrackToPlaylist(track)),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
+  fetchPlaylists: () => dispatch(fetchPlaylists())
 });
 
 export default withRouter(

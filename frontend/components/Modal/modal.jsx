@@ -20,21 +20,27 @@ class Modal extends React.Component {
     switch (modal.modal) {
       case "new_playlist":
         component = <NewPlaylist />;
+        return (
+          <div className="modal-background">
+            <div className="modal-child-np" onClick={e => e.stopPropagation()}>
+              {component}
+            </div>
+          </div>
+        );
         break;
       case "addTrackToPlaylist":
         component = <AddTrackToPlaylist />;
+        return (
+          <div className="modal-background">
+            <div className="modal-child-asp" onClick={e => e.stopPropagation()}>
+              {component}
+            </div>
+          </div>
+        );
         break;
       default:
         return null;
     }
-
-    return (
-      <div className="modal-background">
-        <div className="modal-child" onClick={e => e.stopPropagation()}>
-          {component}
-        </div>
-      </div>
-    );
   }
 }
 

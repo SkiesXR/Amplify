@@ -8,12 +8,18 @@
     z-index: 10;
 }
 
-.modal-child {
+.modal-child-np {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+}
+
+.modal-child-asp {
+    position: absolute;
+    top: 10%;
+    left: 35%;
 }
 
 // New Playlist
@@ -183,10 +189,6 @@
     outline: none;
 }
 
-.modal-button-cancel:active {
-    /* border: none; */
-}
-
 .modal-button-cancel:hover {
     background-color: rgb(34, 34, 34);
 }
@@ -195,3 +197,4 @@
     background-color: rgb(29, 29, 29);
 }
 
+// Add Track to Playlist Modal

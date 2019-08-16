@@ -155,15 +155,15 @@ class PlaylistShow extends React.Component {
                             {/* <div className="cover-art-icon">
                                                             <img src="play_white.png"/>
                                                         </div> */}
-                            <div className="playlist-cover-container">
+                            {/* <div className="playlist-cover-container">
                               {playlistArt}
-                            </div>
-                            {/* <div>
+                            </div> */}
+                            <div>
                               <img
                                 className="album-show-cover-art"
                                 src="bts.jpg"
                               />
-                            </div> */}
+                            </div>
                           </div>
                           <button id="cover-art-play" />
                         </div>
