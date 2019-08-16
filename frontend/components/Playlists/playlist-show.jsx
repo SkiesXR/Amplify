@@ -9,6 +9,7 @@ class PlaylistShow extends React.Component {
     };
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.addToQueue = this.addToQueue.bind(this);
     // this.handlePlay = this.handlePlay.bind(this);
     // this.getQueue = this.getQueue.bind(this);
   }
@@ -22,6 +23,14 @@ class PlaylistShow extends React.Component {
       prevProps.match.params.playlistId != this.props.match.params.playlistId
     ) {
       this.props.fetchPlaylist(this.props.match.params.playlistId);
+    }
+  }
+
+  addToQueue() {
+    debugger;
+    if (Object.keys(this.props.playlist.playlist_tracks).length > 0) {
+      let tracks = this.props.playlist.playlist_tracks;
+      this.props.setQueue(tracks);
     }
   }
 
@@ -73,6 +82,7 @@ class PlaylistShow extends React.Component {
       });
     } else {
       var trackCount = 0;
+      var tracks = [];
       var playlistTracks = "";
     }
 
@@ -123,7 +133,12 @@ class PlaylistShow extends React.Component {
                         <div className="album-artist">{user}</div>
                       </div>
                     </div>
-                    <div className="album-show-left-play">Play</div>
+                    <div
+                      className="album-show-left-play"
+                      onClick={this.addToQueue}
+                    >
+                      Play
+                    </div>
                     <div>
                       <div className="album-show-c3a-bottom">
                         <p>
