@@ -83,7 +83,10 @@ class AddTrackToPlaylist extends React.Component {
                       </button>
                     </div>
                   </div>
-                  <div className="artist-container">{playlist.title}</div>
+                  <div className="asp-artist-container">{playlist.title}</div>
+                  <div className="asp-artist-container">
+                    {Object.keys(playlist.playlist_tracks).length}
+                  </div>
                 </div>
               );
             })}

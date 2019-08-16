@@ -201,4 +201,9 @@
 
 // Add Track to Playlist Modal
 
-.asp-playlistIndexContainer {}
+.asp-artist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
