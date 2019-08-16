@@ -20,7 +20,6 @@ class PlaylistShow extends React.Component {
     this.props
       .fetchPlaylist(this.props.match.params.playlistId)
       .then(() => this.setArtwork());
-    debugger;
   }
 
   componentDidUpdate(prevProps) {
@@ -32,13 +31,14 @@ class PlaylistShow extends React.Component {
   }
 
   setArtwork() {
-    debugger;
     let tracks = this.props.playlist.playlist_tracks;
-    let art = Object.values(this.props.playlist.playlist_tracks).map(track => {
-      this.setState(prevState => {
-        return { artworks: prevState.artworks.concat([track.album_art]) };
-      });
-    });
+    let artCollection = Object.values(this.props.playlist.playlist_tracks).map(
+      track => {
+        this.setState(prevState => {
+          return { artworks: prevState.artworks.concat([track.album_art]) };
+        });
+      }
+    );
   }
 
   addToQueue() {
@@ -78,6 +78,15 @@ class PlaylistShow extends React.Component {
     let { playlist } = this.props || {};
     if (!playlist.creation_at) return null;
     let releaseYear = playlist.creation_at.slice(0, 4) || "";
+
+    let { artworks } = this.state;
+    let playlistArt = artworks.slice(0, 4).map(art => {
+      return (
+        <div className="playlist-coverArt-item">
+          <img src={art} />
+        </div>
+      );
+    });
 
     if (playlist.playlist_tracks) {
       let tracks = Object.values(playlist.playlist_tracks) || {};
@@ -129,16 +138,15 @@ class PlaylistShow extends React.Component {
                             {/* <div className="cover-art-icon">
                                                             <img src="play_white.png"/>
                                                         </div> */}
-                            <div>
+                            <div className="playlist-cover-container">
+                              {playlistArt}
+                            </div>
+                            {/* <div>
                               <img
                                 className="album-show-cover-art"
                                 src="bts.jpg"
-                                // src={
-                                //   Object.values(playlist.playlist_tracks)[0]
-                                //     .album_art
-                                // }
                               />
-                            </div>
+                            </div> */}
                           </div>
                           <button id="cover-art-play" />
                         </div>
