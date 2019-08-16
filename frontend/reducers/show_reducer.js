@@ -13,8 +13,7 @@ export default (state = {}, action) => {
         case RECEIVE_SHOW:
             debugger;
             newState = Object.assign({}, state, {
-                // [action.show.id]: action.show
-                [Object.values(action.show)[0].id]: Object.values(action.show)[0]
+                [action.show.id]: action.show
             })
             return newState;
         default:
