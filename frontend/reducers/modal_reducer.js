@@ -11,7 +11,9 @@ export default function modalReducer(state = null, action) {
         case CLOSE_MODAL:
             return null;
         case RECEIVE_SONG_ID:
-            return Object.assign({}, state, action.id)
+            return Object.assign({}, state, {
+                trackId: action.id
+            })
         default:
             return state;
     }

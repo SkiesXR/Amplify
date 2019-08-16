@@ -64,6 +64,6 @@ export const updatePlaylist = (playlist) => dispatch => (
 );
 
 export const addTrackToPlaylist = (playlistId, trackId) => dispatch => (
-    PlaylistSongAPIUtil.addTrackToPlaylist(playlistId, trackId),
+    PlaylistAPIUtil.addTrackToPlaylist(playlistId, trackId),
     err => dispatch(receivePlaylistMessage(err.responseJSON))
 );

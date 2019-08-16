@@ -11,8 +11,8 @@ class AddTrackToPlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.redirectToShow = this.redirectToShow.bind(this);
     // this.handleChange = this.handleChange.bind(this);
-    // this.redirectToIndex = this.redirectToIndex.bind(this);
   }
 
   componentDidMount() {
@@ -21,11 +21,11 @@ class AddTrackToPlaylist extends React.Component {
     }
   }
 
-  handleSubmit(playlist) {
-    this.props
-      .addTrackToPlaylist(playlist.id)
-      .then(this.props.closeModal)
-      .then(() => this.redirectToShow(playlist.id));
+  handleSubmit(playlist, trackId) {
+    debugger;
+    this.props.addTrackToPlaylist(playlist.id, trackId);
+    // .then(this.props.closeModal)
+    // .then(() => this.redirectToShow(playlist.id));
   }
 
   redirectToShow(playlistId) {
@@ -63,11 +63,13 @@ class AddTrackToPlaylist extends React.Component {
                   key={playlist.id * Math.random()}
                   className="album-artist-container"
                 >
-                  <div className="image-hover-container">
-                    <img
-                      src="PlaylistArt-Placeholder.png"
-                      // onClick={this.handleSubmit(playlist)}
-                    />
+                  <div
+                    className="image-hover-container"
+                    onClick={() =>
+                      this.handleSubmit(playlist, this.props.trackId)
+                    }
+                  >
+                    <img src="PlaylistArt-Placeholder.png" />
                     <div className="Mike">
                       <button id="Mike-button">
                         <svg width="51px" height="52px" viewBox="88 88 51 52">
@@ -101,7 +103,8 @@ class AddTrackToPlaylist extends React.Component {
 }
 
 const msp = state => ({
-  playlists: state.entities.playlists
+  playlists: state.entities.playlists,
+  trackId: state.ui.modal.trackId
 });
 
 const mdp = dispatch => ({
