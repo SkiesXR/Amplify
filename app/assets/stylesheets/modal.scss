@@ -201,9 +201,21 @@
 
 // Add Track to Playlist Modal
 
-.asp-artist-container {
+.asp-artist {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 10px 0px;
+    color: white;
+    font-family: 'Circular';
+    opacity: 1;
+    max-height: 16px;
+    white-space: nowrap;
+}
+
+.asp-trackCount {
+    color: white;
+    font-family: 'Circular';
+    opacity: .6;
 }
