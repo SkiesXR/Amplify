@@ -12,7 +12,8 @@ const msp = state => {
     currentSong: state.ui.nowPlaying.currentSong,
     playing: state.ui.nowPlaying.playing,
     repeat: state.ui.nowPlaying.repeat,
-    shuffle: state.ui.nowPlaying.shuffle
+    shuffle: state.ui.nowPlaying.shuffle,
+    queue: state.ui.nowPlaying.queue
   };
 };
 

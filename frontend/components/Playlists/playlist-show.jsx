@@ -140,12 +140,6 @@ class PlaylistShow extends React.Component {
     //   followButton = <button onClick={this.handleUnfollow}>UNFOLLOW</button>;
     // }
 
-    // let deleteButton;
-    // if (playlist.owned) {
-    //   deleteButton = <button onClick={this.handleDelete}>DELETE</button>;
-    // } else {
-    //   deleteButton = null;
-
     return (
       <div className="playlist-show-c1">
         <div className="playlist-show-c2">

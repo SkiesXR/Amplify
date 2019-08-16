@@ -7,9 +7,9 @@ class Player extends React.Component {
     super(props);
     this.state = {
       // playing: this.props.playing || false,
-      currentSong: this.props.currentSong,
-      repeat: false,
-      shuffle: false,
+      // currentSong: this.props.currentSong,
+      // repeat: false,
+      // shuffle: false,
       playheadPos: 0,
       volPos: 50,
       previousVolume: 0.5,

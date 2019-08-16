@@ -225,6 +225,10 @@
     background-color: rgba(0, 0, 0, .3);
 }
 
+.track-container:hover .tc-context-menu {
+    display: flex;
+}
+
 .tc-outer {
     text-align: right;
     padding-right: 1em;
@@ -276,6 +280,21 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: 1px;
+}
+
+.tc-context-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 3px;
+    cursor: default;
+    position: relative;
+}
+
+.ellipsis {
+    opacity: .6;
+    color: white;
+    font-size: 22px;
 }
 
 .tc-duration {

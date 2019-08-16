@@ -6,13 +6,15 @@ class AlbumShowItem extends React.Component {
     super(props);
     this.state = {
       noteIcon: "music_note.png",
-      noteContainerClass: "tc-outer-top"
+      noteContainerClass: "tc-outer-top",
+      menuVisible: false
     };
 
     // Bind some methods!
     this.playNote = this.playNote.bind(this);
     this.musicNote = this.musicNote.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   handlePlay() {
@@ -38,7 +40,14 @@ class AlbumShowItem extends React.Component {
     });
   }
 
+  toggleMenu() {
+    this.setState(prevState => ({
+      menuVisible: !prevState.menuVisible
+    }));
+  }
+
   render() {
+    let { menuVisible } = this.state;
     const { length, title } = this.props.track;
     const { artist_name } = this.props.album;
     let noteContainerClass = this.state.noteContainerClass;
@@ -64,6 +73,16 @@ class AlbumShowItem extends React.Component {
         <div className="tc-title-artist">
           <div className="tc-title">{title}</div>
           <div className="tc-artist">{artist_name}</div>
+        </div>
+        <div className="tc-context-menu" title="More" onClick={this.toggleMenu}>
+          <div className="ellipsis">...</div>
+          <div
+            className={
+              menuVisible ? "context-menu-show" : "context-menu-hidden"
+            }
+          >
+            <div className="context-menu-item">Add Song to Playlist</div>
+          </div>
         </div>
         <div className="tc-duration">
           <div className="tc-duration-top">{duration}</div>
