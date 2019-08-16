@@ -7,7 +7,6 @@ class PodcastShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchShow(this.props.match.params.podcastId);
-    debugger;
   }
 
   render() {
@@ -71,7 +70,7 @@ class PodcastShow extends React.Component {
                     </div>
                     <div>
                       <div className="album-show-c3a-bottom">
-                        <p>{podcast.description}</p>
+                        <p id="podcast-description">{podcast.description}</p>
                         <p>
                           {episodeCount ? episodeCount : 0}
                           {episodeCount != 1 ? " EPISODES" : " EPISODE"}

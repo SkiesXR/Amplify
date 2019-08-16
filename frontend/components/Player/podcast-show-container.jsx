@@ -9,7 +9,6 @@ import {
 } from "../../actions/player_actions";
 
 const msp = (state, ownProps) => {
-  debugger;
   return {
     podcast: state.entities.shows[ownProps.match.params.podcastId] || {},
     episodes: state.entities.showEpisodes

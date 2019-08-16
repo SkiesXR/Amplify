@@ -11,8 +11,10 @@ export default (state = {}, action) => {
             newState = Object.assign({}, state, action.shows)
             return newState;
         case RECEIVE_SHOW:
+            debugger;
             newState = Object.assign({}, state, {
-                [action.show.id]: action.show
+                // [action.show.id]: action.show
+                [Object.values(action.show)[0].id]: Object.values(action.show)[0]
             })
             return newState;
         default:
