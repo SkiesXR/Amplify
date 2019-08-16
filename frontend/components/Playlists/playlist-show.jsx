@@ -100,7 +100,12 @@ class PlaylistShow extends React.Component {
         );
       });
     } else {
-      var playlistArt = <div className="playlist-coverArt-placeholder" />;
+      // var playlistArt = <div className="playlist-coverArt-placeholder" />;
+      var playlistArt = (
+        <div className="playlist-coverArt-single">
+          <img src="PlaylistArt-Placeholder.png" />
+        </div>
+      );
     }
 
     // let playlistArt = artworks.slice(0, 4).map(art => {
@@ -155,15 +160,15 @@ class PlaylistShow extends React.Component {
                             {/* <div className="cover-art-icon">
                                                             <img src="play_white.png"/>
                                                         </div> */}
-                            {/* <div className="playlist-cover-container">
+                            <div className="playlist-cover-container">
                               {playlistArt}
-                            </div> */}
-                            <div>
+                            </div>
+                            {/* <div>
                               <img
                                 className="album-show-cover-art"
-                                src="bts.jpg"
+                                src="PlaylistArt-Placeholder.png"
                               />
-                            </div>
+                            </div> */}
                           </div>
                           <button id="cover-art-play" />
                         </div>
