@@ -40,6 +40,7 @@ class AlbumShow extends React.Component {
           setQueue={this.props.setQueue}
           setPlaying={this.props.setPlaying}
           openModal={this.props.openModal}
+          closeModal={this.props.closeModal}
         />
       );
     });

@@ -80,7 +80,7 @@ class AlbumShowItem extends React.Component {
           </div>
           <div className={menuVisible ? "cm-show" : "cm-hidden"}>
             <div className="cm-item" onClick={this.props.openModal}>
-              Add Song to Playlist
+              <div onClick={this.toggleMenu}>Add Song to Playlist</div>
             </div>
           </div>
         </div>
