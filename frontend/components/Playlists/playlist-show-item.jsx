@@ -43,7 +43,9 @@ class PlaylistShowItem extends React.Component {
   handleSubmit(id) {
     debugger;
     this.toggleMenu();
-    this.props.removeTrackFromPlaylist(this.props.playlist.id, id);
+    this.props
+      .removeTrackFromPlaylist(this.props.track.playlist_item_id)
+      .then(this.props.fetchPlaylist(this.props.playlist.id));
   }
 
   toggleMenu() {

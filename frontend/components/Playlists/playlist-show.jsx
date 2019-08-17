@@ -133,6 +133,7 @@ class PlaylistShow extends React.Component {
             closeModal={this.props.closeModal}
             receiveSongId={this.props.receiveSongId}
             removeTrackFromPlaylist={this.props.removeTrackFromPlaylist}
+            fetchPlaylist={this.props.fetchPlaylist}
           />
         );
       });

@@ -68,6 +68,6 @@ export const addTrackToPlaylist = (playlistId, trackId) => dispatch => (
     err => dispatch(receivePlaylistMessage(err.responseJSON))
 );
 
-export const removeTrackFromPlaylist = (playlistId, trackId) => dispatch => (
-        PlaylistAPIUtil.removeTrackFromPlaylist(playlistId, trackId))
+export const removeTrackFromPlaylist = (playlistItemId) => dispatch => (
+        PlaylistAPIUtil.removeTrackFromPlaylist(playlistItemId))
     .then((playlist) => dispatch(receivePlaylist(playlist)));

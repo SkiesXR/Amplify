@@ -7,7 +7,7 @@ json.set! playlist.id do
         playlist.tracks.each do |track|
             json.set! track.id do
                 json.playlist_item_id playlist.playlist_items.find_by(track_id: track.id).id
-                json.extract! track, :title, :length, :artist_id, :album_id
+                json.extract! track, :id, :title, :length, :artist_id, :album_id
                 json.artist track.artist.name
                 json.album track.album.title
 
