@@ -1,5 +1,9 @@
 import { connect } from "react-redux";
-import { fetchPlaylist, deletePlaylist } from "../../actions/playlist.actions";
+import {
+  fetchPlaylist,
+  deletePlaylist,
+  removeTrackFromPlaylist
+} from "../../actions/playlist.actions";
 import {
   setCurrentSong,
   toggleSong,
@@ -22,7 +26,9 @@ const mdp = dispatch => ({
   setCurrentSong: song => dispatch(setCurrentSong(song)),
   toggleSong: () => dispatch(toggleSong()),
   setQueue: queue => dispatch(setQueue(queue)),
-  setPlaying: playing => dispatch(setPlaying(playing))
+  setPlaying: playing => dispatch(setPlaying(playing)),
+  removeTrackFromPlaylist: (id, data) =>
+    dispatch(removeTrackFromPlaylist(id, data))
 });
 
 export default connect(

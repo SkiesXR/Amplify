@@ -32,4 +32,9 @@ class Track < ApplicationRecord
         foreign_key: :track_id,
         class_name: :Like   
 
+    has_many :playlist_items,
+        primary_key: :id,
+        foreign_key: :track_id,
+        class_name: :PlaylistItem
+
 end

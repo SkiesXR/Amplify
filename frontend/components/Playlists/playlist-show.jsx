@@ -132,6 +132,7 @@ class PlaylistShow extends React.Component {
             openModal={this.props.openModal}
             closeModal={this.props.closeModal}
             receiveSongId={this.props.receiveSongId}
+            removeTrackFromPlaylist={this.props.removeTrackFromPlaylist}
           />
         );
       });

@@ -14,7 +14,8 @@ end
 def destroy
     @playlist_item = PlaylistItem.find(params[:id])
     @playlist_item.delete
-    render `/api/playlists/#{playlist_id}`
+    # render `/api/playlists/#{playlist_id}`
+    render json: ["Track removed from playlist!"]
 end
     
 def playlist_item_params

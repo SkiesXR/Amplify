@@ -51,3 +51,16 @@ export const addTrackToPlaylist = (playlistId, trackId) => (
         }
     })
 );
+
+export const removeTrackFromPlaylist = (playlistId, trackId) => (
+    $.ajax({
+        url: `/api/playlists/${playlist_id}/tracks/${track_id}/:id`,
+        method: 'DELETE',
+        data: {
+            playlist_item: {
+                playlist_id: playlistId,
+                track_id: trackId
+            }
+        }
+    })
+)

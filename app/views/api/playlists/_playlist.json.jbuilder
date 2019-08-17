@@ -3,9 +3,10 @@ date = playlist.created_at
 json.set! playlist.id do
     json.extract! playlist, :id, :title, :description, :user_id
     json.creation_at date
-    json.playlist_tracks do 
+    json.playlist_tracks do
         playlist.tracks.each do |track|
             json.set! track.id do
+                json.playlist_item_id playlist.playlist_items.find_by(track_id: track.id).id
                 json.extract! track, :title, :length, :artist_id, :album_id
                 json.artist track.artist.name
                 json.album track.album.title
@@ -27,6 +28,7 @@ json.set! playlist.id do
         end
     end
 end
+
 
 
 

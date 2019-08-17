@@ -13,7 +13,7 @@ class PlaylistShowItem extends React.Component {
     this.playNote = this.playNote.bind(this);
     this.musicNote = this.musicNote.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
-    this.handleModal = this.handleModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
@@ -40,9 +40,10 @@ class PlaylistShowItem extends React.Component {
     });
   }
 
-  handleModal(id) {
-    this.props.openModal();
-    this.props.receiveSongId(id);
+  handleSubmit(id) {
+    debugger;
+    this.toggleMenu();
+    this.props.removeTrackFromPlaylist(this.props.playlist.id, id);
   }
 
   toggleMenu() {
@@ -83,11 +84,10 @@ class PlaylistShowItem extends React.Component {
             ...
           </div>
           <div className={menuVisible ? "cm-show" : "cm-hidden"}>
-            <div
-              className="cm-item"
-              onClick={() => this.handleModal(this.props.track.id)}
-            >
-              <div onClick={this.toggleMenu}>Remove Song from Playlist</div>
+            <div className="cm-item">
+              <div onClick={() => this.handleSubmit(this.props.track.id)}>
+                Remove Song from Playlist
+              </div>
             </div>
           </div>
         </div>
