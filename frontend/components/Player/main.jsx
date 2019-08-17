@@ -150,6 +150,7 @@ class Main extends React.Component {
     let artists = "/browse/artists";
     let artistShow = "/artists/";
     let playlist_index = "/collection/playlists";
+    let playlist_show = "/collection/playlists/";
     let liked_songs = "/collection/tracks";
     let podcasts = "/browse/podcasts";
     let genres = "/browse/genres";
@@ -199,6 +200,7 @@ class Main extends React.Component {
     let path = this.props.history.location.pathname;
     if (path.includes(albumShow)) bgGradient = "albums-show";
     if (path.includes(artistShow)) bgGradient = "artists-show";
+    if (path.includes(playlist_show)) bgGradient = "albums-show";
     return bgGradient;
   }
 
