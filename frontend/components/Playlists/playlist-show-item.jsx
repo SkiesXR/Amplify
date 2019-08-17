@@ -14,6 +14,7 @@ class PlaylistShowItem extends React.Component {
     this.musicNote = this.musicNote.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handleModal = this.handleModal.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   handlePlay() {
@@ -42,6 +43,12 @@ class PlaylistShowItem extends React.Component {
   handleModal(id) {
     this.props.openModal();
     this.props.receiveSongId(id);
+  }
+
+  toggleMenu() {
+    this.setState(prevState => ({
+      menuVisible: !prevState.menuVisible
+    }));
   }
 
   render() {
@@ -80,7 +87,7 @@ class PlaylistShowItem extends React.Component {
               className="cm-item"
               onClick={() => this.handleModal(this.props.track.id)}
             >
-              <div onClick={this.toggleMenu}>Add Song to Playlist</div>
+              <div onClick={this.toggleMenu}>Remove Song from Playlist</div>
             </div>
           </div>
         </div>
