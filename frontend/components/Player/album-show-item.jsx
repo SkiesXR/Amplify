@@ -15,6 +15,7 @@ class AlbumShowItem extends React.Component {
     this.musicNote = this.musicNote.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.handleModal = this.handleModal.bind(this);
   }
 
   handlePlay() {
@@ -46,9 +47,14 @@ class AlbumShowItem extends React.Component {
     }));
   }
 
+  handleModal(id) {
+    this.props.openModal();
+    this.props.receiveSongId(id);
+  }
+
   render() {
     let { menuVisible } = this.state;
-    const { length, title } = this.props.track;
+    const { length, title, id } = this.props.track;
     const { artist_name } = this.props.album;
     let noteContainerClass = this.state.noteContainerClass;
     let min = length.slice(0, 2);
@@ -74,14 +80,18 @@ class AlbumShowItem extends React.Component {
           <div className="tc-title">{title}</div>
           <div className="tc-artist">{artist_name}</div>
         </div>
-        <div className="tc-context-menu" title="More" onClick={this.toggleMenu}>
-          <div className="ellipsis">...</div>
-          <div
-            className={
-              menuVisible ? "context-menu-show" : "context-menu-hidden"
-            }
-          >
-            <div className="context-menu-item">Add Song to Playlist</div>
+        <div className="tc-context-menu" title="More">
+          <div className="ellipsis" onClick={this.toggleMenu}>
+            ...
+          </div>
+          <div className={menuVisible ? "cm-show" : "cm-hidden"}>
+            {/* <div className="cm-item" onClick={this.props.openModal}> */}
+            <div
+              className="cm-item"
+              onClick={() => this.handleModal(this.props.track.id)}
+            >
+              <div onClick={this.toggleMenu}>Add Song to Playlist</div>
+            </div>
           </div>
         </div>
         <div className="tc-duration">

@@ -2,10 +2,12 @@ class Api::PlaylistItemsController < ApplicationController
 
 def create
     @playlist_item = PlaylistItem.new(playlist_item_params)
-    if @playlist_item.save
-      render json: ["Track has been added to your playlist!"]
+    if PlaylistItem.exists?(playlist_id: @playlist_item.playlist_id, track_id: @playlist_item.track_id)
+      render json: ["Song already exists in playlist"], status: 401
     else
-      render json: @playlist_item.errors.full_messages, status: 401
+      @playlist_item.position = @playlist_item.playlist.tracks.length + 1
+      @playlist_item.save!
+      render json: ["Track has been added to your playlist!"]
     end
 end
 
@@ -16,7 +18,7 @@ def destroy
 end
     
 def playlist_item_params
-    params.require(:playlist_items).permit(:playlist_id, :track_id)
+    params.require(:playlist_item).permit(:playlist_id, :track_id)
 end 
 
 end

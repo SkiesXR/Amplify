@@ -39,6 +39,9 @@ class AlbumShow extends React.Component {
           toggleSong={this.props.toggleSong}
           setQueue={this.props.setQueue}
           setPlaying={this.props.setPlaying}
+          openModal={this.props.openModal}
+          closeModal={this.props.closeModal}
+          receiveSongId={this.props.receiveSongId}
         />
       );
     });

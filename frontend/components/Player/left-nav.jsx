@@ -26,6 +26,7 @@ class LeftNav extends React.Component {
     let playlistNames = playlists.map(playlist => {
       return (
         <NavLink
+          key={playlist.id * Math.random()}
           activeClassName="nav-link-container-active"
           to={`/collection/playlists/${playlist.id}`}
         >
