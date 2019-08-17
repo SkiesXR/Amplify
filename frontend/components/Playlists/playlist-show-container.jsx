@@ -7,6 +7,7 @@ import {
   setPlaying
 } from "../../actions/player_actions";
 import PlaylistShow from "../Playlists/playlist-show";
+import { openModal, closeModal } from "../../actions/modal_actions";
 
 const msp = (state, ownProps) => {
   return {

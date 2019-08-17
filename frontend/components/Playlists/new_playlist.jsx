@@ -27,7 +27,10 @@ class NewPlaylist extends React.Component {
   }
 
   redirectToIndex() {
-    this.props.history.push("/collection/playlists");
+    // this.props.history.push("/collection/playlists");
+    this.props.history.push(
+      `/collection/playlists/${this.props.last_playlist.id}`
+    );
   }
 
   render() {
@@ -79,7 +82,7 @@ class NewPlaylist extends React.Component {
 }
 
 const msp = state => ({
-  // last_playlist: Object.values(state.entities.playlists).slice(-1)[0]
+  last_playlist: Object.values(state.entities.playlists).slice(-1)[0]
 });
 
 const mdp = dispatch => ({

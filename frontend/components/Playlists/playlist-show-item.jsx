@@ -5,13 +5,15 @@ class PlaylistShowItem extends React.Component {
     super(props);
     this.state = {
       noteIcon: "music_note.png",
-      noteContainerClass: "tc-outer-top"
+      noteContainerClass: "tc-outer-top",
+      menuVisible: false
     };
 
     // Bind some methods!
     this.playNote = this.playNote.bind(this);
     this.musicNote = this.musicNote.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
+    this.handleModal = this.handleModal.bind(this);
   }
 
   handlePlay() {
@@ -37,7 +39,13 @@ class PlaylistShowItem extends React.Component {
     });
   }
 
+  handleModal(id) {
+    this.props.openModal();
+    this.props.receiveSongId(id);
+  }
+
   render() {
+    let { menuVisible } = this.state;
     const { length, title, artist, album } = this.props.track;
     let noteContainerClass = this.state.noteContainerClass;
     let min = length.slice(0, 2);
@@ -62,6 +70,19 @@ class PlaylistShowItem extends React.Component {
         <div className="tc-title-artist">
           <div className="tc-title">{title}</div>
           <div className="tc-artist">{artist}</div>
+        </div>
+        <div className="tc-context-menu" title="More">
+          <div className="ellipsis" onClick={this.toggleMenu}>
+            ...
+          </div>
+          <div className={menuVisible ? "cm-show" : "cm-hidden"}>
+            <div
+              className="cm-item"
+              onClick={() => this.handleModal(this.props.track.id)}
+            >
+              <div onClick={this.toggleMenu}>Add Song to Playlist</div>
+            </div>
+          </div>
         </div>
         <div className="tc-duration">
           <div className="tc-duration-top">{duration}</div>
