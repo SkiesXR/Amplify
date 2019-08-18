@@ -45,7 +45,9 @@ class Search extends React.Component {
             return (
               <div className="album-artist-container">
                 <div className="artist-image-hover-container">
-                  <img src={artist.artist_photo} />
+                  <Link className="artist-result" to={`/artists/${artist.id}`}>
+                    <img src={artist.artist_photo} />
+                  </Link>
                 </div>
                 <div className="title-container">
                   <Link id="grid-title" to={`/artists/${artist.id}`}>

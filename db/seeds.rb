@@ -377,3 +377,4 @@ s9.show_photo.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazona
 
 # Podcast Episodes
 
+# ep1 = ShowEpisode.create!(title: "", description: "", release_date: "", show_id: "", length: "")
