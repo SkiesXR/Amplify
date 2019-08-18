@@ -10,17 +10,26 @@ class PodcastShow extends React.Component {
     this.props.fetchShow(this.props.match.params.podcastId);
   }
 
+  getQueue(idx) {
+    let { episodes } = this.props.podcast;
+    let queue = Object.values(episodes)
+      .slice(idx)
+      .concat(Object.values(episodes).slice(0, idx));
+    return queue;
+  }
+
   render() {
     if (!this.props.podcast.episodes) return null;
     // let { episodes, podcast } = this.props;
     const episodeCount = Object.keys(this.props.podcast.episodes).length || 0;
     if (episodeCount > 0) {
       var podcastEpisodes = Object.values(this.props.podcast.episodes).map(
-        episode => (
+        (episode, idx) => (
           <PodcastShowItem
             key={episode.title}
             episode={episode}
             podcast={this.props.podcast}
+            queue={this.getQueue(idx)}
             setCurrentSong={this.props.setCurrentSong}
             toggleSong={this.props.toggleSong}
             setQueue={this.props.setQueue}

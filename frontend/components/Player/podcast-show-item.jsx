@@ -15,10 +15,9 @@ class PodcastShowItem extends React.Component {
   }
 
   handlePlay() {
-    debugger;
-    // this.props.setCurrentSong(this.props.track);
-    // this.props.setPlaying(true);
-    // this.props.setQueue(this.props.queue);
+    this.props.setCurrentSong(this.props.episode);
+    this.props.setPlaying(true);
+    this.props.setQueue(this.props.queue);
   }
 
   // Flip musical note icon to play icon once mouse enters track container
