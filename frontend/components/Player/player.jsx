@@ -8,7 +8,7 @@ class Player extends React.Component {
     this.state = {
       repeat: false,
       shuffle: false,
-      random: false,
+      shuffle: false,
       active: props.currentSong,
       current: 0,
       playheadPos: 0,
@@ -39,7 +39,7 @@ class Player extends React.Component {
     this.toggleMute = this.toggleMute.bind(this);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
-    // this.randomize = this.randomize.bind(this);
+    this.shuffle = this.shuffle.bind(this);
     this.repeat = this.repeat.bind(this);
 
     // Refs
@@ -59,14 +59,12 @@ class Player extends React.Component {
       prevProps.queue != this.props.queue
     ) {
       clearInterval(this.intervalId);
-      // if (Object.keys(this.props.queue).length > 0) {
       this.setState({
         active:
           Object.keys(this.props.queue).length > 0
             ? this.props.queue[1]
             : this.props.currentSong
       });
-      // }
       this.setAudioSource();
       this.setState({
         active: this.props.queue[1],
@@ -190,7 +188,6 @@ class Player extends React.Component {
   // update audio source for audio element
   setAudioSource() {
     const music = document.getElementById("audio");
-    // music.src = this.props.currentSong.audio_file;
     music.src = this.props.currentSong.audio_file;
   }
 
@@ -357,14 +354,30 @@ class Player extends React.Component {
     this.setSongPlaying(true);
   }
 
-  // randomize() {
-  //   var s = shuffle(this.state.songs.slice());
-  //   this.setState({ songs: (!this.state.random) ? s : this.state.songs, random: !this.state.random });
-  //   this.props.setQueue((!this.state.random) ? s : this.state.songs);
-  // }
+  randomize(array) {
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+
+  shuffle() {
+    debugger;
+    // let shuffleQ = this.props.queue.slice().sort(() => Math.random() - 0.5);
+    let shuffleQ = this.randomize(this.props.queue.slice());
+    this.setState({ shuffle: !this.state.shuffle });
+    if (this.state.shuffle) this.props.setQueue(shuffleQ);
+  }
 
   repeat() {
-    debugger;
     this.setState({ repeat: !this.state.repeat });
   }
 
@@ -415,8 +428,16 @@ class Player extends React.Component {
             <div className="now-playing-controls">
               <div className="now-playing-buttons">
                 {/* shuffle button */}
-                <button id="np-button">
-                  <img id="shuffle" src="shuffle_white.png" />
+                <button id="np-button" onClick={this.shuffle}>
+                  {/* <img id="shuffle" src="shuffle_white.png" /> */}
+                  <img
+                    id="shuffle"
+                    src={
+                      this.state.shuffle
+                        ? "shuffle_neon.png"
+                        : "shuffle_white.png"
+                    }
+                  />
                 </button>
 
                 {/* back button */}
@@ -452,7 +473,15 @@ class Player extends React.Component {
 
                 {/* repeat button */}
                 <button id="np-button" onClick={this.repeat}>
-                  <img id="repeat" src="repeat_white.png" />
+                  {/* <img id="repeat" src="repeat_white.png" /> */}
+                  <img
+                    id="repeat"
+                    src={
+                      this.state.repeat
+                        ? "repeat_green.png"
+                        : "repeat_white.png"
+                    }
+                  />
                 </button>
               </div>
 

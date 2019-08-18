@@ -16,8 +16,9 @@ class AlbumShow extends React.Component {
   }
 
   addToQueue() {
+    debugger;
     let tracks = this.props.album.tracks;
-    this.props.setQueue(tracks);
+    this.props.setQueue(Object.values(tracks));
     this.props.setCurrentSong(tracks[1]);
   }
 
