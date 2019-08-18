@@ -40,7 +40,7 @@ class Player extends React.Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     // this.randomize = this.randomize.bind(this);
-    // this.repeat = this.repeat.bind(this);
+    this.repeat = this.repeat.bind(this);
 
     // Refs
     this.rangeslider = React.createRef();
@@ -119,6 +119,11 @@ class Player extends React.Component {
         playheadPos: 0,
         playPauseButton: "play_white.png"
       });
+      if (this.state.repeat) {
+        this.setSongPlaying(true);
+      } else {
+        this.next();
+      }
     });
   }
 
@@ -209,31 +214,10 @@ class Player extends React.Component {
     }
   }
 
-  // Logic for audio controls
+  // toggle audio playing status
   toggleAudio() {
     this.props.toggleSong();
-    // const music = document.getElementById("audio");
-    // var intervalId = null;
     clearInterval(this.intervalId);
-    // if (music.paused) {
-    //   music.play();
-
-    //   // Swap "pause" icon for "play icon"
-    //   this.setState({
-    //     playPauseButton: "pause_white.png"
-    //   });
-    // } else {
-    //   music.pause();
-
-    //   if (intervalId) {
-    //     clearInterval(intervalId);
-    //   }
-    //   // Swap "play" icon for "pause icon"
-    //   this.setState({
-    //     playPauseButton: "play_white.png",
-    //     playing: false
-    //   });
-    // }
   }
 
   // Volume controller
@@ -244,7 +228,6 @@ class Player extends React.Component {
     this.setState({
       volPos: range.value
     });
-    // console.log(audio.volume);
     audio.muted = audio.volume <= 0.01 ? true : false;
   }
 
@@ -379,9 +362,10 @@ class Player extends React.Component {
   //   this.props.setQueue((!this.state.random) ? s : this.state.songs);
   // }
 
-  // repeat() {
-  //   this.setState({ repeat: !this.state.repeat });
-  // }
+  repeat() {
+    debugger;
+    this.setState({ repeat: !this.state.repeat });
+  }
 
   render() {
     return (
@@ -437,7 +421,7 @@ class Player extends React.Component {
                 {/* back button */}
                 <button id="np-button">
                   <img
-                    id="direction"
+                    id="direction-backward"
                     src="previous_white.png"
                     onClick={this.previous}
                   />
@@ -459,14 +443,14 @@ class Player extends React.Component {
                 {/* next button */}
                 <button id="np-button">
                   <img
-                    id="direction"
+                    id="direction-forward"
                     src="next_white.png"
                     onClick={this.next}
                   />
                 </button>
 
                 {/* repeat button */}
-                <button id="np-button">
+                <button id="np-button" onClick={this.repeat}>
                   <img id="repeat" src="repeat_white.png" />
                 </button>
               </div>

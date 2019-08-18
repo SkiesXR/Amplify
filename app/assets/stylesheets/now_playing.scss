@@ -156,7 +156,7 @@
   color: #fff;
   font-size: 12px;
   opacity: 0.6;
-  padding-top: 50px;
+  margin-top: 50px;
   width: 35px;
   text-align: right;
 }
@@ -166,7 +166,7 @@
   color: #fff;
   font-size: 12px;
   opacity: 0.6;
-  padding-top: 48px;
+  margin-top: 48px;
   width: 35px;
 }
 
@@ -202,7 +202,7 @@
   opacity: .6;
   transition: opacity .2s linear;
   width: 50px;
-  padding: 0 15px;
+  margin: 0 15px;
 }
 
 #play:hover {
@@ -215,18 +215,35 @@
   opacity: .6;
 }
 
-#direction {
+#direction-forward {
   opacity: .6;
   transition: opacity .2s linear;
   width: 16px;
   height: 16px;
+  margin-right: 34px;
 }
 
-#direction:hover {
+#direction-forward:hover {
   opacity: 1;
 }
 
-#direction:active {
+#direction-forward:active {
+  opacity: .6;
+}
+
+#direction-backward {
+  opacity: .6;
+  transition: opacity .2s linear;
+  width: 16px;
+  height: 16px;
+  margin-left: 34px;
+}
+
+#direction-backward:hover {
+  opacity: 1;
+}
+
+#direction-backward:active {
   opacity: .6;
 }
 
@@ -235,7 +252,7 @@
   transition: opacity .2s linear;
   width: 25px;
   height: 25px;
-  padding-right: 34px;
+  // padding-right: 34px;
 }
 
 #shuffle:hover {
@@ -251,7 +268,7 @@
   transition: opacity .2s linear;
   width: 25px;
   height: 25px;
-  padding-left: 34px;
+  // padding-left: 34px;
 }
 
 #repeat:hover {
