@@ -46,6 +46,14 @@ class PlaylistShow extends React.Component {
     }
   }
 
+  getQueue(activeTrackIdx) {
+    let tracks = Object.values(this.props.playlist.playlist_tracks);
+    let queue = tracks
+      .slice(activeTrackIdx)
+      .concat(tracks.slice(0, activeTrackIdx));
+    return queue;
+  }
+
   addToQueue() {
     if (Object.keys(this.props.playlist.playlist_tracks).length > 0) {
       let tracks = this.props.playlist.playlist_tracks;
@@ -111,7 +119,7 @@ class PlaylistShow extends React.Component {
     if (playlist.playlist_tracks) {
       let tracks = Object.values(playlist.playlist_tracks) || {};
       trackCount = Object.keys(playlist.playlist_tracks).length || "";
-      var playlistTracks = tracks.map(track => {
+      var playlistTracks = tracks.map((track, idx) => {
         return (
           <PlaylistShowItem
             key={track.title}
@@ -119,6 +127,7 @@ class PlaylistShow extends React.Component {
             playlist={playlist}
             setCurrentSong={this.props.setCurrentSong}
             toggleSong={this.props.toggleSong}
+            queue={this.getQueue(idx)}
             setQueue={this.props.setQueue}
             setPlaying={this.props.setPlaying}
             openModal={this.props.openModal}
