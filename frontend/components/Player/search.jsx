@@ -107,15 +107,10 @@ class Search extends React.Component {
                 <div className="image-hover-container">
                   <Link to={`/genres/${genre.id}`}>
                     <img src={genre.genre_image} />
-                    <div className="Mike">
-                      <button id="Mike-button">
-                        <img id="Mike" src="play_white.png" />
-                      </button>
-                    </div>
                   </Link>
                 </div>
                 <div className="artist-container">
-                  <Link id="grid-artist" to={`/genres/${genre.id}`}>
+                  <Link id="grid-genre" to={`/genres/${genre.id}`}>
                     {genre.category}
                   </Link>
                 </div>
@@ -139,11 +134,6 @@ class Search extends React.Component {
                 <div className="image-hover-container">
                   <Link to={`/shows/${podcast.id}`}>
                     <img src={podcast.show_photo} />
-                    <div className="Mike">
-                      <button id="Mike-button">
-                        <img id="Mike" src="play_white.png" />
-                      </button>
-                    </div>
                   </Link>
                 </div>
                 <div className="artist-container">

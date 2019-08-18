@@ -346,9 +346,6 @@ t79.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazon
 t80 = Track.create!(title: "Twin", length: "06:25", artist_id: a7.id, album_id: al12.id)
 t80.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Vandella+-+Shine+You+Up+-+EP/Vandella+-+Shine+You+Up+-+EP+-+04+Twin.mp3'), filename: 'vandella - shine_you_up - twin.mp3')
 
-
-
-
 # Podcasts
 
 s1 = Show.create!(title: "Inside Marvel", author: "New Rockstars", description: "New Rockstars bring you breakdowns, theories and commentary on what is happening right now and what is coming next in the Marvel Cinematic Universe.", image_url: "temp")
@@ -378,4 +375,5 @@ s8.show_photo.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazona
 s9 = Show.create!(title: "Hidden Brain", author: "NPR", description: "Shankar Vedantam uses science and storytelling to reveal the unconscious patterns that drive human behavior, shape our choices and direct our relationships.", image_url: "temp")
 s9.show_photo.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Podcast+Photos/hiddenbrain.jpeg'), filename: 'podcast - hidden_brain.jpg')
 
+# Podcast Episodes
 
