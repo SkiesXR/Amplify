@@ -38,8 +38,10 @@ class PodcastShowItem extends React.Component {
   }
 
   render() {
+    // debugger;
     const { noteContainerClass } = this.state;
-    const { title, author, length } = this.props.episode || "";
+    const { title, length } = this.props.episode || "";
+    const { author } = this.props.podcast;
 
     return (
       <div

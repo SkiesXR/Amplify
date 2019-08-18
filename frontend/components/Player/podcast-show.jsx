@@ -11,24 +11,23 @@ class PodcastShow extends React.Component {
   }
 
   render() {
-    debugger;
-    if (!this.props.podcast) return "";
-    let { episodes, podcast } = this.props;
-    const episodeCount = Object.keys(episodes).length || "";
-    if (episodes) {
-      let podcastEpisodes = Object.values(episodes).map(episode => {
-        return (
+    if (!this.props.podcast.episodes) return null;
+    // let { episodes, podcast } = this.props;
+    const episodeCount = Object.keys(this.props.podcast.episodes).length || 0;
+    if (episodeCount > 0) {
+      var podcastEpisodes = Object.values(this.props.podcast.episodes).map(
+        episode => (
           <PodcastShowItem
             key={episode.title}
             episode={episode}
-            podcast={podcast}
+            podcast={this.props.podcast}
             setCurrentSong={this.props.setCurrentSong}
             toggleSong={this.props.toggleSong}
             setQueue={this.props.setQueue}
             setPlaying={this.props.setPlaying}
           />
-        );
-      });
+        )
+      );
     } else {
       //   var episodeCount = 0;
       var podcastEpisodes = "";
@@ -52,16 +51,18 @@ class PodcastShow extends React.Component {
                             <div>
                               <img
                                 className="album-show-cover-art"
-                                src={podcast.show_photo}
+                                src={this.props.podcast.show_photo}
                               />
                             </div>
                           </div>
                           <button id="cover-art-play" />
                         </div>
                         <div className="album-title-container">
-                          <span>{podcast.title}</span>
+                          <span>{this.props.podcast.title}</span>
                         </div>
-                        <div className="album-artist">{podcast.author}</div>
+                        <div className="album-artist">
+                          {this.props.podcast.author}
+                        </div>
                       </div>
                     </div>
                     <div
@@ -72,7 +73,9 @@ class PodcastShow extends React.Component {
                     </div>
                     <div>
                       <div className="album-show-c3a-bottom">
-                        <p id="podcast-description">{podcast.description}</p>
+                        <p id="podcast-description">
+                          {this.props.podcast.description}
+                        </p>
                         <p>
                           {episodeCount ? episodeCount : 0}
                           {episodeCount != 1 ? " EPISODES" : " EPISODE"}
