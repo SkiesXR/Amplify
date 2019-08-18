@@ -1,4 +1,5 @@
 import React from "react";
+import PodcastShowItem from "./podcast-show-item";
 
 class PodcastShow extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class PodcastShow extends React.Component {
   }
 
   render() {
+    debugger;
     if (!this.props.podcast) return "";
     let { episodes, podcast } = this.props;
     const episodeCount = Object.keys(episodes).length || "";

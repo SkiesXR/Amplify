@@ -1,231 +1,228 @@
  .splash {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    min-height: 100vh;
-    /* overflow-x: hidden; */
-}
+     display: flex;
+     flex-direction: column;
+     position: relative;
+     min-height: 100vh;
+     overflow-x: hidden;
+ }
 
-/* header */
+ /* header */
 
-.header {
-    background-color: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    margin-bottom: 0;
-    display: block;
-    box-sizing: border-box;
-    min-height: 54px; 
-    width: 100vw;
-    max-width: 100%;
-}
+ .header {
+     background-color: rgba(0, 0, 0, 0.6);
+     position: fixed;
+     right: 0;
+     left: 0;
+     z-index: 1030;
+     margin-bottom: 0;
+     display: block;
+     box-sizing: border-box;
+     min-height: 54px;
+     width: 100vw;
+     max-width: 100%;
+ }
 
-.nav-flex-container {
-    display: flex;
-    justify-content: space-between;
-    /* width: 1150px; */
-    min-height: 54px;
-    margin: auto;
-    margin-left: 40px;
-    margin-right: 40px;
-}
+ .nav-flex-container {
+     display: flex;
+     justify-content: space-between;
+     /* width: 1150px; */
+     min-height: 54px;
+     margin: auto;
+     margin-left: 40px;
+     margin-right: 40px;
+ }
 
-.spotify-logo-splash {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 132px;
-    height: 40px;
-    background-size: 132px 40px;
-    font: 0/0 a;
-    color: transparent;
-    text-shadow: none;
-    background-color: transparent;
-    border: 0;
-}
+ .spotify-logo-splash {
+     margin-top: 20px;
+     margin-bottom: 20px;
+     width: 132px;
+     height: 40px;
+     background-size: 132px 40px;
+     font: 0/0 a;
+     color: transparent;
+     text-shadow: none;
+     background-color: transparent;
+     border: 0;
+ }
 
-.nav {
-    display: flex;
-    justify-content: flex-end;
-}
+ .nav {
+     display: flex;
+     justify-content: flex-end;
+ }
 
-.nav a {
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: #D9DADC;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 33px 17px;
-    position: relative;
-    display: block;
-}
+ .nav a {
+     font-family: Arial, Helvetica, sans-serif;
+     text-decoration: none;
+     color: #D9DADC;
+     font-size: 16px;
+     font-weight: 700;
+     padding: 33px 17px;
+     position: relative;
+     display: block;
+ }
 
-.nav a:hover {
-    color: #1DB954;
-}
+ .nav a:hover {
+     color: #1DB954;
+ }
 
-/* body */
+ /* body */
 
-.splash-bg {
-    width: 100vw;
-    /* height: 100vh;
+ .splash-bg {
+     width: 100vw;
+     /* height: 100vh;
     max-width: 100%;
     max-height: 100%; */
-    min-height: 100%;
-    background-color: #F037A5;
-    background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
-    z-index: 0;
-    position: absolute;
-}
+     min-height: 100%;
+     background-color: #F037A5;
+     background: linear-gradient(#F037A5 -60%, #FAE62D 140%);
+     z-index: 0;
+     position: absolute;
+ }
 
-.hero-home-bg-cover {
-    background: image-url("hero-burst.svg");
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    max-height: 100%;
-    background-position: top -350px left 10px;
-    background-size: cover;
-    transform: translate(-50%, 0%);
-    position: absolute;
-    left: 50%;
-    z-index: 1;
-}
+ .hero-home-bg-cover {
+     background: image-url("hero-burst.svg");
+     width: 100vw;
+     height: 100vh;
+     max-width: 100%;
+     max-height: 100%;
+     background-position: top -350px left 10px;
+     background-size: cover;
+     transform: translate(-50%, 0%);
+     position: absolute;
+     left: 50%;
+     z-index: 1;
+ }
 
-.splash-main {
-    position: relative;
-    padding-top: 250px;  
-    /* padding-bottom: 250px; */
-    padding-right: 15px;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* height: 369px; */
-    /* width: 970   px; */
-    margin: auto;
-}
+ .splash-main {
+     position: relative;
+     padding-top: 250px;
+     /* padding-bottom: 250px; */
+     padding-right: 15px;
+     padding-left: 15px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     /* height: 369px; */
+     /* width: 970   px; */
+     margin: auto;
+ }
 
-.hero-h1 {
-    font-family: "Circular Bold";
-    font-weight: bolder;
-    font-size: 80px;
-    color: white;
-    position: relative;
-    margin-bottom: 20px;
-    margin-top: 85px;
-}
+ .hero-h1 {
+     font-family: "Circular Bold";
+     font-weight: bolder;
+     font-size: 80px;
+     color: white;
+     position: relative;
+     margin-bottom: 20px;
+     margin-top: 85px;
+ }
 
-.splash-main h4 {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 18px;
-    font-weight: 400;
-    margin: .5em 0 1em;
-    line-height: 1.1;
-}
+ .splash-main h4 {
+     font-family: Arial, Helvetica, sans-serif;
+     color: white;
+     font-size: 18px;
+     font-weight: 400;
+     margin: .5em 0 1em;
+     line-height: 1.1;
+ }
 
-.splash-demo-btn {
-    display: block;
-    margin-bottom: 14px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    padding: 16px 48px 16px;
-    width: 290px;
-    height: 48px;
-    color: #FFF;
-    background-color: #1DB954;
-    font-size: 14px;
-    line-height: 1;
-    border-radius: 500px;
-    border-width: 0;
-    border: 1px solid transparent;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    white-space: normal;
-    font-weight: 700;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color .1s ease-in;
-    outline: none;
-}
+ .splash-demo-btn {
+     display: block;
+     margin-bottom: 14px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 20px;
+     padding: 16px 48px 16px;
+     width: 290px;
+     height: 48px;
+     color: #FFF;
+     background-color: #1DB954;
+     font-size: 14px;
+     line-height: 1;
+     border-radius: 500px;
+     border-width: 0;
+     border: 1px solid transparent;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     white-space: normal;
+     font-weight: 700;
+     text-align: center;
+     cursor: pointer;
+     transition: background-color .1s ease-in;
+     outline: none;
+ }
 
-.splash-demo-btn:hover {
-    background-color: rgb(37, 224, 102);
-}
+ .splash-demo-btn:hover {
+     background-color: rgb(37, 224, 102);
+ }
 
-.splash-demo-btn:active {
-    background-color: rgb(20, 121, 55);
-}
+ .splash-demo-btn:active {
+     background-color: rgb(20, 121, 55);
+ }
 
-.demo-link {
-    text-decoration: none;
-    color: white;
-}
+ .demo-link {
+     text-decoration: none;
+     color: white;
+ }
 
-/* footer */
+ /* footer */
 
-footer {
-    background-color: black;
-    padding: 80px 0 50px;
-    display: block;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
-    width: 100vw;
-    /* max-width: 100%; */
-    position: relative;
-    bottom: -196px;
-}
+ footer {
+     background-color: black;
+     padding: 80px 0 50px;
+     display: block;
+     font-size: 16px;
+     font-family: Arial, Helvetica, sans-serif;
+     line-height: 1.5;
+     width: 100vw;
+     /* max-width: 100%; */
+     position: relative;
+     bottom: -196px;
+ }
 
-.splash-footer-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
+ .splash-footer-content {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+ }
 
-.splash-footer-logo {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-}
+ .splash-footer-logo {
+     display: flex;
+     flex-direction: column;
+     margin: auto;
+ }
 
-.spotify-logo-splash-footer {
-    width: 118px;
-    height: 35px;
-    display: block;
-    margin: auto;
-    margin-bottom: 8px;
-    padding-top: 5px;
-}
+ .spotify-logo-splash-footer {
+     width: 118px;
+     height: 35px;
+     display: block;
+     margin: auto;
+     margin-bottom: 8px;
+     padding-top: 5px;
+ }
 
-.splash-footer-logo h4 {
-    font-family: "Circular Bold";
-    font-size: 12px;
-    font-weight: normal;
-    color: white;
-}
+ .splash-footer-logo h4 {
+     font-family: "Circular Bold";
+     font-size: 12px;
+     font-weight: normal;
+     color: white;
+ }
 
-.splash-credits {
-    color: white;
-    position: relative;
-}
+ .splash-credits {
+     color: white;
+     position: relative;
+ }
 
-#github img {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
+ #github img {
+     width: 50px;
+     height: 50px;
+     margin-right: 20px;
 
-}
+ }
 
-#linkedin img {
-    width: 60px;
-    height: 50px;
-    margin-right: 400px;
-}
-
-
-
+ #linkedin img {
+     width: 60px;
+     height: 50px;
+     margin-right: 400px;
+ }
