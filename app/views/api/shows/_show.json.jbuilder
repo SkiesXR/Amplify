@@ -8,9 +8,10 @@
 
     json.episodes do
         show.show_episodes.each do |episode|
-            json.set! episode.id
+            json.set! episode.id do
                 json.extract! episode, :id, :title, :description, :release_date, :show_id, :length
                 json.audio_file episode.episode_audio
             end
         end
+    end
 
