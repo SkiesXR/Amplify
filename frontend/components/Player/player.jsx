@@ -38,7 +38,7 @@ class Player extends React.Component {
     this.positionHandle = this.positionHandle.bind(this);
     this.toggleMute = this.toggleMute.bind(this);
     this.next = this.next.bind(this);
-    // this.previous = this.previous.bind(this);
+    this.previous = this.previous.bind(this);
     // this.randomize = this.randomize.bind(this);
     // this.repeat = this.repeat.bind(this);
 
@@ -337,7 +337,6 @@ class Player extends React.Component {
   }
 
   next() {
-    debugger;
     let queueSize = this.props.queue.length;
     let current = this.state.repeat
       ? this.state.current
@@ -357,17 +356,22 @@ class Player extends React.Component {
     this.setSongPlaying(true);
   }
 
-  // previous() {
-  //   var total = this.state.songs.length;
-  //   var current = (this.state.current > 0) ? this.state.current - 1 : total - 1;
-  //   var active = this.state.songs[current];
+  previous() {
+    let queueSize = this.props.queue.length;
+    let current =
+      this.state.current > 0 ? this.state.current - 1 : queueSize - 1;
+    let active = this.props.queue[current];
 
-  //   this.setState({ current: current, active: active, progress: 0 });
-  //   this.props.setCurrentSong(active);
-
-  //   this.refs.player.src = active.audioUrl;
-  //   this.play();
-  // }
+    this.setState({
+      current: current,
+      active: active,
+      currentTime: 0,
+      playheadPos: 0
+    });
+    this.props.setCurrentSong(active);
+    this.setAudioSource();
+    this.setSongPlaying(true);
+  }
 
   // randomize() {
   //   var s = shuffle(this.state.songs.slice());
@@ -380,7 +384,6 @@ class Player extends React.Component {
   // }
 
   render() {
-    debugger;
     return (
       <div className="player">
         {/* Audio element */}
@@ -433,7 +436,11 @@ class Player extends React.Component {
 
                 {/* back button */}
                 <button id="np-button">
-                  <img id="direction" src="previous_white.png" />
+                  <img
+                    id="direction"
+                    src="previous_white.png"
+                    onClick={this.previous}
+                  />
                 </button>
 
                 {/* play / pause buttons */}

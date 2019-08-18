@@ -23,7 +23,9 @@ class AlbumShow extends React.Component {
 
   getQueue(activeTrackIdx) {
     let { tracks } = this.props.album;
-    let queue = Object.values(tracks).slice(activeTrackIdx);
+    let queue = Object.values(tracks)
+      .slice(activeTrackIdx)
+      .concat(Object.values(tracks).slice(0, activeTrackIdx));
     return queue;
   }
 
