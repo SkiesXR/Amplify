@@ -11,6 +11,12 @@
             json.set! episode.id do
                 json.extract! episode, :id, :title, :description, :release_date, :show_id, :length
                 json.audio_file episode.episode_audio
+                json.author show.author
+                if show.show_photo.attached?
+                    json.album_art url_for(show.show_photo)
+                else
+                    json.album_art ""
+                end
             end
         end
     end

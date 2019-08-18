@@ -406,7 +406,7 @@ class Player extends React.Component {
               </a>
               <div className="now-playing-text" />
               <a id="npa" href="">
-                {this.props.currentSong.artist}
+                {this.props.currentSong.artist || this.props.currentSong.author}
               </a>
             </div>
             <div className="love-container">
