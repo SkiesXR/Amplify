@@ -354,6 +354,7 @@ class Player extends React.Component {
     this.setSongPlaying(true);
   }
 
+  // Fisher-Yates (aka Knuth) Shuffle
   randomize(array) {
     var currentIndex = array.length,
       temporaryValue,
@@ -365,12 +366,10 @@ class Player extends React.Component {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-
     return array;
   }
 
   shuffle() {
-    // let shuffleQ = this.props.queue.slice().sort(() => Math.random() - 0.5);
     let shuffleQ = this.randomize(this.props.queue.slice());
     this.setState({ shuffle: !this.state.shuffle });
     if (this.state.shuffle) this.props.setQueue(shuffleQ);
@@ -428,7 +427,6 @@ class Player extends React.Component {
               <div className="now-playing-buttons">
                 {/* shuffle button */}
                 <button id="np-button" onClick={this.shuffle}>
-                  {/* <img id="shuffle" src="shuffle_white.png" /> */}
                   <img
                     id="shuffle"
                     src={
@@ -458,7 +456,6 @@ class Player extends React.Component {
                   id="np-button"
                 >
                   <img id="play" src={this.state.playPauseButton} />
-                  {/* <img id="play" src="play_white.png" /> */}
                 </button>
 
                 {/* next button */}
@@ -472,7 +469,6 @@ class Player extends React.Component {
 
                 {/* repeat button */}
                 <button id="np-button" onClick={this.repeat}>
-                  {/* <img id="repeat" src="repeat_white.png" /> */}
                   <img
                     id="repeat"
                     src={

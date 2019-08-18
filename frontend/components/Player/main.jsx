@@ -162,13 +162,6 @@ class Main extends React.Component {
       case featured:
         bgGradient = "main-featured";
         break;
-      // case albumShow:
-      //     bgGradient = "albums-show";
-      //     break;
-      // case artistShow:
-      //     debugger;
-      //     bgGradient = "artists-show";
-      //     break;
       case artists:
         bgGradient = "main-artists";
         break;

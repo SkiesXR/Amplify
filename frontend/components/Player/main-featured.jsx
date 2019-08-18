@@ -14,7 +14,6 @@ class MainFeatured extends React.Component {
     let albums = this.props.albums.map(album => {
       return <GridItem key={album.title} album={album} />;
     });
-    // debugger;
     return (
       <div>
         <div className="header-grid">

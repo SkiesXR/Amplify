@@ -33,7 +33,6 @@ class ArtistShow extends React.Component {
         );
       }
     });
-    // debugger;
     return (
       <div className="artist-show-c1">
         <div className="artist-show-header-container">

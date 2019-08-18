@@ -2,12 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class GenreShowGridItem extends React.Component {
-  // constructor(props) {
-  //     super(props);
-  // }
-
   render() {
-    debugger;
     const { artist } = this.props;
     const { id, name, artist_photo } = artist;
 
