@@ -49,7 +49,8 @@ class PlaylistShow extends React.Component {
   addToQueue() {
     if (Object.keys(this.props.playlist.playlist_tracks).length > 0) {
       let tracks = this.props.playlist.playlist_tracks;
-      this.props.setQueue(tracks);
+      this.props.setQueue(Object.values(tracks));
+      this.props.setCurrentSong(tracks[1]);
     }
   }
 
@@ -100,21 +101,12 @@ class PlaylistShow extends React.Component {
         );
       });
     } else {
-      // var playlistArt = <div className="playlist-coverArt-placeholder" />;
       var playlistArt = (
         <div className="playlist-coverArt-single">
           <img src="PlaylistArt-Placeholder.png" />
         </div>
       );
     }
-
-    // let playlistArt = artworks.slice(0, 4).map(art => {
-    //   return (
-    //     <div className="playlist-coverArt-item">
-    //       <img src={art} />
-    //     </div>
-    //   );
-    // });
 
     if (playlist.playlist_tracks) {
       let tracks = Object.values(playlist.playlist_tracks) || {};

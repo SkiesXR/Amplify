@@ -370,7 +370,6 @@ class Player extends React.Component {
   }
 
   shuffle() {
-    debugger;
     // let shuffleQ = this.props.queue.slice().sort(() => Math.random() - 0.5);
     let shuffleQ = this.randomize(this.props.queue.slice());
     this.setState({ shuffle: !this.state.shuffle });
