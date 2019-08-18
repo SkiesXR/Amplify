@@ -4,6 +4,11 @@ import { fetchAlbums } from "../../actions/album_actions";
 import { fetchPlaylists } from "../../actions/playlist.actions";
 import { fetchGenres } from "../../actions/genre.actions";
 import { fetchShows } from "../../actions/show_actions";
+import {
+  setCurrentSong,
+  setQueue,
+  setPlaying
+} from "../../actions/player_actions";
 import MainFeatured from "../Player/main-featured";
 
 const msp = state => {
@@ -19,7 +24,10 @@ const mdp = dispatch => ({
   fetchAlbums: () => dispatch(fetchAlbums()),
   fetchPlaylists: () => dispatch(fetchPlaylists()),
   fetchGenres: () => dispatch(fetchGenres()),
-  fetchShows: () => dispatch(fetchShows())
+  fetchShows: () => dispatch(fetchShows()),
+  setQueue: queue => dispatch(setQueue(queue)),
+  setCurrentSong: song => dispatch(setCurrentSong(song)),
+  setPlaying: playing => dispatch(setPlaying(playing))
 });
 
 export default connect(

@@ -12,7 +12,15 @@ class MainFeatured extends React.Component {
 
   render() {
     let albums = this.props.albums.map(album => {
-      return <GridItem key={album.title} album={album} />;
+      return (
+        <GridItem
+          key={album.title}
+          album={album}
+          setQueue={this.props.setQueue}
+          setCurrentSong={this.props.setCurrentSong}
+          setPlaying={this.props.setPlaying}
+        />
+      );
     });
     return (
       <div>
