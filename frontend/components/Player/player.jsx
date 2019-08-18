@@ -320,7 +320,6 @@ class Player extends React.Component {
   }
 
   next() {
-    debugger;
     let queueSize = this.props.queue.length;
     let current =
       this.state.repeat === true
