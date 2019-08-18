@@ -6,10 +6,10 @@ class Player extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // playing: this.props.playing || false,
-      // currentSong: this.props.currentSong,
-      // repeat: false,
-      // shuffle: false,
+      repeat: false,
+      shuffle: false,
+      random: false,
+      active: props.currentSong,
       playheadPos: 0,
       volPos: 50,
       previousVolume: 0.5,
@@ -20,19 +20,12 @@ class Player extends React.Component {
       loveId: "love",
       likedSongMessage: null,
       likedSongMessageClass: "likedSongMessageInactive",
-      muteIcon: "max_volume_gray.png"
-      // track: {
-      //   title: "Skylines",
-      //   src: "skylines.mp3",
-      //   duration: "03:09",
-      //   artist: "Animalfirepower",
-      //   artwork:
-      //     "https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg"
-      // }
+      muteIcon: "max_volume_gray.png",
+      queue: props.queue
     };
 
     // Let's bind some methods!
-    this.playAudio = this.playAudio.bind(this);
+    this.toggleAudio = this.toggleAudio.bind(this);
     this.volChange = this.volChange.bind(this);
     this.toggleLove = this.toggleLove.bind(this);
     this.likedSongMessage = this.likedSongMessage.bind(this);
@@ -56,20 +49,30 @@ class Player extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.currentSong.audio_file != this.props.currentSong.audio_file) {
+    if (
+      prevProps.currentSong.audio_file != this.props.currentSong.audio_file ||
+      prevProps.queue != this.props.queue
+    ) {
       clearInterval(this.intervalId);
+      // if (Object.keys(this.props.queue).length > 0) {
+      this.setState({
+        active:
+          Object.keys(this.props.queue).length > 0
+            ? this.props.queue[1]
+            : this.props.currentSong
+      });
+      // }
       this.setAudioSource();
       this.setState({
+        active: this.props.queue[1],
         currentTime: 0,
         playheadPos: 0,
         playPauseButton: "pause_white.png"
       });
       this.setSongPlaying(true);
-      // console.log("change song");
     }
     if (prevProps.playing != this.props.playing) {
       this.setSongPlaying(this.props.playing);
-      // console.log(`playing changed: ${this.props.playing}`);
     }
   }
 
@@ -116,7 +119,6 @@ class Player extends React.Component {
 
   timeUpdate() {
     // Convert track duration to seconds
-    // let length = this.state.track.duration;
     let length = this.props.currentSong.length;
     let minFirstDigit = length[0];
     let minutes =
@@ -136,7 +138,6 @@ class Player extends React.Component {
           loveButton: "love_filled_green.png",
           loveId: "love-green"
         });
-        // console.log(`User liked a song!`);
         this.likedSongMessage("add");
         break;
       case "love_filled_green.png":
@@ -144,13 +145,11 @@ class Player extends React.Component {
           loveButton: "love.png",
           loveId: "love"
         });
-        // console.log(`User removed a liked song!`);
         this.likedSongMessage("remove");
         break;
     }
   }
 
-  // TODO: Add smooth fade in/out
   likedSongMessage(action) {
     switch (action) {
       case "add":
@@ -181,6 +180,7 @@ class Player extends React.Component {
   // update audio source for audio element
   setAudioSource() {
     const music = document.getElementById("audio");
+    // music.src = this.props.currentSong.audio_file;
     music.src = this.props.currentSong.audio_file;
   }
 
@@ -196,6 +196,7 @@ class Player extends React.Component {
       });
     } else {
       music.pause();
+      clearInterval(this.intervalId);
       this.setState({
         playPauseButton: "play_white.png",
         playing: false
@@ -204,32 +205,30 @@ class Player extends React.Component {
   }
 
   // Logic for audio controls
-  playAudio() {
+  toggleAudio() {
     this.props.toggleSong();
-    const music = document.getElementById("audio");
-    // music.src = this.props.currentSong.audio_file;
-    // actually toggles the audio, fix the name
-    var intervalId = null;
+    // const music = document.getElementById("audio");
+    // var intervalId = null;
     clearInterval(this.intervalId);
-    if (music.paused) {
-      music.play();
+    // if (music.paused) {
+    //   music.play();
 
-      // Swap "pause" icon for "play icon"
-      this.setState({
-        playPauseButton: "pause_white.png"
-      });
-    } else {
-      music.pause();
+    //   // Swap "pause" icon for "play icon"
+    //   this.setState({
+    //     playPauseButton: "pause_white.png"
+    //   });
+    // } else {
+    //   music.pause();
 
-      if (intervalId) {
-        clearInterval(intervalId);
-      }
-      // Swap "play" icon for "pause icon"
-      this.setState({
-        playPauseButton: "play_white.png",
-        playing: false
-      });
-    }
+    //   if (intervalId) {
+    //     clearInterval(intervalId);
+    //   }
+    //   // Swap "play" icon for "pause icon"
+    //   this.setState({
+    //     playPauseButton: "play_white.png",
+    //     playing: false
+    //   });
+    // }
   }
 
   // Volume controller
@@ -389,7 +388,14 @@ class Player extends React.Component {
                 </button>
 
                 {/* play / pause buttons */}
-                <button onClick={this.playAudio} id="np-button">
+                <button
+                  onClick={
+                    this.state.playPauseButton === "play_white.png"
+                      ? () => this.setSongPlaying(true)
+                      : () => this.setSongPlaying(false)
+                  }
+                  id="np-button"
+                >
                   <img id="play" src={this.state.playPauseButton} />
                   {/* <img id="play" src="play_white.png" /> */}
                 </button>
