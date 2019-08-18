@@ -19,7 +19,7 @@ const msp = state => {
 
 const mdp = dispatch => ({
   toggleSong: () => dispatch(toggleSong()),
-  setCurrentSong: track => dispath(setCurrentSong(track)),
+  setCurrentSong: track => dispatch(setCurrentSong(track)),
   setPlaying: playing => dispatch(setPlaying(playing)),
   setQueue: queue => dispatch(setQueue(queue))
 });

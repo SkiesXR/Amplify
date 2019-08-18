@@ -17,7 +17,16 @@ class AlbumShow extends React.Component {
 
   addToQueue() {
     let tracks = this.props.album.tracks;
-    this.props.setQueue(tracks);
+    this.props.setQueue(Object.values(tracks));
+    this.props.setCurrentSong(tracks[1]);
+  }
+
+  getQueue(activeTrackIdx) {
+    let { tracks } = this.props.album;
+    let queue = Object.values(tracks)
+      .slice(activeTrackIdx)
+      .concat(Object.values(tracks).slice(0, activeTrackIdx));
+    return queue;
   }
 
   render() {
@@ -29,22 +38,21 @@ class AlbumShow extends React.Component {
     const releaseYear =
       parseInt(this.props.album.release_date.slice(0, 4), 10) || "";
     const trackCount = Object.keys(this.props.album.tracks).length || "";
-    let albumTracks = Object.values(tracks).map(track => {
-      return (
-        <AlbumShowItem
-          key={track.title}
-          track={track}
-          album={this.props.album}
-          setCurrentSong={this.props.setCurrentSong}
-          toggleSong={this.props.toggleSong}
-          setQueue={this.props.setQueue}
-          setPlaying={this.props.setPlaying}
-          openModal={this.props.openModal}
-          closeModal={this.props.closeModal}
-          receiveSongId={this.props.receiveSongId}
-        />
-      );
-    });
+    let albumTracks = Object.values(tracks).map((track, idx) => (
+      <AlbumShowItem
+        key={track.title}
+        track={track}
+        album={this.props.album}
+        queue={this.getQueue(idx)}
+        setCurrentSong={this.props.setCurrentSong}
+        toggleSong={this.props.toggleSong}
+        setQueue={this.props.setQueue}
+        setPlaying={this.props.setPlaying}
+        openModal={this.props.openModal}
+        closeModal={this.props.closeModal}
+        receiveSongId={this.props.receiveSongId}
+      />
+    ));
     return (
       <div className="album-show-c1">
         <div className="album-show-c2">

@@ -10,7 +10,6 @@ import {
 import { openModal, receiveSongId } from "../../actions/modal_actions";
 
 const msp = (state, ownProps) => {
-  // debugger;
   return {
     album: state.entities.albums[ownProps.match.params.albumId] || {},
     tracks: (state.entities.albums[ownProps.match.params.albumId] || {}).tracks,

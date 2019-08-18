@@ -20,8 +20,7 @@ class PlaylistShowItem extends React.Component {
   handlePlay() {
     this.props.setCurrentSong(this.props.track);
     this.props.setPlaying(true);
-    // this.props.toggleSong();
-    // this.props.setQueue(this.props.queue);
+    this.props.setQueue(this.props.queue);
   }
 
   // Flip musical note icon to play icon once mouse enters track container
@@ -41,7 +40,6 @@ class PlaylistShowItem extends React.Component {
   }
 
   handleSubmit(id) {
-    debugger;
     this.toggleMenu();
     this.props.removeTrackFromPlaylist(this.props.track.playlist_item_id);
     this.props.fetchPlaylist(this.props.playlist.id);

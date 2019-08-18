@@ -21,7 +21,7 @@ class AlbumShowItem extends React.Component {
   handlePlay() {
     this.props.setCurrentSong(this.props.track);
     this.props.setPlaying(true);
-    // this.props.setQueue(this.props.queue);
+    this.props.setQueue(this.props.queue);
     // this.props.toggleSong();
   }
 
