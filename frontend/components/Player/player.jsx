@@ -10,6 +10,7 @@ class Player extends React.Component {
       shuffle: false,
       random: false,
       active: props.currentSong,
+      current: 0,
       playheadPos: 0,
       volPos: 50,
       previousVolume: 0.5,
@@ -36,6 +37,10 @@ class Player extends React.Component {
     this.convertTime = this.convertTime.bind(this);
     this.positionHandle = this.positionHandle.bind(this);
     this.toggleMute = this.toggleMute.bind(this);
+    this.next = this.next.bind(this);
+    // this.previous = this.previous.bind(this);
+    // this.randomize = this.randomize.bind(this);
+    // this.repeat = this.repeat.bind(this);
 
     // Refs
     this.rangeslider = React.createRef();
@@ -331,7 +336,51 @@ class Player extends React.Component {
     }
   }
 
+  next() {
+    debugger;
+    let queueSize = this.props.queue.length;
+    let current = this.state.repeat
+      ? this.state.current
+      : this.state.current < queueSize - 1
+      ? this.state.current + 1
+      : 0;
+    let active = this.props.queue[current];
+
+    this.setState({
+      current: current,
+      active: active,
+      currentTime: 0,
+      playheadPos: 0
+    });
+    this.props.setCurrentSong(active);
+    this.setAudioSource();
+    this.setSongPlaying(true);
+  }
+
+  // previous() {
+  //   var total = this.state.songs.length;
+  //   var current = (this.state.current > 0) ? this.state.current - 1 : total - 1;
+  //   var active = this.state.songs[current];
+
+  //   this.setState({ current: current, active: active, progress: 0 });
+  //   this.props.setCurrentSong(active);
+
+  //   this.refs.player.src = active.audioUrl;
+  //   this.play();
+  // }
+
+  // randomize() {
+  //   var s = shuffle(this.state.songs.slice());
+  //   this.setState({ songs: (!this.state.random) ? s : this.state.songs, random: !this.state.random });
+  //   this.props.setQueue((!this.state.random) ? s : this.state.songs);
+  // }
+
+  // repeat() {
+  //   this.setState({ repeat: !this.state.repeat });
+  // }
+
   render() {
+    debugger;
     return (
       <div className="player">
         {/* Audio element */}
@@ -402,7 +451,11 @@ class Player extends React.Component {
 
                 {/* next button */}
                 <button id="np-button">
-                  <img id="direction" src="next_white.png" />
+                  <img
+                    id="direction"
+                    src="next_white.png"
+                    onClick={this.next}
+                  />
                 </button>
 
                 {/* repeat button */}
