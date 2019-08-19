@@ -21,7 +21,7 @@ class Player extends React.Component {
       loveId: "love",
       likedSongMessage: null,
       likedSongMessageClass: "likedSongMessageInactive",
-      muteIcon: "max_volume_gray.png",
+      muteIcon: "volume.png",
       queue: props.queue
     };
 
@@ -305,14 +305,16 @@ class Player extends React.Component {
     if (audio.muted === false) {
       this.setState({
         previousVolume: this.state.volPos,
-        volPos: 0
+        volPos: 0,
+        muteIcon: "volume-mute.png"
       });
       audio.muted = true;
     } else {
       audio.volume = this.state.previousVolume / 100;
       let volPos = this.state.previousVolume;
       this.setState({
-        volPos
+        volPos,
+        muteIcon: "volume.png"
       });
       audio.muted = false;
     }
