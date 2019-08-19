@@ -6,7 +6,6 @@ class PlaylistIndex extends React.Component {
     super(props);
 
     // bind methods
-    // this.setArtwork = this.setArtwork.bind(this);
     this.setArtwork = this.setArtwork.bind(this);
     this.createArtwork = this.createArtwork.bind(this);
   }
@@ -16,24 +15,8 @@ class PlaylistIndex extends React.Component {
     // this.props.fetchPlaylists().then(() => this.setArtwork());
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.playlist.title != this.props.playlist.title) {
-  //     this.props.fetchPlaylists.then(() => this.setArtwork());
-  //   }
-  // }
-
-  // setArtwork() {
-  //   debugger;
-  //   // let playlists = this.props.playlists;
-  //   Object.values(this.props.playlist.playlist_tracks).map(track => {
-  //     this.setState(prevState => {
-  //       return { artworks: prevState.artworks.concat([track.album_art]) };
-  //     });
-  //   });
-  // }
-
+  // For each playlist, store the album artwork (associated with each track) in an array
   setArtwork(playlist_tracks) {
-    debugger;
     console.log(playlist_tracks);
     var artCollection = [];
     if (playlist_tracks != undefined) {
@@ -44,20 +27,15 @@ class PlaylistIndex extends React.Component {
     return this.createArtwork(artCollection);
   }
 
+  // set artwork for each playlist based on number of playlist tracks
   createArtwork(artCollection) {
-    debugger;
-    // set artwork for each playlist based on number of playlist tracks
     if (artCollection.length >= 1 && artCollection.length < 4) {
-      console.log(artCollection.length);
-      debugger;
       return (
         <div>
           <img src={artCollection[0]} />
         </div>
       );
     } else if (artCollection.length >= 4) {
-      console.log(artCollection.length);
-      debugger;
       return artCollection.slice(0, 4).map(art => {
         return (
           <div key={art} className="playlist-idx-coverArt-item">
@@ -66,8 +44,6 @@ class PlaylistIndex extends React.Component {
         );
       });
     } else {
-      console.log(artCollection.length);
-      debugger;
       return (
         <div>
           <img src="PlaylistArt-Placeholder.png" />
@@ -83,8 +59,6 @@ class PlaylistIndex extends React.Component {
         <div key={playlist.title} className="album-artist-container">
           <div className="image-hover-container">
             <Link to={`/collection/playlists/${playlist.id}`}>
-              {/* <img src="bts.jpg" /> */}
-              {/* {playlistArt} */}
               <div className="playlist-idx-cover-container">
                 {this.setArtwork(playlist.playlist_tracks)}
               </div>
