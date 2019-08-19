@@ -79,7 +79,6 @@ class Search extends React.Component {
             return (
               <div className="album-artist-container">
                 <div className="image-hover-container">
-                  {/* <Link to={`/albums/${album.id}`}> */}
                   <img src={album.album_art} />
                   <div className="Mike">
                     <button
@@ -89,7 +88,6 @@ class Search extends React.Component {
                       <img id="Mike" src="play_white.png" />
                     </button>
                   </div>
-                  {/* </Link> */}
                 </div>
                 <div className="artist-container">
                   <Link id="grid-artist" to={`/albums/${album.id}`}>
@@ -141,12 +139,15 @@ class Search extends React.Component {
             return (
               <div className="album-artist-container">
                 <div className="image-hover-container">
-                  {/* <Link to={`/podcasts/${podcast.id}`}> */}
-                  <img
-                    src={podcast.show_photo}
-                    onClick={() => this.handlePodcast(podcast)}
-                  />
-                  {/* </Link> */}
+                  <img src={podcast.show_photo} />
+                  <div className="Mike">
+                    <button
+                      id="Mike-button"
+                      onClick={() => this.handlePodcast(podcast)}
+                    >
+                      <img id="Mike" src="play_white.png" />
+                    </button>
+                  </div>
                 </div>
                 <div className="artist-container">
                   <Link id="grid-artist" to={`/podcasts/${podcast.id}`}>
