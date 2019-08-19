@@ -45,7 +45,7 @@ class PodcastShowItem extends React.Component {
 
   pauseNote() {
     this.setState({
-      noteIcon: "pause_white.png",
+      noteIcon: "pause-green.png",
       noteConainerClass: "tc-outer-top-2"
     });
   }
@@ -59,8 +59,7 @@ class PodcastShowItem extends React.Component {
       <div
         onMouseEnter={this.playNote}
         onMouseEnter={
-          this.props.episode.audio_file === this.props.currentSong.audio_file &&
-          this.props.playing
+          this.props.episode.audio_file === this.props.currentSong.audio_file
             ? this.pauseNote
             : this.playNote
         }
