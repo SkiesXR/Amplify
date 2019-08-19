@@ -87,7 +87,9 @@ body {
 
 .main-playlists {
     grid-area: main;
-    background-image: linear-gradient(to right bottom, rgb(69, 75, 84), rgb(0, 0, 0)),
+    /* background-image: linear-gradient(to right bottom, rgb(51, 51, 45), rgb(0, 0, 0)),
+        linear-gradient(transparent, rgb(0, 0, 0) 70%); */
+    background-image: linear-gradient(to right bottom, rgb(51, 51, 45), rgb(0, 0, 0)),
         linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
