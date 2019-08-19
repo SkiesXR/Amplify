@@ -4,7 +4,7 @@ class PodcastShowItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      noteIcon: "music_note.png",
+      noteIcon: "podcast-icon.png",
       noteContainerClass: "tc-outer-top"
     };
 
@@ -12,12 +12,19 @@ class PodcastShowItem extends React.Component {
     this.handlePlay = this.handlePlay.bind(this);
     this.playNote = this.playNote.bind(this);
     this.podcastNote = this.podcastNote.bind(this);
+    this.pauseNote = this.pauseNote.bind(this);
+    // this.handleTrackIcon = this.handleTrackIcon.bind(this);
   }
 
   handlePlay() {
-    this.props.setCurrentSong(this.props.episode);
-    this.props.setPlaying(true);
-    this.props.setQueue(this.props.queue);
+    if (this.state.noteIcon === "pause_white.png") {
+      this.props.setPlaying(false);
+      this.playNote();
+    } else {
+      this.props.setCurrentSong(this.props.episode);
+      this.props.setPlaying(true);
+      this.props.setQueue(this.props.queue);
+    }
   }
 
   // Flip musical note icon to play icon once mouse enters track container
@@ -36,8 +43,14 @@ class PodcastShowItem extends React.Component {
     });
   }
 
+  pauseNote() {
+    this.setState({
+      noteIcon: "pause_white.png",
+      noteConainerClass: "tc-outer-top-2"
+    });
+  }
+
   render() {
-    // debugger;
     const { noteContainerClass } = this.state;
     const { title, length } = this.props.episode || "";
     const { author } = this.props.podcast;
@@ -45,6 +58,12 @@ class PodcastShowItem extends React.Component {
     return (
       <div
         onMouseEnter={this.playNote}
+        onMouseEnter={
+          this.props.episode.audio_file === this.props.currentSong.audio_file &&
+          this.props.playing
+            ? this.pauseNote
+            : this.playNote
+        }
         onMouseLeave={this.podcastNote}
         className="track-container"
       >

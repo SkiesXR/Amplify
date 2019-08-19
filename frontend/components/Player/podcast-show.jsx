@@ -30,6 +30,8 @@ class PodcastShow extends React.Component {
             episode={episode}
             podcast={this.props.podcast}
             queue={this.getQueue(idx)}
+            playing={this.props.playing}
+            currentSong={this.props.currentSong}
             setCurrentSong={this.props.setCurrentSong}
             toggleSong={this.props.toggleSong}
             setQueue={this.props.setQueue}

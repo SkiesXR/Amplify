@@ -11,7 +11,9 @@ import {
 const msp = (state, ownProps) => {
   return {
     podcast: state.entities.shows[ownProps.match.params.podcastId] || {},
-    episodes: state.entities.showEpisodes
+    episodes: state.entities.showEpisodes,
+    currentSong: state.ui.nowPlaying.currentSong,
+    playing: state.ui.nowPlaying.playing
   };
 };
 

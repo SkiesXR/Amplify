@@ -196,6 +196,7 @@ class Player extends React.Component {
     const music = document.getElementById("audio");
     if (isPlaying) {
       music.play();
+      // this.props.setPlaying(true);
 
       // Swap "pause" icon for "play icon"
       this.setState({
@@ -203,6 +204,7 @@ class Player extends React.Component {
       });
     } else {
       music.pause();
+      // this.props.setPlaying(false);
       clearInterval(this.intervalId);
       this.setState({
         playPauseButton: "play_white.png",
