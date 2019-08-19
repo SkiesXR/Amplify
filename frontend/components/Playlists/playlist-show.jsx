@@ -34,11 +34,11 @@ class PlaylistShow extends React.Component {
   }
 
   setArtwork() {
+    // debugger;
     if (Object.keys(this.props.playlist).includes("playlist_tracks")) {
-      let tracks = this.props.playlist.playlist_tracks;
-      let artCollection = Object.values(
-        this.props.playlist.playlist_tracks
-      ).map(track => {
+      // let tracks = this.props.playlist.playlist_tracks;
+      // let artCollection = Object.values(
+      Object.values(this.props.playlist.playlist_tracks).map(track => {
         this.setState(prevState => {
           return { artworks: prevState.artworks.concat([track.album_art]) };
         });
@@ -143,6 +143,7 @@ class PlaylistShow extends React.Component {
       var tracks = [];
       var playlistTracks = "";
     }
+    // debugger;
 
     // let followButton;
     // if (!this.state.followed) {

@@ -84,9 +84,23 @@
     flex-wrap: wrap;
 }
 
+.playlist-idx-cover-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    max-height: 220px;
+}
+
 .playlist-coverArt-item {
     width: 50%;
     height: 50%;
+}
+
+.playlist-idx-coverArt-item {
+    width: 50%;
+    height: 50%;
+    max-height: 110px;
 }
 
 .playlist-coverArt-item img {
