@@ -69,6 +69,13 @@ unless @shows.empty?
             else
                 json.show_photo ""
             end
+            json.episodes do
+                json.array! show.show_episodes.each do |episode|
+                    json.extract! episode, :id, :title, :length
+                    json.audio_file episode.episode_audio
+                    show.show_photo.attached? ? (json.album_art url_for(show.show_photo)) : (json.album_art "")
+                end
+            end
         end
     end
 end

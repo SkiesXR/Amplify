@@ -12,6 +12,7 @@ class Search extends React.Component {
     this.displayGenres = this.displayGenres.bind(this);
     this.displayPodcasts = this.displayPodcasts.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
+    this.handlePodcast = this.handlePodcast.bind(this);
   }
 
   componentWillUnmount() {
@@ -29,10 +30,16 @@ class Search extends React.Component {
   }
 
   handlePlay(album) {
-    debugger;
     this.props.setCurrentSong(Object.values(album.tracks)[0]);
     this.props.setPlaying(true);
     this.props.setQueue(Object.values(album.tracks));
+  }
+
+  handlePodcast(podcast) {
+    debugger;
+    this.props.setCurrentSong(Object.values(podcast.episodes)[0]);
+    this.props.setPlaying(true);
+    this.props.setQueue(Object.values(podcast.episodes));
   }
 
   displayArtists(artistResults) {
@@ -134,12 +141,15 @@ class Search extends React.Component {
             return (
               <div className="album-artist-container">
                 <div className="image-hover-container">
-                  <Link to={`/shows/${podcast.id}`}>
-                    <img src={podcast.show_photo} />
-                  </Link>
+                  {/* <Link to={`/podcasts/${podcast.id}`}> */}
+                  <img
+                    src={podcast.show_photo}
+                    onClick={() => this.handlePodcast(podcast)}
+                  />
+                  {/* </Link> */}
                 </div>
                 <div className="artist-container">
-                  <Link id="grid-artist" to={`/shows/${podcast.id}`}>
+                  <Link id="grid-artist" to={`/podcasts/${podcast.id}`}>
                     {podcast.title}
                   </Link>
                 </div>

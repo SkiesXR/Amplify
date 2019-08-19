@@ -46,7 +46,7 @@ class PlaylistIndex extends React.Component {
     } else {
       return (
         <div>
-          <img src="PlaylistArt-Placeholder.png" />
+          <img src="PlaylistArt-PlaceholderWithIcon.png" />
         </div>
       );
     }

@@ -98,17 +98,13 @@
     left: 0;
     z-index: 1;
     transition: opacity .2s linear;
-    opacity: 0.7
+    // opacity: 0.7
 }
 
 .Mike:hover {
-    background-color: black;
-    opacity: .5;
+    background-color: #00000030;
+    // opacity: .5;
 }
-
-// .Mike:hover #Mike-button {
-//     opacity: 1
-// }
 
 #Mike {
     box-shadow: none;

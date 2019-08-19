@@ -68,7 +68,7 @@ class AddTrackToPlaylist extends React.Component {
                       this.handleSubmit(playlist, this.props.trackId)
                     }
                   >
-                    <img src="PlaylistArt-Placeholder.png" />
+                    <img src="PlaylistArt-PlaceholderWithIcon.png" />
                     <div className="Mike">
                       <button id="Mike-button">
                         <svg width="51px" height="52px" viewBox="88 88 51 52">
