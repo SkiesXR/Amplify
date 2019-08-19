@@ -8,6 +8,7 @@ import {
   setPlaying
 } from "../../actions/player_actions";
 import { openModal, receiveSongId } from "../../actions/modal_actions";
+import { setBackground } from "../../actions/background_actions";
 
 const msp = (state, ownProps) => {
   return {
@@ -24,7 +25,8 @@ const mdp = dispatch => ({
   setPlaying: playing => dispatch(setPlaying(playing)),
   setQueue: queue => dispatch(setQueue(queue)),
   openModal: id => dispatch(openModal({ modal: "addTrackToPlaylist" })),
-  receiveSongId: id => dispatch(receiveSongId(id))
+  receiveSongId: id => dispatch(receiveSongId(id)),
+  setBackground: color => dispatch(setBackground(color))
 });
 
 export default connect(

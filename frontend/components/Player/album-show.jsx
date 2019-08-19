@@ -13,6 +13,7 @@ class AlbumShow extends React.Component {
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
     this.props.fetchAlbum(albumId);
+    this.props.setBackground(albumId);
   }
 
   addToQueue() {
@@ -115,5 +116,3 @@ class AlbumShow extends React.Component {
 }
 
 export default AlbumShow;
-
-// TODO: White play icon (button, plays music) on album art hovers
