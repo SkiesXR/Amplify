@@ -8,12 +8,34 @@ class AlbumShow extends React.Component {
 
     // bind methods
     this.addToQueue = this.addToQueue.bind(this);
+    this.analyzeColor = this.analyzeColor.bind(this);
   }
 
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
-    this.props.fetchAlbum(albumId);
-    this.props.setBackground(albumId);
+    // this.props.fetchAlbum(albumId);
+    // this.analyzeColor();
+    this.props
+      .fetchAlbum(albumId)
+      // .then(() => this.analyzeColor())
+      .then(() => this.props.setBackground(albumId));
+  }
+
+  // Color Thief Test
+  analyzeColor() {
+    debugger;
+    $(document).ready(function() {
+      // if (this.props.album.album_art) {
+      const colorThief = new ColorThief();
+      // const result = colorThief.getColor(this.props.album.album_art);
+      const result = colorThief.getColor(
+        // document.getElementById("album-show-art").onload
+        document.getElementById("playTest")
+      );
+      console.log(result);
+      debugger;
+    });
+    // }
   }
 
   addToQueue() {
@@ -71,6 +93,7 @@ class AlbumShow extends React.Component {
                                                         </div> */}
                             <div>
                               <img
+                                id="album-show-art"
                                 className="album-show-cover-art"
                                 src={this.props.album.album_art}
                               />
@@ -101,6 +124,8 @@ class AlbumShow extends React.Component {
                           {releaseYear} • {trackCount}{" "}
                           {trackCount > 1 ? "SONGS" : "SONG"}
                         </p>
+                        {/* <img id="playTest" src="play_white.png" /> */}
+                        {/* <div onClick={this.analyzeColor}>Analyze Color</div> */}
                       </div>
                     </div>
                   </div>
