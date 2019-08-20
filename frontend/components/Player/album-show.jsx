@@ -24,7 +24,6 @@ class AlbumShow extends React.Component {
     $(document).ready(function() {
       const colorThief = new ColorThief();
       const result = colorThief.getColor(document.getElementById("playTest"));
-      console.log(result);
     });
     // }
   }

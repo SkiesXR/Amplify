@@ -41,7 +41,6 @@ class PlaylistShowItem extends React.Component {
   }
 
   handleSubmit(id) {
-    debugger;
     this.toggleMenu();
     this.props
       .removeTrackFromPlaylist(this.props.track.playlist_item_id)
@@ -49,7 +48,6 @@ class PlaylistShowItem extends React.Component {
   }
 
   redirectToShow(playlistId) {
-    debugger;
     this.props.history.push(`/collection/playlists/${playlistId}`);
   }
 

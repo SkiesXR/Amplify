@@ -11,7 +11,7 @@ class GenreGridItem extends React.Component {
 
     return (
       <div className="album-artist-container">
-        <div className="image-hover-container">
+        <div className="genre-image-hover-container">
           <Link id="grid-title" to={`/genres/${this.props.genreId}`}>
             <img src={genre_image} />
           </Link>
