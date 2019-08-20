@@ -12,12 +12,12 @@ import {
 
 const nullState = {
     currentSong: {
-        // audio_file: 'https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/skylines.mp3',
         audio_file: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBYZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--430f954954a5f8f21786858caf8eecf88803fd40/afp%20-%20skylines%20-%20skylines.mp3",
         album_art: 'https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg',
         artist: "Animalfirepower",
         title: "Skylines",
-        length: "03:09"
+        length: "03:09",
+        artist_id: 2
     },
     playing: false,
     queue: [{

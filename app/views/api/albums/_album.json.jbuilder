@@ -27,6 +27,7 @@ json.album do
                 else
                     json.album_art ""
                 end
+                json.artistId album.artist_id
             end
         end
     end

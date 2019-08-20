@@ -1,6 +1,7 @@
 import React from "react";
 import ProgressBar from "./progress-bar";
 import ReactAudioPlayer from "react-audio-player";
+import { Link } from "react-router-dom";
 
 class Player extends React.Component {
   constructor(props) {
@@ -384,6 +385,10 @@ class Player extends React.Component {
   }
 
   render() {
+    let destination = !this.props.currentSong.description
+      ? `/artists/${this.props.currentSong.artist_id}`
+      : `/podcasts/${this.props.currentSong.show_id}`;
+
     return (
       <div className="player">
         {/* Audio element */}
@@ -409,9 +414,9 @@ class Player extends React.Component {
                 {this.props.currentSong.title}
               </a>
               <div className="now-playing-text" />
-              <a id="npa" href="">
+              <Link id="npa" to={destination}>
                 {this.props.currentSong.artist || this.props.currentSong.author}
-              </a>
+              </Link>
             </div>
             <div className="love-container">
               <div className="tooltip">Save to your Liked Songs</div>
