@@ -9,15 +9,35 @@ import { fetchPlaylists } from "../../actions/playlist.actions";
 class LeftNav extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      homeIcon: "home-inactive",
+      searchIcon: "search-inactive"
+    };
     this.logoutUser = this.logoutUser.bind(this);
+    this.setIcons = this.setIcons.bind(this);
   }
 
   componentDidMount() {
     if (this.props.playlists.length === 0) this.props.fetchPlaylists();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.path != this.props.match.path) {
+      this.setIcons();
+    }
+  }
+
   logoutUser() {
     this.props.logout().then(() => this.props.history.push("/"));
+  }
+
+  setIcons() {
+    this.props.match.path === "/browse"
+      ? this.setState({ homeIcon: "home-active.png" })
+      : this.setState({ homeIcon: "home-inactive.png" });
+    this.props.match.path === "/search"
+      ? this.setState({ searchIcon: "search-active.png" })
+      : this.setState({ searchIcon: "search-inactive.png" });
   }
 
   render() {
@@ -43,12 +63,14 @@ class LeftNav extends React.Component {
           <img id="amp-logo-left-nav" src="Amplify_White_Transparent.png" />
         </Link>
         <NavLink
+          id="left-nav-home"
           className="nav-link-container"
           activeClassName="nav-link-container-active"
           to="/browse/featured"
         >
           <div className="nav-link-text-with-icon">
-            <img className="nav-link-icon" src="home.png" />
+            {/* <img className="nav-link-icon" src="home-active.png" /> */}
+            <img className="nav-link-icon" src={this.state.homeIcon} />
             <div className="nav-link-text">Home</div>
           </div>
         </NavLink>
@@ -58,7 +80,7 @@ class LeftNav extends React.Component {
           to="/search"
         >
           <div className="nav-link-text-with-icon">
-            <img className="nav-link-icon" src="search.png" />
+            <img className="nav-link-icon" src={this.state.searchIcon} />
             <div className="nav-link-text">Search</div>
           </div>
         </NavLink>
