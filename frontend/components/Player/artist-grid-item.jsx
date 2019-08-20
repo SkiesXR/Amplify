@@ -8,7 +8,9 @@ class ArtistGridItem extends React.Component {
     return (
       <div className="album-artist-container">
         <div className="artist-image-hover-container">
-          <img src={artist_photo} />
+          <Link id="grid-title" to={`/artists/${id}`}>
+            <img src={artist_photo} />
+          </Link>
         </div>
 
         <div className="title-container">
