@@ -153,10 +153,11 @@ class Main extends React.Component {
     let playlist_show = "/collection/playlists/";
     let liked_songs = "/collection/tracks";
     let podcasts = "/browse/podcasts";
+    let podcast_show = "/podcasts/";
     let genres = "/browse/genres";
     let genreShow = "/genres/:genreId";
-    // let discover = "/browse/discover";
     let main = "main";
+    // let discover = "/browse/discover";
 
     switch (this.props.history.location.pathname) {
       case featured:
@@ -194,6 +195,7 @@ class Main extends React.Component {
     if (path.includes(albumShow)) bgGradient = "albums-show";
     if (path.includes(artistShow)) bgGradient = "artists-show";
     if (path.includes(playlist_show)) bgGradient = "albums-show";
+    if (path.includes(podcast_show)) bgGradient = "podcast-show";
     return bgGradient;
   }
 

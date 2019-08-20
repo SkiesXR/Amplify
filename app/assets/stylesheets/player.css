@@ -117,6 +117,12 @@ body {
         linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
+.podcast-show {
+    grid-area: main;
+    background-image: linear-gradient(to right bottom, rgb(65, 65, 65), rgb(0, 0, 0)),
+        linear-gradient(transparent, rgb(0, 0, 0) 70%);
+}
+
 .search {
     grid-area: main;
     background-color: #090909;
