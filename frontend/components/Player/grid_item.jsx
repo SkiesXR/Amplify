@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 class GridItem extends React.Component {
   constructor(props) {
     super(props);
-
     this.handlePlay = this.handlePlay.bind(this);
   }
 
@@ -19,14 +18,12 @@ class GridItem extends React.Component {
     const gridItem = (
       <div className="album-artist-container">
         <div className="image-hover-container">
-          {/* <Link to={`/albums/${id}`}> */}
           <img src={album_art} />
           <div className="Mike">
             <button id="Mike-button" onClick={this.handlePlay}>
               <img id="Mike" src="play_white.png" />
             </button>
           </div>
-          {/* </Link> */}
         </div>
 
         <div className="title-container">

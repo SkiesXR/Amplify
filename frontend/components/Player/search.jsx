@@ -11,8 +11,9 @@ class Search extends React.Component {
     this.displayAlbums = this.displayAlbums.bind(this);
     this.displayGenres = this.displayGenres.bind(this);
     this.displayPodcasts = this.displayPodcasts.bind(this);
-    this.handlePlay = this.handlePlay.bind(this);
-    this.handlePodcast = this.handlePodcast.bind(this);
+    // this.handlePlay = this.handlePlay.bind(this);
+    // this.handlePodcast = this.handlePodcast.bind(this);
+    this.hanldeAudio = this.handleAudio.bind(this);
   }
 
   componentWillUnmount() {
@@ -29,17 +30,10 @@ class Search extends React.Component {
     };
   }
 
-  handlePlay(album) {
-    this.props.setCurrentSong(Object.values(album.tracks)[0]);
+  handleAudio(type, payload, files) {
     this.props.setPlaying(true);
-    this.props.setQueue(Object.values(album.tracks));
-  }
-
-  handlePodcast(podcast) {
-    debugger;
-    this.props.setCurrentSong(Object.values(podcast.episodes)[0]);
-    this.props.setPlaying(true);
-    this.props.setQueue(Object.values(podcast.episodes));
+    this.props.setCurrentSong(Object.values(payload[files])[0]);
+    this.props.setQueue(Object.values(payload[files]));
   }
 
   displayArtists(artistResults) {
@@ -83,7 +77,7 @@ class Search extends React.Component {
                   <div className="Mike">
                     <button
                       id="Mike-button"
-                      onClick={() => this.handlePlay(album)}
+                      onClick={() => this.handleAudio("album", album, "tracks")}
                     >
                       <img id="Mike" src="play_white.png" />
                     </button>
@@ -143,7 +137,9 @@ class Search extends React.Component {
                   <div className="Mike">
                     <button
                       id="Mike-button"
-                      onClick={() => this.handlePodcast(podcast)}
+                      onClick={() =>
+                        this.handleAudio("podcast", podcast, "episodes")
+                      }
                     >
                       <img id="Mike" src="play_white.png" />
                     </button>

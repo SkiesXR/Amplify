@@ -13,27 +13,18 @@ class AlbumShow extends React.Component {
 
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
-    // this.props.fetchAlbum(albumId);
-    // this.analyzeColor();
-    this.props
-      .fetchAlbum(albumId)
-      // .then(() => this.analyzeColor())
-      .then(() => this.props.setBackground(albumId));
+
+    this.props.fetchAlbum(albumId);
+    // .then(() => this.analyzeColor())
+    // .then(() => this.props.setBackground(albumId));
   }
 
   // Color Thief Test
   analyzeColor() {
-    debugger;
     $(document).ready(function() {
-      // if (this.props.album.album_art) {
       const colorThief = new ColorThief();
-      // const result = colorThief.getColor(this.props.album.album_art);
-      const result = colorThief.getColor(
-        // document.getElementById("album-show-art").onload
-        document.getElementById("playTest")
-      );
+      const result = colorThief.getColor(document.getElementById("playTest"));
       console.log(result);
-      debugger;
     });
     // }
   }
@@ -55,9 +46,7 @@ class AlbumShow extends React.Component {
   render() {
     if (!this.props.album) return "";
     if (!this.props.album.release_date) return "";
-    // if (!this.props.tracks) return this.props.album.tracks;
     let tracks = this.props.tracks || this.props.album.tracks;
-    // const { tracks = {} } = this.props.album;
     const releaseYear =
       parseInt(this.props.album.release_date.slice(0, 4), 10) || "";
     const trackCount = Object.keys(this.props.album.tracks).length || "";
@@ -96,6 +85,7 @@ class AlbumShow extends React.Component {
                                 id="album-show-art"
                                 className="album-show-cover-art"
                                 src={this.props.album.album_art}
+                                crossOrigin="Anonymous"
                               />
                             </div>
                           </div>
@@ -119,13 +109,12 @@ class AlbumShow extends React.Component {
                     </div>
                     <div>
                       <div className="album-show-c3a-bottom">
-                        {/* <p>{ releaseYear } • { trackCount } SONGS</p> */}
                         <p>
                           {releaseYear} • {trackCount}{" "}
                           {trackCount > 1 ? "SONGS" : "SONG"}
                         </p>
-                        {/* <img id="playTest" src="play_white.png" /> */}
-                        {/* <div onClick={this.analyzeColor}>Analyze Color</div> */}
+                        {/* <img id="playTest" src="Octocat.png" />
+                        <div onClick={this.analyzeColor}>Analyze Color</div> */}
                       </div>
                     </div>
                   </div>

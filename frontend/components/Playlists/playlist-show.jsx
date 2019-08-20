@@ -34,8 +34,10 @@ class PlaylistShow extends React.Component {
   }
 
   setArtwork() {
-    // debugger;
-    if (Object.keys(this.props.playlist).includes("playlist_tracks")) {
+    if (
+      this.props.playlist &&
+      Object.keys(this.props.playlist).includes("playlist_tracks")
+    ) {
       // let tracks = this.props.playlist.playlist_tracks;
       // let artCollection = Object.values(
       Object.values(this.props.playlist.playlist_tracks).map(track => {
@@ -143,7 +145,6 @@ class PlaylistShow extends React.Component {
       var tracks = [];
       var playlistTracks = "";
     }
-    // debugger;
 
     // let followButton;
     // if (!this.state.followed) {
@@ -164,18 +165,9 @@ class PlaylistShow extends React.Component {
                       <div className="cover-art-info">
                         <div className="cover-art-shadow">
                           <div>
-                            {/* <div className="cover-art-icon">
-                                                            <img src="play_white.png"/>
-                                                        </div> */}
                             <div className="playlist-cover-container">
                               {playlistArt}
                             </div>
-                            {/* <div>
-                              <img
-                                className="album-show-cover-art"
-                                src="PlaylistArt-Placeholder.png"
-                              />
-                            </div> */}
                           </div>
                           <button id="cover-art-play" />
                         </div>

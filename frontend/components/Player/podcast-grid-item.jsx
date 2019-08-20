@@ -2,6 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class PodcastGridItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handlePlay = this.handlePlay.bind(this);
+  }
+
+  handlePlay() {
+    this.props.setCurrentSong(Object.values(this.props.show.episodes)[0]);
+    this.props.setPlaying(true);
+    this.props.setQueue(Object.values(this.props.show.episodes));
+  }
+
   render() {
     const { title, show_photo, author } = this.props.show;
     const { show } = this.props;
@@ -9,6 +20,11 @@ class PodcastGridItem extends React.Component {
       <div className="album-artist-container">
         <div className="image-hover-container">
           <img src={show_photo} />
+          <div className="Mike">
+            <button id="Mike-button" onClick={this.handlePlay}>
+              <img id="Mike" src="play_white.png" />
+            </button>
+          </div>
         </div>
 
         <div className="title-container">

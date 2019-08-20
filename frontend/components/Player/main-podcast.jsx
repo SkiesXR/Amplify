@@ -7,8 +7,16 @@ class MainPodcasts extends React.Component {
   }
 
   render() {
-    let shows = this.props.shows.map(show => {
-      return <PodcastGridItem key={show.title} show={show} />;
+    let shows = this.props.shows.map((show, idx) => {
+      return (
+        <PodcastGridItem
+          key={show.title}
+          show={show}
+          setCurrentSong={this.props.setCurrentSong}
+          setQueue={this.props.setQueue}
+          setPlaying={this.props.setPlaying}
+        />
+      );
     });
 
     return (
