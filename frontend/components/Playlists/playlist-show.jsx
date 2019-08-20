@@ -31,17 +31,17 @@ class PlaylistShow extends React.Component {
         .fetchPlaylist(this.props.match.params.playlistId)
         .then(() => this.setArtwork());
     }
-    if (prevProps.playlist && prevProps.playlist.playlist_tracks) {
-      if (
-        Object.keys(prevProps.playlist.playlist_tracks).length !=
-        Object.keys(this.props.playlist.playlist_tracks).length
-      ) {
-        this.setState({ artworks: [] });
-        this.props
-          .fetchPlaylist(this.props.match.params.playlistId)
-          .then(() => this.setArtwork());
-      }
-    }
+    // if (prevProps.playlist && prevProps.playlist.playlist_tracks) {
+    //   if (
+    //     Object.keys(prevProps.playlist.playlist_tracks).length !=
+    //     Object.keys(this.props.playlist.playlist_tracks).length
+    //   ) {
+    //     this.setState({ artworks: [] });
+    //     this.props
+    //       .fetchPlaylist(this.props.match.params.playlistId)
+    //       .then(() => this.setArtwork());
+    //   }
+    // }
   }
 
   setArtwork() {
