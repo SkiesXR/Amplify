@@ -229,7 +229,19 @@ class Player extends React.Component {
     this.setState({
       volPos: range.value
     });
-    audio.muted = audio.volume <= 0.01 ? true : false;
+    if (audio.volume <= 0.01) {
+      this.setState({
+        muteIcon: "volume-mute.png",
+        volBarId: "myRange"
+      });
+    } else {
+      this.setState({
+        muteIcon: "volume.png",
+        volBarId: "default"
+      });
+      audio.muted = false;
+    }
+    // audio.muted = audio.volume <= 0.01 ? true : false;
   }
 
   // Obtain timestamp and convert for displaying track's current time
