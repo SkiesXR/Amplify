@@ -23,6 +23,7 @@ class Player extends React.Component {
       likedSongMessage: null,
       likedSongMessageClass: "likedSongMessageInactive",
       muteIcon: "volume.png",
+      volBarId: "default",
       queue: props.queue
     };
 
@@ -307,7 +308,8 @@ class Player extends React.Component {
       this.setState({
         previousVolume: this.state.volPos,
         volPos: 0,
-        muteIcon: "volume-mute.png"
+        muteIcon: "volume-mute.png",
+        volBarId: "myRange"
       });
       audio.muted = true;
     } else {
@@ -315,7 +317,8 @@ class Player extends React.Component {
       let volPos = this.state.previousVolume;
       this.setState({
         volPos,
-        muteIcon: "volume.png"
+        muteIcon: "volume.png",
+        volBarId: "default"
       });
       audio.muted = false;
     }
@@ -526,7 +529,7 @@ class Player extends React.Component {
                 max="100"
                 value={this.state.volPos}
                 className="slider"
-                id="myRange"
+                id={this.state.volBarId}
                 onChange={this.volChange}
               />
             </div>
