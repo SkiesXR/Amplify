@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class PlaylistShowItem extends React.Component {
   constructor(props) {
@@ -40,9 +41,16 @@ class PlaylistShowItem extends React.Component {
   }
 
   handleSubmit(id) {
+    debugger;
     this.toggleMenu();
-    this.props.removeTrackFromPlaylist(this.props.track.playlist_item_id);
-    this.props.fetchPlaylist(this.props.playlist.id);
+    this.props
+      .removeTrackFromPlaylist(this.props.track.playlist_item_id)
+      .then(() => this.redirectToShow(this.props.playlist.id));
+  }
+
+  redirectToShow(playlistId) {
+    debugger;
+    this.props.history.push(`/collection/playlists/${playlistId}`);
   }
 
   toggleMenu() {
@@ -98,4 +106,4 @@ class PlaylistShowItem extends React.Component {
   }
 }
 
-export default PlaylistShowItem;
+export default withRouter(PlaylistShowItem);
