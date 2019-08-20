@@ -2,6 +2,10 @@ import React from "react";
 import ArtistShowItem from "./artist-show-item";
 
 class ArtistShow extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
     let artistId = this.props.match.params.artistId;
     this.props.fetchArtist(artistId);
@@ -21,7 +25,14 @@ class ArtistShow extends React.Component {
     let albumListLP = Object.values(sortedAlbums).map(album => {
       if (album.album_type === "Album") {
         return (
-          <ArtistShowItem key={album.title} album={album} artist={artist} />
+          <ArtistShowItem
+            key={album.title}
+            album={album}
+            artist={artist}
+            setCurrentSong={this.props.setCurrentSong}
+            setPlaying={this.props.setPlaying}
+            setQueue={this.props.setQueue}
+          />
         );
       }
     });
@@ -29,7 +40,14 @@ class ArtistShow extends React.Component {
     let albumListEP = Object.values(sortedAlbums).map(album => {
       if (album.album_type === "EP" || album.album_type === "Single") {
         return (
-          <ArtistShowItem key={album.title} album={album} artist={artist} />
+          <ArtistShowItem
+            key={album.title}
+            album={album}
+            artist={artist}
+            setCurrentSong={this.props.setCurrentSong}
+            setPlaying={this.props.setPlaying}
+            setQueue={this.props.setQueue}
+          />
         );
       }
     });
