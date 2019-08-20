@@ -10,8 +10,8 @@ class LeftNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      homeIcon: "home-inactive",
-      searchIcon: "search-inactive"
+      homeIcon: "home-inactive.png",
+      searchIcon: "search-inactive.png"
     };
     this.logoutUser = this.logoutUser.bind(this);
     this.setIcons = this.setIcons.bind(this);
