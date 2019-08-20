@@ -1,24 +1,17 @@
-import React from 'react';
+import React from "react";
 
 class LikedTrackIndex extends React.Component {
+  // componentDidMount() {
+  //
+  // }
 
-    // componentDidMount() {
-    //     
-    // }
-
-    render() {
-
-        // TODO: Render liked songs
-        // let playlists = this.props.playlists.map(playlist => {
-        //     return <PlaylistGridItem key={playlist.title} playlist={playlist} />
-        // })
-
-        return (
-            <div className="main-h1">
-                Liked Songs
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="main-h1" style={{ textAlign: `center` }}>
+        Liked Songs Coming Soon!
+      </div>
+    );
+  }
 }
 
 export default LikedTrackIndex;
