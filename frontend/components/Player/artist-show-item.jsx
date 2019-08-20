@@ -22,14 +22,12 @@ class ArtistShowItem extends React.Component {
     return (
       <div className="album-artist-container">
         <div className="image-hover-container">
-          {/* <Link to={`/albums/${album.id}`}> */}
           <img src={album_art} />
           <div className="Mike">
             <button id="Mike-button" onClick={this.handlePlay}>
               <img id="Mike" src="play_white.png" />
             </button>
           </div>
-          {/* </Link> */}
         </div>
 
         <div className="title-container">
