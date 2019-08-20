@@ -8,11 +8,18 @@ class PlaylistIndex extends React.Component {
     // bind methods
     this.setArtwork = this.setArtwork.bind(this);
     this.createArtwork = this.createArtwork.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPlaylists();
-    // this.props.fetchPlaylists().then(() => this.setArtwork());
+  }
+
+  handlePlay(playlist) {
+    debugger;
+    this.props.setCurrentSong(Object.values(playlist.playlist_tracks)[0]);
+    this.props.setPlaying(true);
+    this.props.setQueue(Object.values(playlist.playlist_tracks));
   }
 
   // For each playlist, store the album artwork (associated with each track) in an array
@@ -57,16 +64,19 @@ class PlaylistIndex extends React.Component {
       return (
         <div key={playlist.title} className="album-artist-container">
           <div className="image-hover-container">
-            <Link to={`/collection/playlists/${playlist.id}`}>
-              <div className="playlist-idx-cover-container">
-                {this.setArtwork(playlist.playlist_tracks)}
-              </div>
-              <div className="Mike">
-                <button id="Mike-button">
-                  <img id="Mike" src="play_white.png" />
-                </button>
-              </div>
-            </Link>
+            {/* <Link to={`/collection/playlists/${playlist.id}`}> */}
+            <div className="playlist-idx-cover-container">
+              {this.setArtwork(playlist.playlist_tracks)}
+            </div>
+            <div className="Mike">
+              <button
+                id="Mike-button"
+                onClick={() => this.handlePlay(playlist)}
+              >
+                <img id="Mike" src="play_white.png" />
+              </button>
+            </div>
+            {/* </Link> */}
           </div>
           <div className="artist-container">
             <Link id="grid-artist" to={`/collection/playlists/${playlist.id}`}>
