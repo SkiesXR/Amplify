@@ -74,6 +74,7 @@ unless @shows.empty?
                     json.extract! episode, :id, :title, :length
                     json.audio_file episode.episode_audio
                     show.show_photo.attached? ? (json.album_art url_for(show.show_photo)) : (json.album_art "")
+                    json.artist show.author
                 end
             end
         end
