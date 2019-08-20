@@ -20,7 +20,7 @@
 .thumb-image {
   // background-image: url("https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg");
   background-size: cover;
-  width: 56px;
+  min-width: 56px;
   height: 56px;
   box-shadow: 0 0 10px rgba(0, 0, 0, .3);
   margin: 0;
@@ -59,6 +59,11 @@
   text-decoration: none;
   display: inline;
   padding-bottom: 2px;
+  overflow: hidden;
+  max-height: 41px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
 #npt:hover {
