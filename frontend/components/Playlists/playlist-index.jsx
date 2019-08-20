@@ -17,7 +17,6 @@ class PlaylistIndex extends React.Component {
 
   // For each playlist, store the album artwork (associated with each track) in an array
   setArtwork(playlist_tracks) {
-    console.log(playlist_tracks);
     var artCollection = [];
     if (playlist_tracks != undefined) {
       artCollection = Object.values(playlist_tracks).map(track => {
