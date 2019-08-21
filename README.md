@@ -17,15 +17,14 @@
 
 - <a href="https://postgresql.org/" target="_blank">PostgreSQL </a>
 - <a href="https://rubyonrails.org/" target="_blank">Rails</a>
-- <a href="https://postgresql.org/" target="_blank">PostgreSQL </a>
+- <a href="https://aws.amazon.com//" target="_blank">AWS</a>
+- <a href="https://heroku.com/" target="_blank">Heroku</a>
 - <a href="https://github.com/rails/jbuilder" target="_blank">JBuilder</a>
 
 # Frontend Technologies
 
 - <a href="https://reactjs.org/" target="_blank">React</a>
 - <a href="https://redux.js.org/" target="_blank">Redux</a>
-- <a href="https://www.npmjs.com/" target="_blank">Node Package Manager</a
 - <a href="https://sass-lang.com/" target="_blank">Sass</a>
 - <a href="https://webpack.js.org/" target="_blank">Webpack</a>
-- <a href="https://aws.amazon.com//" target="_blank">AWS</a>
-- <a href="https://heroku.com/" target="_blank">Heroku</a> 
+- <a href="https://www.npmjs.com/" target="_blank">Node Package Manager</a>
