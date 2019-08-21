@@ -10,13 +10,13 @@
 
 ## Overview <span id="overview"></span>
 
-<strong>Amplify</strong> is a single-page Spotify clone. Stream music, create playlists, and follow your favorite artists!
+<strong>Amplify</strong> is a full-stack single-page web application based on the popular music streaming service Spotify. Listen to music or podcasts, create playlists, and follow your favorite artists! 
 
 ## Features <span id="features"></span>
 
 * Rails 5.2 session-based user-authentication system with custom error-handling
 * Real-time search for artists, albums, genres, and podcasts
-* Continuous music streaming while navigating the app
+* Continuous (uninterupted) music streaming while navigating the app
 * Playlist CRUD
 * Dynamically generated playlist artwork
 
