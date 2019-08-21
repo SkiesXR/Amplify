@@ -4,14 +4,15 @@
 
 # Table of Contents
 - <a href="#overview">Overview</a>
-- Features
-- Backend Technologies
-- Frontend Technologies
+- <a href="#features">Features</a>
+- <a href="#backend">Backend Technologies</a>
+- <a href="#frontend">Frontend Technologies</a>
 
 ## Overview <span id="overview"></span>
+
 <strong>Amplify</strong> is a single-page Spotify clone. Stream music, create playlists, and follow your favorite artists!
 
-## Features
+## Features <span id="features"></span>
 
 * Rails 5.2 session-based user-authentication system with custom error-handling
 * Real-time search for artists, albums, genres, and podcasts
@@ -19,7 +20,7 @@
 * Playlist CRUD
 * Dynamically generated playlist artwork
 
-## Backend Technologies
+## Backend Technologies <span id="backend"></span>
 
 - <a href="https://postgresql.org/" target="_blank">PostgreSQL </a>
 - <a href="https://rubyonrails.org/" target="_blank">Rails</a>
@@ -27,7 +28,7 @@
 - <a href="https://heroku.com/" target="_blank">Heroku</a>
 - <a href="https://github.com/rails/jbuilder" target="_blank">JBuilder</a>
 
-## Frontend Technologies
+## Frontend Technologies <span id="frontend"></span>
 
 - <a href="https://reactjs.org/" target="_blank">React</a>
 - <a href="https://redux.js.org/" target="_blank">Redux</a>
