@@ -10,7 +10,7 @@
 
 ## Overview <span id="overview"></span>
 
-<strong>Amplify</strong> is a full-stack single-page web application based on the popular music streaming service Spotify. Listen to music or podcasts, create playlists, and follow your favorite artists! 
+<strong>Amplify</strong> is a full-stack single-page web application based on the popular music streaming service Spotify. Listen to music or podcasts, create playlists, search for your favorite music, and follow your favorite artists! 
 
 ## Features <span id="features"></span>
 
