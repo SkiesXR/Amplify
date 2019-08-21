@@ -3,7 +3,15 @@
 <a href="http://amplifypk.herokuapp.com/"><strong>Visit Amplify</strong></a>
 
 # Overview
-<strong>Amplify</strong> is a single-page web app that lets you stream music, create playlists, and follow your favorite artists.
+<strong>Amplify</strong> is a single-page Spotify clone. Stream music, create playlists, and follow your favorite artists!
+
+# Features
+
+* Rails 5.2 session-based user-authentication system with custom error-handling
+* Real-time search for artists, albums, genres, and podcasts
+* Continuous music streaming while navigating the app
+* Playlist CRUD
+* Dynamically generated playlist artwork 
 
 # Technologies
 
