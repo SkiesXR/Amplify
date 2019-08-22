@@ -28,7 +28,6 @@ class GridItem extends React.Component {
     const gridItem = (
       <div className="album-artist-container">
         <div className="image-hover-container">
-          {/* Testing */}
           <div>
             {!this.state.loaded ? (
               <img src="AlbumArt-PlaceholderWithIcon.png" />
