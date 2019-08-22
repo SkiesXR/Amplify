@@ -7,6 +7,7 @@
 - <a href="#features">Features</a>
 - <a href="#backend">Backend Technologies</a>
 - <a href="#frontend">Frontend Technologies</a>
+- <a href="#experience">Experience</a>
 
 ## Overview <span id="overview"></span>
 
@@ -35,3 +36,9 @@
 - <a href="https://sass-lang.com/" target="_blank">Sass</a>
 - <a href="https://webpack.js.org/" target="_blank">Webpack</a>
 - <a href="https://www.npmjs.com/" target="_blank">Node Package Manager</a>
+
+## Experience <span id="frontend"></span>
+<div style="display: flex", flex-direction: column, justify-content: center, align-items: left">
+<strong>Navigation</strong>
+<img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---Navigation.gif"></img>
+</div>
