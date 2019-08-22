@@ -57,7 +57,7 @@
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---PlaylistCreation.gif"></img>
 </p>
 
-## Adding Songs to Playlists
+### Adding Songs to Playlists
 <p align="center">
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---AddSongToPlaylist.gif"></img>
 </p>
