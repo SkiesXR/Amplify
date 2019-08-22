@@ -1,3 +1,5 @@
+<img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify_Green.png?raw=true"></img>
+<p/><p/><p/>
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/ProductShot---MacBookPro---Albums---3800x2260.png"></img>
 
 <a href="http://amplifypk.herokuapp.com/"><strong>Visit Amplify</strong></a>
@@ -40,3 +42,12 @@
 ## Experience <span id="frontend"></span>
 ### Navigation
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---Navigation.gif"></img>
+
+### Live Search
+<img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---SearchAndPlay.gif"></img>
+
+### Playlist Creation
+<img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---PlaylistCreation.gif"></img>
+
+## Adding Songs to Playlists
+<img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---AddSongToPlaylist.gif"></img>
