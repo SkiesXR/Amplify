@@ -64,10 +64,10 @@ export const updatePlaylist = (playlist) => dispatch => (
 );
 
 export const addTrackToPlaylist = (playlistId, trackId) => dispatch => (
-    PlaylistAPIUtil.addTrackToPlaylist(playlistId, trackId),
-    err => dispatch(receivePlaylistMessage(err.responseJSON))
+    PlaylistAPIUtil.addTrackToPlaylist(playlistId, trackId)
 );
 
 export const removeTrackFromPlaylist = (playlistItemId) => dispatch => (
-        PlaylistAPIUtil.removeTrackFromPlaylist(playlistItemId))
-    .then((playlist) => dispatch(receivePlaylist(playlist)));
+    PlaylistAPIUtil.removeTrackFromPlaylist(playlistItemId)
+    .then((playlist) => dispatch(receivePlaylist(playlist)))
+);

@@ -1,6 +1,7 @@
 @playlists.each do |playlist|
     json.set! playlist.id do
         json.extract! playlist, :id, :title, :description, :user_id
+        json.creation_at playlist.created_at
         playlist.playlist_items.count > 0 ? (json.trackCount playlist.playlist_items.count) : (json.trackCount 0)
         json.playlist_tracks do
             playlist.tracks.each do |track|

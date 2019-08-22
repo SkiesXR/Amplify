@@ -22,9 +22,11 @@ class AddTrackToPlaylist extends React.Component {
   }
 
   handleSubmit(playlist, trackId) {
-    this.props.addTrackToPlaylist(playlist.id, trackId);
-    this.props.closeModal();
-    this.redirectToShow(playlist.id);
+    this.props.addTrackToPlaylist(playlist.id, trackId).then(() => {
+      this.props.closeModal();
+      this.redirectToShow(playlist.id);
+    });
+    // .then(() => this.redirectToShow(playlist.id));
   }
 
   redirectToShow(playlistId) {

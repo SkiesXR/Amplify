@@ -78,11 +78,9 @@ class PlaylistIndex extends React.Component {
             </div>
             {/* </Link> */}
           </div>
-          <div className="artist-container">
-            <Link id="grid-artist" to={`/collection/playlists/${playlist.id}`}>
-              {playlist.title}
-            </Link>
-          </div>
+          <Link id="grid-artist" to={`/collection/playlists/${playlist.id}`}>
+            <div className="artist-container">{playlist.title}</div>
+          </Link>
         </div>
       );
     });
