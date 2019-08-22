@@ -38,7 +38,5 @@
 - <a href="https://www.npmjs.com/" target="_blank">Node Package Manager</a>
 
 ## Experience <span id="frontend"></span>
-<div style="display: flex", flex-direction: column, justify-content: center, align-items: left">
-<strong>Navigation</strong>
+### Navigation
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---Navigation.gif"></img>
-</div>
