@@ -41,7 +41,7 @@
 - <a href="https://webpack.js.org/" target="_blank">Webpack</a>
 - <a href="https://www.npmjs.com/" target="_blank">Node Package Manager</a>
 
-## Experience <span id="frontend"></span>
+## Experience <span id="experience"></span>
 ### Navigation
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---Navigation.gif"></img>
 
