@@ -43,13 +43,21 @@
 
 ## Experience <span id="experience"></span>
 ### Navigation
+<p align="center">
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---Navigation.gif"></img>
+</p>
 
 ### Live Search
+<p align="center">
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---SearchAndPlay.gif"></img>
+</p>
 
 ### Playlist Creation
+<p align="center">
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---PlaylistCreation.gif"></img>
+</p>
 
 ## Adding Songs to Playlists
+<p align="center">
 <img src="https://github.com/SkiesXR/Amplify/blob/master/public/Amplify---AddSongToPlaylist.gif"></img>
+</p>
