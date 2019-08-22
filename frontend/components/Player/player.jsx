@@ -400,9 +400,11 @@ class Player extends React.Component {
   }
 
   render() {
-    let destination = !this.props.currentSong.description
-      ? `/artists/${this.props.currentSong.artist_id}`
-      : `/podcasts/${this.props.currentSong.show_id}`;
+    if (this.props.currentSong) {
+      var destination = Object.keys(this.props.currentSong).includes("artist")
+        ? `/artists/${this.props.currentSong.artist_id}`
+        : `/podcasts/${this.props.currentSong.show_id}`;
+    }
 
     return (
       <div className="player">

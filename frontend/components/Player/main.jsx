@@ -194,7 +194,11 @@ class Main extends React.Component {
     let path = this.props.history.location.pathname;
     if (path.includes(albumShow)) bgGradient = "albums-show";
     if (path.includes(artistShow)) bgGradient = "artists-show";
-    if (path.includes(playlist_show)) bgGradient = "albums-show";
+    let playlistBGS = ["playlist-show-1", "playlist-show-2", "playlist-show-3"];
+    // let playlistBG = playlistBGS[Math.floor(Math.random() * playlistBGS.length)];
+    // if (path.includes(playlist_show)) bgGradient = "playlist-show";
+    if (path.includes(playlist_show))
+      bgGradient = playlistBGS[Math.floor(Math.random() * playlistBGS.length)];
     if (path.includes(podcast_show)) bgGradient = "podcast-show";
     return bgGradient;
   }

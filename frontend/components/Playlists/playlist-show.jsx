@@ -13,7 +13,7 @@ class PlaylistShow extends React.Component {
     this.addToQueue = this.addToQueue.bind(this);
     this.setArtwork = this.setArtwork.bind(this);
     // this.handlePlay = this.handlePlay.bind(this);
-    // this.getQueue = this.getQueue.bind(this);
+    this.getQueue = this.getQueue.bind(this);
   }
 
   componentDidMount() {
@@ -31,17 +31,6 @@ class PlaylistShow extends React.Component {
         .fetchPlaylist(this.props.match.params.playlistId)
         .then(() => this.setArtwork());
     }
-    // if (prevProps.playlist && prevProps.playlist.playlist_tracks) {
-    //   if (
-    //     Object.keys(prevProps.playlist.playlist_tracks).length !=
-    //     Object.keys(this.props.playlist.playlist_tracks).length
-    //   ) {
-    //     this.setState({ artworks: [] });
-    //     this.props
-    //       .fetchPlaylist(this.props.match.params.playlistId)
-    //       .then(() => this.setArtwork());
-    //   }
-    // }
   }
 
   setArtwork() {
@@ -49,8 +38,6 @@ class PlaylistShow extends React.Component {
       this.props.playlist &&
       Object.keys(this.props.playlist).includes("playlist_tracks")
     ) {
-      // let tracks = this.props.playlist.playlist_tracks;
-      // let artCollection = Object.values(
       Object.values(this.props.playlist.playlist_tracks).map(track => {
         this.setState(prevState => {
           return { artworks: prevState.artworks.concat([track.album_art]) };
@@ -70,8 +57,10 @@ class PlaylistShow extends React.Component {
   addToQueue() {
     if (Object.keys(this.props.playlist.playlist_tracks).length > 0) {
       let tracks = this.props.playlist.playlist_tracks;
-      this.props.setQueue(Object.values(tracks));
-      this.props.setCurrentSong(tracks[1]);
+      this.props.setQueue(Object.values(this.props.playlist.playlist_tracks));
+      this.props.setCurrentSong(
+        Object.values(this.props.playlist.playlist_tracks)[1]
+      );
     }
   }
 
@@ -86,11 +75,12 @@ class PlaylistShow extends React.Component {
     }));
   }
 
-  //   handlePlay() {
-  //     this.props.setCurrentSong(this.props.playlist.tracks);
-  //     this.props.setQueue(this.props.queue);
-  //     this.props.toggleSong();
-  //   }
+  // handlePlay() {
+  //   debugger;
+  //   this.props.setCurrentSong(this.props.playlist.tracks);
+  //   this.props.setQueue(this.props.queue);
+  //   this.props.toggleSong();
+  // }
 
   //   getQueue(currSongIdx) {
   //     let { songs } = this.props;
@@ -135,7 +125,7 @@ class PlaylistShow extends React.Component {
       var playlistTracks = tracks.map((track, idx) => {
         return (
           <PlaylistShowItem
-            key={track.title}
+            key={track.id}
             track={track}
             playlist={playlist}
             setCurrentSong={this.props.setCurrentSong}
@@ -190,6 +180,7 @@ class PlaylistShow extends React.Component {
                     </div>
                     <div
                       className="album-show-left-play"
+                      // onClick={this.addToQueue}
                       onClick={this.addToQueue}
                     >
                       Play
