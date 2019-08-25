@@ -11,8 +11,6 @@ class Search extends React.Component {
     this.displayAlbums = this.displayAlbums.bind(this);
     this.displayGenres = this.displayGenres.bind(this);
     this.displayPodcasts = this.displayPodcasts.bind(this);
-    // this.handlePlay = this.handlePlay.bind(this);
-    // this.handlePodcast = this.handlePodcast.bind(this);
     this.hanldeAudio = this.handleAudio.bind(this);
   }
 
@@ -195,7 +193,10 @@ class Search extends React.Component {
         </div>
         <div
           className={
-            Object.values(results).every(value => value === undefined)
+            // Object.values(results).every(value => value === undefined)
+            //   ? "search-content-empty"
+            //   : "search-content-full"
+            this.state.input === ""
               ? "search-content-empty"
               : "search-content-full"
           }
