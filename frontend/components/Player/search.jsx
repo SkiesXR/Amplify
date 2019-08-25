@@ -5,13 +5,14 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ""
+      input: "",
+      blankResults: null
     };
     this.displayArtists = this.displayArtists.bind(this);
     this.displayAlbums = this.displayAlbums.bind(this);
     this.displayGenres = this.displayGenres.bind(this);
     this.displayPodcasts = this.displayPodcasts.bind(this);
-    this.hanldeAudio = this.handleAudio.bind(this);
+    this.handleAudio = this.handleAudio.bind(this);
   }
 
   componentWillUnmount() {
@@ -19,12 +20,18 @@ class Search extends React.Component {
   }
 
   update(field) {
-    let that = this;
-    return function(e) {
-      that.setState({
+    return e => {
+      this.setState({
         [field]: e.currentTarget.value
       });
-      that.props.fetchSearchResults(e.currentTarget.value);
+      if (this.state.input === "") this.setState({ blankResults: null });
+      this.props
+        .fetchSearchResults(e.currentTarget.value)
+        .then(() =>
+          Object.values(this.props.results).every(value => value === undefined)
+            ? this.setState({ blankResults: true })
+            : this.setState({ blankResults: false })
+        );
     };
   }
 
@@ -42,7 +49,7 @@ class Search extends React.Component {
         <div className="results">
           {artists.map(artist => {
             return (
-              <div className="album-artist-container">
+              <div key={artist.id} className="album-artist-container">
                 <div className="artist-image-hover-container">
                   <Link className="artist-result" to={`/artists/${artist.id}`}>
                     <img src={artist.artist_photo} />
@@ -69,7 +76,7 @@ class Search extends React.Component {
         <div className="results">
           {albums.map(album => {
             return (
-              <div className="album-artist-container">
+              <div key={album.id} className="album-artist-container">
                 <div className="image-hover-container">
                   <img src={album.album_art} />
                   <div className="Mike">
@@ -102,7 +109,7 @@ class Search extends React.Component {
         <div className="results">
           {genres.map(genre => {
             return (
-              <div className="album-artist-container">
+              <div key={genre.id} className="album-artist-container">
                 <div className="image-hover-container">
                   <Link to={`/genres/${genre.id}`}>
                     <img src={genre.genre_image} />
@@ -129,7 +136,7 @@ class Search extends React.Component {
         <div className="results">
           {podcasts.map(podcast => {
             return (
-              <div className="album-artist-container">
+              <div key={podcast.id} className="album-artist-container">
                 <div className="image-hover-container">
                   <img src={podcast.show_photo} />
                   <div className="Mike">
@@ -179,6 +186,28 @@ class Search extends React.Component {
         return result[0] === "shows";
       })[0] || [];
 
+    const noResults = (
+      <div className="search-content-empty">
+        <span id="search-amplify-header">
+          No results found for "{this.state.input}"
+        </span>
+        <span id="search-amplify-subheader">
+          Please make sure your words are spelled correctly or use less or
+          different keywords.
+        </span>
+      </div>
+    );
+
+    const noInput = (
+      <div className="search-content-empty">
+        <span id="search-amplify-header">Search Amplify</span>
+        <span id="search-amplify-subheader">
+          Find your favorite songs, artists, albums, podcasts and playlists.
+        </span>
+      </div>
+    );
+
+    debugger;
     return (
       <div className="search-container">
         <div className="search-inputBox">
@@ -191,21 +220,10 @@ class Search extends React.Component {
             />
           </div>
         </div>
-        <div
-          className={
-            // Object.values(results).every(value => value === undefined)
-            //   ? "search-content-empty"
-            //   : "search-content-full"
-            this.state.input === ""
-              ? "search-content-empty"
-              : "search-content-full"
-          }
-        >
-          <span id="search-amplify-header">Search Amplify</span>
-          <span id="search-amplify-subheader">
-            Find your favorite songs, artists, albums, podcasts and playlists.
-          </span>
-        </div>
+        {this.state.input === "" ? noInput : ""}
+        {this.state.input != "" && this.state.blankResults === true
+          ? noResults
+          : ""}
         <div className="search-results-main">
           {artistResults.length > 0 ? this.displayArtists(artistResults) : ""}
           {albumResults.length > 0 ? this.displayAlbums(albumResults) : ""}
