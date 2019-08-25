@@ -5,7 +5,8 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ""
+      input: "",
+      blankResults: null
     };
     this.displayArtists = this.displayArtists.bind(this);
     this.displayAlbums = this.displayAlbums.bind(this);
@@ -23,8 +24,14 @@ class Search extends React.Component {
       this.setState({
         [field]: e.currentTarget.value
       });
-      this.props.fetchSearchResults(e.currentTarget.value);
-      debugger;
+      if (this.state.input === "") this.setState({ blankResults: null });
+      this.props
+        .fetchSearchResults(e.currentTarget.value)
+        .then(() =>
+          Object.values(this.props.results).every(value => value === undefined)
+            ? this.setState({ blankResults: true })
+            : this.setState({ blankResults: false })
+        );
     };
   }
 
@@ -200,6 +207,7 @@ class Search extends React.Component {
       </div>
     );
 
+    debugger;
     return (
       <div className="search-container">
         <div className="search-inputBox">
@@ -213,7 +221,7 @@ class Search extends React.Component {
           </div>
         </div>
         {this.state.input === "" ? noInput : ""}
-        {Object.values(results).every(value => value === undefined)
+        {this.state.input != "" && this.state.blankResults === true
           ? noResults
           : ""}
         <div className="search-results-main">
