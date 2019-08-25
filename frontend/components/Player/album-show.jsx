@@ -14,8 +14,7 @@ class AlbumShow extends React.Component {
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
 
-    this.props.fetchAlbum(albumId);
-    // .then(() => this.analyzeColor())
+    this.props.fetchAlbum(albumId).then(() => this.analyzeColor());
     // .then(() => this.props.setBackground(albumId));
   }
 
@@ -23,9 +22,10 @@ class AlbumShow extends React.Component {
   analyzeColor() {
     $(document).ready(function() {
       const colorThief = new ColorThief();
+      // const image = document.getElementById('playTest');
       const result = colorThief.getColor(document.getElementById("playTest"));
+      console.log(result);
     });
-    // }
   }
 
   addToQueue() {
@@ -112,8 +112,8 @@ class AlbumShow extends React.Component {
                           {releaseYear} • {trackCount}{" "}
                           {trackCount > 1 ? "SONGS" : "SONG"}
                         </p>
-                        {/* <img id="playTest" src="Octocat.png" />
-                        <div onClick={this.analyzeColor}>Analyze Color</div> */}
+                        <img id="playTest" src="Octocat.png" />
+                        <div onClick={this.analyzeColor}>Analyze Color</div>
                       </div>
                     </div>
                   </div>
