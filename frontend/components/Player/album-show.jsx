@@ -15,7 +15,7 @@ class AlbumShow extends React.Component {
     let albumId = this.props.match.params.albumId;
 
     this.props.fetchAlbum(albumId);
-    // .then(() => this.analyzeColor())
+    // .then(() => this.analyzeColor());
     // .then(() => this.props.setBackground(albumId));
   }
 
@@ -24,8 +24,8 @@ class AlbumShow extends React.Component {
     $(document).ready(function() {
       const colorThief = new ColorThief();
       const result = colorThief.getColor(document.getElementById("playTest"));
+      console.log(result);
     });
-    // }
   }
 
   addToQueue() {

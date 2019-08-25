@@ -3,11 +3,7 @@ import GridItem from "./grid_item";
 
 class MainFeatured extends React.Component {
   componentDidMount() {
-    this.props.fetchArtists();
     this.props.fetchAlbums();
-    this.props.fetchPlaylists();
-    this.props.fetchGenres();
-    this.props.fetchShows();
   }
 
   render() {
