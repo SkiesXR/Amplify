@@ -9,7 +9,7 @@ import Genres from "./main-genres-container";
 import Discover from "./main-discover";
 import PlaylistIndex from "../Playlists/playlist-index-container";
 import PlaylistShow from "../Playlists/playlist-show-container";
-import LikedTrackIndex from "../../components/Collection/liked-tracks-index";
+import LikedTrackIndex from "../../components/Collection/liked-tracks-index-container";
 import AlbumShow from "./album-show-container";
 import ArtistShow from "./artist-show-container";
 import GenreShow from "./genre-show-container";
