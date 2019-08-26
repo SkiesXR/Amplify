@@ -39,8 +39,8 @@ class LikedTrackIndex extends React.Component {
       />
     ));
     return (
-      <div className="main-h1" style={{ textAlign: `center` }}>
-        Liked Songs Coming Soon!
+      <div className="main-h1">
+        Liked Songs
         {likedTracks}
       </div>
     );

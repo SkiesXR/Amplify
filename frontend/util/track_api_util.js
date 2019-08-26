@@ -18,3 +18,16 @@ export const fetchLikedTracks = () => (
         url: "api/likes"
     })
 )
+
+export const saveTrack = (userId, trackId) => (
+    $.ajax({
+        method: "POST",
+        url: "api/likes",
+        data: {
+            like: {
+                user_id: userId,
+                track_id: trackId
+            }
+        }
+    })
+)
