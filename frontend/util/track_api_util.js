@@ -11,3 +11,10 @@ export const fetchTrack = (id) => (
         url: `api/tracks/${id}`,
     })
 )
+
+export const fetchLikedTracks = () => (
+    $.ajax({
+        method: "GET",
+        url: "api/likes"
+    })
+)
