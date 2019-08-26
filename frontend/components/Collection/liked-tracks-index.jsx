@@ -1,9 +1,13 @@
 import React from "react";
 
 class LikedTrackIndex extends React.Component {
-  // componentDidMount() {
-  //
-  // }
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchLikedTracks();
+  }
 
   render() {
     return (
