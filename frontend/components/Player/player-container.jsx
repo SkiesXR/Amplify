@@ -6,7 +6,7 @@ import {
   setQueue,
   setPlaying
 } from "../../actions/player_actions";
-import { saveTrack } from "../../actions/track_actions";
+import { saveTrack, unsaveTrack } from "../../actions/track_actions";
 
 const msp = state => {
   return {
@@ -24,7 +24,8 @@ const mdp = dispatch => ({
   setCurrentSong: track => dispatch(setCurrentSong(track)),
   setPlaying: playing => dispatch(setPlaying(playing)),
   setQueue: queue => dispatch(setQueue(queue)),
-  saveTrack: (userId, trackId) => dispatch(saveTrack(userId, trackId))
+  saveTrack: (userId, trackId) => dispatch(saveTrack(userId, trackId)),
+  unsaveTrack: likedTrackId => dispatch(saveTrack(likedTrackId))
 });
 
 export default connect(
