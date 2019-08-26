@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :shows, only: [:index, :show]
     resources :show_episodes, only: [:index, :show]
     resources :search, only: [:index]
+    resources :likes, only: [:create, :index, :destroy]
   end
 
   resources :users, only: [:new, :create, :show]
