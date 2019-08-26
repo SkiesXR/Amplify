@@ -1,6 +1,7 @@
 import {
     RECEIVE_TRACKS,
     RECEIVE_TRACK,
+    RECEIVE_LIKED_TRACKS
 } from '../actions/track_actions';
 
 export default (state = {}, action) => {
@@ -8,6 +9,9 @@ export default (state = {}, action) => {
     let newState;
     switch (action.type) {
         case RECEIVE_TRACKS:
+            newState = Object.assign({}, state, action.tracks)
+            return newState;
+        case RECEIVE_LIKED_TRACKS:
             newState = Object.assign({}, state, action.tracks)
             return newState;
         case RECEIVE_TRACK:
