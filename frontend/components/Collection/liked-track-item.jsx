@@ -14,14 +14,19 @@ class LikedTrackItem extends React.Component {
     this.musicNote = this.musicNote.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
-    this.handleModal = this.handleModal.bind(this);
+    // this.handleModal = this.handleModal.bind(this);
   }
 
   handlePlay() {
     this.props.setCurrentSong(this.props.track);
     this.props.setPlaying(true);
     this.props.setQueue(this.props.queue);
-    // this.props.toggleSong();
+  }
+
+  toggleMenu() {
+    this.setState(prevState => ({
+      menuVisible: !prevState.menuVisible
+    }));
   }
 
   // Flip musical note icon to play icon once mouse enters track container
@@ -40,21 +45,10 @@ class LikedTrackItem extends React.Component {
     });
   }
 
-  toggleMenu() {
-    this.setState(prevState => ({
-      menuVisible: !prevState.menuVisible
-    }));
-  }
-
-  handleModal(id) {
-    this.props.openModal();
-    this.props.receiveSongId(id);
-  }
-
   render() {
-    let { menuVisible } = this.state;
-    const { length, title, id } = this.props.track;
-    const { artist_name } = this.props.album;
+    const { menuVisible } = this.state;
+    const { length, title, artist } = this.props.track;
+    const { album } = this.props;
     let noteContainerClass = this.state.noteContainerClass;
     let min = length.slice(0, 2);
     let sec = length.slice(3);
@@ -77,26 +71,26 @@ class LikedTrackItem extends React.Component {
         </div>
         <div className="tc-title-artist">
           <div className="tc-title">{title}</div>
-          <div className="tc-artist">{artist_name}</div>
+          <div className="tc-artist">{artist}</div>
         </div>
         <div className="tc-context-menu" title="Add Song to Playlist">
           <div className="ellipsis" onClick={this.toggleMenu}>
-            <img
+            {/* <img
               id="atp"
               src="plus.png"
               onClick={() => this.handleModal(this.props.track.id)}
-            />
-            {/* ... */}
+            /> */}
+            ...
           </div>
-          {/* <div className={menuVisible ? "cm-show" : "cm-hidden"}>
-            <div className="cm-item" onClick={this.props.openModal}>
-            <div
+          <div className={menuVisible ? "cm-show" : "cm-hidden"}>
+            {/* <div className="cm-item" onClick={this.props.openModal}> */}
+            {/* <div
               className="cm-item"
               onClick={() => this.handleModal(this.props.track.id)}
-            >
-              <div onClick={this.toggleMenu}>Add Song to Playlist</div>
-            </div>
-          </div> */}
+            > */}
+            <div onClick={this.toggleMenu}>Remove Song from Playlist</div>
+            {/* </div> */}
+          </div>
         </div>
         <div className="tc-duration">
           <div className="tc-duration-top">{duration}</div>

@@ -25,7 +25,7 @@ class LikedTrackIndex extends React.Component {
   }
 
   render() {
-    let { likes } = this.props;
+    let { likes = {} } = this.props;
     let likedTracks = Object.values(likes).map((track, idx) => (
       <LikedTrackItem
         key={track.title}

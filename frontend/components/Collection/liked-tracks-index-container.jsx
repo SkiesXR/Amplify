@@ -9,7 +9,7 @@ import LikeIndex from "./liked-tracks-index";
 
 const msp = state => {
   return {
-    likes: state.tracks
+    likes: state.entities.tracks
   };
 };
 
