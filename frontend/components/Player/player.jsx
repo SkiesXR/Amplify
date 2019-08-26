@@ -84,8 +84,21 @@ class Player extends React.Component {
   componentDidMount() {
     // set love button icon based on current track's like status
     let trackId = this.props.currentSong.track_id;
-    // if (trackId)
-
+    // let tracks = Object.values(this.props.tracks);
+    this.props.fetchLikedTracks().then(() =>
+      this.props.tracks.some(track => {
+        track.track_id === trackId;
+      })
+        ? this.setState({
+            loveButton: "love_filled_green.png",
+            loveId: "love-green"
+          })
+        : this.setState({
+            loveButton: "love.png",
+            loveId: "love"
+          })
+    );
+    debugger;
     let track;
     let that = this;
     var id = null;
@@ -149,11 +162,12 @@ class Player extends React.Component {
     switch (this.state.loveButton) {
       case "love.png":
         const { userId, currentSong, saveTrack } = this.props;
-        const trackId = currentSong.track_id;
+        const trackId = currentSong.id;
         this.setState({
           loveButton: "love_filled_green.png",
           loveId: "love-green"
         });
+        debugger;
         saveTrack(userId, trackId).then(() => this.likedSongMessage("add"));
         break;
       case "love_filled_green.png":

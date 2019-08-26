@@ -13,7 +13,7 @@ import {
 } from "../../actions/track_actions";
 
 const msp = state => {
-  debugger;
+  // debugger;
   return {
     currentSong: state.ui.nowPlaying.currentSong,
     playing: state.ui.nowPlaying.playing,
