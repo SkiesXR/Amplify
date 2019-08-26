@@ -33,3 +33,7 @@ export const fetchLikedTracks = () => dispatch => (
     TrackAPIUtil.fetchLikedTracks()
     .then(tracks => dispatch(receiveLikedTracks(tracks)))
 )
+
+export const saveTrack = (userId, trackId) => (
+    TrackAPIUtil.saveTrack(userId, trackId)
+);
