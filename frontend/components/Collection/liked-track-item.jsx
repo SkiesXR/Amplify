@@ -1,6 +1,6 @@
 import React from "react";
 
-class AlbumShowItem extends React.Component {
+class LikedTrackItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,6 +21,7 @@ class AlbumShowItem extends React.Component {
     this.props.setCurrentSong(this.props.track);
     this.props.setPlaying(true);
     this.props.setQueue(this.props.queue);
+    // this.props.toggleSong();
   }
 
   // Flip musical note icon to play icon once mouse enters track container
@@ -105,4 +106,4 @@ class AlbumShowItem extends React.Component {
   }
 }
 
-export default AlbumShowItem;
+export default LikedTrackItem;
