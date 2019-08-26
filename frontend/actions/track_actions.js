@@ -28,3 +28,8 @@ export const fetchTrack = (id) => dispatch => (
     TrackAPIUtil.fetchTrack(id)
     .then(track => dispatch(receiveTrack(track)))
 )
+
+export const fetchLikedTracks = () => dispatch => (
+    TrackAPIUtil.fetchLikedTracks()
+    .then(tracks => dispatch(receiveLikedTracks(tracks)))
+)
