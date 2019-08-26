@@ -82,6 +82,10 @@ class Player extends React.Component {
   }
 
   componentDidMount() {
+    // set love button icon based on current track's like status
+    let trackId = this.props.currentSong.track_id;
+    // if (trackId)
+
     let track;
     let that = this;
     var id = null;
