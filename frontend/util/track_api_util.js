@@ -19,8 +19,8 @@ export const fetchLikedTracks = () => (
     })
 )
 
-export const saveTrack = (userId, trackId) => (
-    $.ajax({
+export const saveTrack = (userId, trackId) => {
+    return $.ajax({
         method: "POST",
         url: "api/likes",
         data: {
@@ -30,4 +30,16 @@ export const saveTrack = (userId, trackId) => (
             }
         }
     })
-)
+}
+
+export const unsaveTrack = (likedTrackId) => {
+    return $.ajax({
+        method: "DELETE",
+        url: `api/likes/${likedTrackId}`,
+        data: {
+            data: {
+                id: likedTrackId
+            }
+        }
+    })
+}

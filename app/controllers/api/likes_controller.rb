@@ -6,7 +6,7 @@ def index
 end
 
 def create
-    @like = Like.new(likes_params)
+    @like = Like.new(like_params)
     if Like.exists?(user_id: @like.user_id, track_id: @like.track_id)
       render json: ["You have already liked this song"], status: 401
     else
@@ -22,8 +22,8 @@ def destroy
     render json: ["Track removed from playlist!"]
 end
     
-def likes_params
-    params.require(:likes).permit(:user_id, :track_id)
+def like_params
+    params.require(:like).permit(:user_id, :track_id)
 end 
 
 end

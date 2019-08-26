@@ -17,7 +17,8 @@ const nullState = {
         artist: "Animalfirepower",
         title: "Skylines",
         length: "03:09",
-        artist_id: 2
+        artist_id: 2,
+        track_id: 58
     },
     playing: false,
     queue: [{

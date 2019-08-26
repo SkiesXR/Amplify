@@ -6,6 +6,7 @@ import {
   setQueue,
   setPlaying
 } from "../../actions/player_actions";
+import { saveTrack } from "../../actions/track_actions";
 
 const msp = state => {
   return {
@@ -13,7 +14,8 @@ const msp = state => {
     playing: state.ui.nowPlaying.playing,
     repeat: state.ui.nowPlaying.repeat,
     shuffle: state.ui.nowPlaying.shuffle,
-    queue: state.ui.nowPlaying.queue
+    queue: state.ui.nowPlaying.queue,
+    userId: Object.values(state.entities.users)[0].id
   };
 };
 
@@ -21,7 +23,8 @@ const mdp = dispatch => ({
   toggleSong: () => dispatch(toggleSong()),
   setCurrentSong: track => dispatch(setCurrentSong(track)),
   setPlaying: playing => dispatch(setPlaying(playing)),
-  setQueue: queue => dispatch(setQueue(queue))
+  setQueue: queue => dispatch(setQueue(queue)),
+  saveTrack: (userId, trackId) => dispatch(saveTrack(userId, trackId))
 });
 
 export default connect(
