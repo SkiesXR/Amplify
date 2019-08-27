@@ -71,7 +71,10 @@ class LikedTrackItem extends React.Component {
         </div>
         <div className="tc-title-artist">
           <div className="tc-title">{title}</div>
-          <div className="tc-artist">{artist}</div>
+          <div className="tc-outer-bottom">
+            <div className="tc-artist">{artist} </div>•
+            <div className="tc-artist"> {album}</div>
+          </div>
         </div>
         <div className="tc-context-menu" title="Add Song to Playlist">
           <div className="ellipsis" onClick={this.toggleMenu}>

@@ -256,6 +256,13 @@
     opacity: 1;
 }
 
+.tc-outer-bottom {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .tc-title-artist {
     display: flex;
     flex-direction: column;
@@ -354,4 +361,5 @@
     color: #fff;
     opacity: .6;
     font-family: 'Circular';
+    font-size: 14px;
 }
