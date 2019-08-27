@@ -1,5 +1,6 @@
 @likes.each do |like|
     json.set! like.id do
+        json.likeId like.id
         json.extract! like, :user_id
         track = Track.find(like.track_id)
         json.track_id track.id

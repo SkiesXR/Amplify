@@ -31,7 +31,7 @@ const mdp = dispatch => ({
   setPlaying: playing => dispatch(setPlaying(playing)),
   setQueue: queue => dispatch(setQueue(queue)),
   saveTrack: (userId, trackId) => dispatch(saveTrack(userId, trackId)),
-  unsaveTrack: likedTrackId => dispatch(saveTrack(likedTrackId)),
+  unsaveTrack: likedTrackId => dispatch(unsaveTrack(likedTrackId)),
   fetchLikedTracks: () => dispatch(fetchLikedTracks())
 });
 

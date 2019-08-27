@@ -160,21 +160,33 @@ class Player extends React.Component {
   toggleLove() {
     switch (this.state.loveButton) {
       case "love.png":
-        const { userId, currentSong, saveTrack } = this.props;
+        const { userId, currentSong, saveTrack, unsaveTrack } = this.props;
         const trackId = currentSong.id;
         this.setState({
           loveButton: "love_filled_green.png",
           loveId: "love-green"
         });
         // debugger;
-        saveTrack(userId, trackId).then(() => this.likedSongMessage("add"));
+        saveTrack(userId, trackId)
+          .then(() => this.likedSongMessage("add"))
+          .then(() => this.props.fetchLikedTracks());
         break;
       case "love_filled_green.png":
-        this.setState({
-          loveButton: "love.png",
-          loveId: "love"
-        });
-        this.likedSongMessage("remove");
+        let tracks = Object.values(this.props.tracks);
+        let i;
+        for (i = 0; i < tracks.length - 1; i++) {
+          debugger;
+          if (tracks[i].track_id === this.props.currentSong.track_id) {
+            this.props
+              .unsaveTrack(tracks[i].likeId)
+              .then(() => this.likedSongMessage("remove"))
+              .then(() => this.props.fetchLikedTracks());
+            this.setState({
+              loveButton: "love.png",
+              loveId: "love"
+            });
+          }
+        }
         break;
     }
   }
