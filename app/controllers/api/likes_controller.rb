@@ -1,8 +1,8 @@
 class Api::LikesController < ApplicationController
 
 def index
-    @likes = current_user.likes.all
-    # @likes = Like.all
+    # @likes = current_user.likes.all
+    @likes = Like.all
 end
 
 def create
