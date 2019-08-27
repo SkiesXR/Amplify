@@ -38,7 +38,7 @@ class LikedTrackIndex extends React.Component {
         receiveSongId={this.props.receiveSongId}
       />
     ));
-    return <div className="main-h1">{likedTracks}</div>;
+    return <div className="content-spacing">{likedTracks}</div>;
   }
 }
 

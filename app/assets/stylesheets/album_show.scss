@@ -278,6 +278,7 @@
     line-height: 22px;
     letter-spacing: .015em;
     color: #fff;
+    margin-bottom: 5px;
 }
 
 .tc-artist {
@@ -287,6 +288,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: 1px;
+    text-decoration: none;
+    color: #fff;
+    transition: opacity .2s linear;
+}
+
+.tc-artist:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
 
 .tc-context-menu {
@@ -300,16 +309,14 @@
 }
 
 .cm-show {
+    width: 190px;
+    font-family: 'Circular';
+    font-size: 14px;
     position: absolute;
     top: 35px;
     right: 25px;
-    // width: 50%;
-    // min-width: 160px;
     padding: 12px 10px;
-    // margin: auto;
     background-color: #282828;
-    // -webkit-background-clip: padding-box;
-    // background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: .25rem;
     outline: none;
