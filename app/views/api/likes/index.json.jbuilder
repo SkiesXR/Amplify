@@ -9,5 +9,6 @@
         json.album album.title
         artist = Artist.find(track.artist_id)
         json.artist artist.name
+        track.album.album_art.attached? ? (json.album_art url_for(track.album.album_art)) : (json.album_art "")
         end
     end
