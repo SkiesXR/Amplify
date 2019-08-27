@@ -33,7 +33,6 @@ export const saveTrack = (userId, trackId) => {
 }
 
 export const unsaveTrack = (likedTrackId) => {
-    debugger;
     return $.ajax({
         method: "DELETE",
         url: `api/likes/${likedTrackId}`,

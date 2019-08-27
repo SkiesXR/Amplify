@@ -56,9 +56,6 @@ class Player extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.tracks.values.length != this.props.tracks.values.length) {
-      this.props.fetchLikedTracks();
-    }
     if (
       prevProps.currentSong.audio_file != this.props.currentSong.audio_file ||
       prevProps.queue != this.props.queue
@@ -78,6 +75,18 @@ class Player extends React.Component {
         playPauseButton: "pause_white.png"
       });
       this.setSongPlaying(true);
+      var trackId = this.props.currentSong.id;
+      this.props.tracks.some(track => {
+        return track.id === trackId;
+      })
+        ? this.setState({
+            loveButton: "love_filled_green.png",
+            loveId: "love-green"
+          })
+        : this.setState({
+            loveButton: "love.png",
+            loveId: "love"
+          });
     }
     if (prevProps.playing != this.props.playing) {
       this.setSongPlaying(this.props.playing);
@@ -87,10 +96,9 @@ class Player extends React.Component {
   componentDidMount() {
     // set love button icon based on current track's like status
     let trackId = this.props.currentSong.track_id;
-    // let tracks = Object.values(this.props.tracks);
     this.props.fetchLikedTracks().then(() =>
       this.props.tracks.some(track => {
-        track.track_id === trackId;
+        return track.id === trackId;
       })
         ? this.setState({
             loveButton: "love_filled_green.png",
@@ -169,7 +177,6 @@ class Player extends React.Component {
           loveButton: "love_filled_green.png",
           loveId: "love-green"
         });
-        // debugger;
         saveTrack(userId, trackId)
           .then(() => this.likedSongMessage("add"))
           .then(() => this.props.fetchLikedTracks());
@@ -177,7 +184,7 @@ class Player extends React.Component {
       case "love_filled_green.png":
         let tracks = Object.values(this.props.tracks);
         let i;
-        for (i = 0; i < tracks.length - 1; i++) {
+        for (i = 0; i < tracks.length; i++) {
           if (tracks[i].id === this.props.currentSong.id) {
             return this.props
               .unsaveTrack(tracks[i].likeId)
