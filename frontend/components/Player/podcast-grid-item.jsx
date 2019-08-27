@@ -4,7 +4,17 @@ import { Link } from "react-router-dom";
 class PodcastGridItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loaded: false
+    };
     this.handlePlay = this.handlePlay.bind(this);
+    this.setLoaded = this.setLoaded.bind(this);
+  }
+
+  setLoaded(boolean) {
+    this.setState({
+      loaded: true
+    });
   }
 
   handlePlay() {
@@ -19,10 +29,20 @@ class PodcastGridItem extends React.Component {
     return (
       <div className="album-artist-container">
         <div className="image-hover-container">
+          <div>
+            {!this.state.loaded ? (
+              <img src="AlbumArt-PlaceholderWithIcon.png" />
+            ) : null}
+          </div>
           <img src={show_photo} />
           <div className="Mike">
             <button id="Mike-button" onClick={this.handlePlay}>
-              <img id="Mike" src="play_white.png" />
+              <img
+                id="Mike"
+                src="play_white.png"
+                style={!this.state.loaded ? { visibility: "hidden" } : {}}
+                onLoad={() => this.setLoaded(true)}
+              />
             </button>
           </div>
         </div>
