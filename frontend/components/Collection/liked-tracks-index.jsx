@@ -31,6 +31,7 @@ class LikedTrackIndex extends React.Component {
         key={track.title}
         track={track}
         album={track.album}
+        albumId={track.album_id}
         queue={this.getQueue(idx)}
         setCurrentSong={this.props.setCurrentSong}
         setQueue={this.props.setQueue}

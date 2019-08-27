@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class AlbumShowItem extends React.Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class AlbumShowItem extends React.Component {
   render() {
     let { menuVisible } = this.state;
     const { length, title, id } = this.props.track;
-    const { artist_name } = this.props.album;
+    const { artist_name, artist_id } = this.props.album;
     let noteContainerClass = this.state.noteContainerClass;
     let min = length.slice(0, 2);
     let sec = length.slice(3);
@@ -76,7 +77,9 @@ class AlbumShowItem extends React.Component {
         </div>
         <div className="tc-title-artist">
           <div className="tc-title">{title}</div>
-          <div className="tc-artist">{artist_name}</div>
+          <Link to={`/artists/${artist_id}`}>
+            <div className="tc-artist">{artist_name}</div>
+          </Link>
         </div>
         <div className="tc-context-menu" title="Add Song to Playlist">
           <div className="ellipsis" onClick={this.toggleMenu}>

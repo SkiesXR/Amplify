@@ -49,7 +49,7 @@ class LikedTrackItem extends React.Component {
   render() {
     const { menuVisible } = this.state;
     const { length, title, artist, artist_id } = this.props.track;
-    const { album } = this.props;
+    const { album, albumId } = this.props;
     let noteContainerClass = this.state.noteContainerClass;
     let min = length.slice(0, 2);
     let sec = length.slice(3);
@@ -79,7 +79,9 @@ class LikedTrackItem extends React.Component {
             <span id="ellipse">
               {"\u00A0"}•{"\u00A0"}
             </span>
-            <div className="tc-artist"> {album}</div>
+            <Link to={`/albums/${albumId}`}>
+              <div className="tc-artist"> {album}</div>
+            </Link>
           </div>
         </div>
         <div className="tc-context-menu">
