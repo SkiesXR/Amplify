@@ -24,7 +24,8 @@ export default (state = {}, action) => {
             //     [action.playlist.id]: action.playlist
             // })
             // return newState;
-            return merge({}, state, action.playlist);
+            // return merge({}, state, action.playlist);
+            return merge({}, action.playlist);
         case REMOVE_PLAYLIST:
             newState = Object.assign({}, state)
             delete newState[action.playlistId]

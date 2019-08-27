@@ -20,7 +20,6 @@ export const fetchLikedTracks = () => (
 )
 
 export const saveTrack = (userId, trackId) => {
-    debugger;
     return $.ajax({
         method: "POST",
         url: "api/likes",

@@ -178,16 +178,17 @@ class Player extends React.Component {
         let tracks = Object.values(this.props.tracks);
         let i;
         for (i = 0; i < tracks.length - 1; i++) {
-          debugger;
-          if (tracks[i].track_id === this.props.currentSong.track_id) {
-            this.props
+          if (tracks[i].id === this.props.currentSong.id) {
+            return this.props
               .unsaveTrack(tracks[i].likeId)
               .then(() => this.likedSongMessage("remove"))
-              .then(() => this.props.fetchLikedTracks());
-            this.setState({
-              loveButton: "love.png",
-              loveId: "love"
-            });
+              .then(() => this.props.fetchLikedTracks())
+              .then(() =>
+                this.setState({
+                  loveButton: "love.png",
+                  loveId: "love"
+                })
+              );
           }
         }
         break;

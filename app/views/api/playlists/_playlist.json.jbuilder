@@ -6,6 +6,7 @@ json.set! playlist.id do
     json.playlist_tracks do
         playlist.tracks.each do |track|
             json.set! track.id do
+                debugger
                 json.playlist_item_id playlist.playlist_items.find_by(track_id: track.id).id
                 json.extract! track, :id, :title, :length, :artist_id, :album_id
                 json.artist track.artist.name
