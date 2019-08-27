@@ -98,7 +98,6 @@ class Player extends React.Component {
             loveId: "love"
           })
     );
-    debugger;
     let track;
     let that = this;
     var id = null;
@@ -167,7 +166,7 @@ class Player extends React.Component {
           loveButton: "love_filled_green.png",
           loveId: "love-green"
         });
-        debugger;
+        // debugger;
         saveTrack(userId, trackId).then(() => this.likedSongMessage("add"));
         break;
       case "love_filled_green.png":
