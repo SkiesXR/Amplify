@@ -478,7 +478,11 @@ class Player extends React.Component {
               </Link>
             </div>
             <div className="love-container">
-              <div className="tooltip">Save to your Liked Songs</div>
+              <div className="tooltip">
+                {this.state.loveButton === "love.png"
+                  ? "Save to your Liked Songs"
+                  : "Remove from your liked songs"}
+              </div>
               <button id="love-button" onClick={this.toggleLove}>
                 <img id={this.state.loveId} src={this.state.loveButton} />
               </button>
