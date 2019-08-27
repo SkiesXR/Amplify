@@ -112,18 +112,22 @@ class LeftNav extends React.Component {
               Create Playlist
             </div>
           </div>
-          <div className="playlist-items">{playlistNames}</div>
-          <Link
-            className="nav-link-text-logout"
-            onClick={() => this.logoutUser()}
-            to="/"
-          >
-            Logout
-          </Link>
-          <div className="nav-link-user">
-            <img className="nav-link-profile" src="profile_photo.jpg" />
-            <div className="nav-link-text-profile">
-              {this.props.currentUser}
+          <div className="left-nav-bottom">
+            <div className="playlist-items">{playlistNames}</div>
+            <div className="non-playlist-items">
+              <Link
+                className="nav-link-text-logout"
+                onClick={() => this.logoutUser()}
+                to="/"
+              >
+                Logout
+              </Link>
+              <div className="nav-link-user">
+                <img className="nav-link-profile" src="profile_photo.jpg" />
+                <div className="nav-link-text-profile">
+                  {this.props.currentUser}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -149,6 +153,3 @@ export default withRouter(
     mdp
   )(LeftNav)
 );
-
-// DEBUG: Logout Button not actually logging out user
-// DEBUG: Playlist links don't load playlist info
