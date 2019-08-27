@@ -56,6 +56,9 @@ class Player extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    if (prevProps.tracks.values.length != this.props.tracks.values.length) {
+      this.props.fetchLikedTracks();
+    }
     if (
       prevProps.currentSong.audio_file != this.props.currentSong.audio_file ||
       prevProps.queue != this.props.queue

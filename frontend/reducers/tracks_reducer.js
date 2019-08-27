@@ -12,7 +12,7 @@ export default (state = {}, action) => {
             newState = Object.assign({}, state, action.tracks)
             return newState;
         case RECEIVE_LIKED_TRACKS:
-            newState = Object.assign({}, state, action.tracks)
+            newState = Object.assign({}, action.tracks)
             return newState;
         case RECEIVE_TRACK:
             newState = Object.assign({}, state, {
