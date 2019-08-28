@@ -147,8 +147,16 @@
 
 /* Controls */
 
+.progress-section-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
 .now-playing-controls-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -159,7 +167,7 @@
   color: #fff;
   font-size: 12px;
   opacity: 0.6;
-  margin-top: 50px;
+  margin-right: 10px;
   width: 35px;
   text-align: right;
 }
@@ -169,7 +177,7 @@
   color: #fff;
   font-size: 12px;
   opacity: 0.6;
-  margin-top: 48px;
+  margin-left: 10px;
   width: 35px;
 }
 
@@ -177,7 +185,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 12px;
+  // margin-bottom: 12px;
   margin-right: 16px;
   margin-left: 16px;
   margin-top: 10px;
@@ -301,6 +309,13 @@
 }
 
 // Now Playing Right
+
+.now-playing-right-container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .now-playing-right {
   min-width: 130px;

@@ -491,10 +491,6 @@ class Player extends React.Component {
 
           {/* Player Controls */}
           <div className="now-playing-controls-container">
-            <div className="currentTime">
-              {this.convertTime(this.state.currentTime)}
-            </div>
-
             <div className="now-playing-controls">
               <div className="now-playing-buttons">
                 {/* shuffle button */}
@@ -551,6 +547,13 @@ class Player extends React.Component {
                   />
                 </button>
               </div>
+            </div>
+
+            <div className="progress-section-container">
+              {/* current time */}
+              <div className="currentTime">
+                {this.convertTime(this.state.currentTime)}
+              </div>
 
               {/* progress bar */}
               <div
@@ -570,29 +573,34 @@ class Player extends React.Component {
                   style={{ left: `${this.state.playheadPos}%` }}
                 />
               </div>
+
+              {/* duration */}
+              <div className="duration">{this.props.currentSong.length}</div>
             </div>
-            <div className="duration">{this.props.currentSong.length}</div>
           </div>
 
-          {/* Mute Icon */}
-          <div className="mute-icon-container">
-            <button onClick={this.toggleMute}>
-              <img id="mute-icon" src={this.state.muteIcon} />
-            </button>
-          </div>
+          {/* right side */}
+          <div className="now-playing-right-container">
+            {/* Mute Icon */}
+            <div className="mute-icon-container">
+              <button onClick={this.toggleMute}>
+                <img id="mute-icon" src={this.state.muteIcon} />
+              </button>
+            </div>
 
-          {/* Volume Slider */}
-          <div className="now-playing-right">
-            <div className="slidecontainer">
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value={this.state.volPos}
-                className="slider"
-                id={this.state.volBarId}
-                onChange={this.volChange}
-              />
+            {/* Volume Slider */}
+            <div className="now-playing-right">
+              <div className="slidecontainer">
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={this.state.volPos}
+                  className="slider"
+                  id={this.state.volBarId}
+                  onChange={this.volChange}
+                />
+              </div>
             </div>
           </div>
         </div>
