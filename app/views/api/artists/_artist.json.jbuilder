@@ -1,5 +1,6 @@
 
-json.artist do
+# json.artist do
+json.set! artist.id do
     json.extract! artist, :id, :name, :bio, :genre_id, :image_url
 
     if artist.artist_photo.attached?
