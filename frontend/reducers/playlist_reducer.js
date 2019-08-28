@@ -20,12 +20,12 @@ export default (state = {}, action) => {
             newState = Object.assign({}, state, action.playlists)
             return newState;
         case RECEIVE_PLAYLIST:
-            // newState = Object.assign({}, state, {
-            //     [action.playlist.id]: action.playlist
-            // })
-            // return newState;
+            newState = Object.assign({}, state, {
+                [action.playlist.id]: action.playlist
+            })
+            return newState;
             // return merge({}, state, action.playlist);
-            return merge({}, action.playlist);
+            // return merge({}, action.playlist);
         case REMOVE_PLAYLIST:
             newState = Object.assign({}, state)
             delete newState[action.playlistId]
