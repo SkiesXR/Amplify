@@ -552,6 +552,7 @@ class Player extends React.Component {
                 </button>
               </div>
 
+              {/* progress bar */}
               <div
                 className="rangeslider"
                 onClick={this.mouseMove}
