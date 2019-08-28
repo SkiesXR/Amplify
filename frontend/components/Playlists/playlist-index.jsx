@@ -37,7 +37,7 @@ class PlaylistIndex extends React.Component {
   createArtwork(artCollection) {
     if (artCollection.length >= 1 && artCollection.length < 4) {
       return (
-        <div>
+        <div className="playlist-art-container">
           <img src={artCollection[0]} />
         </div>
       );
@@ -51,7 +51,7 @@ class PlaylistIndex extends React.Component {
       });
     } else {
       return (
-        <div>
+        <div className="playlist-art-container">
           <img src="PlaylistArt-PlaceholderWithIcon.png" />
         </div>
       );
