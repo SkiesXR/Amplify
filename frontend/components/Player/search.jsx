@@ -207,7 +207,6 @@ class Search extends React.Component {
       </div>
     );
 
-    debugger;
     return (
       <div className="search-container">
         <div className="search-inputBox">
