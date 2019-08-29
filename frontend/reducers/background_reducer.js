@@ -5,8 +5,8 @@ import {
 export default function backgroundReducer(state = "", action) {
     switch (action.type) {
         case SET_BACKGROUND:
-            return action.color;
-            // return Object.assign({}, state, action.color)
+            // return action.color;
+            return action.art;
             break;
         default:
             return state;

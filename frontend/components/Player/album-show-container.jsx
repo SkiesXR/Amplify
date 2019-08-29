@@ -14,7 +14,8 @@ const msp = (state, ownProps) => {
   return {
     album: state.entities.albums[ownProps.match.params.albumId] || {},
     tracks: (state.entities.albums[ownProps.match.params.albumId] || {}).tracks,
-    currentSong: state.ui.nowPlaying.currentSong
+    currentSong: state.ui.nowPlaying.currentSong,
+    background: state.ui.background
   };
 };
 
@@ -26,7 +27,7 @@ const mdp = dispatch => ({
   setQueue: queue => dispatch(setQueue(queue)),
   openModal: id => dispatch(openModal({ modal: "addTrackToPlaylist" })),
   receiveSongId: id => dispatch(receiveSongId(id)),
-  setBackground: color => dispatch(setBackground(color))
+  setBackground: art => dispatch(setBackground(art))
 });
 
 export default connect(

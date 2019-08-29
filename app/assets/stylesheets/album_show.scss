@@ -1,6 +1,21 @@
+.album-show-c0 {
+    filter: blur(50px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    top: 0px;
+    left: -50px;
+    position: absolute;
+    width: 98%;
+    height: 95%;
+    transform: scale(1.1);
+}
+
 .album-show-c1 {
     height: 100%;
     overflow-y: scroll;
+    z-index: 2
 }
 
 .album-show-c2 {
@@ -26,13 +41,14 @@
     display: flex;
     // flex-flow: row wrap;
     justify-content: flex-start;
+    align-items: flex-start;
     height: 100%;
 }
 
 .album-show-c3a {
     position: relative;
     min-height: 1px;
-    padding: 0 8px;
+    padding: 14px 8px 0px;
     display: flex;
     flex-direction: column;
     // height: 100%;
