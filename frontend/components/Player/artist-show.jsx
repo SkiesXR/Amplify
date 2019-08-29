@@ -72,15 +72,15 @@ class ArtistShow extends React.Component {
           >
             Albums
           </h1>
-          <hr
+          {/* <hr
             style={{
               marginBottom: `40px`,
               opacity: `0.2`,
               border: `none`,
               height: `1px`
             }}
-          ></hr>
-          <div className="artist-show-container">{albumListLP}</div>
+          ></hr> */}
+          <div className="as-ep-items">{albumListLP}</div>
           <h1
             className={
               albumListEP.every(e => e === undefined)
@@ -90,14 +90,14 @@ class ArtistShow extends React.Component {
           >
             EPs & Singles
           </h1>
-          <hr
+          {/* <hr
             style={{
               marginBottom: `40px`,
               opacity: `0.2`,
               border: `none`,
               height: `1px`
             }}
-          ></hr>
+          ></hr> */}
           <div className="as-ep-items">{albumListEP}</div>
         </div>
       </div>
