@@ -83,9 +83,10 @@ class ArtistShow extends React.Component {
           >
             EPs & Singles
           </h1>
-          <div className="artist-show-container">
-            <div className="artist-show-container">{albumListEP}</div>
-          </div>
+          <hr style={{ marginBottom: `40px`, opacity: `0.2` }}></hr>
+          {/* <div className="as-ep-items"> */}
+          <div className="as-ep-items">{albumListEP}</div>
+          {/* </div> */}
         </div>
       </div>
     );

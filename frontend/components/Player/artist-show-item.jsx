@@ -22,7 +22,6 @@ class ArtistShowItem extends React.Component {
     const tracks = Object.values(album.tracks).map((track, idx) => {
       return (
         <div className="album-show-track">
-          {/* <hr style={{ margin: `15px 0px`, opacity: `0.2` }}></hr> */}
           <div className="album-show-track-info">
             <div className="as-track-idx">{idx + 1}</div>
             <div className="as-track-title">{track.title}</div>
