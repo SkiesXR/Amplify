@@ -24,7 +24,6 @@ class Main extends React.Component {
     let album = "/albums";
     let artist = "artists/";
     let search = "/search";
-    // let location = this.props.history.location.pathname.includes("collection") ? collection : "other";
     let path;
     let location = this.props.history.location.pathname;
     if (location.includes("collection")) {
@@ -141,7 +140,7 @@ class Main extends React.Component {
     }
   }
 
-  // Dynamically sets the background gradient of the page based on the current URL
+  // Dynamically sets the background gradient of the page based on the URL
   setBackground() {
     let bgGradient;
     let search = "/search";
