@@ -33,7 +33,7 @@ class ArtistShowItem extends React.Component {
     });
 
     return (
-      <div style={{ width: `100%` }}>
+      <div style={{ width: `100%`, marginBottom: `40px` }}>
         <div className="artist-show-item-container">
           <div className="artist-show-album-container">
             <div className="artist-show-image-hover-container">
