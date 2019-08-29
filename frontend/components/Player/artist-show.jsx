@@ -65,16 +65,21 @@ class ArtistShow extends React.Component {
         <div className="artist-show-content">
           <h1
             className={
-              albumListLP.every(e => e === undefined) ? "main-h1-dn" : "main-h1"
+              albumListLP.every(e => e === undefined)
+                ? "main-h1-dn"
+                : "artist-show-h1"
             }
           >
             Albums
           </h1>
+          <hr style={{ marginBottom: `40px`, opacity: `0.6` }}></hr>
           <div className="artist-show-container">{albumListLP}</div>
           {/* <h1 className="main-h1">EPs & Singles</h1> */}
           <h1
             className={
-              albumListEP.every(e => e === undefined) ? "main-h1-dn" : "main-h1"
+              albumListEP.every(e => e === undefined)
+                ? "main-h1-dn"
+                : "artist-show-h1"
             }
           >
             EPs & Singles
