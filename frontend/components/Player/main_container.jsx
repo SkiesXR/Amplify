@@ -5,7 +5,8 @@ import Main from "../Player/main";
 const msp = state => {
   return {
     currentUser: state.entities.users[1],
-    artists: Object.values(state.entities.artists)
+    artists: Object.values(state.entities.artists),
+    background: state.ui.background
   };
 };
 

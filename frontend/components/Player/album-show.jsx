@@ -13,8 +13,9 @@ class AlbumShow extends React.Component {
 
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
-
-    this.props.fetchAlbum(albumId);
+    this.props
+      .fetchAlbum(albumId)
+      .then(() => this.props.setBackground(this.props.album.album_art));
     // .then(() => this.analyzeColor());
     // .then(() => this.props.setBackground(albumId));
   }
