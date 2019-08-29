@@ -70,9 +70,7 @@ class ArtistShow extends React.Component {
           >
             Albums
           </h1>
-          <div className="artist-show-container">
-            <div className="artist-show-container">{albumListLP}</div>
-          </div>
+          <div className="artist-show-container">{albumListLP}</div>
           {/* <h1 className="main-h1">EPs & Singles</h1> */}
           <h1
             className={

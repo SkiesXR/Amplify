@@ -36,7 +36,7 @@
 }
 
 .artist-show-content {
-    margin: 200px 5%;
+    margin: 130px 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,8 +64,58 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
 .main-h1-dn {
     display: none;
+}
+
+.artist-show-album-container {
+    width: 260px;
+    height: 242px;
+}
+
+.artist-show-item-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 242px;
+}
+
+.artist-show-image-hover-container {
+    min-width: 242px;
+    max-height: 242px;
+    position: relative;
+}
+
+.artist-show-image-hover-container img {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    margin-bottom: 18px;
+    transition: opacity .2s linear;
+    object-fit: cover;
+}
+
+.artist-release-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.artist-show-releaseDate {
+    font-family: 'Circular';
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.6;
+}
+
+.artist-show-title {
+    font-family: 'Circular Bold';
+    font-size: 36px;
+    color: #fff
 }
