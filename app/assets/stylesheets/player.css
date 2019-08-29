@@ -102,10 +102,9 @@ body {
 
 .albums-show {
     grid-area: main;
-    /* background-image: linear-gradient(to right bottom, rgb(51, 51, 45), rgb(0, 0, 0)),
-        linear-gradient(transparent, rgb(0, 0, 0) 70%); */
-    /* background-image: url("https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg");
-    filter: blur(8px);
+    background-image: linear-gradient(to right bottom, rgb(51, 51, 45), rgb(0, 0, 0)),
+        linear-gradient(transparent, rgb(0, 0, 0) 70%);
+    /* filter: blur(8px);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; */
