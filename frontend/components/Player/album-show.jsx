@@ -13,9 +13,7 @@ class AlbumShow extends React.Component {
 
   componentDidMount() {
     let albumId = this.props.match.params.albumId;
-    this.props
-      .fetchAlbum(albumId)
-      .then(() => this.props.setBackground(this.props.album.album_art));
+    this.props.fetchAlbum(albumId);
     // .then(() => this.analyzeColor());
     // .then(() => this.props.setBackground(albumId));
   }
@@ -68,7 +66,10 @@ class AlbumShow extends React.Component {
     return (
       <div>
         <div className="album-show-c1">
-          <div className="album-show-c0"></div>
+          <div
+            className="album-show-c0"
+            style={{ backgroundImage: `url(${this.props.album.album_art})` }}
+          ></div>
           <div className="album-show-c2">
             <section id="album-show-section">
               <div className="fluid-container">

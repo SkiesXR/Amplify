@@ -14,7 +14,8 @@ const msp = (state, ownProps) => {
   return {
     album: state.entities.albums[ownProps.match.params.albumId] || {},
     tracks: (state.entities.albums[ownProps.match.params.albumId] || {}).tracks,
-    currentSong: state.ui.nowPlaying.currentSong
+    currentSong: state.ui.nowPlaying.currentSong,
+    background: state.ui.background
   };
 };
 

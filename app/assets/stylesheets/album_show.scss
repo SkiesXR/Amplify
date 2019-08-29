@@ -1,5 +1,4 @@
 .album-show-c0 {
-    background-image: url(https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Album+Photos/AFP+-+Skylines.jpg);
     filter: blur(50px);
     background-position: center;
     background-repeat: no-repeat;
@@ -42,13 +41,14 @@
     display: flex;
     // flex-flow: row wrap;
     justify-content: flex-start;
+    align-items: flex-start;
     height: 100%;
 }
 
 .album-show-c3a {
     position: relative;
     min-height: 1px;
-    padding: 0 8px;
+    padding: 14px 8px 0px;
     display: flex;
     flex-direction: column;
     // height: 100%;
