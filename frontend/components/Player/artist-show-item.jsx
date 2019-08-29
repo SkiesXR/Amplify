@@ -27,14 +27,14 @@ class ArtistShowItem extends React.Component {
             <div className="as-track-title">{track.title}</div>
             <div className="as-track-length">{track.length}</div>
           </div>
-          <hr
+          {/* <hr
             style={{
               margin: `15px 0px`,
               opacity: `0.2`,
               border: `none`,
               height: `1px`
             }}
-          ></hr>
+          ></hr> */}
         </div>
       );
     });

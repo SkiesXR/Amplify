@@ -45,7 +45,7 @@
 }
 
 .artist-show-content {
-    margin: 130px auto;
+    margin: 180px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,6 +121,7 @@
     font-size: 14px;
     color: #fff;
     opacity: 0.6;
+    margin-bottom: 8px;
 }
 
 .artist-show-title {
@@ -137,6 +138,14 @@
 
 .album-show-track {
     width: 100%;
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    padding: 10px;
+}
+
+.album-show-track:hover {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .album-show-track-info {
@@ -144,7 +153,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    font-family: 'Circular'
+    font-family: 'Circular';
+
 }
 
 .as-track-idx {
