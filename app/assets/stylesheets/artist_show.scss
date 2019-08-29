@@ -24,6 +24,15 @@
     background: linear-gradient(transparent -30%, #181818);
 }
 
+.artist-show-h1 {
+    font-family: "Circular Bold";
+    font-size: 24px;
+    line-height: 44px;
+    letter-spacing: -.005em;
+    color: #fff;
+    margin: 24px 0px 0px;
+}
+
 .artist-show-name {
     font-family: 'Circular Bold';
     font-size: 48px;
@@ -36,7 +45,7 @@
 }
 
 .artist-show-content {
-    margin: 130px 5%;
+    margin: 130px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,4 +127,34 @@
     font-family: 'Circular Bold';
     font-size: 36px;
     color: #fff
+}
+
+.artist-show-item-tracks {
+    display: flex;
+    flex-direction: column;
+}
+
+.album-show-track {
+    width: 100%;
+}
+
+.album-show-track-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: 'Circular'
+}
+
+.as-track-idx {
+    width: 5%;
+}
+
+.as-track-title {
+    width: 85%;
+}
+
+.as-track-length {
+    width: 10%;
+    text-align: right;
 }

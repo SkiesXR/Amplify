@@ -72,9 +72,8 @@ class ArtistShow extends React.Component {
           >
             Albums
           </h1>
-          <hr style={{ marginBottom: `40px`, opacity: `0.6` }}></hr>
+          <hr style={{ marginBottom: `40px`, opacity: `0.2` }}></hr>
           <div className="artist-show-container">{albumListLP}</div>
-          {/* <h1 className="main-h1">EPs & Singles</h1> */}
           <h1
             className={
               albumListEP.every(e => e === undefined)
