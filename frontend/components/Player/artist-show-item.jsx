@@ -7,10 +7,16 @@ class ArtistShowItem extends React.Component {
     this.handlePlay = this.handlePlay.bind(this);
   }
 
-  handlePlay() {
-    this.props.setCurrentSong(Object.values(this.props.album.tracks)[0]);
+  handlePlay(track, queue) {
+    this.props.setCurrentSong(track);
     this.props.setPlaying(true);
-    this.props.setQueue(Object.values(this.props.album.tracks));
+    this.props.setQueue(queue);
+  }
+
+  getQueue(activeTrackIdx) {
+    let { album } = this.props;
+    let queue = Object.values(album.tracks).slice(activeTrackIdx);
+    return queue;
   }
 
   render() {
@@ -19,24 +25,22 @@ class ArtistShowItem extends React.Component {
     const album = this.props.album || "";
     const { album_art, title, release_date } = album || "";
     const release_year = release_date.slice(0, 4);
+    debugger;
     const tracks = Object.values(album.tracks).map((track, idx) => {
+      const queue = this.getQueue(idx);
       return (
         <div className="album-show-track">
           <div className="album-show-track-info">
-            <div className="as-track-idx">{idx + 1}</div>
+            <div
+              className="as-track-idx"
+              onClick={track => this.handlePlay(track, queue)}
+            >
+              {idx + 1}
+            </div>
             <div className="as-track-title">{track.title}</div>
             <div className="as-track-length">{track.length}</div>
           </div>
-          <div className="as-track-hr-container">
-            {/* <hr
-              style={{
-                // margin: `15px 0px`,  
-                opacity: `0.2`,
-                border: `none`,
-                height: `1px`
-              }}
-            ></hr> */}
-          </div>
+          <div className="as-track-hr-container"></div>
         </div>
       );
     });
