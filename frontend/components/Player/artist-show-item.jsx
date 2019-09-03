@@ -8,6 +8,7 @@ class ArtistShowItem extends React.Component {
   }
 
   handlePlay(track, queue) {
+    debugger;
     this.props.setCurrentSong(track);
     this.props.setPlaying(true);
     this.props.setQueue(queue);
@@ -16,6 +17,7 @@ class ArtistShowItem extends React.Component {
   getQueue(activeTrackIdx) {
     let { album } = this.props;
     let queue = Object.values(album.tracks).slice(activeTrackIdx);
+    debugger;
     return queue;
   }
 
@@ -25,15 +27,15 @@ class ArtistShowItem extends React.Component {
     const album = this.props.album || "";
     const { album_art, title, release_date } = album || "";
     const release_year = release_date.slice(0, 4);
-    debugger;
     const tracks = Object.values(album.tracks).map((track, idx) => {
-      const queue = this.getQueue(idx);
+      const queue = () => this.getQueue(idx);
+      debugger;
       return (
         <div className="album-show-track">
           <div className="album-show-track-info">
             <div
               className="as-track-idx"
-              onClick={track => this.handlePlay(track, queue)}
+              onClick={() => this.handlePlay(track, queue)}
             >
               {idx + 1}
             </div>
