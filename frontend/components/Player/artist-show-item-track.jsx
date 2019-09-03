@@ -13,6 +13,7 @@ class ArtistShowItemTrack extends React.Component {
   }
 
   handlePlay(track, queue) {
+    debugger;
     this.props.setCurrentSong(track);
     this.props.setPlaying(true);
     this.props.setQueue(queue);
@@ -34,21 +35,9 @@ class ArtistShowItemTrack extends React.Component {
     });
   }
 
-  getQueue(activeTrackIdx) {
-    let { album } = this.props;
-    let queue = Object.values(album.tracks).slice(activeTrackIdx);
-    debugger;
-    return queue;
-  }
-
   render() {
     const { track, queue, idx } = this.props;
-    const playIcon = (
-      <img
-        src={this.state.noteIcon}
-        onClick={() => this.handlePlay(track, queue)}
-      ></img>
-    );
+    const playIcon = <img src={this.state.noteIcon}></img>;
 
     return (
       <div className="album-show-track">

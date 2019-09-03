@@ -175,7 +175,7 @@ t22.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazon
 t23 = Track.create!(title: "Nylons", length: "04:41", artist_id: a2.id, album_id: al5.id)
 t23.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Luna+EP/Animal+Firepower+-+Luna+EP+-+03+Nylons.mp3'), filename: 'afp - luna - nylons.mp3')
 
-t24 = Track.create!(title: "1314", length: "01:26", artist_id: a2.id, album_id: al5.id)
+t24 = Track.create!(title: "1314", length: "01:46", artist_id: a2.id, album_id: al5.id)
 t24.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Luna+EP/Animal+Firepower+-+Luna+EP+-+04+1314.mp3'), filename: 'afp - luna - 1314.mp3')
 
 t25 = Track.create!(title: "Harbor Lanterns", length: "04:31", artist_id: a2.id, album_id: al5.id)

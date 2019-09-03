@@ -52,11 +52,10 @@ class ArtistShowItem extends React.Component {
     const { album_art, title, release_date } = album || "";
     const release_year = release_date.slice(0, 4);
     const tracks = Object.values(album.tracks).map((track, idx) => {
-      const queue = () => this.getQueue(idx);
       return (
         <ArtistShowItemTrack
           key={track.title}
-          queue={queue}
+          queue={this.getQueue(idx)}
           track={track}
           idx={idx}
           setCurrentSong={this.props.setCurrentSong}
