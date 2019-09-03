@@ -56,6 +56,9 @@ class ArtistShowItemTrack extends React.Component {
           >
             {this.state.noteIcon ? playIcon : idx + 1}
           </div>
+          <div className="as-love-container">
+            <img id="love" src="love_gray.png" alt="love" />
+          </div>
           <div className="as-track-title">{track.title}</div>
           <div className="as-track-length">{track.length}</div>
         </div>

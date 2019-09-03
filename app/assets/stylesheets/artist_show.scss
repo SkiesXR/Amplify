@@ -50,7 +50,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 85%;
+  width: 80%;
 }
 
 .artist-show-bio-header {
@@ -205,4 +205,11 @@
   max-width: 25px;
   max-height: 25px;
   opacity: 1;
+}
+
+.as-love-container {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
