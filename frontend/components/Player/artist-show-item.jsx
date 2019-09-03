@@ -53,7 +53,17 @@ class ArtistShowItem extends React.Component {
     const release_year = release_date.slice(0, 4);
     const tracks = Object.values(album.tracks).map((track, idx) => {
       const queue = () => this.getQueue(idx);
-      return <ArtistShowItemTrack queue={queue} track={track} idx={idx} />;
+      return (
+        <ArtistShowItemTrack
+          key={track.title}
+          queue={queue}
+          track={track}
+          idx={idx}
+          setCurrentSong={this.props.setCurrentSong}
+          setPlaying={this.props.setPlaying}
+          setQueue={this.props.setQueue}
+        />
+      );
     });
 
     return (

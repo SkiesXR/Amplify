@@ -43,7 +43,12 @@ class ArtistShowItemTrack extends React.Component {
 
   render() {
     const { track, queue, idx } = this.props;
-    const playIcon = <img src={this.state.noteIcon}></img>;
+    const playIcon = (
+      <img
+        src={this.state.noteIcon}
+        onClick={() => this.handlePlay(track, queue)}
+      ></img>
+    );
 
     return (
       <div className="album-show-track">
