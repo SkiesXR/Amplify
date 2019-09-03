@@ -34,6 +34,24 @@ class ArtistShowItemTrack extends React.Component {
     );
   }
 
+  componentDidUpdate(prevProps) {
+    let { likes } = this.props;
+    let trackId = this.props.track.id;
+    if (prevProps.likes != likes) {
+      Object.values(likes).some(track => {
+        return track.id === trackId;
+      })
+        ? this.setState({
+            loveButton: "love_filled.png",
+            loveId: "love-green"
+          })
+        : this.setState({
+            loveButton: "love.png",
+            loveId: "love"
+          });
+    }
+  }
+
   handlePlay(track, queue) {
     this.props.setCurrentSong(track);
     this.props.setPlaying(true);

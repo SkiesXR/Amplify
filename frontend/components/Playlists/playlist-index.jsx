@@ -16,7 +16,6 @@ class PlaylistIndex extends React.Component {
   }
 
   handlePlay(playlist) {
-    debugger;
     this.props.setCurrentSong(Object.values(playlist.playlist_tracks)[0]);
     this.props.setPlaying(true);
     this.props.setQueue(Object.values(playlist.playlist_tracks));

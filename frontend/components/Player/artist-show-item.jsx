@@ -15,7 +15,6 @@ class ArtistShowItem extends React.Component {
   }
 
   handlePlay(track, queue) {
-    debugger;
     this.props.setCurrentSong(track);
     this.props.setPlaying(true);
     this.props.setQueue(queue);
