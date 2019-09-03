@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ArtistShowItemTrack from "./artist-show-item-track";
 
 class ArtistShowItem extends React.Component {
   constructor(props) {
@@ -52,29 +53,7 @@ class ArtistShowItem extends React.Component {
     const release_year = release_date.slice(0, 4);
     const tracks = Object.values(album.tracks).map((track, idx) => {
       const queue = () => this.getQueue(idx);
-      return (
-        <div className="album-show-track">
-          <div
-            className="album-show-track-info"
-            onMouseEnter={this.playNote}
-            onMouseLeave={this.musicNote}
-          >
-            <div
-              className={
-                this.state.noteIcon === "play.png"
-                  ? this.state.noteContainerClass
-                  : "as-track-idx"
-              }
-              onClick={() => this.handlePlay(track, queue)}
-            >
-              {this.state.noteIcon ? playIcon : idx + 1}
-            </div>
-            <div className="as-track-title">{track.title}</div>
-            <div className="as-track-length">{track.length}</div>
-          </div>
-          <div className="as-track-hr-container"></div>
-        </div>
-      );
+      return <ArtistShowItemTrack queue={queue} track={track} idx={idx} />;
     });
 
     return (
