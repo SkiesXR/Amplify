@@ -88,25 +88,20 @@ class ArtistShowItemTrack extends React.Component {
           loveButton: "love_filled.png",
           loveId: "love-green"
         });
-        saveTrack(userId, trackId);
-        //   .then(() => this.likedSongMessage("add"))
-        //   .then(() => this.props.fetchLikedTracks());
+        saveTrack(userId, trackId).then(() => this.props.fetchLikedTracks());
         break;
       case "love_filled.png":
         let tracks = Object.values(this.props.likes);
         let i;
         for (i = 0; i < tracks.length; i++) {
           if (tracks[i].id === this.props.track.id) {
-            return (
-              unsaveTrack(tracks[i].likeId)
-                //   .then(() => this.likedSongMessage("remove"))
-                //   .then(() => this.props.fetchLikedTracks())
-                .then(() =>
-                  this.setState({
-                    loveButton: "love.png",
-                    loveId: "love"
-                  })
-                )
+            return this.props.unsaveTrack(tracks[i].likeId).then(() =>
+              this.props.fetchLikedTracks().then(() =>
+                this.setState({
+                  loveButton: "love.png",
+                  loveId: "love"
+                })
+              )
             );
           }
         }

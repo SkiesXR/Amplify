@@ -56,6 +56,7 @@ class Player extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    // if current song or queue changes
     if (
       prevProps.currentSong.audio_file != this.props.currentSong.audio_file ||
       prevProps.queue != this.props.queue
@@ -75,6 +76,8 @@ class Player extends React.Component {
         playPauseButton: "pause_white.png"
       });
       this.setSongPlaying(true);
+
+      // check to see if 'like' status changed for the current song
       var trackId = this.props.currentSong.id;
       this.props.tracks.some(track => {
         return track.id === trackId;
@@ -88,6 +91,8 @@ class Player extends React.Component {
             loveId: "love"
           });
     }
+
+    // if the global 'playing' status has changed...
     if (prevProps.playing != this.props.playing) {
       this.setSongPlaying(this.props.playing);
     }
@@ -616,5 +621,3 @@ class Player extends React.Component {
 }
 
 export default Player;
-
-// DEBUG: Progress bar handle movement is on an interval
