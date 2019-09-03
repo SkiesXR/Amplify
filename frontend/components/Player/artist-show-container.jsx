@@ -6,10 +6,12 @@ import {
   setQueue,
   setPlaying
 } from "../../actions/player_actions";
+import { fetchLikedTracks } from "../../actions/track_actions";
 
 const msp = (state, ownProps) => {
   return {
-    artist: state.entities.artists[ownProps.match.params.artistId]
+    artist: state.entities.artists[ownProps.match.params.artistId],
+    likes: state.entities.tracks
   };
 };
 
@@ -17,7 +19,8 @@ const mdp = dispatch => ({
   fetchArtist: id => dispatch(fetchArtist(id)),
   setQueue: queue => dispatch(setQueue(queue)),
   setCurrentSong: song => dispatch(setCurrentSong(song)),
-  setPlaying: playing => dispatch(setPlaying(playing))
+  setPlaying: playing => dispatch(setPlaying(playing)),
+  fetchLikedTracks: () => dispatch(fetchLikedTracks())
 });
 
 export default connect(

@@ -29,6 +29,8 @@ class ArtistShow extends React.Component {
             key={album.title}
             album={album}
             artist={artist}
+            likes={this.props.likes}
+            fetchLikedTracks={this.props.fetchLikedTracks}
             setCurrentSong={this.props.setCurrentSong}
             setPlaying={this.props.setPlaying}
             setQueue={this.props.setQueue}
@@ -65,25 +67,24 @@ class ArtistShow extends React.Component {
         <div className="artist-show-content">
           <h1
             className={
-              albumListLP.every(e => e === undefined) ? "main-h1-dn" : "main-h1"
+              albumListLP.every(e => e === undefined)
+                ? "main-h1-dn"
+                : "artist-show-h1"
             }
           >
             Albums
           </h1>
-          <div className="artist-show-container">
-            <div className="artist-show-container">{albumListLP}</div>
-          </div>
-          {/* <h1 className="main-h1">EPs & Singles</h1> */}
+          <div className="as-ep-items">{albumListLP}</div>
           <h1
             className={
-              albumListEP.every(e => e === undefined) ? "main-h1-dn" : "main-h1"
+              albumListEP.every(e => e === undefined)
+                ? "main-h1-dn"
+                : "artist-show-h1"
             }
           >
             EPs & Singles
           </h1>
-          <div className="artist-show-container">
-            <div className="artist-show-container">{albumListEP}</div>
-          </div>
+          <div className="as-ep-items">{albumListEP}</div>
         </div>
       </div>
     );

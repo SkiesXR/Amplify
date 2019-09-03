@@ -75,19 +75,6 @@ class PlaylistShow extends React.Component {
     }));
   }
 
-  // handlePlay() {
-  //   debugger;
-  //   this.props.setCurrentSong(this.props.playlist.tracks);
-  //   this.props.setQueue(this.props.queue);
-  //   this.props.toggleSong();
-  // }
-
-  //   getQueue(currSongIdx) {
-  //     let { songs } = this.props;
-  //     let queue = songs.slice(1);
-  //     return queue;
-  //   }
-
   render() {
     let { menuVisible } = this.state;
     let { user } = this.props;
