@@ -30,7 +30,7 @@
   line-height: 44px;
   letter-spacing: -0.005em;
   color: #fff;
-  margin: 24px 0px;
+  margin-bottom: 24px;
 }
 
 .artist-show-name {
@@ -45,7 +45,7 @@
 }
 
 .artist-show-content {
-  margin: 130px auto;
+  margin: 180px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,7 +141,7 @@
   transition-property: background-color;
   transition-duration: 0.2s;
   transition-timing-function: linear;
-  padding: 10px;
+  padding: 10px 0px;
   border-bottom: 1px solid #ffffff1f;
 }
 
