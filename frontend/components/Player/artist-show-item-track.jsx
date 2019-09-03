@@ -1,19 +1,40 @@
 import React from "react";
+import { fetchLikedTracks } from "../../actions/track_actions";
+import { connect } from "react-redux";
 
 class ArtistShowItemTrack extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       noteIcon: false,
-      noteContainerClass: "tc-outer-top"
+      noteContainerClass: "tc-outer-top",
+      loveButton: "love.png",
+      loveId: "love"
     };
     this.handlePlay = this.handlePlay.bind(this);
     this.playNote = this.playNote.bind(this);
     this.musicNote = this.musicNote.bind(this);
   }
 
+  componentDidMount() {
+    const { likes } = this.props;
+    let trackId = this.props.track.id;
+    this.props.fetchLikedTracks().then(() =>
+      Object.values(this.props.likes).some(track => {
+        return track.id === trackId;
+      })
+        ? this.setState({
+            loveButton: "love_filled.png",
+            loveId: "love-green"
+          })
+        : this.setState({
+            loveButton: "love.png",
+            loveId: "love"
+          })
+    );
+  }
+
   handlePlay(track, queue) {
-    debugger;
     this.props.setCurrentSong(track);
     this.props.setPlaying(true);
     this.props.setQueue(queue);
@@ -57,7 +78,11 @@ class ArtistShowItemTrack extends React.Component {
             {this.state.noteIcon ? playIcon : idx + 1}
           </div>
           <div className="as-love-container">
-            <img id="love" src="love_gray.png" alt="love" />
+            <img
+              id={this.state.loveId}
+              src={this.state.loveButton}
+              alt="love"
+            />
           </div>
           <div className="as-track-title">{track.title}</div>
           <div className="as-track-length">{track.length}</div>
@@ -68,4 +93,17 @@ class ArtistShowItemTrack extends React.Component {
   }
 }
 
-export default ArtistShowItemTrack;
+const msp = state => {
+  return {
+    likes: state.entities.tracks
+  };
+};
+
+const mdp = dispatch => ({
+  fetchLikedTracks: () => dispatch(fetchLikedTracks())
+});
+
+export default connect(
+  msp,
+  mdp
+)(ArtistShowItemTrack);

@@ -40,7 +40,6 @@ class ArtistShowItem extends React.Component {
   getQueue(activeTrackIdx) {
     let { album } = this.props;
     let queue = Object.values(album.tracks).slice(activeTrackIdx);
-    debugger;
     return queue;
   }
 
@@ -58,6 +57,8 @@ class ArtistShowItem extends React.Component {
           queue={this.getQueue(idx)}
           track={track}
           idx={idx}
+          // likes={this.props.likes}
+          // fetchLikedTracks={this.props.fetchLikedTracks}
           setCurrentSong={this.props.setCurrentSong}
           setPlaying={this.props.setPlaying}
           setQueue={this.props.setQueue}

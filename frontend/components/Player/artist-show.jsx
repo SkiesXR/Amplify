@@ -29,6 +29,8 @@ class ArtistShow extends React.Component {
             key={album.title}
             album={album}
             artist={artist}
+            likes={this.props.likes}
+            fetchLikedTracks={this.props.fetchLikedTracks}
             setCurrentSong={this.props.setCurrentSong}
             setPlaying={this.props.setPlaying}
             setQueue={this.props.setQueue}
