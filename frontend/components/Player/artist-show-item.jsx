@@ -5,10 +5,12 @@ class ArtistShowItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      noteIcon: "music_note.png",
+      noteIcon: false,
       noteContainerClass: "tc-outer-top"
     };
     this.handlePlay = this.handlePlay.bind(this);
+    this.playNote = this.playNote.bind(this);
+    this.musicNote = this.musicNote.bind(this);
   }
 
   handlePlay(track, queue) {
@@ -29,7 +31,7 @@ class ArtistShowItem extends React.Component {
   // Flip play icon to musical note icon once mouse leaves track container
   musicNote() {
     this.setState({
-      noteIcon: "music_note.png",
+      noteIcon: false,
       noteContainerClass: "tc-outer-top"
     });
   }
@@ -43,21 +45,29 @@ class ArtistShowItem extends React.Component {
 
   render() {
     if (!this.props.album) return "";
+    const playIcon = <img src={this.state.noteIcon}></img>;
     const { name } = this.props.artist || "";
     const album = this.props.album || "";
     const { album_art, title, release_date } = album || "";
     const release_year = release_date.slice(0, 4);
     const tracks = Object.values(album.tracks).map((track, idx) => {
       const queue = () => this.getQueue(idx);
-      debugger;
       return (
         <div className="album-show-track">
-          <div className="album-show-track-info">
+          <div
+            className="album-show-track-info"
+            onMouseEnter={this.playNote}
+            onMouseLeave={this.musicNote}
+          >
             <div
-              className="as-track-idx"
+              className={
+                this.state.noteIcon === "play.png"
+                  ? this.state.noteContainerClass
+                  : "as-track-idx"
+              }
               onClick={() => this.handlePlay(track, queue)}
             >
-              {idx + 1}
+              {this.state.noteIcon ? playIcon : idx + 1}
             </div>
             <div className="as-track-title">{track.title}</div>
             <div className="as-track-length">{track.length}</div>
