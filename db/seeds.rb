@@ -280,7 +280,7 @@ t57.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazon
 t58 = Track.create!(title: "Skylines", length: "03:09", artist_id: a2.id, album_id: al7.id)
 t58.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Skylines/Animal+Firepower+-+Skylines+-+04+Skylines.mp3'), filename: 'afp - skylines - skylines.mp3')
 
-t59 = Track.create!(title: "1314", length: "01:46", artist_id: a2.id, album_id: al7.id)
+t59 = Track.create!(title: "1314", length: "01:26", artist_id: a2.id, album_id: al7.id)
 t59.audio_file.attach(io: open('https://amplifyskiesxr-seeds.s3-us-west-1.amazonaws.com/Music/Animal+Firepower+-+Skylines/Animal+Firepower+-+Skylines+-+05+1314.mp3'), filename: 'afp - skylines - 1314.mp3')
 
 t60 = Track.create!(title: "Ascend", length: "03:21", artist_id: a2.id, album_id: al7.id)
