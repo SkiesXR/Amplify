@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 class ArtistShowItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      noteIcon: "music_note.png",
+      noteContainerClass: "tc-outer-top"
+    };
     this.handlePlay = this.handlePlay.bind(this);
   }
 
@@ -12,6 +16,22 @@ class ArtistShowItem extends React.Component {
     this.props.setCurrentSong(track);
     this.props.setPlaying(true);
     this.props.setQueue(queue);
+  }
+
+  // Flip musical note icon to play icon once mouse enters track container
+  playNote() {
+    this.setState({
+      noteIcon: "play.png",
+      noteContainerClass: "tc-outer-top-2"
+    });
+  }
+
+  // Flip play icon to musical note icon once mouse leaves track container
+  musicNote() {
+    this.setState({
+      noteIcon: "music_note.png",
+      noteContainerClass: "tc-outer-top"
+    });
   }
 
   getQueue(activeTrackIdx) {
