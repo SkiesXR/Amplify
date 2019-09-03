@@ -159,10 +159,20 @@
 
 .as-track-idx {
   width: 5%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.as-track-idx img {
+  max-width: 20px;
+  max-height: 20px;
 }
 
 .as-track-title {
   width: 85%;
+  padding-left: 15px;
 }
 
 .as-track-length {
@@ -181,4 +191,18 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
+}
+
+.as-outer-top-2 {
+  width: 5%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.as-outer-top-2 img {
+  max-width: 15px;
+  max-height: 15px;
+  opacity: 1;
 }

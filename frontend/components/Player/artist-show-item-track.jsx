@@ -13,7 +13,6 @@ class ArtistShowItemTrack extends React.Component {
   }
 
   handlePlay(track, queue) {
-    debugger;
     this.props.setCurrentSong(track);
     this.props.setPlaying(true);
     this.props.setQueue(queue);
@@ -22,8 +21,8 @@ class ArtistShowItemTrack extends React.Component {
   // Flip musical note icon to play icon once mouse enters track container
   playNote() {
     this.setState({
-      noteIcon: "play.png",
-      noteContainerClass: "tc-outer-top-2"
+      noteIcon: "play_white.png",
+      noteContainerClass: "as-outer-top-2"
     });
   }
 
@@ -55,7 +54,7 @@ class ArtistShowItemTrack extends React.Component {
         >
           <div
             className={
-              this.state.noteIcon === "play.png"
+              this.state.noteIcon === "play_white.png"
                 ? this.state.noteContainerClass
                 : "as-track-idx"
             }
