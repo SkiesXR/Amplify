@@ -1,5 +1,9 @@
 import React from "react";
-import { fetchLikedTracks } from "../../actions/track_actions";
+import {
+  fetchLikedTracks,
+  saveTrack,
+  unsaveTrack
+} from "../../actions/track_actions";
 import { connect } from "react-redux";
 
 class ArtistShowItemTrack extends React.Component {
@@ -14,6 +18,7 @@ class ArtistShowItemTrack extends React.Component {
     this.handlePlay = this.handlePlay.bind(this);
     this.playNote = this.playNote.bind(this);
     this.musicNote = this.musicNote.bind(this);
+    this.toggleLove = this.toggleLove.bind(this);
   }
 
   componentDidMount() {
@@ -74,6 +79,41 @@ class ArtistShowItemTrack extends React.Component {
     });
   }
 
+  toggleLove() {
+    switch (this.state.loveButton) {
+      case "love.png":
+        const { userId, track, saveTrack, unsaveTrack } = this.props;
+        const trackId = track.id;
+        this.setState({
+          loveButton: "love_filled.png",
+          loveId: "love-green"
+        });
+        saveTrack(userId, trackId);
+        //   .then(() => this.likedSongMessage("add"))
+        //   .then(() => this.props.fetchLikedTracks());
+        break;
+      case "love_filled.png":
+        let tracks = Object.values(this.props.likes);
+        let i;
+        for (i = 0; i < tracks.length; i++) {
+          if (tracks[i].id === this.props.track.id) {
+            return (
+              unsaveTrack(tracks[i].likeId)
+                //   .then(() => this.likedSongMessage("remove"))
+                //   .then(() => this.props.fetchLikedTracks())
+                .then(() =>
+                  this.setState({
+                    loveButton: "love.png",
+                    loveId: "love"
+                  })
+                )
+            );
+          }
+        }
+        break;
+    }
+  }
+
   render() {
     const { track, queue, idx } = this.props;
     const playIcon = <img src={this.state.noteIcon}></img>;
@@ -100,6 +140,7 @@ class ArtistShowItemTrack extends React.Component {
               id={this.state.loveId}
               src={this.state.loveButton}
               alt="love"
+              onClick={this.toggleLove}
             />
           </div>
           <div className="as-track-title">{track.title}</div>
@@ -113,12 +154,15 @@ class ArtistShowItemTrack extends React.Component {
 
 const msp = state => {
   return {
-    likes: state.entities.tracks
+    likes: state.entities.tracks,
+    userId: Object.values(state.entities.users)[0].id
   };
 };
 
 const mdp = dispatch => ({
-  fetchLikedTracks: () => dispatch(fetchLikedTracks())
+  fetchLikedTracks: () => dispatch(fetchLikedTracks()),
+  saveTrack: (userId, trackId) => dispatch(saveTrack(userId, trackId)),
+  unsaveTrack: likedTrackId => dispatch(unsaveTrack(likedTrackId))
 });
 
 export default connect(
