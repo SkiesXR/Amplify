@@ -26,7 +26,6 @@ class AddTrackToPlaylist extends React.Component {
       this.props.closeModal();
       this.redirectToShow(playlist.id);
     });
-    // .then(() => this.redirectToShow(playlist.id));
   }
 
   redirectToShow(playlistId) {

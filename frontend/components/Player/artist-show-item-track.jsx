@@ -2,10 +2,9 @@ import React from "react";
 import {
   fetchLikedTracks,
   saveTrack,
-  unsaveTrack,
-  receiveSongId
+  unsaveTrack
 } from "../../actions/track_actions";
-import { openModal } from "../../actions/modal_actions";
+import { openModal, receiveSongId } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 
 class ArtistShowItemTrack extends React.Component {
@@ -82,6 +81,7 @@ class ArtistShowItemTrack extends React.Component {
   }
 
   handleModal(id) {
+    debugger;
     this.props.openModal();
     this.props.receiveSongId(id);
   }
