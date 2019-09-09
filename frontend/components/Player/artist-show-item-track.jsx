@@ -139,6 +139,13 @@ class ArtistShowItemTrack extends React.Component {
             />
           </div>
           <div className="as-track-title">{track.title}</div>
+          <div className="as-track-addToPlaylist">
+            <img
+              src="plus.png"
+              style={{ width: `18px` }}
+              // onClick={() => this.handleModal(this.props.track.id)}
+            />
+          </div>
           <div className="as-track-length">{track.length}</div>
         </div>
         <div className="as-track-hr-container"></div>

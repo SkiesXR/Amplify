@@ -171,8 +171,15 @@
 }
 
 .as-track-title {
-  width: 85%;
+  width: 75%;
   padding-left: 15px;
+}
+
+.as-track-addToPlaylist {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .as-track-length {
