@@ -2,8 +2,10 @@ import React from "react";
 import {
   fetchLikedTracks,
   saveTrack,
-  unsaveTrack
+  unsaveTrack,
+  receiveSongId
 } from "../../actions/track_actions";
+import { openModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 
 class ArtistShowItemTrack extends React.Component {
@@ -79,6 +81,11 @@ class ArtistShowItemTrack extends React.Component {
     });
   }
 
+  handleModal(id) {
+    this.props.openModal();
+    this.props.receiveSongId(id);
+  }
+
   toggleLove() {
     switch (this.state.loveButton) {
       case "love.png":
@@ -143,7 +150,7 @@ class ArtistShowItemTrack extends React.Component {
             <img
               src="plus.png"
               style={{ width: `18px` }}
-              // onClick={() => this.handleModal(this.props.track.id)}
+              onClick={() => this.handleModal(track.id)}
             />
           </div>
           <div className="as-track-length">{track.length}</div>
@@ -164,7 +171,9 @@ const msp = state => {
 const mdp = dispatch => ({
   fetchLikedTracks: () => dispatch(fetchLikedTracks()),
   saveTrack: (userId, trackId) => dispatch(saveTrack(userId, trackId)),
-  unsaveTrack: likedTrackId => dispatch(unsaveTrack(likedTrackId))
+  unsaveTrack: likedTrackId => dispatch(unsaveTrack(likedTrackId)),
+  openModal: id => dispatch(openModal({ modal: "addTrackToPlaylist" })),
+  receiveSongId: id => dispatch(receiveSongId(id))
 });
 
 export default connect(
