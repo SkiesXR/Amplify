@@ -182,6 +182,15 @@
   align-items: center;
 }
 
+.as-track-plus-hide {
+  display: none;
+}
+
+.as-track-plus-show {
+  display: inline;
+  width: 18px;
+}
+
 .as-track-length {
   width: 10%;
   text-align: right;

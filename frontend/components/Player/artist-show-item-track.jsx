@@ -14,7 +14,8 @@ class ArtistShowItemTrack extends React.Component {
       noteIcon: false,
       noteContainerClass: "tc-outer-top",
       loveButton: "love.png",
-      loveId: "love"
+      loveId: "love",
+      plusClass: "as-track-plus-hide"
     };
     this.handlePlay = this.handlePlay.bind(this);
     this.playNote = this.playNote.bind(this);
@@ -68,7 +69,8 @@ class ArtistShowItemTrack extends React.Component {
   playNote() {
     this.setState({
       noteIcon: "play_white.png",
-      noteContainerClass: "as-outer-top-2"
+      noteContainerClass: "as-outer-top-2",
+      plusClass: "as-track-plus-show"
     });
   }
 
@@ -76,7 +78,8 @@ class ArtistShowItemTrack extends React.Component {
   musicNote() {
     this.setState({
       noteIcon: false,
-      noteContainerClass: "tc-outer-top"
+      noteContainerClass: "tc-outer-top",
+      plusClass: "as-track-plus-hide"
     });
   }
 
@@ -149,7 +152,7 @@ class ArtistShowItemTrack extends React.Component {
           <div className="as-track-addToPlaylist">
             <img
               src="plus.png"
-              style={{ width: `18px` }}
+              className={this.state.plusClass}
               onClick={() => this.handleModal(track.id)}
             />
           </div>
