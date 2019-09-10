@@ -29,7 +29,11 @@ class AddTrackToPlaylist extends React.Component {
   }
 
   redirectToShow(playlistId) {
-    this.props.history.push(`/collection/playlists/${playlistId}`);
+    if (this.props.history.location.pathname.includes("artists")) {
+      return;
+    } else {
+      this.props.history.push(`/collection/playlists/${playlistId}`);
+    }
   }
 
   render() {
