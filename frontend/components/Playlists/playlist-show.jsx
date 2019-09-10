@@ -12,7 +12,6 @@ class PlaylistShow extends React.Component {
     this.toggleMenu = this.toggleMenu.bind(this);
     this.addToQueue = this.addToQueue.bind(this);
     this.setArtwork = this.setArtwork.bind(this);
-    // this.handlePlay = this.handlePlay.bind(this);
     this.getQueue = this.getQueue.bind(this);
   }
 
@@ -23,13 +22,18 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (
-      prevProps.match.params.playlistId != this.props.match.params.playlistId
-    ) {
-      this.setState({ artworks: [] });
-      this.props
-        .fetchPlaylist(this.props.match.params.playlistId)
-        .then(() => this.setArtwork());
+    if (prevProps.playlist.playlist_tracks) {
+      if (
+        prevProps.match.params.playlistId !=
+          this.props.match.params.playlistId ||
+        Object.keys(prevProps.playlist.playlist_tracks).length !=
+          Object.keys(this.props.playlist.playlist_tracks).length
+      ) {
+        this.setState({ artworks: [] });
+        this.props
+          .fetchPlaylist(this.props.match.params.playlistId)
+          .then(() => this.setArtwork());
+      }
     }
   }
 
@@ -134,13 +138,6 @@ class PlaylistShow extends React.Component {
       var playlistTracks = "";
     }
 
-    // let followButton;
-    // if (!this.state.followed) {
-    //   followButton = <button onClick={this.handleFollow}>FOLLOW</button>;
-    // } else {
-    //   followButton = <button onClick={this.handleUnfollow}>UNFOLLOW</button>;
-    // }
-
     return (
       <div className="playlist-show-c1">
         <div className="playlist-show-c2">
@@ -167,7 +164,6 @@ class PlaylistShow extends React.Component {
                     </div>
                     <div
                       className="album-show-left-play"
-                      // onClick={this.addToQueue}
                       onClick={this.addToQueue}
                     >
                       Play
@@ -211,5 +207,3 @@ class PlaylistShow extends React.Component {
 }
 
 export default PlaylistShow;
-
-// TODO: Figure out displaying playlist tracks by position
