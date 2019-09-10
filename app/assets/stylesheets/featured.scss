@@ -1,89 +1,88 @@
 .header-grid {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    // padding: 0 32px;
-    padding-left: 10px;
-    width: 85%;
-    margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  // padding: 0 32px;
+  padding-left: 10px;
+  width: 85%;
+  margin: auto;
 }
 
 .main-h1 {
-    font-family: "Circular Bold";
-    font-size: 36px;
-    line-height: 44px;
-    letter-spacing: -.005em;
-    color: #fff;
-    margin: 24px 0;
+  font-family: "Circular Bold";
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.005em;
+  color: #fff;
+  margin: 24px 0;
 }
 
 .featured-container {
-    position: relative;
-    display: flex;
-    // align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    // max-height: 566px;
-    overflow: auto;
-    padding: 0 32px 32px;
-    width: 85%;
-    margin: auto;
-    margin-bottom: 160px;
+  position: relative;
+  display: flex;
+  // align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  // max-height: 566px;
+  overflow: auto;
+  padding: 0 32px 32px;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 160px;
 }
 
 .title-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #grid-title {
-    font-family: "Circular";
-    height: 20px;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: .015em;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    text-align: center;
-    margin: 12px 0 4px;
+  font-family: "Circular";
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  text-align: center;
+  margin: 12px 0 4px;
 }
 
 .artist-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #grid-artist {
-    text-decoration: none;
-    font-family: "Circular";
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: .015em;
-    max-height: 20px;
-    color: white;
-    opacity: 0.6;
-    transition: opacity .05s linear;
-    border-bottom: 1px solid transparent;
+  text-decoration: none;
+  font-family: "Circular";
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  max-height: 20px;
+  color: white;
+  opacity: 0.6;
+  transition: opacity 0.05s linear;
+  border-bottom: 1px solid transparent;
 }
 
 #grid-artist:hover {
-    opacity: 1;
-    border-bottom: 1px solid white;
-    // text-decoration: underline;
+  opacity: 1;
+  border-bottom: 1px solid white;
 }
 
 #grid-genre {
-    @extend #grid-artist;
-    padding-top: 10px;
+  @extend #grid-artist;
+  padding-top: 10px;
 }
 
 #grid-genre:hover {
-    opacity: 1;
-    border-bottom: 1px solid white;
+  opacity: 1;
+  border-bottom: 1px solid white;
 }
