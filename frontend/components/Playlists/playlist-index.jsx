@@ -63,7 +63,6 @@ class PlaylistIndex extends React.Component {
       return (
         <div key={playlist.title} className="album-artist-container">
           <div className="image-hover-container">
-            {/* <Link to={`/collection/playlists/${playlist.id}`}> */}
             <div className="playlist-idx-cover-container">
               {this.setArtwork(playlist.playlist_tracks)}
             </div>
@@ -75,7 +74,6 @@ class PlaylistIndex extends React.Component {
                 <img id="Mike" src="play_white.png" />
               </button>
             </div>
-            {/* </Link> */}
           </div>
           <Link
             id="playlist-grid-artist"
