@@ -151,8 +151,8 @@ class Search extends React.Component {
                   </div>
                 </div>
                 <div className="artist-container">
-                  <Link id="grid-artist" to={`/podcasts/${podcast.id}`}>
-                    {podcast.title}
+                  <Link id="search-grid-artist" to={`/podcasts/${podcast.id}`}>
+                    <span id="search-pod-artist">{podcast.title}</span>
                   </Link>
                 </div>
               </div>
