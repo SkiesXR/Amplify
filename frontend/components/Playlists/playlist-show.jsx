@@ -22,18 +22,13 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.playlist.playlist_tracks) {
-      if (
-        prevProps.match.params.playlistId !=
-          this.props.match.params.playlistId ||
-        Object.keys(prevProps.playlist.playlist_tracks).length !=
-          Object.keys(this.props.playlist.playlist_tracks).length
-      ) {
-        this.setState({ artworks: [] });
-        this.props
-          .fetchPlaylist(this.props.match.params.playlistId)
-          .then(() => this.setArtwork());
-      }
+    if (
+      prevProps.match.params.playlistId != this.props.match.params.playlistId
+    ) {
+      this.setState({ artworks: [] });
+      this.props
+        .fetchPlaylist(this.props.match.params.playlistId)
+        .then(() => this.setArtwork());
     }
   }
 
