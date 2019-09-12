@@ -89,7 +89,7 @@ class Search extends React.Component {
                   </div>
                 </div>
                 <div className="artist-container">
-                  <Link id="grid-artist" to={`/albums/${album.id}`}>
+                  <Link id="search-grid-artist" to={`/albums/${album.id}`}>
                     {album.title}
                   </Link>
                 </div>
