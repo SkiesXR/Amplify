@@ -12,7 +12,6 @@ class AddTrackToPlaylist extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectToShow = this.redirectToShow.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
