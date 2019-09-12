@@ -70,11 +70,16 @@
   opacity: 0.6;
   transition: opacity 0.05s linear;
   border-bottom: 1px solid transparent;
+  margin-top: 20px;
 }
-
-#grid-artist:hover {
+grid-artist #grid-artist:hover {
   opacity: 1;
   border-bottom: 1px solid white;
+}
+
+#search-grid-artist {
+  @extend #grid-artist;
+  opacity: 1;
 }
 
 #grid-genre {

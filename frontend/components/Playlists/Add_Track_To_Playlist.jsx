@@ -12,6 +12,8 @@ class AddTrackToPlaylist extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectToShow = this.redirectToShow.bind(this);
+    this.setArtwork = this.setArtwork.bind(this);
+    this.createArtwork = this.createArtwork.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +34,44 @@ class AddTrackToPlaylist extends React.Component {
       return;
     } else {
       this.props.history.push(`/collection/playlists/${playlistId}`);
+    }
+  }
+
+  // For each playlist, store the album artwork (associated with each track) in an array
+  setArtwork(playlist_tracks) {
+    debugger;
+    var artCollection = [];
+    if (playlist_tracks != undefined) {
+      artCollection = Object.values(playlist_tracks).map(track => {
+        return track.album_art;
+      });
+    }
+    return this.createArtwork(artCollection);
+  }
+
+  // set artwork for each playlist based on number of playlist tracks
+  createArtwork(artCollection) {
+    debugger;
+    if (artCollection.length >= 1 && artCollection.length < 4) {
+      return (
+        <div className="playlist-art-container">
+          <img src={artCollection[0]} />
+        </div>
+      );
+    } else if (artCollection.length >= 4) {
+      return artCollection.slice(0, 4).map(art => {
+        return (
+          <div key={art} className="playlist-idx-coverArt-item">
+            <img src={art} />
+          </div>
+        );
+      });
+    } else {
+      return (
+        <div className="playlist-art-container">
+          <img src="PlaylistArt-PlaceholderWithIcon.png" />
+        </div>
+      );
     }
   }
 
@@ -67,12 +107,13 @@ class AddTrackToPlaylist extends React.Component {
                   className="album-artist-container"
                 >
                   <div
-                    className="image-hover-container"
+                    className="atp-image-hover-container"
                     onClick={() =>
                       this.handleSubmit(playlist, this.props.trackId)
                     }
                   >
-                    <img src="PlaylistArt-PlaceholderWithIcon.png" />
+                    {/* <img src="PlaylistArt-PlaceholderWithIcon.png" /> */}
+                    {this.setArtwork(playlist.playlist_tracks)}
                     <div className="Mike">
                       <button id="Mike-button">
                         <svg width="51px" height="52px" viewBox="88 88 51 52">

@@ -151,8 +151,8 @@ class Search extends React.Component {
                   </div>
                 </div>
                 <div className="artist-container">
-                  <Link id="grid-artist" to={`/podcasts/${podcast.id}`}>
-                    {podcast.title}
+                  <Link id="search-grid-artist" to={`/podcasts/${podcast.id}`}>
+                    <span id="search-pod-artist">{podcast.title}</span>
                   </Link>
                 </div>
               </div>
@@ -237,6 +237,3 @@ class Search extends React.Component {
 }
 
 export default Search;
-
-// TODO: Improve quality of search results:
-//  1) Searching artist name displays artist AND albums they've produced
