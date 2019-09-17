@@ -34,15 +34,14 @@ class PodcastGridItem extends React.Component {
               <img src="AlbumArt-PlaceholderWithIcon.png" />
             ) : null}
           </div>
-          <img src={show_photo} />
+          <img
+            src={show_photo}
+            style={!this.state.loaded ? { visibility: "hidden" } : {}}
+            onLoad={() => this.setLoaded(true)}
+          />
           <div className="Mike">
             <button id="Mike-button" onClick={this.handlePlay}>
-              <img
-                id="Mike"
-                src="play_white.png"
-                style={!this.state.loaded ? { visibility: "hidden" } : {}}
-                onLoad={() => this.setLoaded(true)}
-              />
+              <img id="Mike" src="play_white.png" />
             </button>
           </div>
         </div>
