@@ -609,6 +609,8 @@ class Player extends React.Component {
             </div>
           </div>
         </div>
+
+        {/* Message that appears once a user toggles the like button */}
         <span
           id="likedSongMessage"
           className={this.state.likedSongMessageClass}
