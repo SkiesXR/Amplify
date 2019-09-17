@@ -17,7 +17,7 @@ class PodcastShowItem extends React.Component {
   }
 
   handlePlay() {
-    if (this.state.noteIcon === "pause_white.png") {
+    if (this.state.noteIcon === "pause-green.png") {
       this.props.setPlaying(false);
       this.playNote();
     } else {
@@ -59,7 +59,8 @@ class PodcastShowItem extends React.Component {
     return (
       <div
         onMouseEnter={
-          this.props.episode.audio_file === this.props.currentSong.audio_file
+          this.props.episode.audio_file === this.props.currentSong.audio_file &&
+          playing === true
             ? this.pauseNote
             : this.playNote
         }
