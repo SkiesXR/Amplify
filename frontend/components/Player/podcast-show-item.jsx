@@ -57,12 +57,12 @@ class PodcastShowItem extends React.Component {
 
     return (
       <div
-        onMouseEnter={this.playNote}
         onMouseEnter={
           this.props.episode.audio_file === this.props.currentSong.audio_file
             ? this.pauseNote
             : this.playNote
         }
+        // onMouseLeave={this.podcastNote}
         onMouseLeave={this.podcastNote}
         className="track-container"
       >
