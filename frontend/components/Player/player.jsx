@@ -55,49 +55,6 @@ class Player extends React.Component {
     this.refs = {};
   }
 
-  componentDidUpdate(prevProps) {
-    // if current song or queue changes
-    if (
-      prevProps.currentSong.audio_file != this.props.currentSong.audio_file ||
-      prevProps.queue != this.props.queue
-    ) {
-      clearInterval(this.intervalId);
-      this.setState({
-        active:
-          Object.keys(this.props.queue).length > 0
-            ? this.props.queue[1]
-            : this.props.currentSong
-      });
-      this.setAudioSource();
-      this.setState({
-        active: this.props.queue[1],
-        currentTime: 0,
-        playheadPos: 0,
-        playPauseButton: "pause_white.png"
-      });
-      this.setSongPlaying(true);
-
-      // check to see if 'like' status changed for the current song
-      var trackId = this.props.currentSong.id;
-      this.props.tracks.some(track => {
-        return track.id === trackId;
-      })
-        ? this.setState({
-            loveButton: "love_filled_green.png",
-            loveId: "love-green"
-          })
-        : this.setState({
-            loveButton: "love.png",
-            loveId: "love"
-          });
-    }
-
-    // if the global 'playing' status has changed...
-    if (prevProps.playing != this.props.playing) {
-      this.setSongPlaying(this.props.playing);
-    }
-  }
-
   componentDidMount() {
     // set love button icon based on current track's like status
     let trackId = this.props.currentSong.track_id;
@@ -157,6 +114,49 @@ class Player extends React.Component {
         this.next();
       }
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    // if current song or queue changes
+    if (
+      prevProps.currentSong.audio_file != this.props.currentSong.audio_file ||
+      prevProps.queue != this.props.queue
+    ) {
+      clearInterval(this.intervalId);
+      this.setState({
+        active:
+          Object.keys(this.props.queue).length > 0
+            ? this.props.queue[1]
+            : this.props.currentSong
+      });
+      this.setAudioSource();
+      this.setState({
+        active: this.props.queue[1],
+        currentTime: 0,
+        playheadPos: 0,
+        playPauseButton: "pause_white.png"
+      });
+      this.setSongPlaying(true);
+
+      // check to see if 'like' status changed for the current song
+      var trackId = this.props.currentSong.id;
+      this.props.tracks.some(track => {
+        return track.id === trackId;
+      })
+        ? this.setState({
+            loveButton: "love_filled_green.png",
+            loveId: "love-green"
+          })
+        : this.setState({
+            loveButton: "love.png",
+            loveId: "love"
+          });
+    }
+
+    // if the global 'playing' status has changed...
+    if (prevProps.playing != this.props.playing) {
+      this.setSongPlaying(this.props.playing);
+    }
   }
 
   timeUpdate() {
@@ -245,7 +245,6 @@ class Player extends React.Component {
     const music = document.getElementById("audio");
     if (isPlaying) {
       music.play();
-      // this.props.setPlaying(true);
 
       // Swap "pause" icon for "play icon"
       this.setState({
@@ -253,11 +252,9 @@ class Player extends React.Component {
       });
     } else {
       music.pause();
-      // this.props.setPlaying(false);
       clearInterval(this.intervalId);
       this.setState({
-        playPauseButton: "play_white.png",
-        playing: false
+        playPauseButton: "play_white.png"
       });
     }
   }
@@ -288,7 +285,6 @@ class Player extends React.Component {
       });
       audio.muted = false;
     }
-    // audio.muted = audio.volume <= 0.01 ? true : false;
   }
 
   // Obtain timestamp and convert for displaying track's current time
@@ -452,6 +448,7 @@ class Player extends React.Component {
         ? `/artists/${this.props.currentSong.artist_id}`
         : `/podcasts/${this.props.currentSong.show_id}`;
     }
+    const { setPlaying } = this.props;
 
     return (
       <div className="player">
@@ -525,6 +522,8 @@ class Player extends React.Component {
                     this.state.playPauseButton === "play_white.png"
                       ? () => this.setSongPlaying(true)
                       : () => this.setSongPlaying(false)
+                    //   () => setPlaying(true)
+                    // : () => setPlaying(false)
                   }
                   id="np-button"
                 >
