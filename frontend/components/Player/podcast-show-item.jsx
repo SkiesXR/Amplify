@@ -51,9 +51,10 @@ class PodcastShowItem extends React.Component {
   }
 
   render() {
-    const { noteContainerClass } = this.state;
+    const { noteContainerClass, noteIcon } = this.state;
     const { title, length } = this.props.episode || "";
     const { author } = this.props.podcast;
+    const { playing } = this.props;
 
     return (
       <div
@@ -62,17 +63,12 @@ class PodcastShowItem extends React.Component {
             ? this.pauseNote
             : this.playNote
         }
-        // onMouseLeave={this.podcastNote}
         onMouseLeave={this.podcastNote}
         className="track-container"
       >
         <div className="tc-outer">
           <div className={noteContainerClass}>
-            <img
-              id="tc-note"
-              src={this.state.noteIcon}
-              onClick={this.handlePlay}
-            />
+            <img id="tc-note" src={noteIcon} onClick={this.handlePlay} />
           </div>
         </div>
         <div className="tc-title-artist">
