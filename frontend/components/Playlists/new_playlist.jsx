@@ -14,11 +14,14 @@ class NewPlaylist extends React.Component {
   }
 
   handleSubmit() {
+    const { title } = this.state;
+    const { closeModal } = this.props;
+    if (title === "") return null;
     let playlist = this.state;
     this.setState({ title: "" });
     this.props
       .createPlaylist(playlist)
-      .then(this.props.closeModal)
+      .then(closeModal)
       .then(() => this.redirectToIndex());
   }
 
@@ -27,7 +30,6 @@ class NewPlaylist extends React.Component {
   }
 
   redirectToIndex() {
-    // this.props.history.push("/collection/playlists");
     this.props.history.push(
       `/collection/playlists/${this.props.last_playlist.id}`
     );
@@ -96,5 +98,3 @@ export default withRouter(
     mdp
   )(NewPlaylist)
 );
-
-// TODO: Only the current user's playlists are visible
