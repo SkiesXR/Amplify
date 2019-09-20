@@ -207,6 +207,7 @@ class Player extends React.Component {
     }
   }
 
+  // Prompt the user that the curret song has been liked / un-liked
   likedSongMessage(action) {
     switch (action) {
       case "add":
@@ -379,6 +380,7 @@ class Player extends React.Component {
     }
   }
 
+  // toggle next track
   next() {
     let queueSize = this.props.queue.length;
     let current =
@@ -400,6 +402,7 @@ class Player extends React.Component {
     this.setSongPlaying(true);
   }
 
+  // toggle previous track
   previous() {
     let queueSize = this.props.queue.length;
     let current =
@@ -432,12 +435,14 @@ class Player extends React.Component {
     return array;
   }
 
+  // shuffle the queue
   shuffle() {
     let shuffleQ = this.randomize(this.props.queue.slice());
     this.setState({ shuffle: !this.state.shuffle });
     if (this.state.shuffle) this.props.setQueue(shuffleQ);
   }
 
+  // loop the current track
   repeat() {
     this.setState({ repeat: !this.state.repeat });
   }

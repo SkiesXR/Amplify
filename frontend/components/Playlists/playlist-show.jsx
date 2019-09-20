@@ -55,13 +55,6 @@ class PlaylistShow extends React.Component {
 
   addToQueue() {
     const { playlist } = this.props;
-    // if (Object.keys(this.props.playlist.playlist_tracks).length > 0) {
-    //   let tracks = this.props.playlist.playlist_tracks;
-    //   this.props.setQueue(Object.values(this.props.playlist.playlist_tracks));
-    //   this.props.setCurrentSong(
-    //     Object.values(this.props.playlist.playlist_tracks)[1]
-    //   );
-    // }
     if (playlist.playlist_tracks) {
       if (Object.keys(playlist.playlist_tracks).length > 0) {
         let tracks = Object.values(playlist.playlist_tracks);
