@@ -62,9 +62,12 @@ class PlaylistShow extends React.Component {
     //     Object.values(this.props.playlist.playlist_tracks)[1]
     //   );
     // }
-    if (Object.keys(playlist.playlist_tracks).length > 0) {
-      this.props.setQueue(Object.values(playlist.playlist_tracks));
-      this.props.setCurrentSong(Object.values(playlist.playlist_tracks[0]));
+    if (playlist.playlist_tracks) {
+      if (Object.keys(playlist.playlist_tracks).length > 0) {
+        let tracks = Object.values(playlist.playlist_tracks);
+        this.props.setQueue(tracks);
+        this.props.setCurrentSong(tracks[0]);
+      }
     }
   }
 
