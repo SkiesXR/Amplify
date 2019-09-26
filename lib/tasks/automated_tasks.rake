@@ -14,7 +14,6 @@ namespace :automated_tasks do
         end
 
         # Delete Demo User playlists
-        # demo_playlists.destroy
 
         puts "#{Time.now} - Success!"
     end
