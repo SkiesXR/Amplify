@@ -514,6 +514,7 @@ class Player extends React.Component {
                         : "shuffle_white.png"
                     }
                   />
+                  <div class="helper-shuffle">Shuffle</div>
                 </button>
 
                 {/* back button */}
@@ -563,6 +564,7 @@ class Player extends React.Component {
                         : "repeat_white.png"
                     }
                   />
+                  <div class="helper-repeat">Enable Repeat</div>
                 </button>
               </div>
             </div>

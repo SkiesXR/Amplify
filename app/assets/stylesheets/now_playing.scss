@@ -379,3 +379,18 @@
   bottom: -25px;
   @extend .helper-play;
 }
+
+.helper-shuffle {
+  right: 16px;
+  bottom: -18px;
+  @extend .helper-last;
+}
+
+.helper-repeat {
+  width: 100px;
+  padding: 5px 10px;
+  right: -110px;
+  bottom: -20px;
+  z-index: 10;
+  @extend .helper-next;
+}
