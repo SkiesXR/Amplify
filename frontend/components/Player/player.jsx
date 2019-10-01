@@ -24,11 +24,7 @@ class Player extends React.Component {
       likedSongMessageClass: "likedSongMessageInactive",
       muteIcon: "volume.png",
       volBarId: "default",
-      queue: props.queue,
-      nextTxt: "Next",
-      lastTxt: "Previous",
-      shuffleTxt: "Enable Shuffle",
-      repeatTxt: "Enable Repeat"
+      queue: props.queue
     };
 
     // Let's bind some methods!

@@ -209,7 +209,7 @@
 }
 
 #np-button:hover .helper-play {
-  display: block;
+  opacity: 1;
 }
 
 #np-button:hover .helper-last {
@@ -359,7 +359,7 @@
 
 .helper-play {
   position: absolute;
-  display: none;
+  // display: none;
   bottom: -5px;
   right: -20px;
   padding: 5px 8px;
@@ -368,6 +368,8 @@
   font-family: "Circular";
   font-size: 14px;
   background-color: black;
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
 }
 
 .helper-last {
