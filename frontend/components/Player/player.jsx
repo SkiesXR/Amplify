@@ -510,6 +510,7 @@ class Player extends React.Component {
                         : "shuffle_white.png"
                     }
                   />
+                  <div class="helper-shuffle">Shuffle</div>
                 </button>
 
                 {/* back button */}
@@ -519,6 +520,7 @@ class Player extends React.Component {
                     src="previous_white.png"
                     onClick={this.previous}
                   />
+                  <div class="helper-last">Previous</div>
                 </button>
 
                 {/* play / pause buttons */}
@@ -527,12 +529,15 @@ class Player extends React.Component {
                     this.state.playPauseButton === "play_white.png"
                       ? () => this.setSongPlaying(true)
                       : () => this.setSongPlaying(false)
-                    //   () => setPlaying(true)
-                    // : () => setPlaying(false)
                   }
                   id="np-button"
                 >
                   <img id="play" src={this.state.playPauseButton} />
+                  <div class="helper-play">
+                    {this.state.playPauseButton === "play_white.png"
+                      ? "Play"
+                      : "Pause"}
+                  </div>
                 </button>
 
                 {/* next button */}
@@ -542,6 +547,7 @@ class Player extends React.Component {
                     src="next_white.png"
                     onClick={this.next}
                   />
+                  <div class="helper-next">Next</div>
                 </button>
 
                 {/* repeat button */}
@@ -554,6 +560,7 @@ class Player extends React.Component {
                         : "repeat_white.png"
                     }
                   />
+                  <div class="helper-repeat">Enable Repeat</div>
                 </button>
               </div>
             </div>

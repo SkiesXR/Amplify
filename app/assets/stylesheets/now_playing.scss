@@ -6,7 +6,7 @@
   border: 0;
   vertical-align: baseline;
   position: relative;
-  height: 100%
+  height: 100%;
 }
 
 /* left side */
@@ -14,14 +14,14 @@
 .now-playing-left {
   display: flex;
   flex-direction: row;
-  width: 30%
+  width: 30%;
 }
 
 .thumb-image {
   background-size: cover;
   min-width: 56px;
   height: 56px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 0;
   display: block;
   outline: 0;
@@ -52,7 +52,7 @@
   font-family: "Circular";
   font-size: 14px;
   color: white;
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
   line-height: 20px;
   cursor: pointer;
   text-decoration: none;
@@ -76,7 +76,7 @@
   text-decoration: none;
   font-size: 12px;
   color: white;
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
   line-height: 16px;
   cursor: pointer;
   display: inline;
@@ -117,7 +117,7 @@
   width: 20px;
   height: 20px;
   opacity: 0.6;
-  transition: opacity .2s linear;
+  transition: opacity 0.2s linear;
 }
 
 #love:hover {
@@ -162,7 +162,7 @@
 }
 
 .currentTime {
-  font-family: 'Circular';
+  font-family: "Circular";
   color: #fff;
   font-size: 12px;
   opacity: 0.6;
@@ -172,7 +172,7 @@
 }
 
 .duration {
-  font-family: 'Circular';
+  font-family: "Circular";
   color: #fff;
   font-size: 12px;
   opacity: 0.6;
@@ -184,7 +184,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // margin-bottom: 12px;
   margin-right: 16px;
   margin-left: 16px;
   margin-top: 10px;
@@ -206,11 +205,24 @@
   border: none;
   padding: 0;
   outline: none;
+  position: relative;
+}
+
+#np-button:hover .helper-play {
+  opacity: 1;
+}
+
+#np-button:hover .helper-last {
+  display: block;
+}
+
+#np-button:hover .helper-next {
+  display: block;
 }
 
 #play {
-  opacity: .6;
-  transition: opacity .2s linear;
+  opacity: 0.6;
+  transition: opacity 0.2s linear;
   width: 50px;
   margin: 0 15px;
 }
@@ -221,13 +233,13 @@
 }
 
 #play:active {
-  transform: scale(.95);
-  opacity: .6;
+  transform: scale(0.95);
+  opacity: 0.6;
 }
 
 #direction-forward {
-  opacity: .6;
-  transition: opacity .2s linear;
+  opacity: 0.6;
+  transition: opacity 0.2s linear;
   width: 16px;
   height: 16px;
   margin-right: 34px;
@@ -238,12 +250,12 @@
 }
 
 #direction-forward:active {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 #direction-backward {
-  opacity: .6;
-  transition: opacity .2s linear;
+  opacity: 0.6;
+  transition: opacity 0.2s linear;
   width: 16px;
   height: 16px;
   margin-left: 34px;
@@ -254,15 +266,14 @@
 }
 
 #direction-backward:active {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 #shuffle {
-  opacity: .6;
-  transition: opacity .2s linear;
+  opacity: 0.6;
+  transition: opacity 0.2s linear;
   width: 25px;
   height: 25px;
-  // padding-right: 34px;
 }
 
 #shuffle:hover {
@@ -270,15 +281,14 @@
 }
 
 #shuffle:active {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 #repeat {
-  opacity: .6;
-  transition: opacity .2s linear;
+  opacity: 0.6;
+  transition: opacity 0.2s linear;
   width: 25px;
   height: 25px;
-  // padding-left: 34px;
 }
 
 #repeat:hover {
@@ -286,14 +296,14 @@
 }
 
 #repeat:active {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 #timeline {
   width: 500px;
   height: 3px;
   background: #fff;
-  opacity: .2;
+  opacity: 0.2;
   margin-top: 20px;
   float: left;
   border-radius: 15px;
@@ -332,7 +342,7 @@
 #mute-icon {
   width: 20px;
   height: 20px;
-  transition: all .05s;
+  transition: all 0.05s;
 }
 
 #mute-icon:hover {
@@ -345,4 +355,44 @@
 
 #myRange {
   background: transparent;
+}
+
+.helper-play {
+  position: absolute;
+  // display: none;
+  bottom: -5px;
+  right: -20px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  color: white;
+  font-family: "Circular";
+  font-size: 14px;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+.helper-last {
+  right: 12px;
+  @extend .helper-next;
+}
+
+.helper-next {
+  bottom: -25px;
+  @extend .helper-play;
+}
+
+.helper-shuffle {
+  right: 16px;
+  bottom: -18px;
+  @extend .helper-last;
+}
+
+.helper-repeat {
+  width: 100px;
+  padding: 5px 10px;
+  right: -110px;
+  bottom: -20px;
+  z-index: 10;
+  @extend .helper-next;
 }
