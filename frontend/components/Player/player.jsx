@@ -25,7 +25,6 @@ class Player extends React.Component {
       muteIcon: "volume.png",
       volBarId: "default",
       queue: props.queue,
-      playTxt: "Play",
       nextTxt: "Next",
       lastTxt: "Previous",
       shuffleTxt: "Enable Shuffle",
@@ -536,8 +535,8 @@ class Player extends React.Component {
                   id="np-button"
                 >
                   <img id="play" src={this.state.playPauseButton} />
-                  <div class="helper">
-                    {this.state.playPauseButton === "play_white"
+                  <div class="helper-play">
+                    {this.state.playPauseButton === "play_white.png"
                       ? "Play"
                       : "Pause"}
                   </div>
@@ -550,6 +549,7 @@ class Player extends React.Component {
                     src="next_white.png"
                     onClick={this.next}
                   />
+                  <div class="helper-next">"Next"</div>
                 </button>
 
                 {/* repeat button */}

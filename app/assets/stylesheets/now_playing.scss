@@ -184,7 +184,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // margin-bottom: 12px;
   margin-right: 16px;
   margin-left: 16px;
   margin-top: 10px;
@@ -267,7 +266,6 @@
   transition: opacity 0.2s linear;
   width: 25px;
   height: 25px;
-  // padding-right: 34px;
 }
 
 #shuffle:hover {
@@ -283,7 +281,6 @@
   transition: opacity 0.2s linear;
   width: 25px;
   height: 25px;
-  // padding-left: 34px;
 }
 
 #repeat:hover {
@@ -352,7 +349,7 @@
   background: transparent;
 }
 
-.helper {
+.helper-play {
   display: none;
   position: absolute;
   bottom: -5px;
@@ -360,6 +357,12 @@
   padding: 5px 8px;
   border-radius: 3px;
   color: white;
+  font-family: "Circular";
   font-size: 14px;
   background-color: black;
+}
+
+.helper-next {
+  bottom: -25px;
+  @extend .helper;
 }
