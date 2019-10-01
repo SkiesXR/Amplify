@@ -208,7 +208,15 @@
   position: relative;
 }
 
-#np-button:hover .helper {
+#np-button:hover .helper-play {
+  display: block;
+}
+
+#np-button:hover .helper-last {
+  display: block;
+}
+
+#np-button:hover .helper-next {
   display: block;
 }
 
@@ -350,8 +358,8 @@
 }
 
 .helper-play {
-  display: none;
   position: absolute;
+  display: none;
   bottom: -5px;
   right: -20px;
   padding: 5px 8px;
@@ -362,7 +370,12 @@
   background-color: black;
 }
 
+.helper-last {
+  right: 12px;
+  @extend .helper-next;
+}
+
 .helper-next {
   bottom: -25px;
-  @extend .helper;
+  @extend .helper-play;
 }

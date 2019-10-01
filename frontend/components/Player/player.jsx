@@ -523,6 +523,7 @@ class Player extends React.Component {
                     src="previous_white.png"
                     onClick={this.previous}
                   />
+                  <div class="helper-last">Previous</div>
                 </button>
 
                 {/* play / pause buttons */}
@@ -549,7 +550,7 @@ class Player extends React.Component {
                     src="next_white.png"
                     onClick={this.next}
                   />
-                  <div class="helper-next">"Next"</div>
+                  <div class="helper-next">Next</div>
                 </button>
 
                 {/* repeat button */}
