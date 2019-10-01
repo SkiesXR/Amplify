@@ -532,13 +532,15 @@ class Player extends React.Component {
                     this.state.playPauseButton === "play_white.png"
                       ? () => this.setSongPlaying(true)
                       : () => this.setSongPlaying(false)
-                    //   () => setPlaying(true)
-                    // : () => setPlaying(false)
                   }
                   id="np-button"
                 >
                   <img id="play" src={this.state.playPauseButton} />
-                  <div>{this.state.playTxt}</div>
+                  <div class="helper">
+                    {this.state.playPauseButton === "play_white"
+                      ? "Play"
+                      : "Pause"}
+                  </div>
                 </button>
 
                 {/* next button */}

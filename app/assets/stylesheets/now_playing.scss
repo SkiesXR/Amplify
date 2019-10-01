@@ -206,6 +206,11 @@
   border: none;
   padding: 0;
   outline: none;
+  position: relative;
+}
+
+#np-button:hover .helper {
+  display: block;
 }
 
 #play {
@@ -345,4 +350,16 @@
 
 #myRange {
   background: transparent;
+}
+
+.helper {
+  display: none;
+  position: absolute;
+  bottom: -5px;
+  right: -20px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  color: white;
+  font-size: 14px;
+  background-color: black;
 }
