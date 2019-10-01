@@ -24,7 +24,12 @@ class Player extends React.Component {
       likedSongMessageClass: "likedSongMessageInactive",
       muteIcon: "volume.png",
       volBarId: "default",
-      queue: props.queue
+      queue: props.queue,
+      playTxt: "Play",
+      nextTxt: "Next",
+      lastTxt: "Previous",
+      shuffleTxt: "Enable Shuffle",
+      repeatTxt: "Enable Repeat"
     };
 
     // Let's bind some methods!
@@ -533,6 +538,7 @@ class Player extends React.Component {
                   id="np-button"
                 >
                   <img id="play" src={this.state.playPauseButton} />
+                  <div>{this.state.playTxt}</div>
                 </button>
 
                 {/* next button */}
